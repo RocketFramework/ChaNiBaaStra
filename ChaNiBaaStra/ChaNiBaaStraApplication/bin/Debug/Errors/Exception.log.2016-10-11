@@ -1,0 +1,640 @@
+2016-10-11 16:50:55,249 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111650249-31 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:05,117 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651117-26 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:05,192 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651192-65 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:05,313 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651313-95 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:05,408 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651408-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:05,536 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651536-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,253 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651253-94 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,428 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651428-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,432 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 10111651432-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,436 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651436-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,440 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 10111651440-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,474 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651474-19 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,645 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111651645-69 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:51:06,734 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetRashiRelationHandler - 10111651732-79 
+Nido.Common.Exceptions.ExceptionCritical: Non-static method requires a target.
+   at Nido.Common.BackEnd.DataRepository`2.GetAllNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetAllGeneric(Expression`1 predicate)
+2016-10-11 16:51:16,618 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetRashiRelationHandler - 10111651618-58 
+Nido.Common.Exceptions.ExceptionCritical: Non-static method requires a target.
+   at Nido.Common.BackEnd.DataRepository`2.GetAllNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetAllGeneric(Expression`1 predicate)
+2016-10-11 16:54:49,887 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654887-87 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:50,100 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654100-76 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:50,178 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654178-51 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:50,301 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654301-81 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:50,427 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654427-11 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:50,570 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654570-25 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:51,224 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654224-44 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:51,401 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111654401-30 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 16:54:51,406 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 10111654406-13 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:01:19,967 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011171967-70 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:23,902 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717902-68 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:24,337 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717337-46 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:24,436 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717436-57 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:24,542 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717542-51 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:24,640 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717640-62 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:24,791 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717791-12 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:25,654 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717654-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:25,832 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111717832-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:17:25,836 [9] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 10111717836-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:42,851 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721851-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:43,062 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172162-52 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:43,165 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721165-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:43,318 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721318-13 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:43,399 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721399-87 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:43,503 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721503-82 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:44,176 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721176-37 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:44,354 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721354-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:44,445 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721445-65 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:44,484 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721484-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:21:44,625 [9] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111721625-50 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:21,699 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725699-98 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:21,883 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725883-83 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:21,976 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725976-94 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:22,091 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172591-72 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:22,162 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725162-64 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:22,264 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725264-58 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:23,035 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172535-71 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:23,186 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725186-21 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:23,234 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725234-77 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:23,267 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725267-96 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:25:23,378 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111725378-43 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,016 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172716-74 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,108 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727108-33 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,209 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727209-27 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,349 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727349-93 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,444 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727444-52 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:36,564 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727564-99 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:37,298 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727298-76 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:37,458 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727458-26 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:37,483 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727483-62 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:37,513 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727513-81 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:37,610 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727610-76 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:44,850 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727850-59 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:44,944 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727944-18 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:45,058 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172758-65 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:45,225 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727225-98 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:45,333 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727333-93 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:45,486 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727486-59 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:46,187 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727187-33 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:46,355 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727355-66 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:46,377 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727377-2 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:46,400 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727400-22 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:27:46,504 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111727504-16 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,027 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011172827-0 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,106 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728106-11 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,198 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728198-86 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,327 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728327-0 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,403 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728403-75 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:41,512 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728512-69 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:42,262 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728262-99 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:28:42,481 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111728481-40 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:35:09,001 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 101117350-60 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:35:09,018 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011173518-96 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:35:09,113 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111735113-91 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:10,613 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745613-88 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:10,710 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745710-82 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:10,794 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745794-57 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:10,921 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745921-88 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:10,992 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745992-63 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:11,098 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011174598-21 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:11,768 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745768-76 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:11,975 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745975-17 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:16,224 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745224-82 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:16,247 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745247-2 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:45:16,312 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111745312-41 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:21,960 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748960-49 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:22,054 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011174854-7 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:22,143 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748143-82 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:22,272 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748272-48 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:22,343 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748343-87 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:22,464 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748464-18 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:23,126 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748126-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:23,284 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748284-86 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:23,292 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748292-22 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:23,306 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748306-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 17:48:23,341 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111748341-25 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,455 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186455-76 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,540 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186540-50 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,636 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186636-45 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,763 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186763-75 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,847 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186847-50 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:02,953 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186953-45 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:03,804 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186804-69 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:03,970 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186970-19 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:03,981 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186981-54 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:06:15,228 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011186228-26 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:14:07,369 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111814369-94 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:19:16,501 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111819501-96 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:26:56,362 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111826362-11 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:33:42,967 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111833967-93 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:35:28,153 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111835153-37 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:39:26,347 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111839347-68 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,121 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843121-65 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,247 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843247-43 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,378 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843378-73 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,518 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843518-39 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,595 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843595-14 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:11,748 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843748-64 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:12,630 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843630-72 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:12,801 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843801-58 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:12,813 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843813-93 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 18:43:12,826 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111843826-77 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:04:43,137 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011194137-60 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:44,431 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912431-93 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:44,544 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912544-88 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:44,670 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912670-18 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:44,844 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912844-51 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:44,930 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912930-62 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:45,046 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011191246-57 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:45,774 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912774-50 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:45,943 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912943-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:45,954 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912954-36 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:45,973 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111912973-56 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:12:46,015 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011191215-75 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:16,809 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915809-79 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:16,889 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915889-54 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:17,013 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 1011191513-84 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:17,175 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915175-34 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:17,263 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915263-92 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:17,392 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915392-23 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:18,137 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915137-52 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:18,325 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915325-22 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:18,336 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915335-58 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:15:18,355 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111915355-41 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-11 19:20:07,153 [10] ERROR ChaNiBaaStra.Dal.Handlers.NakathHandler - 10111920153-10 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)

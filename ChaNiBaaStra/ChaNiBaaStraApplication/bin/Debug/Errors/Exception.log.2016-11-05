@@ -1,0 +1,28 @@
+2016-11-05 10:22:30,471 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151022470-86 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-11-05 10:22:30,506 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151022506-6 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-11-05 10:22:30,518 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151022518-41 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-11-05 10:22:30,544 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151022544-61 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-11-05 10:22:30,553 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151022553-61 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-11-05 10:22:31,416 [8] ERROR ChaNiBaaStra.Dal.Handlers.PlanetRashiRelationHandler - 1151022372-66 
+Nido.Common.Exceptions.ExceptionCritical: Non-static method requires a target.
+   at Nido.Common.BackEnd.DataRepository`2.GetAllNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetAllGeneric(Expression`1 predicate)
+2016-11-05 10:26:26,604 [10] ERROR ChaNiBaaStra.Dal.Handlers.PlanetHandler - 1151026604-85 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)

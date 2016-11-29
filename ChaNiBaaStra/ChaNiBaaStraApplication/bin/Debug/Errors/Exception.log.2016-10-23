@@ -1,0 +1,8 @@
+2016-10-23 21:03:18,019 [9] ERROR ChaNiBaaStra.Dal.Handlers.WeekDayHandler - 102321319-52 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
+2016-10-23 21:05:37,742 [10] ERROR ChaNiBaaStra.Dal.Handlers.WeekDayHandler - 1023215741-17 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Nido.Common.BackEnd.DataRepository`2.GetFirstNew(Expression`1 predicate)
+   at Nido.Common.BackEnd.HandlerBase`2.GetFirstGeneric(Expression`1 predicate)
