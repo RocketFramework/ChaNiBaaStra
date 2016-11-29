@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FE6B0FF-C5DE-449B-8D83-0CAE78C64C69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChaNiBaaStra.Dal</RootNamespace>
+    <AssemblyName>ChaNiBaaStra.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.121\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.0.0.7, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=3.1.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.3.01.0.0\lib\net451\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nido.Common, Version=1.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NidoFramework.1.1.8.6\lib\net451\Nido.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RefactorThis.GraphDiff, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\DbContext.cs" />
+    <Compile Include="Handlers\AstroPositionHandler.cs" />
+    <Compile Include="Handlers\BeneficConditionHandler.cs" />
+    <Compile Include="Handlers\ButhaTypeHandler.cs" />
+    <Compile Include="Handlers\GoodThithiHandler.cs" />
+    <Compile Include="Handlers\MonthHandler.cs" />
+    <Compile Include="Handlers\MovemenTypeHandler.cs" />
+    <Compile Include="Handlers\NakathHandler.cs" />
+    <Compile Include="Handlers\NakathMonthHandler.cs" />
+    <Compile Include="Handlers\NakathPlanetHandler.cs" />
+    <Compile Include="Handlers\NakathRelationHandler.cs" />
+    <Compile Include="Handlers\NakathThithiHandler.cs" />
+    <Compile Include="Handlers\NakathThithiWeekDayHandler.cs" />
+    <Compile Include="Handlers\NakathWeekDayHandler.cs" />
+    <Compile Include="Handlers\PakshaTypeHandler.cs" />
+    <Compile Include="Handlers\PlanetaryGenderTypeHandler.cs" />
+    <Compile Include="Handlers\PlanetAstroPositionHandler.cs" />
+    <Compile Include="Handlers\PlanetHandler.cs" />
+    <Compile Include="Handlers\PlanetRashiRelationHandler.cs" />
+    <Compile Include="Handlers\PlanetRelationHandler.cs" />
+    <Compile Include="Handlers\PlanetRelativeViewHandler.cs" />
+    <Compile Include="Handlers\RashiHandler.cs" />
+    <Compile Include="Handlers\RashiMonthHandler.cs" />
+    <Compile Include="Handlers\RashiThithiHandler.cs" />
+    <Compile Include="Handlers\RelationshipTypeHandler.cs" />
+    <Compile Include="Handlers\ThithiHandler.cs" />
+    <Compile Include="Handlers\ThithiMonthHandler.cs" />
+    <Compile Include="Handlers\ThithiSagnaHandler.cs" />
+    <Compile Include="Handlers\ThithiSiddhaHandler.cs" />
+    <Compile Include="Handlers\ThithiTypeHandler.cs" />
+    <Compile Include="Handlers\ThithiWeekDayHandler.cs" />
+    <Compile Include="Handlers\WeekDayHandler.cs" />
+    <Compile Include="Handlers\WorkForThithiHandler.cs" />
+    <Compile Include="Handlers\WorkHandler.cs" />
+    <Compile Include="Handlers\YogaHandler.cs" />
+    <Compile Include="Models\AstroPosition.cs" />
+    <Compile Include="Models\BeneficCondition.cs" />
+    <Compile Include="Models\ButhaType.cs" />
+    <Compile Include="Models\GoodThithi.cs" />
+    <Compile Include="Models\Month.cs" />
+    <Compile Include="Models\MovemenType.cs" />
+    <Compile Include="Models\Nakath.cs" />
+    <Compile Include="Models\NakathMonth.cs" />
+    <Compile Include="Models\NakathPlanet.cs" />
+    <Compile Include="Models\NakathRelation.cs" />
+    <Compile Include="Models\NakathThithi.cs" />
+    <Compile Include="Models\NakathThithiWeekDay.cs" />
+    <Compile Include="Models\NakathWeekDay.cs" />
+    <Compile Include="Models\PakshaType.cs" />
+    <Compile Include="Models\Planet.cs" />
+    <Compile Include="Models\PlanetaryGenderType.cs" />
+    <Compile Include="Models\PlanetAstroPosition.cs" />
+    <Compile Include="Models\PlanetRashiRelation.cs" />
+    <Compile Include="Models\PlanetRelation.cs" />
+    <Compile Include="Models\PlanetRelativeView.cs" />
+    <Compile Include="Models\Rashi.cs" />
+    <Compile Include="Models\RashiMonth.cs" />
+    <Compile Include="Models\RashiThithi.cs" />
+    <Compile Include="Models\RelationshipType.cs" />
+    <Compile Include="Models\Thithi.cs" />
+    <Compile Include="Models\ThithiMonth.cs" />
+    <Compile Include="Models\ThithiSagna.cs" />
+    <Compile Include="Models\ThithiSiddha.cs" />
+    <Compile Include="Models\ThithiType.cs" />
+    <Compile Include="Models\ThithiWeekDay.cs" />
+    <Compile Include="Models\WeekDay.cs" />
+    <Compile Include="Models\Work.cs" />
+    <Compile Include="Models\WorkForThithi.cs" />
+    <Compile Include="Models\Yoga.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Templates\TemplateFileManagerV2.1.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\Sample_Db_Bak.Sql" />
+    <Content Include="Handlers\Readme.txt" />
+    <Content Include="Models\AuditTrails.txt" />
+    <Content Include="Models\Readme.txt" />
+    <Content Include="Readme.txt" />
+    <Content Include="Templates\DbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Handlers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Handlers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Models.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Models.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

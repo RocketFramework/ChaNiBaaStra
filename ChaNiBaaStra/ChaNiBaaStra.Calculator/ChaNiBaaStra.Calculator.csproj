@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3C26B08-4436-4A6E-9AF4-1253690CCF04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChaNiBaaStra.Calculator</RootNamespace>
+    <AssemblyName>ChaNiBaaStra.Calculator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SwissEphNet, Version=2.5.1.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SwissEphNet.2.5.1.13\lib\portable40-net40+sl5+win8+wp8\SwissEphNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AstroCalculator.cs" />
+    <Compile Include="AstroDate.cs" />
+    <Compile Include="AstroPanchanga.cs" />
+    <Compile Include="CalculationBase.cs" />
+    <Compile Include="NakathFinder.cs" />
+    <Compile Include="NakathFinderInput.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChaNiBaaStra.Dal\ChaNiBaaStra.Dal.csproj">
+      <Project>{0fe6b0ff-c5de-449b-8d83-0cae78c64c69}</Project>
+      <Name>ChaNiBaaStra.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChaNiBaaStra.DataModels\ChaNiBaaStra.DataModels.csproj">
+      <Project>{afaf803a-7897-4c73-8a2e-bb0638663bdf}</Project>
+      <Name>ChaNiBaaStra.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChaNiBaaStra.Utilities\ChaNiBaaStra.Utilities.csproj">
+      <Project>{7aba334b-c713-495e-8c15-4df6e0fc0fa2}</Project>
+      <Name>ChaNiBaaStra.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
