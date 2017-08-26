@@ -1,7 +1,7 @@
-﻿<Application x:Class="ChaNiBaaStraApplication.App"
+﻿<Application x:Class="AfterHora.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ChaNiBaaStraApplication"
+             xmlns:local="clr-namespace:AfterHora"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
