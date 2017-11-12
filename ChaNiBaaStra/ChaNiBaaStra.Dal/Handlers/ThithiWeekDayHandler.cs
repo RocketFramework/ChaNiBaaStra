@@ -19,51 +19,13 @@ namespace ChaNiBaaStra.Dal.Handlers
     /// You may write any additional data handling operations
     /// related to ThithiWeekDay table in here.
     /// </remarks>
-    public class ThithiWeekDayHandler : HandlerBase<ThithiWeekDay, AstroDatabaseDBContext>
+    public class ThithiWeekDayHandler 
     {
-        protected override Type LogPrefix
+        protected  Type LogPrefix
         {
             get { return this.GetType(); }
         }
 
-        /// <summary>
-        /// Created by RocketFramework
-        /// </summary>
-        /// <remarks>
-        /// This is a sample method. 
-        /// You may modify this method as needed.
-        /// 
-        /// If you want to do complex data loading, you can write a 
-        /// SP that accept multiple parameters and then call multiple tables, 
-        /// views through it to select the particular record set you want.
-        /// 
-        /// Important: You have to create a 'Model' object to directly match the receiving object.
-        /// 
-        /// Then through a SP call you may load the records.
-        /// </remarks>
-        public GenericResponse<IEnumerable<ThithiWeekDay>> MyCustomMethod()
-        {
-            try
-            {
-                // Call the SP or any other custom SQL query with or wihout parameters
-                // This is good if the provided methods are not sifficient to select the records
-                //
-                // The example below explain how to call a SP with or without parameters
-                //
-                // return db.ExecuteStoredProcedure<FinanceStatusView>("PRHeader_S_FinancePRStatus @BudgetStatusId,@PRStatusId",
-                // new SqlParameter("@BudgetStatusId", 1), new SqlParameter("@PRStatusId", prStatusId));
-                // 
-                // return db.ExecuteStoredProcedure<FinanceStatusView>("PRHeader_S_FinancePRStatus");
-                //
-                IEnumerable<ThithiWeekDay> s = this._context.ExecuteStoredProcedure<ThithiWeekDay>("Select * from ThithiWeekDay", null);
-                // return UpdateSuccessResponse(<Updated ThithiWeekDay>);
-                // return DeleteSuccessResponse(<Deleted ThithiWeekDay>);
-                return SelectSuccessResponse(s);
-            }
-            catch (Exception e)
-            {
-                return HandleException<IEnumerable<ThithiWeekDay>>(e);
-            }
-        }
+
 	}
 }

@@ -29,7 +29,7 @@ namespace ChaNiBaaStra.Dal.DB
         public DbSet<PakshaType> PakshaTypes { get; set; }
         public DbSet<Thithi> Thithis { get; set; }
         public DbSet<RashiThithi> RashiThithis { get; set; }
-        public DbSet<ThithiSiddha> ThithiSiddhas { get; set; }
+
         public DbSet<GoodThithi> GoodThithis { get; set; }
         public DbSet<PlanetRelativeView> PlanetRelativeViews { get; set; }
         public DbSet<PlanetAstroPosition> PlanetAstroPositions { get; set; }

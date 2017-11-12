@@ -6,6 +6,7 @@ using Nido.Common.BackEnd;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using ChaNiBaaStra.Dal.DB;
 
 namespace ChaNiBaaStra.Dal.Models
 {
@@ -100,21 +101,6 @@ namespace ChaNiBaaStra.Dal.Models
             }
         }
 
-		[NotMapped]
-        public string WorkPopup
-        {
-            get
-            {
-                if (this.Work != null)
-                    return this.CreatePopupText(this.Work.Text
-                        , new TableCreator<Work>(this.Work)
-                        .RemoveRecord(x => x.Value).RemoveRecord(x => x.Text)
-                        .RemoveRecord(x => x.DeleteError).RemoveRecord(x => x.CanDelete)
-                        .GetPopupTable());
-                else
-                    return "Indecisive record data!!";
-            }
-        }
 
 		/// <summary>
         /// Implement this to prevent or allow the object to be deleted through the base handler.

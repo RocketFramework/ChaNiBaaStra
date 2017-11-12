@@ -30,13 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GeoTimeZone, Version=1.3.0.40889, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GeoTimeZone.1.3.0\lib\portable-net40+sl50+win+wp80\GeoTimeZone.dll</HintPath>
+    <Reference Include="GeoTimeZone, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\GeoTimeZone.2.0.0\lib\netstandard1.0\GeoTimeZone.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
-    <Reference Include="SwissEphNet, Version=2.5.1.13, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SwissEphNet.2.5.1.13\lib\portable40-net40+sl5+win8+wp8\SwissEphNet.dll</HintPath>
+    <Reference Include="SwissEphNet, Version=2.6.0.21, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\SwissEphNet.2.6.0.21\lib\net40\SwissEphNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
