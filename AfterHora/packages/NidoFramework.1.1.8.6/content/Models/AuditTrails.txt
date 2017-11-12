@@ -1,0 +1,40 @@
+﻿To Enable Audit taril for your application you need to follow the steps given below...
+
+1. Enable Tracking via adding the <add key="EnableTracking" value="true"/>
+2. Create the table using the following SQL
+
+/****** Object:  Table [dbo].[AuditTrail]    Script Date: 12/13/2013 08:12:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[AuditTrail](
+	[AuditTrailId] [int] IDENTITY(1,1) NOT NULL,
+	[SystemName] [varchar](50) NULL,
+	[RevisionStamp] [datetime] NULL,
+	[TableName] [varchar](50) NULL,
+	[TablePrimaryId] [varchar](50) NULL,
+	[UserName] [varchar](50) NULL,
+	[Actions] [varchar](50) NULL,
+	[OldData] [xml] NULL,
+	[NewData] [xml] NULL,
+	[ChangedColumns] [varchar](1000) NULL,
+ CONSTRAINT [PK_DBAudit] PRIMARY KEY CLUSTERED 
+(
+	[AuditTrailId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+3. Add a new seesion variable named "UserName" <set the actual logged in user of the application>
+4. Add a new Session variable named "SystemName" <set the actual name of the application>
+5. You are ready to go now..

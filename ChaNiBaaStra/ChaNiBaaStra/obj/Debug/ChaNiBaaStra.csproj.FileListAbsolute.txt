@@ -1,0 +1,4 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra\obj\Debug\ChaNiBaaStra.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra\obj\Debug\ChaNiBaaStra.Form1.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra\obj\Debug\ChaNiBaaStra.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra\obj\Debug\ChaNiBaaStra.csproj.GenerateResource.Cache

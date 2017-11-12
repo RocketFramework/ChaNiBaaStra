@@ -1,0 +1,17 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\bin\Debug\AfterHora.exe.config
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\bin\Debug\AfterHora.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\bin\Debug\AfterHora.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\MainWindow.g.cs
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\App.g.cs
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.lref
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\MainWindow.baml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.g.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.exe
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\bin\Debug\AfterHora.exe.config
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.exe
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.pdb

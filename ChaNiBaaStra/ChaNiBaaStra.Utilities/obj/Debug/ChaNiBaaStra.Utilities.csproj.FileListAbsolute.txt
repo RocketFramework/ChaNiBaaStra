@@ -1,0 +1,6 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\GeoTimeZone.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb
