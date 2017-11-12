@@ -13,5 +13,6 @@ namespace AfterHora
     /// </summary>
     public partial class App : Application
     {
+        //Test
     }
 }
