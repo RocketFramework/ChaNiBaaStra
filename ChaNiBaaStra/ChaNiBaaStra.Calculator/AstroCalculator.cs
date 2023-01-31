@@ -8,8 +8,17 @@ using SwissEphNet;
 
 namespace ChaNiBaaStra.Calculator
 {
-    public class AstroCalculator
+    public class AstroCalculator : CalculationBase
     {
+        // Just to test this is removed
+        /*public AstroCalculator() : this(new DateTime(2016, 9, 26, 7, 31, 0), new AstroPlace())
+        { }*/
+        public AstroCalculator(AstroPlace place) : base(place, false)
+        {
+            WeekDay = new AstroWeekDay((EnumWeekDay)(place.BirthDate.DayOfWeek));
+            Nakath = new AstroNakath(this.Moon.Longitude);
+        }
+
         public Mod mod = new Mod();
 
 
@@ -48,8 +57,8 @@ namespace ChaNiBaaStra.Calculator
                 House = Rasi.ofDeg(mid);
             }
         }
-
-        public void test()
+        // Just to check this was renamed
+        public void test22()
         {
             SwissEphNet.SwissEph t = new SwissEph();
             double[] house = new double[13];

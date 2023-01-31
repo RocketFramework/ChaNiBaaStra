@@ -4,3 +4,18 @@ C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaS
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\GeoTimeZone.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\GeoTimeZone.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb

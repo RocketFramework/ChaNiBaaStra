@@ -122,6 +122,14 @@ namespace ChaNiBaaStra.DataModels
                 , actualTimingEndTime);
         }
 
-        public bool IsGood { get { return this.DataModel.IsGood.HasValue ? this.DataModel.IsGood.Value : true; } }
+        public bool IsGood
+        {
+            get
+            {
+                return !(this.Current == EnumWeekDay.Sunday ||
+                        this.Current == EnumWeekDay.Tuesday ||  
+                        this.Current == EnumWeekDay.Saturday);
+            }
+        }
     }
 }

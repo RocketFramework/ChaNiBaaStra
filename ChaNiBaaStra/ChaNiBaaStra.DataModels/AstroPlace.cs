@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ChaNiBaaStra.Utilities;
 using PropertyChanged;
+using static log4net.Appender.RollingFileAppender;
 
 namespace ChaNiBaaStra.DataModels
 {
@@ -124,7 +125,7 @@ namespace ChaNiBaaStra.DataModels
         public string TimeZoneId { get; set; }
         public string TimeZoneString { get; set; }
 
-        public AstroPlace(string city, string country, double latitude, double longitude, double timeZone, DateTime dateTime)
+        public AstroPlace(string city, string country, double latitude, double longitude, DateTime dateTime)
         {
             AdjustTime(longitude, dateTime);
 
@@ -167,6 +168,8 @@ namespace ChaNiBaaStra.DataModels
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
 
             this.birthDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
+
+            AdjustTime(this.Longitude, this.birthDateTime);
         }
 
         public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)

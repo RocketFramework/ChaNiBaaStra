@@ -50,12 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AstroUtility.cs" />
+    <Compile Include="ContryList.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DateTimeExtension.cs" />
+    <Compile Include="EnumPlanetRasiRelationTypesExtension.cs" />
     <Compile Include="EnumToList.cs" />
     <Compile Include="GeoAngle.cs" />
+    <Compile Include="HouseData.cs" />
     <Compile Include="IntCircle.cs" />
     <Compile Include="IntExtension.cs" />
+    <Compile Include="PlanetTransitOverHouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SunTimes.cs" />
     <Compile Include="TimeData.cs" />

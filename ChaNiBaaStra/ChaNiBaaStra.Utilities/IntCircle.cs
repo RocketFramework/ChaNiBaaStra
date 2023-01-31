@@ -58,7 +58,15 @@ namespace ChaNiBaaStra.Utilities
 
         public int Minus(int value)
         {
-            return Math.Abs(Current - value) % max;
+            if (Current <= value)
+                return Math.Abs(Current - value - 1) % max;
+            else
+                return 1+ Math.Abs(12 - (Current - value)) % max;
+        }
+
+        public int MinusAbsolute(int value)
+        {
+            return (Current - value) % max;
         }
 
         public int Add(int value)

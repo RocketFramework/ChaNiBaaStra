@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChaNiBaaStra.Dal.Models;
 using Nido.Common.BackEnd;
 
 namespace ChaNiBaaStra.DataModels
@@ -43,6 +44,13 @@ namespace ChaNiBaaStra.DataModels
             CurrentInt = Convert.ToInt32(value);
         }
 
+        public string ShortName
+        {
+            get
+            {
+                return this.Name.Substring(0, 2);
+            }
+        }
         private string _Name;
         public string Name { get { return string.IsNullOrEmpty(_Name) ? Current.ToString() : _Name; } set { _Name = value; } }
         /// <summary>

@@ -22,40 +22,41 @@ namespace ChaNiBaaStra.DataModels
             AstroPlanet mars = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mars);
             AstroPlanet mercury = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mercury);
             AstroPlanet jupiter = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Jupiter);
-            AstroPlanet vernus = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus);
+            AstroPlanet venus = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus);
             AstroPlanet saturn = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn);
+            LagnaAdhipathiPlanets = new List<AstroPlanet>();
 
             switch (birthHoroscope.LagnaRasi.Current)
             {
                 case EnumRasi.Mesha:
                     {
                         List<AstroPlanet> subp = new List<AstroPlanet> { sun, mars, moon };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { mercury, vernus, saturn };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { mercury, venus, saturn };
                         List<AstroPlanet> yop = new List<AstroPlanet> { jupiter };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, vernus, saturn };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus, saturn };
+                        LagnaAdhipathiPlanets.Add(mars);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 11;
                     }
                     break;
                 case EnumRasi.Vrishabha:
                     {
-                        List<AstroPlanet> subp = new List<AstroPlanet> { sun, mars, mercury, vernus };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { moon, vernus, jupiter };
+                        List<AstroPlanet> subp = new List<AstroPlanet> { sun, mars, mercury, venus };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { moon, venus, jupiter };
                         List<AstroPlanet> yop = new List<AstroPlanet> { saturn };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, vernus };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus };
+                        LagnaAdhipathiPlanets.Add(venus);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 9;
                     }
                     break;
                 case EnumRasi.Mithuna:
                     {
-                        List<AstroPlanet> subp = new List<AstroPlanet> { saturn, vernus };
+                        List<AstroPlanet> subp = new List<AstroPlanet> { saturn, venus };
                         List<AstroPlanet> asup = new List<AstroPlanet> { sun, mars, jupiter };
-                        List<AstroPlanet> yop = new List<AstroPlanet> { vernus, mercury };
+                        List<AstroPlanet> yop = new List<AstroPlanet> { venus, mercury };
                         List<AstroPlanet> marp = new List<AstroPlanet> { mars, jupiter };
-
+                        LagnaAdhipathiPlanets.Add(mercury);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 7;
                     }
@@ -63,10 +64,10 @@ namespace ChaNiBaaStra.DataModels
                 case EnumRasi.Kataka:
                     {
                         List<AstroPlanet> subp = new List<AstroPlanet> { mars, jupiter };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { mercury, vernus };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { mercury, venus };
                         List<AstroPlanet> yop = new List<AstroPlanet> { mars };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, vernus };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus };
+                        LagnaAdhipathiPlanets.Add(moon);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 11;
                     }
@@ -76,19 +77,19 @@ namespace ChaNiBaaStra.DataModels
                         List<AstroPlanet> subp = new List<AstroPlanet> { mars };
                         List<AstroPlanet> asup = new List<AstroPlanet> { mercury, jupiter, saturn };
                         List<AstroPlanet> yop = new List<AstroPlanet> { mars };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, vernus };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus };
+                        LagnaAdhipathiPlanets.Add(sun);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 9;
                     }
                     break;
                 case EnumRasi.Kanya:
                     {
-                        List<AstroPlanet> subp = new List<AstroPlanet> { vernus };
+                        List<AstroPlanet> subp = new List<AstroPlanet> { venus };
                         List<AstroPlanet> asup = new List<AstroPlanet> { moon, jupiter };
-                        List<AstroPlanet> yop = new List<AstroPlanet> { mercury, vernus };
+                        List<AstroPlanet> yop = new List<AstroPlanet> { mercury, venus };
                         List<AstroPlanet> marp = new List<AstroPlanet> { mars, jupiter };
-
+                        LagnaAdhipathiPlanets.Add(mercury);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 7;
                     }
@@ -99,7 +100,7 @@ namespace ChaNiBaaStra.DataModels
                         List<AstroPlanet> asup = new List<AstroPlanet> { sun, mars, jupiter };
                         List<AstroPlanet> yop = new List<AstroPlanet> { moon, mercury, saturn };
                         List<AstroPlanet> marp = new List<AstroPlanet> { jupiter };
-
+                        LagnaAdhipathiPlanets.Add(venus);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 11;
                     }
@@ -110,7 +111,7 @@ namespace ChaNiBaaStra.DataModels
                         List<AstroPlanet> asup = new List<AstroPlanet> { mercury, mars, saturn };
                         List<AstroPlanet> yop = new List<AstroPlanet> { sun };
                         List<AstroPlanet> marp = new List<AstroPlanet> { mercury, saturn };
-
+                        LagnaAdhipathiPlanets.Add(mars);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 9;
                     }
@@ -118,21 +119,21 @@ namespace ChaNiBaaStra.DataModels
                 case EnumRasi.Dhanus:
                     {
                         List<AstroPlanet> subp = new List<AstroPlanet> { sun, mars };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { vernus };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { venus };
                         List<AstroPlanet> yop = new List<AstroPlanet> { sun, mercury };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { vernus };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { venus };
+                        LagnaAdhipathiPlanets.Add(jupiter);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 7;
                     }
                     break;
                 case EnumRasi.Makara:
                     {
-                        List<AstroPlanet> subp = new List<AstroPlanet> { vernus };
+                        List<AstroPlanet> subp = new List<AstroPlanet> { venus };
                         List<AstroPlanet> asup = new List<AstroPlanet> { moon, mars, jupiter };
                         List<AstroPlanet> yop = new List<AstroPlanet> { mars, jupiter };
                         List<AstroPlanet> marp = new List<AstroPlanet> { mars };
-
+                        LagnaAdhipathiPlanets.Add(saturn);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 11;
                     }
@@ -140,10 +141,10 @@ namespace ChaNiBaaStra.DataModels
                 case EnumRasi.Kumbha:
                     {
                         List<AstroPlanet> subp = new List<AstroPlanet> { moon, mars };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { sun, mercury, vernus };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { sun, mercury, venus };
                         List<AstroPlanet> yop = new List<AstroPlanet> { mars, jupiter };
                         List<AstroPlanet> marp = new List<AstroPlanet> { saturn };
-
+                        LagnaAdhipathiPlanets.Add(saturn);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 9;
                     }
@@ -151,20 +152,21 @@ namespace ChaNiBaaStra.DataModels
                 case EnumRasi.Meena:
                     {
                         List<AstroPlanet> subp = new List<AstroPlanet> { moon, mars };
-                        List<AstroPlanet> asup = new List<AstroPlanet> { sun, mercury, vernus, saturn };
+                        List<AstroPlanet> asup = new List<AstroPlanet> { sun, mercury, venus, saturn };
                         List<AstroPlanet> yop = new List<AstroPlanet> { jupiter, mars };
-                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, vernus, saturn };
-
+                        List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus, saturn };
+                        LagnaAdhipathiPlanets.Add(jupiter);
                         SetPlanetVarieties(subp, asup, yop, marp);
                         BadakaHouseNumber = 7;
                     }
                     break;
             }
-            LagnaAdhipathiPlanets = new List<AstroPlanet>();
-            var retData = birthHoroscope.LagnaRasi.DataModel.PlanetRashiRelations.Where(x => x.RelationshipTypeId == (int)EnumRelationshipTypes.Swashesthra
+            
+            // This part is commented but the data loding is included and added to the above switch code
+            /*var retData = birthHoroscope.LagnaRasi.DataModel.PlanetRashiRelations.Where(x => x.RelationshipTypeId == (int)EnumRelationshipTypes.Swashesthra
                 || x.RelationshipTypeId == (int)EnumRelationshipTypes.SwashesthraMulaThrikona);
             foreach (PlanetRashiRelation pr in retData)
-                LagnaAdhipathiPlanets.Add(birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.DataModel.PlanetId == pr.PlanetId));
+                LagnaAdhipathiPlanets.Add(birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.DataModel.PlanetId == pr.PlanetId));*/
         }
 
         private void SetPlanetVarieties(List<AstroPlanet> subp, List<AstroPlanet> asup

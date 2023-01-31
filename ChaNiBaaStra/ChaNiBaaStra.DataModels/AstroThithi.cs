@@ -36,12 +36,11 @@ namespace ChaNiBaaStra.DataModels
     {
         public AstroThithi(EnumThithi thithi) : base(thithi, 16, AstroConsts.ThithiLength)
         {
-            ThithiHandler handler = new ThithiHandler();
-            this.DataModel = handler.GetFirstGeneric(x => x.ThithiId == CurrentInt).Result;
+            // COMMENTED TO GET THE CODE WORKING
+            //ThithiHandler handler = new ThithiHandler();
         }
         public AstroThithi(int thithiInt) : this((EnumThithi)thithiInt)
         { }
-
         public double FindThithiEnd(double sun, double moon, double sunSpeed, double moonSpeed)
         {
             double diff = getMoonSunDiff(sun, moon);
@@ -76,7 +75,19 @@ namespace ChaNiBaaStra.DataModels
             return thithi;
         }
         public EnumPaksha ThithiPaksha { get; set; }
-        public bool IsGood { get { return DataModel.IsGood; } }
+        public bool IsGood
+        {
+            get
+            {
+                return !(CurrentInt == 4 || 
+                    CurrentInt == 6 || 
+                    CurrentInt == 8 || 
+                    CurrentInt == 9 || 
+                    CurrentInt == 12 || 
+                    CurrentInt == 14 || 
+                    CurrentInt == 15);
+            }
+        }
         public DateTime? EndTime { get; set; }
         public static double getMoonSunDiff(double sun, double moon)
         {

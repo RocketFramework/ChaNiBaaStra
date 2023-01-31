@@ -36,6 +36,7 @@ namespace ChaNiBaaStra.DataModels
 
         public static int AUS_TIME_ROW = 9;
 
+        public static long TICKS_PER_DAY = 864000000000;
         //public static int HOUSE_SYSTEM = (int)'P';
 
         public static int HOUSE_FLAG = SwissEph.SEFLG_SIDEREAL;

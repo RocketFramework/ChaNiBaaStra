@@ -1,1 +1,70 @@
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csprojResolveAssemblyReference.cache
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csprojResolveAssemblyReference.cache
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll.config
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Nido.Common.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\SwissEphNet.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Nido.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb

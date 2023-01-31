@@ -26,7 +26,7 @@ namespace ChaNiBaaStra.DataModels
     {
         public AstroKarna() 
         {
-            this.DataModel = null;
+            //this.DataModel = null;
         }
         public AstroKarna(EnumKarana karna) : base(karna, 11, AstroConsts.InvalidIntInput)
         { }
