@@ -407,20 +407,20 @@ namespace ChaNiBaaStra.Calculator
 
         public bool IsGoodForBirth()
         {
-            bool test = (TransitDate.Sun.NavamsaRasi.Current == EnumRasi.Simha
-                && TransitDate.Moon.NavamsaRasi.Current == EnumRasi.Kataka
-                && (TransitDate.Venus.NavamsaRasi.Current == EnumRasi.Vrishabha
-                || TransitDate.Venus.NavamsaRasi.Current == EnumRasi.Kanya)
-                && (TransitDate.Mars.NavamsaRasi.Current == EnumRasi.Mesha
-                || TransitDate.Mars.NavamsaRasi.Current == EnumRasi.Vrichika));
+            bool test = (TransitDate.Sun.NawamsaRasi.Current == EnumRasi.Simha
+                && TransitDate.Moon.NawamsaRasi.Current == EnumRasi.Kataka
+                && (TransitDate.Venus.NawamsaRasi.Current == EnumRasi.Vrishabha
+                || TransitDate.Venus.NawamsaRasi.Current == EnumRasi.Kanya)
+                && (TransitDate.Mars.NawamsaRasi.Current == EnumRasi.Mesha
+                || TransitDate.Mars.NawamsaRasi.Current == EnumRasi.Vrichika));
             if (test) return test;
             test = ((TransitDate.Jupiter.HouseNumber == 5) || (TransitDate.Jupiter.HouseNumber == 9));
             if (test) return test;
             int[] upachaya = new int[] { 3, 6, 10, 11 };
             Mod mod12 = new Mod(12);
             int dif = mod12.sub(TransitDate.Horoscope.LagnaRasi.CurrentInt, BirthDate.Horoscope.LagnaRasi.CurrentInt);//6
-            test = ((upachaya.Contains(mod12.sub(TransitDate.Sun.HouseNumber, dif)) && (TransitDate.Sun.NavamsaRasi.Current == EnumRasi.Simha)) && ((TransitDate.Venus.NavamsaRasi.Current == EnumRasi.Vrishabha
-                || TransitDate.Venus.NavamsaRasi.Current == EnumRasi.Kanya) && upachaya.Contains(mod12.sub(TransitDate.Venus.HouseNumber, dif))));
+            test = ((upachaya.Contains(mod12.sub(TransitDate.Sun.HouseNumber, dif)) && (TransitDate.Sun.NawamsaRasi.Current == EnumRasi.Simha)) && ((TransitDate.Venus.NawamsaRasi.Current == EnumRasi.Vrishabha
+                || TransitDate.Venus.NawamsaRasi.Current == EnumRasi.Kanya) && upachaya.Contains(mod12.sub(TransitDate.Venus.HouseNumber, dif))));
             if (test) return test;
             return false;
         }

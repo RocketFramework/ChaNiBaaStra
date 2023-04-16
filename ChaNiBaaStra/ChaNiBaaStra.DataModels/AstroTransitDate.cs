@@ -15,9 +15,10 @@ namespace ChaNiBaaStra.DataModels
         public int Month { get; set; }
         public int Minute { get; set; }
         public int Hour { get; set; }
+        public DateTime OriginalBirthDateTime { get; set; }
         public DateTime CurrentDateTime { get; set; }
         public double tjd_ut { get; set; }
-        public AstroPlace LocationData { get; set; }
+        public AstroPlace PlaceData { get; set; }
         public SwissEph swissEph = new SwissEph();
         public AstroPlanet Sun { get; set; }
         public AstroPlanet Moon { get; set; }
@@ -50,6 +51,7 @@ namespace ChaNiBaaStra.DataModels
 
         public DateTime SunRise { get; set; }
         public DateTime SunSet { get; set; }
+        public bool IsDayTime { get { return ((SunRise < CurrentDateTime) && (CurrentDateTime < SunSet)); } }
         public int Second { get; set; }
 
         public AstroTransitDate()

@@ -40,7 +40,7 @@ namespace ChaNiBaaStra
                 if (isLagna)
                 {
                     this.centerLabel.Text = hrScope.LagnaRasi.Name
-                        + "\r\n(" + hrScope.LagnaRasi.AdhipathiPlanets.FirstOrDefault()
+                        + "\r\n(" + hrScope.LagnaRasi.AdhipathiEnumPlanets.FirstOrDefault()
                         + ")\r\n" + Math.Truncate(hrScope.LagnaRasi.RasiEndDegreesFromHorizon) + "°";
 
                     foreach (AstroRasi rasi in hrScope.RasiHouseList)
@@ -110,12 +110,12 @@ namespace ChaNiBaaStra
                 }
                 else
                 {
-                    this.centerLabel.Text = hrScope.NavamsaRasi.Name + "\r\n(" + hrScope.NavamsaRasi.AdhipathiPlanets.FirstOrDefault() + ")\r\n" + Math.Truncate(hrScope.LagnaRasi.RasiEndDegreesFromHorizon) + "°";
+                    this.centerLabel.Text = hrScope.NavamsaRasi.Name + "\r\n(" + hrScope.NavamsaRasi.AdhipathiEnumPlanets.FirstOrDefault() + ")\r\n" + Math.Truncate(hrScope.LagnaRasi.RasiEndDegreesFromHorizon) + "°";
                     foreach (AstroRasi rasi in hrScope.RasiHouseList)
                     {
                         foreach (AstroPlanet planet in rasi.Planets)
                         {
-                            int houseNumber = hrScope.NavamsaRasi.ofRasi(planet.NavamsaRasi.Current);
+                            int houseNumber = hrScope.NavamsaRasi.ofRasi(planet.NawamsaRasi.Current);
                             switch (houseNumber)
                             {
                                 case 1:
@@ -206,10 +206,11 @@ namespace ChaNiBaaStra
         private void ButtonMiddle_Click(object sender, EventArgs e, AstroPlanet p, EnumRasi lagnaRasi)
         {
             ResetButtonColor();
-            foreach (EnumRasi rasi in p.AdhipathiRasis)
+            // NOT SURE
+            foreach (int houseNumber in p.AdhipathiHouses)
             {
-                int houseNumber = AstroUtility.AstroCycleIncrease((int)lagnaRasi, p.Rasi.absoluteGabOfRasi(rasi));
-                if (houseNumber == 0) houseNumber = 12;
+                /*int houseNumber = AstroUtility.AstroCycleIncrease((int)lagnaRasi, p.Rasi.absoluteGabOfRasi(rasi));
+                if (houseNumber == 0) houseNumber = 12;*/
                 switch (houseNumber)
                 {
                     case 1: this.button1.BackColor = Color.Yellow; this.button1.Text = AstroUtility.HouseGab(houseNumber, p.HouseNumber).ToString(); break;

@@ -42,3 +42,19 @@ C:\Users\LENOVO\Downloads\Projects\Projects\Astro\AfterHora\AfterHora\obj\Debug\
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.exe
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\AfterHora\AfterHora\obj\Debug\AfterHora.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\bin\Debug\AfterHora.exe.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\bin\Debug\AfterHora.exe
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\bin\Debug\AfterHora.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.SuggestedBindingRedirects.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\MainWindow.g.cs
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\App.g.cs
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.lref
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\MainWindow.baml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.g.resources
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.Properties.Resources.resources
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.GenerateResource.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.exe
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.pdb

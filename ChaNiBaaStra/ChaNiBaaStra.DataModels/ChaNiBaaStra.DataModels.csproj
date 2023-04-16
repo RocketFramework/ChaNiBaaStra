@@ -100,6 +100,8 @@
     <Compile Include="AstroBhavaPosition.cs" />
     <Compile Include="AstroConst.cs" />
     <Compile Include="AstroDasa.cs" />
+    <Compile Include="AstroGoodBad.cs" />
+    <Compile Include="AstroHoroscopeYogaChecker.cs" />
     <Compile Include="AstroMuhurtha.cs" />
     <Compile Include="AstroKarna.cs" />
     <Compile Include="AstroNakath.cs" />
@@ -107,8 +109,10 @@
     <Compile Include="AstroRasi.cs" />
     <Compile Include="AstroThithi.cs" />
     <Compile Include="AstroTransitDate.cs" />
+    <Compile Include="AstroView.cs" />
     <Compile Include="AstroWeekDay.cs" />
     <Compile Include="AstroYoga.cs" />
+    <Compile Include="BirthDataSaveObject.cs" />
     <Compile Include="BirthRasiExtra.cs" />
     <Compile Include="DB\PlanetRasiRelator.cs" />
     <Compile Include="Horoscope.cs" />
@@ -135,7 +139,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="Varga\AshtakaVargaya.cs" />
     <Compile Include="WeekDayHandler.cs" />
+    <Compile Include="YogaFinderRuleEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

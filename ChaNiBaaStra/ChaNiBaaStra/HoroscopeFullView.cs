@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ChaNiBaaStra.Utilities;
 using ChaNiBaaStra.Dal.Models;
 using static ChaNiBaaStra.Calculator.AstroCalculator;
+using ChaNiBaaStra.DataModels.Varga;
 
 namespace ChaNiBaaStra
 {
@@ -29,19 +30,75 @@ namespace ChaNiBaaStra
         {
             InitHoroscopeFlowLayout();
             InitHoroscope();
-            InitNawamsaHoroscope();  
+            InitNawamsaHoroscope();
         }
 
         public void PartialUiInit()
         {
             InitTransitFlowLayout();
             InitTransitHoroscope();
+            UpdateMessages();
+        }
+
+        public void SetAsktakaVarga(AstroPlanet clickedPlanet)
+        {
+            if (clickedPlanet.IsTransitPlanet)
+            {
+                AstakaVargaMaster varga = new AstakaVargaMaster(CurrentHoroscope.CompletePlanetList);
+                switch (clickedPlanet.Current)
+                {
+                    case EnumPlanet.Sun: SetVarga(varga.SunVarga); break;
+                    case EnumPlanet.Moon: SetVarga(varga.MoonVarga); break;
+                    case EnumPlanet.Mars: SetVarga(varga.MarVarga); break;
+                    case EnumPlanet.Mercury: SetVarga(varga.MercuryVarga); break;
+                    case EnumPlanet.Jupiter: SetVarga(varga.JupiterVarga); break;
+                    case EnumPlanet.Venus: SetVarga(varga.VenusVarga); break;
+                    case EnumPlanet.Saturn: SetVarga(varga.SaturnVarga); break;
+                }
+            }
+        }
+
+        private void SetVarga(AshtakaVargayaBase baseVargaCalculator)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                Label labelN = (this.Controls.OfType<Label>())
+                    .Where(x => x.Name == "labelAsktakaVarga" + (i + 1)).FirstOrDefault();
+                labelN.Text = baseVargaCalculator.AshtakaVargaList[i].ToString();
+            }
+        }
+
+        private void UpdateMessages()
+        {
+            for (int i = 1; i <= 12; i++)
+            {
+                FlowLayoutPanel laoutPanelN = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanelN" + i).FirstOrDefault();
+                if (laoutPanelN != null)
+                {
+                    string message = this.CurrentHoroscope.RasiHouseList
+                        .Where(x => x.HouseNumber == i).FirstOrDefault().GetPowerBasedOnViews();
+                    this.toolTipFullView.SetToolTip(laoutPanelN
+                        , message);
+                    laoutPanelN.Tag = message;
+                }
+                FlowLayoutPanel laoutPanelT = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanelT" + i).FirstOrDefault();
+                if (laoutPanelT != null)
+                {
+                    string message = this.TransitHoroscope.RasiHouseList
+                        .Where(x => x.HouseNumber == i).FirstOrDefault().GetPowerBasedOnViews();
+                    this.toolTipFullView.SetToolTip(laoutPanelT
+                        , message);
+                    laoutPanelT.Tag = message;
+                }
+            }
         }
 
         private void InitNawamsaHoroscope()
         {
             this.labelNawamsa.Text = CurrentHoroscope.NavamsaRasi.Name
-                + "\r\n(" + CurrentHoroscope.NavamsaRasi.AdhipathiPlanets.FirstOrDefault()
+                + "\r\nN (" + CurrentHoroscope.NavamsaRasi.AdhipathiEnumPlanets.FirstOrDefault()
                 + ") " + Math.Truncate(CurrentHoroscope.NavamsaRasi.RasiEndDegreesFromHorizon)
                 + "°";
             ResetLabels();
@@ -54,11 +111,11 @@ namespace ChaNiBaaStra
         }
 
         private void CreateNawamsaHoroscope(List<AstroPlanet> planets)
-        {                
+        {
             foreach (AstroPlanet planet in planets)
             {
                 int houseNumber = CurrentHoroscope
-                    .NavamsaRasi.ofRasi(planet.NavamsaRasi.Current);
+                    .NavamsaRasi.ofRasi(planet.NawamsaRasi.Current);
                 switch (houseNumber)
                 {
                     case 1:
@@ -127,15 +184,17 @@ namespace ChaNiBaaStra
         public void InitTransitHoroscope()
         {
             this.labelTransit.Text = TransitHoroscope.LagnaRasi.Name
-                + "\r\n(" + TransitHoroscope.LagnaRasi.AdhipathiPlanets.FirstOrDefault()
+                + "\r\nT (" + TransitHoroscope.LagnaRasi.AdhipathiEnumPlanets.FirstOrDefault()
                 + ") " + Math.Truncate(TransitHoroscope.LagnaRasi.RasiEndDegreesFromHorizon)
                 + "°";
+
             if (IsBhavaView)
                 foreach (AstroBhava rasi in TransitHoroscope.BhavaHouseList)
-                    CreateTransitHoroscope(rasi.BhavaNumber, rasi.Planets);
+                    CreateTransitHoroscope(rasi.BhavaNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
             else
                 foreach (AstroRasi rasi in TransitHoroscope.RasiHouseList)
-                    CreateTransitHoroscope(rasi.HouseNumber, rasi.Planets);
+                    CreateTransitHoroscope(rasi.HouseNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
+            //CreateTransitHoroscope(AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, Math.Abs(TransitHoroscope.LagnaRasi.CurrentInt - CurrentHoroscope.LagnaRasi.CurrentInt+1)), rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
         }
 
         private void CreateTransitHoroscope(int houseNumber, List<AstroPlanet> planets)
@@ -196,18 +255,17 @@ namespace ChaNiBaaStra
         public void InitHoroscope()
         {
             this.labelLagna.Text = CurrentHoroscope.LagnaRasi.Name
-                + "\r\n(" + CurrentHoroscope.LagnaRasi.AdhipathiPlanets.FirstOrDefault()
-                + ") " + Math.Truncate(CurrentHoroscope.LagnaRasi.RasiEndDegreesFromHorizon)
-                + "°";
+                + "\r\nL (" + CurrentHoroscope.LagnaRasi.AdhipathiEnumPlanets.FirstOrDefault()
+                + ") " + CurrentHoroscope.LagnaRasi.RasiEndDegreesFromHorizon.ToDegreeString();
             if (IsBhavaView)
                 foreach (AstroBhava rasi in CurrentHoroscope.BhavaHouseList)
                 {
-                    CeateHoroscope(rasi.BhavaNumber, rasi.Planets);
+                    CeateHoroscope(rasi.BhavaNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
                 }
             else
                 foreach (AstroRasi rasi in CurrentHoroscope.RasiHouseList)
                 {
-                    CeateHoroscope(rasi.HouseNumber, rasi.Planets);
+                    CeateHoroscope(rasi.HouseNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
                 }
         }
 
@@ -304,43 +362,147 @@ namespace ChaNiBaaStra
         }
 
         public List<PlanetView> planetHolders = new List<PlanetView>(2);
-
+        PlanetView pViewClicked;
         public void SomePlanetClicked(object sender, EventArgs e)
         {
-            PlanetView pView = (PlanetView)sender;
-            ((Form2)this.Parent.Parent.Parent).UpdateForPlanet((!IsBhavaView)
-                ? pView.ThisPlanet.AjustedLongitude
-                : pView.ThisPlanet.AjustedBhavaLongitude
-                , pView.ThisPlanet.Nakatha.Name
-                , pView.ThisPlanet.NavamsaRasi.Name);
+            pViewClicked = (PlanetView)sender;
+            SetAsktakaVarga(pViewClicked.ThisPlanet);
+            ((ChaniBhastraSecret)this.Parent.Parent.Parent).UpdateDisplayPlanetMessages(pViewClicked.ThisPlanet, this.IsBhavaView);
 
             if (planetHolders.Count == 0)
             {
-                planetHolders.Add(pView);
-                planetHolders[0].RelatedPlanet = null;
+                planetHolders.Add(pViewClicked);
+                planetHolders[0].RelatedPlanet = planetHolders[0].ThisPlanet;
+
+                if (pViewClicked.ThisPlanet.Views.TheyCanSeeMee != null)
+                    foreach (AstroPlanet view in pViewClicked.ThisPlanet.Views.TheyCanSeeMee)
+                        UpdateForTheyCanSeeMee(view, pViewClicked.IsTransitPlanet);
             }
             else if (planetHolders.Count == 1)
             {
-                planetHolders.Add(pView);
+                planetHolders.Add(pViewClicked);
                 planetHolders[0].RelatedPlanet = planetHolders[1].ThisPlanet;
                 planetHolders[1].RelatedPlanet = planetHolders[0].ThisPlanet;
+
+                ResetButtonColorUpdate();
+
+                if ((pViewClicked.ThisPlanet.Name == planetHolders[0].Name)
+                    && (pViewClicked.IsTransitPlanet == planetHolders[0].IsTransitPlanet)
+                     && (pViewClicked.ThisPlanet.Views.ICanSeeThem != null))
+                    foreach (int view in planetHolders[1].ThisPlanet.Views.ICanSeeThem)
+                        UpdateForICanSeeThem(view, planetHolders[1].IsTransitPlanet);
+                else if (pViewClicked.ThisPlanet.Views.TheyCanSeeMee != null)
+                    foreach (AstroPlanet view in pViewClicked.ThisPlanet.Views.TheyCanSeeMee)
+                        UpdateForTheyCanSeeMee(view, pViewClicked.IsTransitPlanet);
             }
             else if (planetHolders.Count >= 2)
             {
                 planetHolders[0].UpdateButtonNobe(true);
                 planetHolders[0] = planetHolders[1];
-                planetHolders[1] = pView;
+                planetHolders[1] = pViewClicked;
                 planetHolders[0].RelatedPlanet = planetHolders[1].ThisPlanet;
                 planetHolders[1].RelatedPlanet = planetHolders[0].ThisPlanet;
-                pView.UpdateButtonNobe(false);
+                pViewClicked.UpdateButtonNobe(false);
                 planetHolders[0].UpdateButtonNobe(false);
+
+                ResetButtonColorUpdate();
+
+                if ((pViewClicked.ThisPlanet.Name == planetHolders[0].ThisPlanet.Name)
+                    && (pViewClicked.IsTransitPlanet == planetHolders[0].IsTransitPlanet)
+                    && (pViewClicked.ThisPlanet.Views.ICanSeeThem != null))
+                    foreach (int view in pViewClicked.ThisPlanet.Views.ICanSeeThem)
+                        UpdateForICanSeeThem(view, pViewClicked.IsTransitPlanet);
+                else if (planetHolders[1].ThisPlanet.Views.TheyCanSeeMee != null)
+                    foreach (AstroPlanet view in planetHolders[1].ThisPlanet.Views.TheyCanSeeMee)
+                        UpdateForTheyCanSeeMee(view, planetHolders[1].IsTransitPlanet);
+
+                /*
+                               if (pView.ThisPlanet.Views.SeeRasiHouses != null)
+                               {
+                                   foreach (AstroPlanet view in planetHolders[0].ThisPlanet.Views.PlanetRasiSeeMee)
+                                       UpdateForResetSeeMe(view, planetHolders[0].IsTransitPlanet);
+                                   foreach (AstroPlanet view in pView.ThisPlanet.Views.PlanetRasiSeeMee)
+                                       UpdateForSeeMe(view, pView.IsTransitPlanet);
+                               }
+
+                               foreach (int view in planetHolders[1].ThisPlanet.Views.SeeRasiHouses)
+                                   UpdateForResetHouseView(view, planetHolders[0].IsTransitPlanet);
+
+                               if ((pView.ThisPlanet.Name == planetHolders[1].Name) && (pView.IsTransitPlanet == planetHolders[1].IsTransitPlanet))
+                                   foreach (int view in planetHolders[1].ThisPlanet.Views.SeeRasiHouses)
+                                       UpdateForHouseView(view, planetHolders[1].IsTransitPlanet);
+                               else
+                                   foreach (AstroPlanet view in pView.ThisPlanet.Views.PlanetRasiSeeMee)
+                                       UpdateForSeeMe(view, pView.IsTransitPlanet);
+
+                               if ((pView.ThisPlanet.Name == planetHolders[1].Name) && (pView.IsTransitPlanet == planetHolders[1].IsTransitPlanet))
+
+               */
             }
-            ShowAdhipathyAfterPlanetClick(pView.ThisPlanet
+
+            ShowAdhipathyAfterPlanetClick(pViewClicked.ThisPlanet
                 , CurrentHoroscope.LagnaRasi.Current
-                , pView.IsTransitPlanet);
+                , pViewClicked.IsTransitPlanet);
         }
 
-        private void UpdateAdhipathyAfterClick(Panel adhipathyIndicator
+        private void ResetButtonColorUpdate()
+        {
+            if (planetHolders[0].ThisPlanet.Views.ICanSeeThem != null)
+                foreach (int view in planetHolders[0].ThisPlanet.Views.ICanSeeThem)
+                    UpdateForICantSeeThem(view, planetHolders[0].IsTransitPlanet);
+            if ((planetHolders.Count > 1) && (planetHolders[1].ThisPlanet.Views.ICanSeeThem != null))
+                foreach (int view in planetHolders[1].ThisPlanet.Views.ICanSeeThem)
+                    UpdateForICantSeeThem(view, planetHolders[1].IsTransitPlanet);
+
+            if (planetHolders[0].ThisPlanet.Views.TheyCanSeeMee != null)
+                foreach (AstroPlanet view in planetHolders[0].ThisPlanet.Views.TheyCanSeeMee)
+                    UpdateForTheyCantSeeMee(view, planetHolders[0].IsTransitPlanet);
+            if ((planetHolders.Count > 1) && (planetHolders[1].ThisPlanet.Views.TheyCanSeeMee != null))
+                foreach (AstroPlanet view in planetHolders[1].ThisPlanet.Views.TheyCanSeeMee)
+                    UpdateForTheyCantSeeMee(view, planetHolders[1].IsTransitPlanet);
+        }
+
+        private void UpdateForICanSeeThem(int view, bool isTransitPlanet)
+        {
+            List<PlanetView> planetViewList = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanel" + (isTransitPlanet ? "T" : "N") + view)
+                .FirstOrDefault().Controls.OfType<PlanetView>().ToList();
+            if (planetViewList != null)
+                foreach (PlanetView planetView in planetViewList)
+                    planetView.ICanSeeThem(pViewClicked.ThisPlanet);
+        }
+
+        private void UpdateForICantSeeThem(int view, bool isTransitPlanet)
+        {
+            List<PlanetView> planetViewList = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanel" + (isTransitPlanet ? "T" : "N") + view)
+                .FirstOrDefault().Controls.OfType<PlanetView>().ToList();
+            if (planetViewList != null)
+                foreach (PlanetView planetView in planetViewList)
+                    planetView.ICantSeeThem();
+        }
+
+        private void UpdateForTheyCanSeeMee(AstroPlanet view, bool isTransit)
+        {
+            PlanetView planetView = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanel" + (isTransit ? "T" : "N") + view.HouseNumber)
+                .FirstOrDefault().Controls.OfType<PlanetView>()
+                .Where(x => x.ThisPlanet.Name == view.Name).FirstOrDefault();
+            if (planetView != null)
+                planetView.TheyCanSeeMe(pViewClicked.ThisPlanet);
+        }
+
+        private void UpdateForTheyCantSeeMee(AstroPlanet view, bool isTransit)
+        {
+            PlanetView planetView = (this.Controls.OfType<FlowLayoutPanel>())
+                .Where(x => x.Name == "flowLayoutPanel" + (isTransit ? "T" : "N") + view.HouseNumber)
+                .FirstOrDefault().Controls.OfType<PlanetView>()
+                .Where(x => x.ThisPlanet.Name == view.Name).FirstOrDefault();
+            if (planetView != null)
+                planetView.TheyCantSeeMe();
+        }
+
+        private void UpdateDistanceToClickedPlanet(Panel adhipathyIndicator
             , Label gapLabel, int gap)
         {
             adhipathyIndicator.Visible = true;
@@ -355,106 +517,106 @@ namespace ChaNiBaaStra
             else
                 ResetButtonColor();
 
-            foreach (EnumRasi rasi in p.AdhipathiRasis)
+            foreach (int houseNumber in p.AdhipathiHouses)
             {
-                int houseNumber = AstroUtility.AstroCycleIncrease((int)lagnaRasi
+                /*int houseNumber = AstroUtility.AstroCycleIncrease((int)lagnaRasi
                     , (this.IsBhavaView) ? p.Bhava.absoluteGabOfRasi(rasi) : p.Rasi.absoluteGabOfRasi(rasi));
-                if (houseNumber == 0) houseNumber = 12;
+                p.AdhipathiHouses.Add(houseNumber)*/
                 switch (houseNumber)
                 {
                     case 1:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT1RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT1RashiHead
                                 : this.panelN1RashiHead, (isTransit) ? this.labelT1
-                                : this.labelN1, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN1, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 2:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT2RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT2RashiHead
                                 : this.panelN2RashiHead, (isTransit) ? this.labelT2
-                                : this.labelN2, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN2, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 3:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT3RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT3RashiHead
                                 : this.panelN3RashiHead, (isTransit) ? this.labelT3
-                                : this.labelN3, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN3, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 4:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT4RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT4RashiHead
                                 : this.panelN4RashiHead, (isTransit) ? this.labelT4
-                                : this.labelN4, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN4, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 5:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT5RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT5RashiHead
                                 : this.panelN5RashiHead, (isTransit) ? this.labelT5
-                                : this.labelN5, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN5, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 6:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT6RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT6RashiHead
                                 : this.panelN6RashiHead, (isTransit) ? this.labelT6
-                                : this.labelN6, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN6, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 7:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT7RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT7RashiHead
                                 : this.panelN7RashiHead, (isTransit) ? this.labelT7
-                                : this.labelN7, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN7, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 8:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT8RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT8RashiHead
                                 : this.panelN8RashiHead, (isTransit) ? this.labelT8
-                                : this.labelN8, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN8, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 9:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT9RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT9RashiHead
                                 : this.panelN9RashiHead, (isTransit) ? this.labelT9
-                                : this.labelN9, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN9, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 10:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT10RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT10RashiHead
                                 : this.panelN10RashiHead, (isTransit) ? this.labelT10
-                                : this.labelN10, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN10, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 11:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT11RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT11RashiHead
                                 : this.panelN11RashiHead, (isTransit) ? this.labelT11
-                                : this.labelN11, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN11, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
                     case 12:
                         {
-                            UpdateAdhipathyAfterClick((isTransit) ? this.panelT12RashiHead
+                            UpdateDistanceToClickedPlanet((isTransit) ? this.panelT12RashiHead
                                 : this.panelN12RashiHead, (isTransit) ? this.labelT12
-                                : this.labelN12, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView) 
+                                : this.labelN12, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
                                 ? p.Bhava.BhavaNumber : p.HouseNumber));
                             break;
                         }
@@ -550,6 +712,19 @@ namespace ChaNiBaaStra
             this.flowLayoutPanelT10.Controls.Clear();
             this.flowLayoutPanelT11.Controls.Clear();
             this.flowLayoutPanelT12.Controls.Clear();
+        }
+
+        private void flowLayoutPanelN10_MouseDown(object sender, MouseEventArgs e)
+        {
+            ((ChaniBhastraSecret)this.Parent.Parent.Parent).UpdateDisplayMessage(((FlowLayoutPanel)sender).Tag.ToString(), false);
+
+            //this.((FlowLayoutPanel)sender).Tag.ToString();
+        }
+
+        private void flowLayoutPanelT1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ((ChaniBhastraSecret)this.Parent.Parent.Parent).UpdateDisplayMessage(((FlowLayoutPanel)sender).Tag.ToString(), true);
+
         }
     }
 }

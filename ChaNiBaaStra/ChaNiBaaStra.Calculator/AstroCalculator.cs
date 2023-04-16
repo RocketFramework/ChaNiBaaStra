@@ -15,7 +15,7 @@ namespace ChaNiBaaStra.Calculator
         { }*/
         public AstroCalculator(AstroPlace place) : base(place, false)
         {
-            WeekDay = new AstroWeekDay((EnumWeekDay)(place.BirthDate.DayOfWeek));
+            WeekDay = new AstroWeekDay((EnumWeekDay)(place.AdjustedBirthDateTime.DayOfWeek));
             Nakath = new AstroNakath(this.Moon.Longitude);
         }
 

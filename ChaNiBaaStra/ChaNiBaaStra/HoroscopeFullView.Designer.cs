@@ -117,6 +117,18 @@
             this.labelT3 = new System.Windows.Forms.Label();
             this.labelT11 = new System.Windows.Forms.Label();
             this.toolTipFullView = new System.Windows.Forms.ToolTip(this.components);
+            this.labelAsktakaVarga7 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga6 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga5 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga4 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga3 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga2 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga1 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga12 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga11 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga10 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga9 = new System.Windows.Forms.Label();
+            this.labelAsktakaVarga8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanelT1
@@ -126,6 +138,7 @@
             this.flowLayoutPanelT1.Name = "flowLayoutPanelT1";
             this.flowLayoutPanelT1.Size = new System.Drawing.Size(404, 100);
             this.flowLayoutPanelT1.TabIndex = 18;
+            this.flowLayoutPanelT1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT7
             // 
@@ -134,6 +147,7 @@
             this.flowLayoutPanelT7.Name = "flowLayoutPanelT7";
             this.flowLayoutPanelT7.Size = new System.Drawing.Size(404, 93);
             this.flowLayoutPanelT7.TabIndex = 19;
+            this.flowLayoutPanelT7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelN7
             // 
@@ -142,6 +156,7 @@
             this.flowLayoutPanelN7.Name = "flowLayoutPanelN7";
             this.flowLayoutPanelN7.Size = new System.Drawing.Size(227, 143);
             this.flowLayoutPanelN7.TabIndex = 20;
+            this.flowLayoutPanelN7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN10
             // 
@@ -150,6 +165,7 @@
             this.flowLayoutPanelN10.Name = "flowLayoutPanelN10";
             this.flowLayoutPanelN10.Size = new System.Drawing.Size(227, 143);
             this.flowLayoutPanelN10.TabIndex = 21;
+            this.flowLayoutPanelN10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN4
             // 
@@ -158,6 +174,7 @@
             this.flowLayoutPanelN4.Name = "flowLayoutPanelN4";
             this.flowLayoutPanelN4.Size = new System.Drawing.Size(227, 143);
             this.flowLayoutPanelN4.TabIndex = 21;
+            this.flowLayoutPanelN4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN3
             // 
@@ -166,6 +183,7 @@
             this.flowLayoutPanelN3.Name = "flowLayoutPanelN3";
             this.flowLayoutPanelN3.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN3.TabIndex = 22;
+            this.flowLayoutPanelN3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN2
             // 
@@ -174,6 +192,7 @@
             this.flowLayoutPanelN2.Name = "flowLayoutPanelN2";
             this.flowLayoutPanelN2.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN2.TabIndex = 23;
+            this.flowLayoutPanelN2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN12
             // 
@@ -182,6 +201,7 @@
             this.flowLayoutPanelN12.Name = "flowLayoutPanelN12";
             this.flowLayoutPanelN12.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN12.TabIndex = 23;
+            this.flowLayoutPanelN12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN11
             // 
@@ -190,6 +210,7 @@
             this.flowLayoutPanelN11.Name = "flowLayoutPanelN11";
             this.flowLayoutPanelN11.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN11.TabIndex = 23;
+            this.flowLayoutPanelN11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN9
             // 
@@ -198,6 +219,7 @@
             this.flowLayoutPanelN9.Name = "flowLayoutPanelN9";
             this.flowLayoutPanelN9.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN9.TabIndex = 23;
+            this.flowLayoutPanelN9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN8
             // 
@@ -206,6 +228,7 @@
             this.flowLayoutPanelN8.Name = "flowLayoutPanelN8";
             this.flowLayoutPanelN8.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN8.TabIndex = 23;
+            this.flowLayoutPanelN8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN6
             // 
@@ -214,6 +237,7 @@
             this.flowLayoutPanelN6.Name = "flowLayoutPanelN6";
             this.flowLayoutPanelN6.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN6.TabIndex = 23;
+            this.flowLayoutPanelN6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelN1
             // 
@@ -222,14 +246,16 @@
             this.flowLayoutPanelN1.Name = "flowLayoutPanelN1";
             this.flowLayoutPanelN1.Size = new System.Drawing.Size(227, 143);
             this.flowLayoutPanelN1.TabIndex = 21;
+            this.flowLayoutPanelN1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // flowLayoutPanelT2
             // 
             this.flowLayoutPanelT2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT2.Location = new System.Drawing.Point(159, 16);
+            this.flowLayoutPanelT2.Location = new System.Drawing.Point(183, 16);
             this.flowLayoutPanelT2.Name = "flowLayoutPanelT2";
-            this.flowLayoutPanelT2.Size = new System.Drawing.Size(309, 100);
+            this.flowLayoutPanelT2.Size = new System.Drawing.Size(285, 100);
             this.flowLayoutPanelT2.TabIndex = 19;
+            this.flowLayoutPanelT2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT6
             // 
@@ -238,70 +264,79 @@
             this.flowLayoutPanelT6.Name = "flowLayoutPanelT6";
             this.flowLayoutPanelT6.Size = new System.Drawing.Size(301, 100);
             this.flowLayoutPanelT6.TabIndex = 20;
+            this.flowLayoutPanelT6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT8
             // 
             this.flowLayoutPanelT8.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanelT8.Location = new System.Drawing.Point(1043, 884);
             this.flowLayoutPanelT8.Name = "flowLayoutPanelT8";
-            this.flowLayoutPanelT8.Size = new System.Drawing.Size(309, 100);
+            this.flowLayoutPanelT8.Size = new System.Drawing.Size(282, 100);
             this.flowLayoutPanelT8.TabIndex = 21;
+            this.flowLayoutPanelT8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT12
             // 
             this.flowLayoutPanelT12.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT12.Location = new System.Drawing.Point(1048, 16);
+            this.flowLayoutPanelT12.Location = new System.Drawing.Point(1042, 16);
             this.flowLayoutPanelT12.Name = "flowLayoutPanelT12";
-            this.flowLayoutPanelT12.Size = new System.Drawing.Size(309, 100);
+            this.flowLayoutPanelT12.Size = new System.Drawing.Size(283, 100);
             this.flowLayoutPanelT12.TabIndex = 22;
+            this.flowLayoutPanelT12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT5
             // 
             this.flowLayoutPanelT5.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT5.Location = new System.Drawing.Point(18, 700);
+            this.flowLayoutPanelT5.Location = new System.Drawing.Point(18, 691);
             this.flowLayoutPanelT5.Name = "flowLayoutPanelT5";
-            this.flowLayoutPanelT5.Size = new System.Drawing.Size(165, 156);
+            this.flowLayoutPanelT5.Size = new System.Drawing.Size(165, 187);
             this.flowLayoutPanelT5.TabIndex = 22;
+            this.flowLayoutPanelT5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT9
             // 
             this.flowLayoutPanelT9.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT9.Location = new System.Drawing.Point(1319, 700);
+            this.flowLayoutPanelT9.Location = new System.Drawing.Point(1319, 691);
             this.flowLayoutPanelT9.Name = "flowLayoutPanelT9";
-            this.flowLayoutPanelT9.Size = new System.Drawing.Size(165, 156);
+            this.flowLayoutPanelT9.Size = new System.Drawing.Size(165, 187);
             this.flowLayoutPanelT9.TabIndex = 23;
+            this.flowLayoutPanelT9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT11
             // 
             this.flowLayoutPanelT11.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT11.Location = new System.Drawing.Point(1319, 153);
+            this.flowLayoutPanelT11.Location = new System.Drawing.Point(1319, 125);
             this.flowLayoutPanelT11.Name = "flowLayoutPanelT11";
-            this.flowLayoutPanelT11.Size = new System.Drawing.Size(165, 156);
+            this.flowLayoutPanelT11.Size = new System.Drawing.Size(165, 194);
             this.flowLayoutPanelT11.TabIndex = 24;
+            this.flowLayoutPanelT11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT3
             // 
             this.flowLayoutPanelT3.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT3.Location = new System.Drawing.Point(18, 153);
+            this.flowLayoutPanelT3.Location = new System.Drawing.Point(18, 125);
             this.flowLayoutPanelT3.Name = "flowLayoutPanelT3";
-            this.flowLayoutPanelT3.Size = new System.Drawing.Size(165, 156);
+            this.flowLayoutPanelT3.Size = new System.Drawing.Size(165, 194);
             this.flowLayoutPanelT3.TabIndex = 24;
+            this.flowLayoutPanelT3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT4
             // 
             this.flowLayoutPanelT4.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT4.Location = new System.Drawing.Point(36, 425);
+            this.flowLayoutPanelT4.Location = new System.Drawing.Point(36, 354);
             this.flowLayoutPanelT4.Name = "flowLayoutPanelT4";
-            this.flowLayoutPanelT4.Size = new System.Drawing.Size(152, 160);
+            this.flowLayoutPanelT4.Size = new System.Drawing.Size(152, 327);
             this.flowLayoutPanelT4.TabIndex = 25;
+            this.flowLayoutPanelT4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // flowLayoutPanelT10
             // 
             this.flowLayoutPanelT10.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelT10.Location = new System.Drawing.Point(1305, 419);
+            this.flowLayoutPanelT10.Location = new System.Drawing.Point(1305, 354);
             this.flowLayoutPanelT10.Name = "flowLayoutPanelT10";
-            this.flowLayoutPanelT10.Size = new System.Drawing.Size(152, 160);
+            this.flowLayoutPanelT10.Size = new System.Drawing.Size(152, 321);
             this.flowLayoutPanelT10.TabIndex = 26;
+            this.flowLayoutPanelT10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelT1_MouseDown);
             // 
             // labelNW4
             // 
@@ -438,6 +473,7 @@
             this.flowLayoutPanelN5.Name = "flowLayoutPanelN5";
             this.flowLayoutPanelN5.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN5.TabIndex = 23;
+            this.flowLayoutPanelN5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelN10_MouseDown);
             // 
             // panelT5RashiHead
             // 
@@ -675,7 +711,7 @@
             // 
             this.labelT2.AutoSize = true;
             this.labelT2.BackColor = System.Drawing.Color.Transparent;
-            this.labelT2.Location = new System.Drawing.Point(123, 19);
+            this.labelT2.Location = new System.Drawing.Point(135, 19);
             this.labelT2.Name = "labelT2";
             this.labelT2.Size = new System.Drawing.Size(37, 20);
             this.labelT2.TabIndex = 56;
@@ -685,7 +721,7 @@
             // 
             this.labelT12.AutoSize = true;
             this.labelT12.BackColor = System.Drawing.Color.Transparent;
-            this.labelT12.Location = new System.Drawing.Point(1356, 15);
+            this.labelT12.Location = new System.Drawing.Point(1330, 18);
             this.labelT12.Name = "labelT12";
             this.labelT12.Size = new System.Drawing.Size(37, 20);
             this.labelT12.TabIndex = 57;
@@ -695,7 +731,7 @@
             // 
             this.labelT8.AutoSize = true;
             this.labelT8.BackColor = System.Drawing.Color.Transparent;
-            this.labelT8.Location = new System.Drawing.Point(1351, 960);
+            this.labelT8.Location = new System.Drawing.Point(1331, 962);
             this.labelT8.Name = "labelT8";
             this.labelT8.Size = new System.Drawing.Size(37, 20);
             this.labelT8.TabIndex = 60;
@@ -881,6 +917,126 @@
             this.labelT11.TabIndex = 75;
             this.labelT11.Text = "(12)";
             // 
+            // labelAsktakaVarga7
+            // 
+            this.labelAsktakaVarga7.AutoSize = true;
+            this.labelAsktakaVarga7.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga7.Location = new System.Drawing.Point(488, 964);
+            this.labelAsktakaVarga7.Name = "labelAsktakaVarga7";
+            this.labelAsktakaVarga7.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga7.TabIndex = 76;
+            this.labelAsktakaVarga7.Text = "11111000";
+            // 
+            // labelAsktakaVarga6
+            // 
+            this.labelAsktakaVarga6.AutoSize = true;
+            this.labelAsktakaVarga6.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga6.Location = new System.Drawing.Point(44, 965);
+            this.labelAsktakaVarga6.Name = "labelAsktakaVarga6";
+            this.labelAsktakaVarga6.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga6.TabIndex = 77;
+            this.labelAsktakaVarga6.Text = "11111000";
+            // 
+            // labelAsktakaVarga5
+            // 
+            this.labelAsktakaVarga5.AutoSize = true;
+            this.labelAsktakaVarga5.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga5.Location = new System.Drawing.Point(18, 884);
+            this.labelAsktakaVarga5.Name = "labelAsktakaVarga5";
+            this.labelAsktakaVarga5.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga5.TabIndex = 78;
+            this.labelAsktakaVarga5.Text = "11111000";
+            // 
+            // labelAsktakaVarga4
+            // 
+            this.labelAsktakaVarga4.AutoSize = true;
+            this.labelAsktakaVarga4.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga4.Location = new System.Drawing.Point(18, 331);
+            this.labelAsktakaVarga4.Name = "labelAsktakaVarga4";
+            this.labelAsktakaVarga4.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga4.TabIndex = 79;
+            this.labelAsktakaVarga4.Text = "11111000";
+            // 
+            // labelAsktakaVarga3
+            // 
+            this.labelAsktakaVarga3.AutoSize = true;
+            this.labelAsktakaVarga3.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga3.Location = new System.Drawing.Point(18, 102);
+            this.labelAsktakaVarga3.Name = "labelAsktakaVarga3";
+            this.labelAsktakaVarga3.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga3.TabIndex = 80;
+            this.labelAsktakaVarga3.Text = "11111000";
+            // 
+            // labelAsktakaVarga2
+            // 
+            this.labelAsktakaVarga2.AutoSize = true;
+            this.labelAsktakaVarga2.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga2.Location = new System.Drawing.Point(48, 19);
+            this.labelAsktakaVarga2.Name = "labelAsktakaVarga2";
+            this.labelAsktakaVarga2.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga2.TabIndex = 79;
+            this.labelAsktakaVarga2.Text = "11111000";
+            // 
+            // labelAsktakaVarga1
+            // 
+            this.labelAsktakaVarga1.AutoSize = true;
+            this.labelAsktakaVarga1.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga1.Location = new System.Drawing.Point(487, 19);
+            this.labelAsktakaVarga1.Name = "labelAsktakaVarga1";
+            this.labelAsktakaVarga1.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga1.TabIndex = 81;
+            this.labelAsktakaVarga1.Text = "11111000";
+            // 
+            // labelAsktakaVarga12
+            // 
+            this.labelAsktakaVarga12.AutoSize = true;
+            this.labelAsktakaVarga12.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga12.Location = new System.Drawing.Point(1376, 19);
+            this.labelAsktakaVarga12.Name = "labelAsktakaVarga12";
+            this.labelAsktakaVarga12.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga12.TabIndex = 82;
+            this.labelAsktakaVarga12.Text = "11111000";
+            // 
+            // labelAsktakaVarga11
+            // 
+            this.labelAsktakaVarga11.AutoSize = true;
+            this.labelAsktakaVarga11.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga11.Location = new System.Drawing.Point(1376, 102);
+            this.labelAsktakaVarga11.Name = "labelAsktakaVarga11";
+            this.labelAsktakaVarga11.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga11.TabIndex = 79;
+            this.labelAsktakaVarga11.Text = "11111000";
+            // 
+            // labelAsktakaVarga10
+            // 
+            this.labelAsktakaVarga10.AutoSize = true;
+            this.labelAsktakaVarga10.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga10.Location = new System.Drawing.Point(1396, 331);
+            this.labelAsktakaVarga10.Name = "labelAsktakaVarga10";
+            this.labelAsktakaVarga10.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga10.TabIndex = 79;
+            this.labelAsktakaVarga10.Text = "11111000";
+            // 
+            // labelAsktakaVarga9
+            // 
+            this.labelAsktakaVarga9.AutoSize = true;
+            this.labelAsktakaVarga9.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga9.Location = new System.Drawing.Point(1396, 884);
+            this.labelAsktakaVarga9.Name = "labelAsktakaVarga9";
+            this.labelAsktakaVarga9.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga9.TabIndex = 83;
+            this.labelAsktakaVarga9.Text = "11111000";
+            // 
+            // labelAsktakaVarga8
+            // 
+            this.labelAsktakaVarga8.AutoSize = true;
+            this.labelAsktakaVarga8.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsktakaVarga8.Location = new System.Drawing.Point(1374, 962);
+            this.labelAsktakaVarga8.Name = "labelAsktakaVarga8";
+            this.labelAsktakaVarga8.Size = new System.Drawing.Size(81, 20);
+            this.labelAsktakaVarga8.TabIndex = 84;
+            this.labelAsktakaVarga8.Text = "11111000";
+            // 
             // HoroscopeFullView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -889,6 +1045,18 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Skeliton;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.labelAsktakaVarga8);
+            this.Controls.Add(this.labelAsktakaVarga9);
+            this.Controls.Add(this.labelAsktakaVarga10);
+            this.Controls.Add(this.labelAsktakaVarga11);
+            this.Controls.Add(this.labelAsktakaVarga12);
+            this.Controls.Add(this.labelAsktakaVarga1);
+            this.Controls.Add(this.labelAsktakaVarga2);
+            this.Controls.Add(this.labelAsktakaVarga3);
+            this.Controls.Add(this.labelAsktakaVarga4);
+            this.Controls.Add(this.labelAsktakaVarga5);
+            this.Controls.Add(this.labelAsktakaVarga6);
+            this.Controls.Add(this.labelAsktakaVarga7);
             this.Controls.Add(this.labelT11);
             this.Controls.Add(this.labelT3);
             this.Controls.Add(this.labelT5);
@@ -1075,5 +1243,17 @@
         private System.Windows.Forms.Label labelT3;
         private System.Windows.Forms.Label labelT11;
         private System.Windows.Forms.ToolTip toolTipFullView;
+        private System.Windows.Forms.Label labelAsktakaVarga7;
+        private System.Windows.Forms.Label labelAsktakaVarga6;
+        private System.Windows.Forms.Label labelAsktakaVarga5;
+        private System.Windows.Forms.Label labelAsktakaVarga4;
+        private System.Windows.Forms.Label labelAsktakaVarga3;
+        private System.Windows.Forms.Label labelAsktakaVarga2;
+        private System.Windows.Forms.Label labelAsktakaVarga1;
+        private System.Windows.Forms.Label labelAsktakaVarga12;
+        private System.Windows.Forms.Label labelAsktakaVarga11;
+        private System.Windows.Forms.Label labelAsktakaVarga10;
+        private System.Windows.Forms.Label labelAsktakaVarga9;
+        private System.Windows.Forms.Label labelAsktakaVarga8;
     }
 }

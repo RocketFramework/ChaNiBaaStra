@@ -21,30 +21,30 @@ namespace ChaNiBaaStra
             InitializeComponent();
         }
 
-        public AstroPlanet CurrentPlanet { get; set; }
+        //public AstroPlanet CurrentPlanet { get; set; }
 
         public void UpdateUI(AstroPlanet planet, bool isNawamsa)
         {
-            CurrentPlanet = planet;
+            //CurrentPlanet = planet;
             this.buttonMiddle.Text = (planet.IsReversing) ? "(" + planet.Name.Substring(0, 2) 
                 + ")" : planet.Name.Substring(0, 2);
-            this.labelTop.Text = planet.GetPlanetRelationToRasi(planet.Current
-                , planet.NavamsaRasi.Current).ToShortString();
+            this.labelTop.Text = Horoscope.GetPlanetRelationToRasi(planet.Current
+                , planet.NawamsaRasi.Current).ToShortString();
             this.labelTop.Tag = new String(new char[] { 'c' });
-            this.labelTop.Tag = planet.GetPlanetRelationToRasi(planet.Current
-                , planet.NavamsaRasi.Current).ToLongString();
+            this.labelTop.Tag = Horoscope.GetPlanetRelationToRasi(planet.Current
+                , planet.NawamsaRasi.Current).ToLongString();
         }
 
         public void UpdateUI(AstroPlanet planet)
         {
-            CurrentPlanet = planet;
+            //CurrentPlanet = planet;
             this.buttonMiddle.Text = (planet.IsReversing) ? "(" 
                 + planet.Name.Substring(0, 2) + ")" : planet.Name.Substring(0, 2);
-            this.labelTop.Text = planet.GetPlanetRelationToRasi(planet.Current
-                , planet.NavamsaRasi.Current).ToShortString();
+            this.labelTop.Text = Horoscope.GetPlanetRelationToRasi(planet.Current
+                , planet.NawamsaRasi.Current).ToShortString();
             this.labelTop.Tag = new String(new char[] { 'c' });
-            this.labelTop.Tag = planet.GetPlanetRelationToRasi(planet.Current
-                , planet.NavamsaRasi.Current).ToLongString();
+            this.labelTop.Tag = Horoscope.GetPlanetRelationToRasi(planet.Current
+                , planet.NawamsaRasi.Current).ToLongString();
 
             // Astha mean weaken by the bright light of the sun
             // 
@@ -91,7 +91,7 @@ namespace ChaNiBaaStra
 
         private void buttonMiddle_MouseHover(object sender, EventArgs e)
         {
-            this.toolTipPlanet.Show(CurrentPlanet.GetPlanetQuality(), (Button)sender, 10000);
+            //this.toolTipPlanet.Show(CurrentPlanet.GetPlanetQuality(), (Button)sender, 10000);
         }
     }
 }

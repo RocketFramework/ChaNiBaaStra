@@ -47,9 +47,46 @@ namespace ChaNiBaaStra.Utilities
         public static int AstroCycleIncrease(int house, int increment)
         {
             IntCircle circle = new IntCircle(12, house);
-            return circle.Add(increment);
+            int i = circle.Add(increment);
+            if (i == 0)
+                return 12;
+            else
+                return i;
         }
 
+        /// <summary>
+        /// house =1, increment = 3, return is 3
+        /// </summary>
+        /// <param name="house"></param>
+        /// <param name="increment"></param>
+        /// <returns></returns>
+        public static int AstroCycleIncreaseNew(int house, int increment)
+        {
+            IntCircle circle = new IntCircle(12, house - 1);
+            int i = circle.Add(increment);
+            if (i == 0)
+                return 12;
+            else
+                return i;
+        }
+
+        public static int AstroCycleDecreaseNew(int house, int dicrement)
+        {
+            IntCircle circle = new IntCircle(12, house);
+            int i = circle.GoBack(dicrement);
+            if (i == 0)
+                return 1;
+            else
+                return i;
+        }
+
+        /// <summary>
+        /// H1=1, H2=1 Gap = 1
+        /// H1=1, H2=10 Gap = 11
+        /// </summary>
+        /// <param name="house1"></param>
+        /// <param name="house2"></param>
+        /// <returns></returns>
         public static int HouseGab(int house1, int house2)
         {
             if (house1 < house2)
@@ -104,6 +141,25 @@ namespace ChaNiBaaStra.Utilities
             }
             hours = span.Hours;
             minutes = span.Minutes;
+        }
+
+        public static DateTime AdjustTime(double longitude, DateTime dateTime)
+        {
+            double actualOffset = longitude / 15.0;
+            TimeSpan ts = TimeZoneInfo.Local.BaseUtcOffset;
+            double standardOffset = ts.TotalMinutes / 60.0;
+            double adjustment = (actualOffset - standardOffset) * 60;
+
+            double minAdjustment = (int)adjustment;
+            double secAdjustment = (adjustment - minAdjustment) * 60;
+
+            DateTime adjustedDateTime = dateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
+            return adjustedDateTime;
+            /*
+            this.TimeZone = -1 * actualOffset;
+            this.BirthDate = adjustedDateTime.Date;
+            this.BirthTime = adjustedDateTime.TimeOfDay;
+            OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second);*/
         }
 
         public static void DateDiff(DateTime dt1, DateTime dt2, out int years, out int months

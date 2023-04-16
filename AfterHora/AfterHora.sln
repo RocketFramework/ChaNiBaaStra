@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfterHora", "AfterHora\AfterHora.csproj", "{7CC24D85-6137-4C75-8CA5-10CD5618056A}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaNiBaaStra.DataModels", "..\ChaNiBaaStra\ChaNiBaaStra.DataModels\ChaNiBaaStra.DataModels.csproj", "{AFAF803A-7897-4C73-8A2E-BB0638663BDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaNiBaaStra.Dal", "..\ChaNiBaaStra\ChaNiBaaStra.Dal\ChaNiBaaStra.Dal.csproj", "{0FE6B0FF-C5DE-449B-8D83-0CAE78C64C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstroUnitTestor", "AstroUnitTestor\AstroUnitTestor.csproj", "{685A06C6-56B5-4D5D-B828-F04F9B28FEE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,8 +47,15 @@ Global
 		{0FE6B0FF-C5DE-449B-8D83-0CAE78C64C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE6B0FF-C5DE-449B-8D83-0CAE78C64C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE6B0FF-C5DE-449B-8D83-0CAE78C64C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685A06C6-56B5-4D5D-B828-F04F9B28FEE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685A06C6-56B5-4D5D-B828-F04F9B28FEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685A06C6-56B5-4D5D-B828-F04F9B28FEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685A06C6-56B5-4D5D-B828-F04F9B28FEE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CE54BF2-55B0-43BA-AD7D-F08BB29ADBBE}
 	EndGlobalSection
 EndGlobal

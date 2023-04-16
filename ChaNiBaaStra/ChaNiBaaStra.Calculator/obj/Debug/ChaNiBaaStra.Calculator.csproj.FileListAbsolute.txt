@@ -31,6 +31,8 @@ E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Ca
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll.config
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.pdb
@@ -53,6 +55,7 @@ C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calc
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.pdb
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll.config
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.dll.config
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.xml
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.pdb
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.xml
@@ -63,8 +66,58 @@ C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calc
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.xml
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.pdb
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
-C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
-C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CopyComplete
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\OpenAI_API.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Nido.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\OpenAI_API.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Dal.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Utilities.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.Extended.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\log4net.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb

@@ -56,6 +56,14 @@ namespace ChaNiBaaStra.Utilities
             return Current;
         }
 
+        public int GoBack(int value)
+        {
+            if (Current < value)
+                return max - (value - Current) + 1;
+            else
+                return Current - (value - 1);
+        }
+
         public int Minus(int value)
         {
             if (Current <= value)

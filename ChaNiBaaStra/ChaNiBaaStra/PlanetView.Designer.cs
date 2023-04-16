@@ -95,6 +95,7 @@
             this.panelOtherPlanetSeeMe.Name = "panelOtherPlanetSeeMe";
             this.panelOtherPlanetSeeMe.Size = new System.Drawing.Size(25, 12);
             this.panelOtherPlanetSeeMe.TabIndex = 4;
+            this.panelOtherPlanetSeeMe.Visible = false;
             // 
             // PlanetView
             // 
@@ -106,6 +107,7 @@
             this.Controls.Add(this.buttonRashiRelation);
             this.Controls.Add(this.buttonPlnet);
             this.Controls.Add(this.panelVargoththama);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PlanetView";
             this.Size = new System.Drawing.Size(78, 45);
             this.ResumeLayout(false);

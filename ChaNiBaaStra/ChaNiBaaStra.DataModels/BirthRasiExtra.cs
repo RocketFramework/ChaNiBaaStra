@@ -26,11 +26,35 @@ namespace ChaNiBaaStra.DataModels
             AstroPlanet saturn = birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn);
             LagnaAdhipathiPlanets = new List<AstroPlanet>();
 
+            AstroPlanet[] filterer = new AstroPlanet[12];
+            birthHoroscope.RasiPlanetList.CopyTo(filterer);
+            List<AstroPlanet> filtered = new List<AstroPlanet>();
+            filtered.AddRange(filterer);
+            filtered.RemoveAll(x => x.Current == EnumPlanet.Uranus ||
+            x.Current == EnumPlanet.Neptune ||
+            x.Current == EnumPlanet.Pluto ||
+            x.Current == EnumPlanet.Rahu ||
+            x.Current == EnumPlanet.Kethu);
+
+            this.AathmaKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).FirstOrDefault();
+            this.AathmaKaraka.KarakaState = PlanetKarakaStates.AathmaKaraka;
+            this.AmathyaKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(1);
+            this.AmathyaKaraka.KarakaState = PlanetKarakaStates.AmathyaKaraka;
+            BradhariKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(2);
+            this.BradhariKaraka.KarakaState = PlanetKarakaStates.BradhariKaraka; 
+            MathruKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(3);
+            this.MathruKaraka.KarakaState = PlanetKarakaStates.MathruKaraka; 
+            PithruKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(4);
+            this.PithruKaraka.KarakaState = PlanetKarakaStates.PithruKaraka; 
+            GnathiKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(5);
+            this.GnathiKaraka.KarakaState = PlanetKarakaStates.GnathiKaraka; 
+            DhaaraKaraka = filtered.OrderByDescending(x => x.AjustedLongitude).ElementAt(6);
+            this.DhaaraKaraka.KarakaState = PlanetKarakaStates.DhaaraKaraka;
             switch (birthHoroscope.LagnaRasi.Current)
             {
                 case EnumRasi.Mesha:
                     {
-                        List<AstroPlanet> subp = new List<AstroPlanet> { sun, mars, moon };
+                        List<AstroPlanet> subp = new List<AstroPlanet> { jupiter, mars, sun, moon };
                         List<AstroPlanet> asup = new List<AstroPlanet> { mercury, venus, saturn };
                         List<AstroPlanet> yop = new List<AstroPlanet> { jupiter };
                         List<AstroPlanet> marp = new List<AstroPlanet> { mercury, venus, saturn };
@@ -161,12 +185,6 @@ namespace ChaNiBaaStra.DataModels
                     }
                     break;
             }
-            
-            // This part is commented but the data loding is included and added to the above switch code
-            /*var retData = birthHoroscope.LagnaRasi.DataModel.PlanetRashiRelations.Where(x => x.RelationshipTypeId == (int)EnumRelationshipTypes.Swashesthra
-                || x.RelationshipTypeId == (int)EnumRelationshipTypes.SwashesthraMulaThrikona);
-            foreach (PlanetRashiRelation pr in retData)
-                LagnaAdhipathiPlanets.Add(birthHoroscope.RasiPlanetList.FirstOrDefault(x => x.DataModel.PlanetId == pr.PlanetId));*/
         }
 
         private void SetPlanetVarieties(List<AstroPlanet> subp, List<AstroPlanet> asup
@@ -192,6 +210,14 @@ namespace ChaNiBaaStra.DataModels
                 Maraka += planet.Name + ", ";
             Maraka.TrimEnd(' ', ',');
         }
+
+        public AstroPlanet AathmaKaraka { get; set; }
+        public AstroPlanet AmathyaKaraka { get; set; }
+        public AstroPlanet BradhariKaraka { get; set; }
+        public AstroPlanet MathruKaraka { get; set; }
+        public AstroPlanet PithruKaraka { get; set; }
+        public AstroPlanet GnathiKaraka { get; set; }
+        public AstroPlanet DhaaraKaraka { get; set; }
 
         public List<AstroPlanet> SubhaPlanets { get; set; }
         public string Subha { get; set; }

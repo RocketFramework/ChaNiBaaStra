@@ -44,7 +44,7 @@
             this.buttonMiddle.Location = new System.Drawing.Point(13, 14);
             this.buttonMiddle.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMiddle.Name = "buttonMiddle";
-            this.buttonMiddle.Size = new System.Drawing.Size(657, 562);
+            this.buttonMiddle.Size = new System.Drawing.Size(52, 18);
             this.buttonMiddle.TabIndex = 0;
             this.buttonMiddle.Text = "Mo";
             this.buttonMiddle.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             this.labelLeft.Location = new System.Drawing.Point(0, 14);
             this.labelLeft.Margin = new System.Windows.Forms.Padding(0);
             this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(13, 562);
+            this.labelLeft.Size = new System.Drawing.Size(13, 18);
             this.labelLeft.TabIndex = 2;
             this.labelLeft.Text = "M";
             this.labelLeft.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,9 +66,9 @@
             // 
             this.labelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBottom.Location = new System.Drawing.Point(0, 576);
+            this.labelBottom.Location = new System.Drawing.Point(0, 32);
             this.labelBottom.Name = "labelBottom";
-            this.labelBottom.Size = new System.Drawing.Size(683, 13);
+            this.labelBottom.Size = new System.Drawing.Size(78, 13);
             this.labelBottom.TabIndex = 3;
             this.labelBottom.Text = "V";
             this.labelBottom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +80,7 @@
             this.labelTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTop.Location = new System.Drawing.Point(0, 0);
             this.labelTop.Name = "labelTop";
-            this.labelTop.Size = new System.Drawing.Size(683, 14);
+            this.labelTop.Size = new System.Drawing.Size(78, 14);
             this.labelTop.TabIndex = 4;
             this.labelTop.Text = "NMS";
             this.labelTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,9 +96,9 @@
             this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButton1.AutoEllipsis = true;
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton1.Location = new System.Drawing.Point(670, 14);
+            this.radioButton1.Location = new System.Drawing.Point(65, 14);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(13, 562);
+            this.radioButton1.Size = new System.Drawing.Size(13, 18);
             this.radioButton1.TabIndex = 5;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.labelTop);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PlanetHolder";
-            this.Size = new System.Drawing.Size(683, 589);
+            this.Size = new System.Drawing.Size(78, 45);
             this.ResumeLayout(false);
 
         }

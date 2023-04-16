@@ -7,6 +7,11 @@ using ChaNiBaaStra.DataModels;
 using SwissEphNet;
 using ChaNiBaaStra.Utilities;
 using System.Windows;
+using ChaNiBaaStra.Dal.Models;
+using static log4net.Appender.RollingFileAppender;
+using static ChaNiBaaStra.Calculator.AstroCalculator;
+using System.Windows.Controls;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ChaNiBaaStra.Calculator
 {
@@ -57,8 +62,8 @@ namespace ChaNiBaaStra.Calculator
             YogaEndDateTime = null;
             swissEph.swe_set_topo(locationData.Longitude, locationData.Latitude, 0.0);
 
-            DateTime dateTime = locationData.BirthDateTime;
-            LocationData = locationData;
+            DateTime dateTime = locationData.AdjustedBirthDateTime;
+            PlaceData = locationData;
             CurrentDateTime = dateTime;
             Year = dateTime.Year;
             Month = dateTime.Month;
@@ -66,7 +71,7 @@ namespace ChaNiBaaStra.Calculator
             Hour = dateTime.Hour;
             Minute = dateTime.Minute;
             Second = dateTime.Second;
-            List<AstroPlanet> pList = (IsWithDetails)? CalculatePlanetPositionWithDetailsOptmized():CalculatePlanetPosition();
+            List<AstroPlanet> pList = (IsWithDetails)? CalculatePlanetPositionWithDetailsOptmized(false):CalculatePlanetPosition();
             Sun = pList.Find(x => x.Current == EnumPlanet.Sun);
             Moon = pList.Find(x => x.Current == EnumPlanet.Moon);
             Mars = pList.Find(x => x.Current == EnumPlanet.Mars);
@@ -79,7 +84,7 @@ namespace ChaNiBaaStra.Calculator
             Pluto = pList.Find(x => x.Current == EnumPlanet.Pluto);
             Rahu = pList.Find(x => x.Current == EnumPlanet.Rahu);
             Kethu = pList.Find(x => x.Current == EnumPlanet.Kethu);
-
+       
             Nakath = new AstroNakath(this.Moon.Longitude);
             Nakath.EndTime = NakathEndDateTime;
             WeekDay = new AstroWeekDay((EnumWeekDay)((int)dateTime.DayOfWeek + 1));
@@ -105,14 +110,14 @@ namespace ChaNiBaaStra.Calculator
             bool isSunset = false;
             DateTime sunrise = DateTime.Now;
             DateTime sunset = DateTime.Now;
-            int ltD = (int)LocationData.Latitude;
+            int ltD = (int)PlaceData.Latitude;
             //DateTime = DateTime.AddDays(10);
 
             SunTimes.Instance.CalculateSunRiseSetTimes(new SunTimes.LatitudeCoords
-                                   ((int)LocationData.Latitude, (int)((LocationData.Latitude - (int)LocationData.Latitude) * 60), 0, SunTimes.LatitudeCoords.Direction.North),
+                                   ((int)PlaceData.Latitude, (int)((PlaceData.Latitude - (int)PlaceData.Latitude) * 60), 0, SunTimes.LatitudeCoords.Direction.North),
                                                 new SunTimes.LongitudeCoords
-                                   ((int)LocationData.Longitude, (int)((LocationData.Longitude - (int)LocationData.Longitude) * 60), 0, SunTimes.LongitudeCoords.Direction.East),
-                                                CurrentDateTime, LocationData.TimeZone, ref sunrise, ref sunset,
+                                   ((int)PlaceData.Longitude, (int)((PlaceData.Longitude - (int)PlaceData.Longitude) * 60), 0, SunTimes.LongitudeCoords.Direction.East),
+                                                CurrentDateTime, PlaceData.TimeZone, ref sunrise, ref sunset,
                                  ref isSunrise, ref isSunset);
 
             if (CurrentDateTime > sunset)
@@ -120,17 +125,17 @@ namespace ChaNiBaaStra.Calculator
                 DateTime sunrise2 = DateTime.Now;
                 DateTime sunset2 = DateTime.Now;
                 SunTimes.Instance.CalculateSunRiseSetTimes(new SunTimes.LatitudeCoords
-                       ((int)LocationData.Latitude, (int)((LocationData.Latitude - (int)LocationData.Latitude) * 60), 0, SunTimes.LatitudeCoords.Direction.North),
+                       ((int)PlaceData.Latitude, (int)((PlaceData.Latitude - (int)PlaceData.Latitude) * 60), 0, SunTimes.LatitudeCoords.Direction.North),
                                     new SunTimes.LongitudeCoords
-                       ((int)LocationData.Longitude, (int)((LocationData.Longitude - (int)LocationData.Longitude) * 60), 0, SunTimes.LongitudeCoords.Direction.East),
-                                    CurrentDateTime.AddDays(1), LocationData.TimeZone, ref sunrise2, ref sunset2,
+                       ((int)PlaceData.Longitude, (int)((PlaceData.Longitude - (int)PlaceData.Longitude) * 60), 0, SunTimes.LongitudeCoords.Direction.East),
+                                    CurrentDateTime.AddDays(1), PlaceData.TimeZone, ref sunrise2, ref sunset2,
                      ref isSunrise, ref isSunset);
                 sunrise = sunset;
                 sunset = sunrise2;
             }
-            SunRise = LocationData.GetStandardTime(sunrise);
-            SunSet = LocationData.GetStandardTime(sunset);
-            Muthurtha = new AstroMuhurtha(LocationData.OriginalDateTime, SunRise, SunSet);
+            SunRise = PlaceData.GetStandardTime(sunrise);
+            SunSet = PlaceData.GetStandardTime(sunset);
+            Muthurtha = new AstroMuhurtha(PlaceData.OriginalDateTime, SunRise, SunSet);
         }
         /*public DateTime SunRise { get; set; }
         public DateTime SunSet { get; set; }
@@ -148,7 +153,7 @@ namespace ChaNiBaaStra.Calculator
             swissEph.swe_set_ephe_path(null);
 
             DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, LocationData.Longitude));
+            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
             tjd_ut = tData.JulianDateTime;
 
             /*
@@ -176,7 +181,7 @@ namespace ChaNiBaaStra.Calculator
                 // Speed in latitude(deg / day)
                 // Speed in distance(AU / day)
 
-                pReturn = new AstroPlanet(planet, cusps, LocationData);
+                pReturn = new AstroPlanet(planet, cusps, PlaceData);
                 /*
                  * if there is a problem, a negative value is returned and an
                  * error message is in serr.
@@ -193,14 +198,15 @@ namespace ChaNiBaaStra.Calculator
                 {
                     pReturn.Name = "Rahu";
                     cusps[0] = (cusps[0] + 180.00) % 360;
-                    AstroPlanet ketu = new AstroPlanet(12, cusps, LocationData);
+                    AstroPlanet ketu = new AstroPlanet(12, cusps, PlaceData);
                     ketu.Name = "Kethu";
                     planets.Add(ketu);
                 }
             }
             return planets;
         }
-        public List<AstroPlanet> CalculatePlanetPositionWithDetailsOptmized()
+
+        public List<AstroPlanet> CalculatePlanetPositionWithDetailsOptmized(bool isTransit)
         {
             List<AstroPlanet> planets = new List<AstroPlanet>();
             NakathEndDateTime = null;
@@ -212,10 +218,10 @@ namespace ChaNiBaaStra.Calculator
             swissEph.swe_set_ephe_path(null);
 
             DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, LocationData.Longitude));
+            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
             tjd_ut = tData.JulianDateTime;
 
-            swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);
+            swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);//was SE_SIDM_LAHIRI
 
             cusps = new double[6];
             AstroPlanet ketu = null;
@@ -232,6 +238,7 @@ namespace ChaNiBaaStra.Calculator
                 for (planet = SwissEph.SE_SUN; planet <= SwissEph.SE_CHIRON; planet++)
                 {
                     pReturn = planets.FirstOrDefault(x => x.CurrentInt == planet);
+
                     if (LoopSkipLogic(planet, pReturn, IsPachangaCalculated, dt))
                         continue;
 
@@ -248,18 +255,20 @@ namespace ChaNiBaaStra.Calculator
                     {
                         pReturn = Initialization(planets, cusps, planet, ref ketu, ref orgSunLong, ref orgMoonLong);
                     }
-
+                    // Update the transit status as that is require
+                    // for us to get which planet sees each rasi
+                    pReturn.IsTransitPlanet = isTransit;
                     if (pReturn.RasiStart < cusps[0] && cusps[0] < pReturn.RasiEnd)
                     {
                         // Planet Reversing related Calculation 
                         if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
                         {
-                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = true;
                         }
                         else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
                         {
-                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = false;
                         }
                     }
@@ -272,7 +281,7 @@ namespace ChaNiBaaStra.Calculator
                         double rasiTimeDif = (((Math.Abs(mod360.sub(pReturn.RasiEnd, cusps[0])) < Math.Abs(mod360.sub(cusps[0], pReturn.RasiStart)))
                             ? mod360.sub(pReturn.RasiStart, cusps[0]) : mod360.sub(cusps[0], pReturn.RasiEnd))
                             / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(rasiTimeDif);
+                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(rasiTimeDif);
                         if ((pReturn.Current == EnumPlanet.Rahu) && (ketu != null))
                             ketu.NextTransitDateTime = pReturn.NextTransitDateTime;
                     }
@@ -301,7 +310,7 @@ namespace ChaNiBaaStra.Calculator
             , ref double orgSunLong, ref double orgMoonLong)
         {
             Mod mod360 = new Mod(360);
-            AstroPlanet pReturn = new AstroPlanet(planet, cusps, LocationData);
+            AstroPlanet pReturn = new AstroPlanet(planet, cusps, PlaceData);
             pReturn.Name = swissEph.swe_get_planet_name(planet);
             planets.Add(pReturn);
             if (pReturn.Current == EnumPlanet.Sun)
@@ -315,7 +324,7 @@ namespace ChaNiBaaStra.Calculator
                 double[] kethuCusps = new double[6];
                 cusps.CopyTo(kethuCusps, 0);
                 kethuCusps[0] = mod360.add(kethuCusps[0], 180.00) % 360;
-                ketu = new AstroPlanet(12, kethuCusps, LocationData);
+                ketu = new AstroPlanet(12, kethuCusps, PlaceData);
                 ketu.Name = "Kethu";
                 planets.Add(ketu);
             }
@@ -342,6 +351,7 @@ namespace ChaNiBaaStra.Calculator
                     return true;// transit is already captured for this planet, so no need to run this loop
             return false;
         }
+
         private bool PanchangaCalculation(double[] cusps, AstroPlanet pReturn, AstroPlanet curSun, double orgSunLong, double orgMoonLong)
         {
             Mod mod360 = new Mod(360);
@@ -362,7 +372,7 @@ namespace ChaNiBaaStra.Calculator
             {
                 double nakTimeDif = ((cusps[0] - nakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
                 if (NakathEndDateTime == null)
-                    NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(nakTimeDif);
+                    NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
             }
         }
 
@@ -376,7 +386,7 @@ namespace ChaNiBaaStra.Calculator
                 double difSpeed = cusps[3] - curSun.SpeedInLongitude;
                 double karTimeDif = ((mod360.sub(cusps[0], curSun.Longitude) - karnaEnd) / ((difSpeed == 0) ? 1 : difSpeed)) * 1440 * -1;
                 if (KarnaEndDateTime == null)
-                    KarnaEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(karTimeDif);
+                    KarnaEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(karTimeDif);
             }
         }
         private void YogaEndTime(double[] cusps, AstroPlanet curSun, double orgSunLong, double orgMoonLong, Mod mod360)
@@ -389,7 +399,7 @@ namespace ChaNiBaaStra.Calculator
                 double totalSpeed = curSun.SpeedInLongitude + cusps[3];
                 double yogaTimeDif = ((mod360.add(cusps[0], curSun.Longitude) - yogaEnd) / ((totalSpeed == 0) ? 1 : totalSpeed)) * 1440 * -1;
                 if (YogaEndDateTime == null)
-                    YogaEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(yogaTimeDif);
+                    YogaEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(yogaTimeDif);
             }
         }
 
@@ -404,7 +414,7 @@ namespace ChaNiBaaStra.Calculator
                 double difSpeed = cusps[3] - curSun.SpeedInLongitude;
                 double thithiTimeDif = ((mod360.sub(cusps[0], curSun.Longitude) - thithiEnd) / ((difSpeed == 0) ? 1 : difSpeed)) * 1440 * -1;
                 if (ThithiEndDateTime == null)
-                    ThithiEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(thithiTimeDif);
+                    ThithiEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(thithiTimeDif);
             }
         }
 
@@ -418,7 +428,7 @@ namespace ChaNiBaaStra.Calculator
             int planet;
             swissEph.swe_set_ephe_path(null);
             DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, LocationData.Longitude));
+            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
             double planetAvgSpeed = 0.0;
             /*
              * a loop over all planets
@@ -459,7 +469,7 @@ namespace ChaNiBaaStra.Calculator
                     {
                         shouldAdd = false;
                         planetAvgSpeed = cusps[3];
-                        pReturn = new AstroPlanet(planet, cusps, LocationData);
+                        pReturn = new AstroPlanet(planet, cusps, PlaceData);
                         /*
                          * if there is a problem, a negative value is returned and an
                          * error message is in serr.
@@ -478,7 +488,7 @@ namespace ChaNiBaaStra.Calculator
                             double[] kethuCusps = new double[6];
                             cusps.CopyTo(kethuCusps, 0);
                             kethuCusps[0] = (kethuCusps[0] + 180.00) % 360;
-                            ketu = new AstroPlanet(12, kethuCusps, LocationData);
+                            ketu = new AstroPlanet(12, kethuCusps, PlaceData);
                             ketu.Name = "Kethu";
                             planets.Add(ketu);
                         }
@@ -494,12 +504,12 @@ namespace ChaNiBaaStra.Calculator
                         // Planet Reversing related Calculation 
                         if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
                         {
-                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = true;
                         }
                         else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
                         {
-                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = false;
                         }
 
@@ -508,7 +518,7 @@ namespace ChaNiBaaStra.Calculator
                         {
                             // Adjustment for actual Nakath End Time
                             double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(nakTimeDif);
+                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
                         }
 
                         double degreeToGo = (!transitIsCaptured) ?
@@ -575,7 +585,7 @@ namespace ChaNiBaaStra.Calculator
                 // Looping to find the next transit time/ reversing time of the planet body
                 while (true)
                 {
-                    DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                    DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                     if (nowDate.Subtract(dt).TotalDays > 365)
                         break;
                     iflgret = swissEph.swe_calc_ut(tjd_ut, planet, AstroConsts.iflag, cusps, ref serr);
@@ -588,7 +598,7 @@ namespace ChaNiBaaStra.Calculator
                     if (shouldAdd)
                     {
                         shouldAdd = false;
-                        pReturn = new AstroPlanet(planet, cusps, LocationData);
+                        pReturn = new AstroPlanet(planet, cusps, PlaceData);
                         /*
                          * if there is a problem, a negative value is returned and an
                          * error message is in serr.
@@ -605,7 +615,7 @@ namespace ChaNiBaaStra.Calculator
                         {
                             pReturn.Name = "Rahu";
                             cusps[0] = (cusps[0] + 180.00) % 360;
-                            AstroPlanet ketu = new AstroPlanet(12, cusps, LocationData);
+                            AstroPlanet ketu = new AstroPlanet(12, cusps, PlaceData);
                             ketu.Name = "Kethu";
                             planets.Add(ketu);
                         }
@@ -621,12 +631,12 @@ namespace ChaNiBaaStra.Calculator
                         // Planet Reversing related Calculation 
                         if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
                         {
-                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = true;
                         }
                         else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
                         {
-                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
                             pReturn.IsNivrutha = false;
                         }
 
@@ -635,7 +645,7 @@ namespace ChaNiBaaStra.Calculator
                         {
                             // Adjustment for actual Nakath End Time
                             double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(nakTimeDif);
+                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
                         }
 
                         // Optimization for NextTransitTime Calculation
@@ -658,7 +668,7 @@ namespace ChaNiBaaStra.Calculator
                         // TODO: One time sun speed was 0 and made the adjustment as I didn't have internet
                         // Need to check it again to find out whether the 1 is a viable alternative here
                         double rasiTimeDif = ((cusps[0] - x2RasiEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone).AddMinutes(rasiTimeDif);
+                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(rasiTimeDif);
                         transitIsCaptured = true;
                         if (pReturn.Current == EnumPlanet.Moon && x2RasiEnd < x2NakathEnd)
                             x2RasiEnd = x2NakathEnd + 0.001; // Adustment to get it hit the internal logic
@@ -671,18 +681,48 @@ namespace ChaNiBaaStra.Calculator
             }
             return planets;
         }
+
+        public AstroRasi GetLagnaRashi()
+        {
+            double[] cusps = new double[13];
+            double[] ascmc = new double[10];
+            // cusps - the end point of a house
+            swissEph.swe_houses_ex(tjd_ut, SwissEph.SEFLG_SIDEREAL, PlaceData.Latitude, PlaceData.Longitude, 'A', cusps, ascmc);
+
+            int lagna = 0;
+            // postion starts from 1
+            for (int i = 1; i < cusps.Length; i++)
+                if ((cusps[i] > 0) && (cusps[i] < 30)) lagna = i;
+            if (lagna == 0)
+                for (int i = 1; i < cusps.Length; i++)
+                    if ((cusps[i] > 0) && (cusps[i] < 35)) lagna = i;
+            Mod mod = new Mod(360);
+            IntCircle intCycle = new IntCircle(12, lagna);
+            AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.ValueMinusCurrent(14));
+            rasi.AscendentDegrees = cusps[intCycle.Current];
+            rasi.AscendentDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]) + cusps[intCycle.Current];
+            rasi.RasiEndDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]);
+            rasi.RasiEndDegreesFromHorizon = cusps[intCycle.Current];
+            rasi.RasiStartDegreesFromMesha = (intCycle.Previous == 1) ? 360.0 : mod.sub(cusps[1], cusps[intCycle.Previous]);
+            rasi.RasiStartDegreesFromHorizon = cusps[intCycle.Previous];
+            rasi.RasiMidDegreesFromMesha = (rasi.RasiStartDegreesFromMesha + rasi.RasiEndDegreesFromMesha) / 2.0;
+            rasi.LengthDegrees = mod.sub(rasi.RasiEndDegreesFromMesha, rasi.RasiStartDegreesFromMesha);
+            rasi.Length = rasi.LengthDegrees;
+            return rasi;
+        }
+
         public Horoscope CalculateHoroscope(List<AstroPlanet> pList)
         {
             swissEph.swe_set_ephe_path("C:\\SWEPH\\EPHE");
 
             DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, LocationData.Longitude));
+            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
             tjd_ut = tData.JulianDateTime;
 
             double[] cusps = new double[13];
             double[] ascmc = new double[10];
             // cusps - the end point of a house
-            swissEph.swe_houses_ex(tjd_ut, SwissEph.SEFLG_SIDEREAL, LocationData.Latitude, LocationData.Longitude, 'A', cusps, ascmc);
+            swissEph.swe_houses_ex(tjd_ut, SwissEph.SEFLG_SIDEREAL, PlaceData.Latitude, PlaceData.Longitude, 'A', cusps, ascmc);// it was 'A' before  
             Horoscope horoScope = new Horoscope();
             Mod mod = new Mod(360);
 
@@ -693,7 +733,6 @@ namespace ChaNiBaaStra.Calculator
             if (lagna == 0)
                 for (int i = 1; i < cusps.Length; i++)
                     if ((cusps[i] > 0) && (cusps[i] < 35)) lagna = i;
-
             int j = 0;
 
             horoScope.RasiHouseList = new List<AstroRasi>();
@@ -707,7 +746,7 @@ namespace ChaNiBaaStra.Calculator
                 // get the right lagna integer from the lagna integer
                 AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.ValueMinusCurrent(14));
                 rasi.AscendentDegrees = cusps[intCycle.Current];
-                rasi.AscendentDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]) + cusps[intCycle.Current];
+                rasi.AscendentDegreesFromMesha = (intCycle.Current == 1) ? cusps[intCycle.Current] : mod.sub(cusps[1], cusps[intCycle.Current]) + cusps[intCycle.Current];
                 rasi.RasiEndDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]);
                 rasi.RasiEndDegreesFromHorizon = cusps[intCycle.Current];
                 rasi.RasiStartDegreesFromMesha = (intCycle.Previous == 1) ? 360.0 : mod.sub(cusps[1], cusps[intCycle.Previous]);
@@ -718,12 +757,13 @@ namespace ChaNiBaaStra.Calculator
                 rasi.HouseNumber = j + 1;
 
                 foreach (AstroPlanet planet in pList)
+                {
                     if (planet.Longitude >= rasi.RasiEndDegreesFromMesha
                         && planet.Longitude <= rasi.RasiStartDegreesFromMesha ||
                         ((rasi.RasiStartDegreesFromMesha < rasi.RasiEndDegreesFromMesha) &&
                         (((planet.Longitude <= rasi.RasiStartDegreesFromMesha) && (planet.Longitude >= 0)) ||
                         ((planet.Longitude >= rasi.RasiEndDegreesFromMesha) && (planet.Longitude <= 360)))))
-                    { 
+                    {
                         planet.AjustedLongitude = mod.sub(planet.Longitude, rasi.RasiEndDegreesFromMesha);
                         switch (rasi.HouseNumber)
                         {
@@ -754,12 +794,12 @@ namespace ChaNiBaaStra.Calculator
                         }
                         planet.Rasi = rasi;// TODO: CHECKING
                         rasi.Planets.Add(planet);
-                        horoScope.RasiPlanetList.Add(planet);
+                        horoScope.RasiPlanetList.Add(planet);                      
                     }
+                }
+
                 horoScope.RasiHouseList.Add(rasi);
-
                 AstroBhava bhava = new AstroBhava();
-
                 Bhava30DegreeStartingFromHorizon(pList, cusps, horoScope, mod, j, bIncrement, bhava);
 
                 if (lagna == intCycle.Current)
@@ -777,7 +817,39 @@ namespace ChaNiBaaStra.Calculator
             horoScope.CurrentTransitDate = (AstroTransitDate)this;
             horoScope.CompletePlanetList = pList;
             FinalAdjustment(horoScope);
+
             return horoScope;
+        }
+
+        private static void AddThthakalikaMythra(AstroRasi rasi, AstroPlanet planet)
+        {
+
+            int second = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 2);
+            int third = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 3);
+            int fourth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 4);
+            int tenth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 10);
+            int leventh = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 11);
+            int twelth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 12);
+            List<int> mithraList = new List<int>() { second, third, fourth, leventh, twelth };
+            if (mithraList.Contains(planet.HouseNumber))
+            {
+                rasi.ThathKalikaMythra.Add(planet);
+                return;
+            }
+            else if (planet.PlanetRasiRelation < EnumPlanetRasiRelationTypes.Mithra)
+            {
+                rasi.ThathKalikaMythra.Add(planet);
+                return;
+            }
+
+            int fifth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 5);
+            int sixth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 6);
+            int seventh = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 7);
+            int eigth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 8);
+            int ninth = AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, 9);
+            List<int> sathuruList = new List<int>() { fifth, sixth, seventh, eigth, ninth, tenth };
+            if (sathuruList.Contains(planet.HouseNumber))
+                rasi.ThathKalikaSathuru.Add(planet);
         }
 
         private void FinalAdjustment(Horoscope horoScope)
@@ -785,17 +857,75 @@ namespace ChaNiBaaStra.Calculator
             foreach (AstroRasi rasi in horoScope.RasiHouseList)
             {
                 if ((rasi.HouseNumber == 2) || (rasi.HouseNumber == 8))
-                    foreach (EnumPlanet ePlanet in rasi.AdhipathiPlanets)
+                    foreach (EnumPlanet ePlanet in rasi.AdhipathiEnumPlanets)
                         horoScope.CompletePlanetList
                             .FirstOrDefault(x => x.Current == ePlanet)
                             .IsMarakaPlanet = true;
 
                 if ((rasi.HouseNumber == 6) || (rasi.HouseNumber == 12))
-                    foreach (EnumPlanet ePlanet in rasi.AdhipathiPlanets)
+                    foreach (EnumPlanet ePlanet in rasi.AdhipathiEnumPlanets)
                         horoScope.CompletePlanetList
-                            .FirstOrDefault(x => x.Current == ePlanet)
-                            .IsRogaPlanet = true;      
+                             .FirstOrDefault(x => x.Current == ePlanet)
+                             .IsRogaPlanet = true;
+
+                foreach (AstroPlanet planet in horoScope.CompletePlanetList)
+                {
+                    AddThthakalikaMythra(rasi, planet);
+                    if (rasi.AdhipathiEnumPlanets.Contains(planet.Current))
+                        rasi.AdhipathiAstroPlanets.Add(planet);
+                }
             }
+
+            foreach (AstroPlanet planetOut in horoScope.RasiPlanetList)
+            {
+                planetOut.Views = new AstroView(planetOut);
+                planetOut.LagnaRasi = horoScope.LagnaRasi;
+                planetOut.UpdateAdhipathis();
+                if ((planetOut.Current == EnumPlanet.Saturn) ||
+                    (planetOut.Current == EnumPlanet.Sun) ||
+                    (planetOut.Current == EnumPlanet.Mars) ||
+                    (planetOut.Current == EnumPlanet.Rahu) ||
+                    (planetOut.Current == EnumPlanet.Kethu))
+                    planetOut.MelificOrBenific = PlanetTypes.Melific;
+                else
+                    planetOut.MelificOrBenific = PlanetTypes.Benefic;
+            }
+
+            foreach (AstroPlanet planetOut in horoScope.RasiPlanetList)
+                foreach (AstroPlanet planetIn in horoScope.RasiPlanetList)
+                {
+                    if (planetOut.NawamsaRasi.AdhipathiEnumPlanets.Contains(planetIn.Current) 
+                            && !planetOut.NawamsaRasi.AdhipathiAstroPlanets.Contains(planetIn))
+                        planetOut.NawamsaRasi.AdhipathiAstroPlanets.Add(planetIn);
+
+                    if (planetOut.Name != planetIn.Name)
+                    {
+                        switch (planetOut.GetPlanetRelation(planetIn.Current))
+                        {
+                            case EnumPlanetRelationTypes.Mithra:
+                                {
+                                    planetOut.MithraPlanets.Add(planetIn);
+                                    if (planetOut.Rasi.ThathKalikaMythra.Contains(planetIn))
+                                        planetOut.AdhiMithraPlanets.Add(planetIn);
+                                }
+                                break;
+                            case EnumPlanetRelationTypes.Sathuru:
+                                {
+                                    planetOut.SathuruPlanets.Add(planetIn);
+                                    if (planetOut.Rasi.ThathKalikaSathuru.Contains(planetIn))
+                                        planetOut.AdhiSathuruPlanets.Add(planetIn);
+                                }
+                                break;
+                            case EnumPlanetRelationTypes.Sama:
+                                planetOut.SamaPlanets.Add(planetIn); break;
+                        }
+
+                        foreach (int housesPlanetInSee in planetIn.Views.ICanSeeThem)
+                            if (housesPlanetInSee == planetOut.HouseNumber)
+                                planetOut.Views.TheyCanSeeMee.Add(planetIn);
+                    }
+                }
+
             switch (horoScope.LagnaRasi.Current)
             {
                 case EnumRasi.Mesha:
@@ -829,6 +959,238 @@ namespace ChaNiBaaStra.Calculator
                         break;
                     }
             }
+            horoScope.ExtraDetails = new BirthRasiExtra(horoScope);
+            SetMostPowerfulPlanet(horoScope);
+        }
+
+        private void SetMostPowerfulPlanet(Horoscope horoScope)
+        {
+            int currentScore = 0;
+            int prevScore = 0;
+            foreach (AstroPlanet planet in horoScope.CompletePlanetList)
+            {
+                planet.SetBala();
+                if (!((planet.Current == EnumPlanet.Uranus) ||
+                    (planet.Current == EnumPlanet.Neptune) ||
+                    (planet.Current == EnumPlanet.Pluto)))
+                {
+
+                    bool positionScoreGiven = false;
+                    if (planet.IsExtremelyExalted)
+                    {
+                        currentScore += 4;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+                    else if (planet.IsExalted)
+                    {
+                        currentScore += 3;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+                    else if (planet.IsPowerful)
+                    {
+                        currentScore += 2;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+                    if (planet.IsVargoththama)
+                    {
+                        currentScore += 1;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+                    if (planet.IsDigbala)
+                    {
+                        currentScore += 1;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+
+                    if (horoScope.NavamsaRasi.AdhipathiEnumPlanets.Contains(planet.Current))
+                    {
+                        currentScore += 3;
+                        ScoreForPosition(ref currentScore, planet, ref positionScoreGiven);
+                    }
+
+                    if (prevScore < currentScore)
+                    {
+                        horoScope.MostPowerfulPlanet = planet;
+                        prevScore = currentScore;
+                    }
+                    currentScore = 0;
+                }
+
+                foreach (AstroRasi rasi in horoScope.RasiHouseList)
+                {
+                    if (AstroView.CanPlanetSeeThisRashiHouse(planet.Current, planet.HouseNumber, rasi.HouseNumber))
+                        rasi.WhoSeesMe.Add(planet);
+                    SetDrosKanaya(planet, rasi);
+                }
+
+                SetThrishansa(horoScope, planet);
+                SetDwadasansa(horoScope, planet);
+                SetSapthansa(horoScope, planet);
+
+            }
+        }
+
+        private void SetSapthansa(Horoscope horoScope, AstroPlanet planet)
+        {
+            if (planet.Sapthanshaya == 1)
+                planet.SapthansaAdhipathi = planet.Rasi.AdhipathiAstroPlanets
+                    .FirstOrDefault(x => x.Current == planet.Rasi.AdhipathiEnumPlanets[0]);
+            else
+            {
+                if (planet.Rasi.IsOddRashi)
+                {
+                    planet.SapthanshayaRasi = horoScope.RasiHouseList
+                        .FirstOrDefault(x => x.Current == planet.Rasi.GetIncrementRashi(planet.Sapthanshaya - 1));
+                    planet.SapthansaAdhipathi = planet.SapthanshayaRasi.AdhipathiAstroPlanets
+                        .FirstOrDefault(x => x.Current == planet.SapthanshayaRasi.AdhipathiEnumPlanets[0]);
+                }
+                else
+                {
+                    planet.SapthanshayaRasi = horoScope.RasiHouseList
+                        .FirstOrDefault(x => x.Current == planet.Rasi.GetIncrementRashi(planet.Sapthanshaya + 6 - 1));
+                    planet.SapthansaAdhipathi = planet.SapthanshayaRasi.AdhipathiAstroPlanets
+                        .FirstOrDefault(x => x.Current == planet.SapthanshayaRasi.AdhipathiEnumPlanets[0]);
+                }
+            }
+        }
+
+        private static void SetDwadasansa(Horoscope horoScope, AstroPlanet planet)
+        {
+            if (planet.Dwadasanshaya == 1)
+                planet.DwadasansaAdhipathi = planet.Rasi.AdhipathiAstroPlanets
+                    .FirstOrDefault(x => x.Current == planet.Rasi.AdhipathiEnumPlanets[0]);
+            else
+            {
+                planet.DwadasanshayaRasi = horoScope.RasiHouseList
+                    .FirstOrDefault(x => x.Current == planet.Rasi.GetIncrementRashi(planet.Dwadasanshaya - 1));
+                planet.DwadasansaAdhipathi = planet.DwadasanshayaRasi.AdhipathiAstroPlanets
+                    .FirstOrDefault(x => x.Current == planet.DwadasanshayaRasi.AdhipathiEnumPlanets[0]);
+            }
+        }
+
+        private static void SetDrosKanaya(AstroPlanet planet, AstroRasi rasi)
+        {
+            switch (planet.DrosKanaya)
+            {
+                case 1:
+                    {
+                        if ((planet.Rasi.IsCharaRashi) && (rasi.HouseNumber == 1))
+                        {
+                            planet.DrosKanayaRasi= rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsThiraRashi) && (rasi.HouseNumber == 9))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsUbhayaRashi) && (rasi.HouseNumber == 5))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        if ((planet.Rasi.IsCharaRashi) && (rasi.HouseNumber == 5))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsThiraRashi) && (rasi.HouseNumber == 1))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsUbhayaRashi) && (rasi.HouseNumber == 9))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                    }
+                    break;
+                case 3:
+                    {
+                        if ((planet.Rasi.IsCharaRashi) && (rasi.HouseNumber == 9))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsThiraRashi) && (rasi.HouseNumber == 5))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                        else if ((planet.Rasi.IsUbhayaRashi) && (rasi.HouseNumber == 1))
+                        {
+                            planet.DrosKanayaRasi = rasi;
+                            planet.DroskanaAdhipathi = rasi.AdhipathiAstroPlanets.FirstOrDefault(x => x.Current == rasi.AdhipathiEnumPlanets[0]);
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private static void SetThrishansa(Horoscope horoScope, AstroPlanet planet)
+        {
+            if ((planet.Thrishanshaya <= 5) && (planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mars);
+            }
+            else if ((planet.Thrishanshaya <= 10) && (planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn);
+            }
+            else if ((planet.Thrishanshaya <= 18) && (planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Jupiter);
+            }
+            else if ((planet.Thrishanshaya <= 25) && (planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mercury);
+            }
+            else if ((planet.Thrishanshaya <= 30) && (planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus);
+            }
+            else if ((planet.Thrishanshaya <= 5) && (!planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus);
+            }
+            else if ((planet.Thrishanshaya <= 10) && (!planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mercury);
+            }
+            else if ((planet.Thrishanshaya <= 18) && (!planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Jupiter);
+            }
+            else if ((planet.Thrishanshaya <= 25) && (!planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn);
+            }
+            else if ((planet.Thrishanshaya <= 30) && (!planet.Rasi.IsOddRashi))
+            {
+                planet.ThrishanshakaAdhipathi = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mars);
+            }
+        }
+
+        private static void ScoreForPosition(ref int currentScore, AstroPlanet planet, ref bool positionScoreGiven)
+        {
+            if (!positionScoreGiven)
+            {
+                currentScore = PositionScore(currentScore, planet);
+                positionScoreGiven = true;
+            }
+        }
+
+        private static int PositionScore(int currentScore, AstroPlanet planet)
+        {
+            if (planet.HouseNumber == 1) currentScore += 3;
+            else if ((planet.HouseNumber == 5) || (planet.HouseNumber == 9)) currentScore += 2;
+            else if ((planet.HouseNumber == 4) || (planet.HouseNumber == 7) || (planet.HouseNumber == 10)) currentScore += 1;
+            return currentScore;
         }
 
         private static void Bhava30DegreeStartingFromHorizon(List<AstroPlanet> pList, double[] cusps, Horoscope horoScope, Mod mod, int j, double bIncrement, AstroBhava bhava)

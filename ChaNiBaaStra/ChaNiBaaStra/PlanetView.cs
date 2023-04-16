@@ -25,7 +25,10 @@ namespace ChaNiBaaStra
             set { this.panelOtherPlanetSeeMe.Visible = value; }
         }
 
-        public AstroPlanet ThisPlanet { get; set; }
+        private AstroPlanet thisPlanet;
+        public AstroPlanet ThisPlanet { get{ return thisPlanet; } set { thisPlanet = value;
+                this.thisPlanet.IsTransitPlanet = IsTransitPlanet;
+            } }
         public AstroRasi ThisRasi { get; set; }
 
         public bool IsTransitPlanet { get; set; }
@@ -78,17 +81,30 @@ namespace ChaNiBaaStra
         {
             if (isReset)
             {
-                this.buttonPlnet.BackColor = Color.Transparent;
-                this.buttonPlanetRelation.BackColor = Color.Transparent;
-                this.toolTipPlanet.SetToolTip(this.buttonPlanetRelation, null);
+                ResetTxtForViewsSeesRelatedNobe();
             }
             else if (this.RelatedPlanet != null)
             {
-                this.buttonPlanetRelation.BackColor = this.ThisPlanet
-                    .GetPlanetRelation(this.relatedPlanet.Current).ToColor();
-                this.toolTipPlanet.SetToolTip(this.buttonPlanetRelation, this.ThisPlanet
-                    .GetPlanetRelation(this.relatedPlanet.Current).ToLongString(this.relatedPlanet.Name));
+                UpdateTxtForViewsSeesRelatedNobe(this.relatedPlanet);
             }
+        }
+
+        public void UpdateTxtForViewsSeesRelatedNobe(AstroPlanet relatingPlanet)
+        {
+            if (relatingPlanet != null)
+            {
+                this.buttonPlanetRelation.BackColor = this.ThisPlanet
+                    .GetPlanetRelation(relatingPlanet.Current).ToColor();
+                this.toolTipPlanet.SetToolTip(this.buttonPlanetRelation, this.ThisPlanet
+                    .GetPlanetRelation(relatingPlanet.Current).ToLongString(relatingPlanet.Name));
+            }
+        }
+
+        public void ResetTxtForViewsSeesRelatedNobe()
+        {
+            this.buttonPlnet.BackColor = Color.Transparent;
+            this.buttonPlanetRelation.BackColor = Color.Transparent;
+            this.toolTipPlanet.SetToolTip(this.buttonPlanetRelation, null);
         }
 
         internal void UpdateUI(AstroPlanet planet)
@@ -100,7 +116,8 @@ namespace ChaNiBaaStra
                 "(" + planet.Name.Substring(0, 2)
                 + ")" : planet.Name.Substring(0, 2);
             this.buttonRashiRelation.BackColor = planet.PlanetRasiRelation.ToColor();
-            this.toolTipPlanet.SetToolTip(this.buttonRashiRelation, planet.PlanetRasiRelation.ToLongString());
+            this.toolTipPlanet.SetToolTip(this.buttonRashiRelation
+                , planet.PlanetRasiRelation.ToLongString());
             this.panelVargoththama.Visible = planet.IsVargoththama;
             this.Font = new Font(FontFamily.GenericSerif, 8);
             this.buttonPlnet.Width = 35;
@@ -113,7 +130,36 @@ namespace ChaNiBaaStra
                 PlanetButtonToolTip += " 6 or 12 Adhipathi - Roga Planet ";
 
             this.toolTipPlanet
-                .SetToolTip(this.buttonPlnet, this.PlanetButtonToolTip);
+                .SetToolTip(this.buttonPlnet, this.PlanetButtonToolTip 
+                + "\r\n" + ThisPlanet.GetSpecialMessages());
+        }
+
+        public void ICanSeeThem(AstroPlanet clickedPlanet)
+        {
+            this.buttonPlnet.BackColor = Color.Yellow;
+            this.buttonPlnet.ForeColor = Color.Blue;
+            this.buttonPlnet.Font = new Font(this.buttonPlnet.Font, FontStyle.Bold);
+            UpdateTxtForViewsSeesRelatedNobe(clickedPlanet);
+        }
+
+        public void ICantSeeThem()
+        {
+            this.buttonPlnet.BackColor = Color.Transparent;
+            this.buttonPlnet.ForeColor = Color.Black;
+            this.buttonPlnet.Font = new Font(this.buttonPlnet.Font, FontStyle.Regular);
+            ResetTxtForViewsSeesRelatedNobe();
+        }
+
+        public void TheyCanSeeMe(AstroPlanet clickedPlanet)
+        {
+            this.panelOtherPlanetSeeMe.Visible = true;
+            UpdateTxtForViewsSeesRelatedNobe(clickedPlanet);
+        }
+
+        public void TheyCantSeeMe()
+        {
+            this.panelOtherPlanetSeeMe.Visible = false;
+            ResetTxtForViewsSeesRelatedNobe();
         }
 
         private void buttonPlnet_Click(object sender, EventArgs e)

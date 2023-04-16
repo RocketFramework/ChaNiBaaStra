@@ -10,12 +10,329 @@ E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Ut
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
 E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll.config
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.AppContext.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.Specialized.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Console.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Data.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Compression.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Pipes.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Expressions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Parallel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Queryable.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Http.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.NameResolution.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Ping.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Requests.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Security.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Sockets.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebSockets.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ObjectModel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.Reader.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.Writer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Handles.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Claims.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Principal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.SecureString.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.Encoding.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Thread.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Timer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XPath.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\GeoTimeZone.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.barcodes.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.commons.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.forms.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.io.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.kernel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.layout.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.pdfa.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.sign.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.styledxmlparser.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.svg.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\OpenAI_API.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Buffers.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Memory.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ValueTuple.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.barcodes.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.commons.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.forms.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.io.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.kernel.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.layout.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.pdfa.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.sign.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.styledxmlparser.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.svg.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Buffers.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Memory.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ValueTuple.xml
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CopyComplete
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.AppContext.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.Concurrent.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.NonGeneric.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Collections.Specialized.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Console.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Data.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Contracts.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Debug.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Process.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Tools.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Drawing.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Dynamic.Runtime.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Globalization.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Compression.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.IsolatedStorage.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.Pipes.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Expressions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Parallel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Linq.Queryable.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Http.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.NameResolution.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.NetworkInformation.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Ping.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Requests.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Security.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.Sockets.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebSockets.Client.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Net.WebSockets.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ObjectModel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Reflection.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.Reader.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.ResourceManager.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Resources.Writer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Handles.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.InteropServices.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Numerics.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Claims.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.Principal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Security.SecureString.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.Encoding.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Text.RegularExpressions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Overlapped.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Thread.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.ThreadPool.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Timer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XmlDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XmlSerializer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XPath.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Xml.XPath.XDocument.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\GeoTimeZone.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.barcodes.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.commons.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.forms.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.io.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.kernel.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.layout.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.pdfa.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.sign.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.styledxmlparser.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.svg.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\OpenAI_API.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Buffers.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Memory.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ValueTuple.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.barcodes.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.commons.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.forms.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.io.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.kernel.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.layout.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.pdfa.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.sign.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.styledxmlparser.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\itext.svg.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Buffers.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Memory.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\bin\Debug\System.ValueTuple.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Utilities\obj\Debug\ChaNiBaaStra.Utilities.pdb

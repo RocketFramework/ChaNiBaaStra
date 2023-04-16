@@ -47,13 +47,13 @@ namespace ChaNiBaaStra
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    AstroCalculator birthCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, form.BirthTime));
-                    AstroCalculator transitCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, System.DateTime.Now));
+                    AstroCalculator birthCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", "", form.Latitude, form.Longitute, form.BirthTime, true));
+                    AstroCalculator transitCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", "", form.Latitude, form.Longitute, System.DateTime.Now, true));
                     //AstroTransitDate birthDate = new AstroTransitDate(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, form.BirthTime), false);
                     //AstroTransitDate transitDate = new AstroTransitDate(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, TransitDate), false);
 
-                    List<AstroPlanet> birthPlantes = birthCalculator.CalculatePlanetPositionWithDetailsOptmized();
-                    List<AstroPlanet> transitPlantes = transitCalculator.CalculatePlanetPositionWithDetailsOptmized();
+                    List<AstroPlanet> birthPlantes = birthCalculator.CalculatePlanetPositionWithDetailsOptmized(false);
+                    List<AstroPlanet> transitPlantes = transitCalculator.CalculatePlanetPositionWithDetailsOptmized(true);
 
 
                     //System.Threading.Thread.Sleep(2300);
@@ -68,9 +68,7 @@ namespace ChaNiBaaStra
 
                     this.horoscopeView1.UpdateUI(birthHoroscope, true);
                     this.horoscopeView2.UpdateUI(birthHoroscope, false);
-                    var bindingList = new BindingList<AstroDasa>(birthHoroscope.AstroDasaDetails.FutureDasas);
-                    var source = new BindingSource(bindingList, null);
-                    this.dataGridView1.DataSource = source;
+
                 }
             }
         }
@@ -82,15 +80,7 @@ namespace ChaNiBaaStra
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            var rowsCount = dataGridView1.SelectedRows.Count;
-            if (rowsCount == 0 || rowsCount > 1) return;
-            var row = dataGridView1.SelectedRows[0];
-            AstroDasa dasa = ((AstroDasa)row.DataBoundItem);
 
-            if (row == null) return;
-            var bindingList = new BindingList<AstroDasa>(dasa.AthuruDasas);
-            var source = new BindingSource(bindingList, null);
-            this.dataGridView2.DataSource = source;
         }
     }
 }

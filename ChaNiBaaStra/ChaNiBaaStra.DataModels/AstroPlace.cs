@@ -46,7 +46,8 @@ namespace ChaNiBaaStra.DataModels
             this.MinuteValue = min;
             this.DirectionValue = dir;
         }
-        public Location(string deg, string min, EnumDirection dir) : this(Convert.ToInt32(deg), Convert.ToInt32(min), dir)
+        public Location(string deg, string min, EnumDirection dir) 
+            : this(Convert.ToInt32(deg), Convert.ToInt32(min), dir)
         { }
         public Location(double value, EnumLocationType type)
         {
@@ -60,46 +61,78 @@ namespace ChaNiBaaStra.DataModels
     [ImplementPropertyChanged]
     public class AstroPlace : INotifyPropertyChanged
     {
-        public DateTime OriginalDateTime { get; set; }
-        public DateTime BirthDate
+        private const string DateTimeOffsetFormatString = "yyyy-MM-ddTHH:mm:sszzz";
+        private DateTimeOffset eventTimeField;
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string EventTime
         {
-            get { return birthDateTime.Date; }
+            get { return eventTimeField.ToString(DateTimeOffsetFormatString); }
+            set { eventTimeField = DateTimeOffset.Parse(value); }
+        }
+
+        public DateTime OriginalDateTime { get { return DateTime.Parse(EventTime); } 
+            set { eventTimeField = value; } }
+
+        public DateTime AdjustedBirthDate
+        {
+            get { return adjustedBirthDateTime.Date; }
+        }
+
+        public DateTime AdjustedBirthDateTime
+        {
+            get { return adjustedBirthDateTime; }
+        }
+
+        public TimeSpan AdjustedBirthTime
+        {
+            get { return adjustedBirthDateTime.TimeOfDay; }
+        }
+
+        /*public DateTime OriginalDateTime { get; set; }*/
+        /*public DateTime AdjustedBirthDate
+        {
+            get { return adjustedBirthDateTime.Date; }
             set
             {
-                birthDateTime = new DateTime(value.Year
+                adjustedBirthDateTime = new DateTime(value.Year
                     , value.Month, value.Day
                     , BirthTime.Hours, BirthTime.Minutes, BirthTime.Seconds);
             }
-        }
-        private DateTime birthDateTime;
-        public DateTime BirthDateTime
+        }*/
+
+        private DateTime adjustedBirthDateTime;
+
+        /*public DateTime AdjustedBirthDateTime
         {
-            get { return birthDateTime;  }
+            get { return adjustedBirthDateTime;  }
             set
             {
-                birthDateTime = value;
+                adjustedBirthDateTime = value;
                 AdjustTime(Longitude, value);
             }
-        }
+        }*/
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public TimeSpan BirthTime
+        /*public TimeSpan AdjustedBirthTime
         {
-            get { return birthDateTime.TimeOfDay; }
+            get { return adjustedBirthDateTime.TimeOfDay; }
             set
             {
-                birthDateTime = new DateTime(BirthDate.Year
-                    , BirthDate.Month, BirthDate.Day
+                adjustedBirthDateTime = new DateTime(AdjustedBirthDate.Year
+                    , AdjustedBirthDate.Month, AdjustedBirthDate.Day
                     , value.Hours, value.Minutes, value.Seconds);
             }
-        }
+        }*/
+
         public string City { get; set; }
         public string Country { get; set; }
         public double Longitude { get; set; }
         private string longitudeAngle;
         public string LongitudeAngle
         {
-            get { return string.IsNullOrEmpty(longitudeAngle) ? GeoAngle.FromDouble(Longitude).ToString() : longitudeAngle; }
+            get { return string.IsNullOrEmpty(longitudeAngle) ? GeoAngle.FromDouble(Longitude).ToString() 
+                    : longitudeAngle; }
             set
             {
                 Longitude = AstroUtility.ConvertDegreeAngleToDouble(value);
@@ -112,7 +145,8 @@ namespace ChaNiBaaStra.DataModels
         private string latitudeAngle;
         public string LatitudeAngle
         {
-            get { return string.IsNullOrEmpty(latitudeAngle)? GeoAngle.FromDouble(Latitude).ToString(): latitudeAngle; }
+            get { return string.IsNullOrEmpty(latitudeAngle) ? GeoAngle.FromDouble(Latitude).ToString() 
+                    : latitudeAngle; }
             set
             {
                 Latitude = AstroUtility.ConvertDegreeAngleToDouble(value);
@@ -124,23 +158,31 @@ namespace ChaNiBaaStra.DataModels
         public double TimeZone { get; set; }
         public string TimeZoneId { get; set; }
         public string TimeZoneString { get; set; }
+        public string PersonName { get; set; }
+        public bool IsMale { get; }
 
-        public AstroPlace(string city, string country, double latitude, double longitude, DateTime dateTime)
+        public AstroPlace(string city, string country, string name
+            , double latitude, double longitude, DateTime dateTime, bool isMale)
         {
+            //+
+            OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day
+                , dateTime.Hour, dateTime.Minute, dateTime.Second);
             AdjustTime(longitude, dateTime);
 
             this.Country = country;
             this.City = city;
             this.Longitude = longitude;
             this.Latitude = latitude;
-            
+            this.PersonName = name;
+            this.IsMale = isMale;
             int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
         }
 
         private void AdjustTime(double longitude, DateTime dateTime)
         {
-            OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second);
+            //OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day
+            //, dateTime.Hour, dateTime.Minute, dateTime.Second);
 
             double actualOffset = longitude / 15.0;
             TimeSpan ts = TimeZoneInfo.Local.BaseUtcOffset;
@@ -150,26 +192,30 @@ namespace ChaNiBaaStra.DataModels
             double minAdjustment = (int)adjustment;
             double secAdjustment = (adjustment - minAdjustment) * 60;
 
-            DateTime adjustedDateTime = dateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
-
+            //DateTime adjustedDateTime = dateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
+            adjustedBirthDateTime = dateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
             this.TimeZone = -1 * actualOffset;
-            this.BirthDate = adjustedDateTime.Date;
-            this.BirthTime = adjustedDateTime.TimeOfDay;
+            //this.AdjustedBirthDate = adjustedDateTime.Date;
+            //this.AdjustedBirthTime = adjustedDateTime.TimeOfDay;
         }
 
         public AstroPlace()
         {
+            //+
+            OriginalDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
+            this.Longitude = 79.861244;
+            AdjustTime(this.Longitude, OriginalDateTime);
+
             this.Country = "Sri Lanka";
             this.City = "Colombo";
-            this.Longitude = 79.861244;
             this.Latitude = 6.9271;
             this.TimeZone = -1 * Longitude / 15.0;
+            this.PersonName = "Nirosh";
+            this.IsMale = true;
             int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
 
-            this.birthDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
-
-            AdjustTime(this.Longitude, this.birthDateTime);
+            //this.adjustedBirthDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
         }
 
         public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)

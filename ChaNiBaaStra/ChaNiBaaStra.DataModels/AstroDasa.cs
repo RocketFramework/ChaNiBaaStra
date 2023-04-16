@@ -10,6 +10,15 @@ using static ChaNiBaaStra.DataModels.AstroDasa;
 
 namespace ChaNiBaaStra.DataModels
 {
+    public enum DasaResultTypes
+    {
+        VeryGood = 1,
+        Good = 2,
+        Mixed = 3,
+        Bad = 4,
+        VeryBad = 5,
+        Unknown = 6
+    }
     public class AstroDasas
     {
         public AstroDasa CurrentDasa { get; set; }
@@ -122,6 +131,40 @@ namespace ChaNiBaaStra.DataModels
                 dasa.End = d.AddDays(dasa.DasaPeriod);
                 dasa.Remainder = new DasaRemainder((int)dasa.DasaPeriod, 0, 0);
                 d = dasa.End;
+                dasa.AthuruDasas = CalculateAntharAthuruDasa(dasa.DasaPlanet, dasa.Start, dasa.End, dasa.LengthInDays());
+            }
+
+            return futureDasaList;
+        }
+
+        private List<AstroDasa> CalculateAntharAthuruDasa(EnumPlanet dasaPlanet, DateTime start
+        , DateTime end, int totalDasaLength)
+        {
+            // Update dasa list in par with the current total dasa length
+            AstroDasa[] originalDasaArray = new AstroDasa[dasaList.Count];
+
+            for (int i = 0; i < originalDasaArray.Length; i++)
+            {
+                AstroDasa athuruDasa = new AstroDasa(dasaList[i].DasaPlanet
+                    , (dasaList[i].DasaPeriod * 365) * (totalDasaLength / DasaLength));
+                originalDasaArray[i] = athuruDasa;
+            }
+            List<AstroDasa> originalDasaList = new List<AstroDasa>();
+            originalDasaList.AddRange(originalDasaArray);
+
+            List<AstroDasa> futureDasaList = new List<AstroDasa>();
+            DasaListAdjust(dasaPlanet, originalDasaList, futureDasaList);
+
+            DateTime d = start;
+            foreach (AstroDasa dasa in futureDasaList)
+            {
+                // I think we need to do some modificaiton around dasa remainder
+                // The calculation is not giving the right value for the first rasi of a list
+                // I think we need to get the adjustment base on the actual dasa start datetime
+                dasa.Start = d;
+                dasa.End = d.AddDays(dasa.DasaPeriod);
+                dasa.Remainder = new DasaRemainder((int)dasa.DasaPeriod, 0, 0);
+                d = dasa.End;
             }
 
             return futureDasaList;
@@ -204,13 +247,88 @@ namespace ChaNiBaaStra.DataModels
         public void Init(DateTime dateTime, double dasaPeriod)
         {
             this.Start = dateTime;
-            this.End = dateTime.AddDays((int)(dasaPeriod*365));
-            this.Remainder = new DasaRemainder((int)dasaPeriod*365, 0, 0);
+            this.End = dateTime.AddDays((int)(dasaPeriod * 365));
+            this.Remainder = new DasaRemainder((int)dasaPeriod * 365, 0, 0);
         }
 
         public int LengthInDays()
         {
             return End.Subtract(Start).Days;
         }
+
+        public DasaEffectTypes GetDasaBirthPlanetEffect(List<AstroPlanet> birthTimePlanets)
+        {
+            AstroPlanet dasaAdhipathAtBirthChart = birthTimePlanets.FirstOrDefault(x => x.Current == this.DasaPlanet);
+            return dasaAdhipathAtBirthChart.DasaBirthPlanetEffect;
+        }
+
+        public DasaResultTypes IsDasaTransitTimeGood(List<AstroPlanet> dasaTimePlantes)
+        {
+            AstroPlanet dasaAdhipathi = dasaTimePlantes.FirstOrDefault(x => x.Current == this.DasaPlanet);
+
+            foreach (AstroPlanet planet in dasaTimePlantes)
+            {
+                //if (dasaAdhipathi.Current == planet.Current) continue;
+                if ((planet.HouseNumber == 1) && (planet.PlanetRasiRelation <= EnumPlanetRasiRelationTypes.Mithra))
+                {
+                    if (planet.Current == this.DasaPlanet)
+                        return DasaResultTypes.VeryGood;
+                    else if ((planet.IsGoodPlanet) && (planet.GetPlanetRelation(this.DasaPlanet) == EnumPlanetRelationTypes.Mithra))
+                        return DasaResultTypes.VeryGood;
+                    else if ((planet.IsGoodPlanet) && (planet.GetPlanetRelation(this.DasaPlanet) == EnumPlanetRelationTypes.Sathuru))
+                        return DasaResultTypes.Mixed;
+                }
+                else if ((planet.HouseNumber == 1) && (planet.IsGoodPlanet))
+                { 
+                    if ((planet.Current == this.DasaPlanet) &&
+                        ((planet.HouseNumber == 3)
+                        || (planet.HouseNumber == 7)
+                        || (planet.HouseNumber == 10)
+                        || (planet.HouseNumber == 11)))
+                        return DasaResultTypes.Good;
+                }
+                else if (planet.Current == EnumPlanet.Moon)
+                {
+                    setDasaQualityBasedOnMoonPlacement(planet.Rasi.Current);
+                    if (dasaAdhipathi.GetRelationToRasi(planet.Rasi.Current) <= EnumPlanetRasiRelationTypes.Mithra)
+                        return DasaResultTypes.Good;
+
+                    List<int> list = new List<int>() { 3, 5, 6, 7, 9, 10, 11 };
+                    foreach (int i in list)
+                        if (AstroUtility.AstroCycleIncreaseNew(dasaAdhipathi.HouseNumber, i) == planet.HouseNumber)
+                            return DasaResultTypes.Good;
+                }
+            }
+
+            return DasaResultTypes.Unknown;
+        }
+
+        private string dasaQualityBasedOnMoon;
+        public string DasaQualityBasedOnMoon
+        {
+            get { return dasaQualityBasedOnMoon; }
+            set { dasaQualityBasedOnMoon = "Mental Feeling is Like :" + value; }
+        }
+
+        private void setDasaQualityBasedOnMoonPlacement(EnumRasi moonRashi)
+        {
+            switch (moonRashi)
+            {
+                case EnumRasi.Mesha: DasaQualityBasedOnMoon = "Women get raped"; break;
+                case EnumRasi.Vrishabha: DasaQualityBasedOnMoon = "No food shortage"; break;
+                case EnumRasi.Mithuna: DasaQualityBasedOnMoon = "Get Knowledge/ Education, Friends and wealth"; break;
+                case EnumRasi.Kataka: DasaQualityBasedOnMoon = "Get wealth, happiness, and recognition"; break;
+                case EnumRasi.Simha: DasaQualityBasedOnMoon = "Happen to have hard work at distance places, in forest, in road or near house"; break;
+                case EnumRasi.Kanya: DasaQualityBasedOnMoon = "Get Knowledge/ Education, Friends and wealth"; break;
+                case EnumRasi.Thula: DasaQualityBasedOnMoon = "No food shortage"; break;
+                case EnumRasi.Vrichika: DasaQualityBasedOnMoon = "Women get raped"; break;
+                case EnumRasi.Dhanus: DasaQualityBasedOnMoon = "Wealth, Hapiness and devotion come after you"; break; ;
+                case EnumRasi.Makara: DasaQualityBasedOnMoon = "Get a bad woman"; break;
+                case EnumRasi.Kumbha: DasaQualityBasedOnMoon = "Get a bad woman"; break;
+                case EnumRasi.Meena: DasaQualityBasedOnMoon = "Wealth, Hapiness and devotion come after you"; break;
+            }
+            DasaQualityBasedOnMoon = "";
+        }
+
     }
 }
