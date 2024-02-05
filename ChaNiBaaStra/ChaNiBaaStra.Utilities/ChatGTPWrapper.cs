@@ -1,18 +1,14 @@
-﻿using OpenAI_API;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenAI_API.Completions;
-using OpenAI_API.Models;
-using OpenAI_API.Embedding;
-using iText.StyledXmlParser.Jsoup.Nodes;
 using System.Windows.Controls.Primitives;
 
 namespace ChaNiBaaStra.Utilities
 {
-    public class ChatGTPWrapper
+   /* public class ChatGTPWrapper
     {
         public const string API_KEY = "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";
         public async void CallChatGTPToSummarize()
@@ -40,5 +36,5 @@ namespace ChaNiBaaStra.Utilities
                 response = ex.Message;
             }
         }
-    }
+    }*/
 }
