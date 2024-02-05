@@ -6,6 +6,7 @@ using Nido.Common.BackEnd;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using ChaNiBaaStra.Dal.DB;
 
 namespace ChaNiBaaStra.Dal.Models
 {

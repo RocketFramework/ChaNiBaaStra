@@ -32,48 +32,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\AfterHora\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\..\AfterHora\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Extended.6.1.0.121\lib\net45\EntityFramework.Extended.dll</HintPath>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\AfterHora\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.MappingAPI, Version=6.0.0.7, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <HintPath>..\..\AfterHora\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\AfterHora\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=3.1.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
-      <HintPath>..\packages\CompareNETObjects.3.01.0.0\lib\net451\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects">
+      <HintPath>..\..\AfterHora\packages\CompareNETObjects.3.09.0.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Nido.Common, Version=1.1.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NidoFramework.1.1.8.6\lib\net451\Nido.Common.dll</HintPath>
+    <Reference Include="Nido.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\NidoFramework.1.1.4\lib\net45\Nido.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PropertyChanged, Version=1.51.3.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
-      <HintPath>..\packages\PropertyChanged.Fody.1.51.3\lib\dotnet\PropertyChanged.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\..\AfterHora\packages\PropertyChanged.Fody.1.51.3\Lib\dotnet\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged.Fody">
+      <HintPath>..\..\AfterHora\packages\PropertyChanged.Fody.1.51.3\PropertyChanged.Fody.dll</HintPath>
     </Reference>
     <Reference Include="RefactorThis.GraphDiff, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+      <HintPath>..\..\AfterHora\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SwissEphNet, Version=2.5.1.13, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SwissEphNet.2.5.1.13\lib\portable40-net40+sl5+win8+wp8\SwissEphNet.dll</HintPath>
+    <Reference Include="SwissEphNet">
+      <HintPath>..\..\AfterHora\packages\SwissEphNet.2.6.0.21\lib\net40\SwissEphNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -83,6 +84,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
@@ -98,22 +100,55 @@
     <Compile Include="AstroBhavaPosition.cs" />
     <Compile Include="AstroConst.cs" />
     <Compile Include="AstroDasa.cs" />
+    <Compile Include="AstroGoodBad.cs" />
+    <Compile Include="AstroHoroscopeYogaChecker.cs" />
     <Compile Include="AstroMuhurtha.cs" />
     <Compile Include="AstroKarna.cs" />
     <Compile Include="AstroNakath.cs" />
     <Compile Include="AstroPlanet.cs" />
     <Compile Include="AstroRasi.cs" />
     <Compile Include="AstroThithi.cs" />
+    <Compile Include="AstroTransitDate.cs" />
+    <Compile Include="AstroView.cs" />
     <Compile Include="AstroWeekDay.cs" />
     <Compile Include="AstroYoga.cs" />
+    <Compile Include="BirthDataSaveObject.cs" />
     <Compile Include="BirthRasiExtra.cs" />
+    <Compile Include="DB\PlanetRasiRelator.cs" />
     <Compile Include="Horoscope.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="AstroPlace.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\ThithiSagna.cs" />
+    <Compile Include="Models\ThithiWeekDay.cs" />
+    <Compile Include="Models\WeekDay.cs" />
+    <Compile Include="Models\Work.cs" />
+    <Compile Include="Models\WorkForThithi.cs" />
+    <Compile Include="Models\Yoga.cs" />
+    <Compile Include="Templates\DbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Handlers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Handlers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Models.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Varga\AshtakaVargaya.cs" />
+    <Compile Include="WeekDayHandler.cs" />
+    <Compile Include="YogaFinderRuleEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Templates\TemplateFileManagerV2.1.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChaNiBaaStra.Dal\ChaNiBaaStra.Dal.csproj">
@@ -126,15 +161,38 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FodyWeavers.xml" />
+    <Content Include="AppReadme\Compare-NET-Objects-Help.txt" />
+    <Content Include="DB\Sample_Db_Bak.Sql" />
+    <Content Include="Handlers\Readme.txt" />
+    <Content Include="Models\AuditTrails.txt" />
+    <Content Include="Models\Readme.txt" />
+    <Content Include="Templates\DbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Handlers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Handlers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Models.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Models.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Fody.1.29.2\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.2\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.1.29.2\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.2\build\dotnet\Fody.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

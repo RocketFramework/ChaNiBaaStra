@@ -1,0 +1,437 @@
+﻿<#@ template language="C#" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ include file="TemplateFileManagerV2.1.ttinclude" #>
+<#@ assembly   name        = "Microsoft.CSharp"             #>
+<#@ assembly   name        = "System.Core"                  #>
+<#@ assembly   name        = "System.Data"                  #>
+<#@ import     namespace   = "System.Collections.Generic"   #>
+<#@ import     namespace   = "System.Dynamic"               #>
+<#@ import     namespace   = "System.Linq"                  #>
+<#@ import     namespace   = "System.Data.SqlClient"        #>
+
+<#
+	var namespaceName    = "";
+	namespaceName = System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("NamespaceHint").ToString();
+	string[] names = namespaceName.Split('.');
+	namespaceName = "";
+	for (int i=0; i<names.Length-1; i++)
+    {
+		namespaceName += names[i] + ".";
+    }
+	namespaceName += "Models";
+   // Update the connection string to something appropriate
+   var connectionString = @"data source=MAS-LT-ICT011;initial catalog=School;user id=smstest;password=welcome@123;multipleactiveresultsets=True;";
+
+   using (var db = new SqlConnection (connectionString))
+   using (var cmd = db.CreateCommand ())
+   {
+      db.Open();
+      var tables              = ReadRows (cmd, "SELECT * FROM sys.tables").ToArray ();
+
+      var columns             = ReadRows (cmd, "SELECT * FROM sys.columns").ToLookup (k => k.object_id);
+
+      var indexes             = ReadRows (cmd, "SELECT * FROM sys.indexes").ToLookup (k => k.object_id);
+      var indexColumns        = ReadRows (cmd, "SELECT * FROM sys.index_columns").ToLookup (k => k.object_id);
+
+      var foreignKeys         = ReadRows (cmd, "SELECT * FROM sys.foreign_keys").ToArray ();
+      var foreignKeyColumns   = ReadRows (cmd, "SELECT * FROM sys.foreign_key_columns").ToArray ();
+
+	  var relationShips = ReadRows(cmd, @"SELECT OBJECT_NAME(parent_object_id) 'ParentTable', c.NAME 'ParentColumnName', OBJECT_NAME(referenced_object_id) 'ReferencedTable', cref.NAME 'ReferencedColumnName'
+											FROM  sys.foreign_key_columns fkc 
+											INNER JOIN  sys.columns c ON fkc.parent_column_id = c.column_id AND fkc.parent_object_id = c.object_id
+											INNER JOIN sys.columns cref ON fkc.referenced_column_id = cref.column_id AND fkc.referenced_object_id = cref.object_id").ToArray();
+
+		var manager = TemplateFileManager.Create(this);	
+		foreach (var table in tables)
+		{ 
+			var deleteCondition = "return true;";
+			var deleteMessage = "return \"Click to delete the record.\";";
+			var deleteMessageText = "return \"Click to delete the record.\";";
+			string primaryKey = "";
+			bool nameExist = false; 
+			List<string> relatedTableNames = new List<string>();
+			manager.StartNewFile(table.name + ".cs");
+			string displayName = Regex.Replace(table.name, "([A-Z])", " $1").Trim();
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Nido.Common.BackEnd;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
+namespace <#=namespaceName#>
+{
+    /// <summary>
+    /// Created by MAS IT
+    /// </summary>
+    public class <#=table.name#> : BaseObject
+    {
+		public <#=table.name#>()
+			// Change this parameter to change the DisplayName 
+			// (this name is used in all system messages)
+			// property of this object
+			: base("<#=displayName#>") { }
+
+<#
+         IEnumerable<dynamic> tc = columns[table.object_id];
+         var tableColumns = tc.OrderBy (r => r.column_id).ToArray ();          
+
+         IEnumerable<dynamic> ti = indexes[table.object_id];
+         var tableIndexes = ti.ToArray ();          
+
+         var primaryKeyIndex = tableIndexes.FirstOrDefault (i => i.is_primary_key);
+         var primaryKeyColumns = new Dictionary<dynamic, dynamic> ();
+         if (primaryKeyIndex != null)
+         {
+            IEnumerable<dynamic> pc = indexColumns[table.object_id];
+            primaryKeyColumns = pc
+               .Where (c => c.index_id == primaryKeyIndex.index_id)
+               .ToDictionary (c => c.column_id, c => c.key_ordinal)
+               ;
+         }
+
+         foreach (var tableColumn in tableColumns)
+         {
+			 string columnDisplayName = Regex.Replace(tableColumn.name, "([A-Z])", " $1").Trim();
+             var type = MapToType (tableColumn.user_type_id, tableColumn.max_length, tableColumn.is_nullable);
+			 var nullable = tableColumn.is_nullable;
+			 var maxLength = tableColumn.max_length;
+			 if (tableColumn.name == "Name")
+             {
+				 nameExist = true;
+             }
+			 if (primaryKeyColumns.ContainsKey (tableColumn.column_id)) 
+			{ 
+				primaryKey = tableColumn.name;
+#>
+		#region Public Properties
+		[Key]
+<#
+			} 	
+			var relatedColumn = relationShips.FirstOrDefault(r=>(r.ParentColumnName == tableColumn.name && r.ParentTable == table.name));
+			if (relatedColumn != null)
+            {
+				var variableName = relatedColumn.ReferencedTable;
+				if (tableColumn.name.Contains("Id"))
+					variableName = tableColumn.name.Replace("Id", "");
+				if (!type.Contains("?"))
+                {
+#>
+		[Nido.Common.Utilities.Validators.Required]
+<#
+                }
+				var refTableDisplayName = Regex.Replace(variableName, "([A-Z])", " $1").Trim();
+#>
+		[ForeignKey("<#=variableName#>")]
+		[DisplayName("<#=columnDisplayName#>")]
+<#
+				if (type== "string")
+                {
+#>
+		[Nido.Common.Utilities.Validators.StringLength(<#=maxLength#>)]
+<#
+                }
+#>
+		[ScaffoldColumn(false)]
+		public <#=type#> <#=tableColumn.name#> { get; set; }
+
+		[DisplayName("<#=refTableDisplayName#>")]
+		[ScaffoldColumn(false)]
+		public <#=relatedColumn.ReferencedTable#> <#=variableName#> { get; set; } 
+<#
+				relatedTableNames.Add(relatedColumn.ReferencedTable + ":" + variableName);
+            } else
+            {
+				if (!nullable)
+                {
+#>
+		[Nido.Common.Utilities.Validators.Required]
+<#
+                }
+				if (type== "string")
+                {
+#>
+		[Nido.Common.Utilities.Validators.StringLength(<#=maxLength#>)]
+<#
+                }
+#>
+		[DisplayName("<#=columnDisplayName#>")]
+		public <#=type#> <#=tableColumn.name#> { get; set; }
+<# 
+            }
+#>
+
+<#
+         }
+		 var relatedTables = relationShips.Where(r=>((r.ReferencedTable == table.name) && (r.ParentColumnName != r.ReferencedColumnName)));
+		 if (relatedTables.Count() > 1)
+         {
+			 deleteCondition = "return !(";
+			 deleteMessage = "return ";
+			 deleteMessageText = "return ";
+			 foreach (var relatedTable in relatedTables)
+			 {
+				 if (relatedTable != null)
+				 {
+					var incverseName = relatedTable.ParentColumnName;
+					if (incverseName.Contains("Id"))
+                    {
+						incverseName = incverseName.Replace("Id", "");
+                    }
+					var invCollection = incverseName + relatedTable.ParentTable + "s";
+					var columnDisplayName = Regex.Replace(invCollection, "([A-Z])", " $1").Trim();
+#>
+		[InverseProperty("<#=incverseName#>")]
+		[DisplayName("<#=columnDisplayName#>")]
+		[ScaffoldColumn(false)]
+		public ICollection<<#=relatedTable.ParentTable#>> <#=invCollection#> { get; set; } 
+
+<#					deleteCondition += "((" + incverseName + relatedTable.ParentTable + "s != null) \r\n\t\t\t\t\t && (" + incverseName + relatedTable.ParentTable + "s.Count > 0)) || "; 
+					deleteMessage += "\"<b>\" + ((" + incverseName + relatedTable.ParentTable + "s != null) ? " + incverseName + relatedTable.ParentTable + "s.Count.ToString() : \"Indecisive # of\") + \"</b> " + incverseName + relatedTable.ParentTable + "(s)" + " are using this '" + table.name + "'<br/>\"\r\n\t\t\t\t\t + ";
+					deleteMessageText += "((" + incverseName + relatedTable.ParentTable + "s != null) ? " + incverseName + relatedTable.ParentTable + "s.Count.ToString() : \"Indecisive # of\")\r\n\t\t\t\t\t + \" " + incverseName + relatedTable.ParentTable + "(s), \" + ";
+				}
+			 }
+			 deleteCondition =  deleteCondition.TrimEnd(new char[] {' ', '|'}) + ");";
+			 deleteMessage = deleteMessage.TrimEnd(new char[] {'\r', '\n', '\t', '+', ' '}) + ";";
+			 deleteMessageText = deleteMessageText.TrimEnd(new char[] {',', ' ', '+', '\"'}) + " are using this '" + table.name + "'\";";
+         } else
+         {	 
+			 relatedTables = relationShips.Where(r=>(r.ReferencedTable == table.name));
+			 if (relatedTables.Count() > 1)
+             {		
+				 deleteCondition = "return !(";
+				 deleteMessage = "return ";
+				 deleteMessageText = "return ";
+				 foreach (var relatedTable in relatedTables)
+				 {
+					 if (relatedTable != null)
+					 {
+						 deleteCondition += "((" + relatedTable.ParentTable +"s != null) \r\n\t\t\t\t\t && (" + relatedTable.ParentTable +"s.Count > 0)) || ";
+						 deleteMessage += "\"<b>\" + ((" + relatedTable.ParentTable + "s != null) ? " + relatedTable.ParentTable + "s.Count.ToString() : \"Indecisive # of\") + \"</b> " + relatedTable.ParentTable + "(s)" + " are using this '" + table.name + "'<br/>\"\r\n\t\t\t\t\t + ";
+						 deleteMessageText += "((" + relatedTable.ParentTable + "s != null) ? " + relatedTable.ParentTable + "s.Count.ToString() : \"Indecisive # of\")\r\n\t\t\t\t\t + \" " + relatedTable.ParentTable + "(s), \" + ";
+						 var columnDisplayName = Regex.Replace(relatedTable.ParentTable + "s", "([A-Z])", " $1").Trim();
+#>
+		[DisplayName("<#=columnDisplayName#>")]
+		[ScaffoldColumn(false)]
+		public ICollection<<#=relatedTable.ParentTable#>> <#=relatedTable.ParentTable#>s { get; set; } 
+
+<#
+					}
+				}	
+				deleteCondition =  deleteCondition.TrimEnd(new char[] {' ', '|'}) + ");";
+				deleteMessage = deleteMessage.TrimEnd(new char[] {'\r', '\n', '\t', '+', ' '}) + ";";
+				deleteMessageText = deleteMessageText.TrimEnd(new char[] {' ', '+', ',', '\"'}) + " are using this '" + table.name + "'\";";
+            }
+
+         }
+#>
+		#endregion
+
+		#region Not Mapped Properties
+<#
+		 foreach (string t in relatedTableNames)
+         {
+			 string[] temp = t.Split(':');
+#>
+
+		[NotMapped]
+        public string <#=temp[1]#>Popup
+        {
+            get
+            {
+                if (this.<#=temp[1]#> != null)
+                    return this.CreatePopupText(this.<#=temp[1]#>.Text
+                        , new TableCreator<<#=temp[0]#>>(this.<#=temp[1]#>)
+                        .RemoveRecord(x => x.Value).RemoveRecord(x => x.Text)
+                        .RemoveRecord(x => x.DeleteError).RemoveRecord(x => x.CanDelete)
+                        .GetPopupTable());
+                else
+                    return "Indecisive record data!!";
+            }
+        }
+<#
+         }
+#>
+
+		/// <summary>
+        /// Implement this to prevent or allow the object to be deleted through the base handler.
+        /// You need to consider all dependant objects before allowing a object to be deleted.
+        /// Therefore please implement this correctly/ accordingly.
+        /// </summary>
+		[NotMapped] 
+		[ScaffoldColumn(false)]
+		public override bool CanDelete
+        {
+            // TODO: Impletement this 
+            // Example: return ((StudentCourses != null) && (StudentCourses.Count > 0)) ? false : true;
+            get
+            {
+                if (_canDelete.HasValue)
+                    return _canDelete.Value;
+                else
+                    <#=deleteCondition#>
+            }
+            set { _canDelete = value; }
+        }
+        private bool? _canDelete;
+
+		[NotMapped]
+		[ScaffoldColumn(false)]
+		public override string DeleteError
+		{
+			get 
+			{ 
+				<#=deleteMessage#> 
+			} 
+		}
+		
+		[NotMapped]
+		[ScaffoldColumn(false)]
+		public override string DeleteErrorText
+		{
+			get 
+			{ 
+				<#=deleteMessageText#>
+			} 
+		}
+
+		/// <summary>
+        /// This property set the value of the items of the combo box that created 
+		/// deriving the BaseCombo. You may change this as needed.
+        /// </summary>
+        [NotMapped]
+		[ScaffoldColumn(false)]
+        public override string Value 
+		{ get { return Convert.ToString(<#=primaryKey#>); } set { <#=primaryKey#> = Convert.ToInt32(value); } }
+
+<#
+		 if (nameExist)
+         {
+#>
+		/// <summary>
+        /// This property set the display name of the items of the combo box that created 
+		/// deriving the BaseCombo. You may modify or delete this as required.
+        /// </summary>
+        [NotMapped]
+		[ScaffoldColumn(false)]
+        public override string Text { get { return Name; } set { Name = value; } }
+<#
+         }
+#>		
+		#endregion
+    }
+}
+<# 		
+		} 
+		manager.Process();
+   }
+#>
+
+<#+
+
+   struct DataType
+   {     
+      public readonly int     SizeOf;
+      public readonly string  SingularType;
+      public readonly string  PluralType;
+
+      public DataType (
+         int sizeOf,
+         string singularType,
+         string pluralType = null
+         )
+      {
+         SizeOf         = sizeOf;
+         SingularType   = singularType;
+         PluralType     = pluralType ?? (singularType + "[]");
+      }
+
+   }
+   static Dictionary<int, DataType> dataTypes = new Dictionary<int, DataType>
+      {
+			{34 , new DataType(255, "Byte[]")},
+			{35  , new DataType(500, "string")}, 
+			{36  , new DataType(50, "Guid")}, 
+			{40  , new DataType(150, "DateTime")}, 
+			{41  , new DataType(20, "TimeSpan")}, 
+			{42  , new DataType(10, "DateTime")}, 
+			{48  , new DataType(10, "short")},
+			{52  , new DataType(10, "short")}, 
+			{56   , new DataType(3222222, "int")},
+			{58  , new DataType(10, "DateTime")}, 
+			{59  , new DataType(10000, "Single")}, 
+			{60  , new DataType (10,  "decimal"    ,  "decimal" )}, 
+			{61   , new DataType (8,  "DateTime"            )},
+			{62  , new DataType (10,  "float"    ,  "float" )}, 
+			{99  , new DataType (500,  "String" )}, 
+			{104  , new DataType(2, "bool")}, 
+			{106  , new DataType (10,  "decimal"    ,  "decimal" )}, 
+			{108  , new DataType (10,  "decimal"    ,  "decimal" )}, 
+			{122  , new DataType (10,  "decimal"    ,  "decimal" )}, 
+			{127  , new DataType (8,  "long"                )},
+			{165  , new DataType (1,  "byte"                )},
+			{167  , new DataType(500, "string")}, 
+			{173 , new DataType(255, "Byte[]")},
+			{175  , new DataType (10,  "char"    ,  "string" )},
+			{189 , new DataType(255, "Byte[]")},
+			{231  , new DataType (2,  "char"    ,  "string" )},
+			{239  , new DataType (10,  "char"    ,  "string" )},
+			{241 , new DataType (100,  "xml"  )},
+			{256  , new DataType(500, "string")},  
+      };
+
+   static string MapToType (int typeId, int maxLength, bool isNullable)
+   {
+      DataType dataType;
+
+      if (dataTypes.TryGetValue (typeId, out dataType))
+      {
+         var length = maxLength > 0 ? (maxLength / dataType.SizeOf) : int.MaxValue;
+         if (length > 1)
+         {
+			 if (dataType.SingularType != "string" && isNullable)
+				return "Nullable<" + dataType.PluralType + ">";
+			 else
+				return dataType.PluralType;
+         }
+         else
+         {
+			 if (dataType.SingularType != "string" && isNullable)
+				return "Nullable<" + dataType.SingularType + ">"; 
+			 else
+				return dataType.SingularType;
+         }
+      }
+      else
+      {
+         return "UnknownType_"+ typeId;
+      }
+   }
+
+   static IEnumerable<dynamic> ReadRows (SqlCommand command, string sql)
+   {
+      command.CommandText = sql ?? "";
+
+      using (var reader = command.ExecuteReader())
+      {
+         while (reader.Read())
+         {
+            var dyn = new ExpandoObject ();
+            IDictionary<string, object> dic = dyn;
+
+            for (var iter = 0; iter < reader.FieldCount; ++iter)
+            {
+                  dic[reader.GetName(iter) ?? ""] = reader.GetValue(iter);
+            }
+
+            yield return dyn;
+         }
+
+      }
+   }
+
+
+#>

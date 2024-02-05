@@ -1,0 +1,189 @@
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Nido.Common.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\SwissEphNet.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Nido.Common.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\SwissEphNet.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.xml
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.pdb
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csprojResolveAssemblyReference.cache
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.dll
+E:\USER\Documents\Visual Studio 2015\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Nido.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\OpenAI_API.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Nido.Common.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\SwissEphNet.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\OpenAI_API.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\netstandard.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll.config
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\OpenAI_API.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CopyComplete
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll.config
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\Nido.Common.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\SwissEphNet.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Dal.dll.config
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.BulkInsert.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.Extended.dll.config
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.MappingAPI.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\log4net.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.xml
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\PropertyChanged.Fody.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\RefactorThis.GraphDiff.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.AssemblyReference.cache
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CoreCompileInputs.cache
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.csproj.CopyComplete
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.dll
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\obj\Debug\ChaNiBaaStra.DataModels.pdb
+C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.DataModels\bin\Debug\ChaNiBaaStra.Utilities.dll.config

@@ -6,6 +6,7 @@ using Nido.Common.BackEnd;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using ChaNiBaaStra.Dal.DB;
 
 namespace ChaNiBaaStra.Dal.Models
 {
@@ -79,22 +80,6 @@ namespace ChaNiBaaStra.Dal.Models
 		#region Not Mapped Properties
 
 		[NotMapped]
-        public string WeekDayPopup
-        {
-            get
-            {
-                if (this.WeekDay != null)
-                    return this.CreatePopupText(this.WeekDay.Text
-                        , new TableCreator<WeekDay>(this.WeekDay)
-                        .RemoveRecord(x => x.Value).RemoveRecord(x => x.Text)
-                        .RemoveRecord(x => x.DeleteError).RemoveRecord(x => x.CanDelete)
-                        .GetPopupTable());
-                else
-                    return "Indecisive record data!!";
-            }
-        }
-
-		[NotMapped]
         public string NakathPopup
         {
             get
@@ -102,22 +87,6 @@ namespace ChaNiBaaStra.Dal.Models
                 if (this.Nakath != null)
                     return this.CreatePopupText(this.Nakath.Text
                         , new TableCreator<Nakath>(this.Nakath)
-                        .RemoveRecord(x => x.Value).RemoveRecord(x => x.Text)
-                        .RemoveRecord(x => x.DeleteError).RemoveRecord(x => x.CanDelete)
-                        .GetPopupTable());
-                else
-                    return "Indecisive record data!!";
-            }
-        }
-
-		[NotMapped]
-        public string WorkPopup
-        {
-            get
-            {
-                if (this.Work != null)
-                    return this.CreatePopupText(this.Work.Text
-                        , new TableCreator<Work>(this.Work)
                         .RemoveRecord(x => x.Value).RemoveRecord(x => x.Text)
                         .RemoveRecord(x => x.DeleteError).RemoveRecord(x => x.CanDelete)
                         .GetPopupTable());

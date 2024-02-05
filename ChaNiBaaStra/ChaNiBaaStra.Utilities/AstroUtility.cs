@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,8 @@ namespace ChaNiBaaStra.Utilities
 
         public static double ConvertDegreeAngleToDouble(string degreeAngle)
         {
-            string[] data = degreeAngle.Split(new char[] { '°', '\'', ' ', '\"' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] data = degreeAngle.Split(new char[] { '°', '\'', ' '
+                , '\"' }, StringSplitOptions.RemoveEmptyEntries);
             double minutes = Convert.ToDouble(data[1]);
             double degrees = Convert.ToDouble(data[0]);
             double seconds = (data.Length > 2) ? Convert.ToDouble(data[2]) : 0.0;
@@ -39,8 +41,164 @@ namespace ChaNiBaaStra.Utilities
             //   whole number of degrees, 
             //   plus minutes divided by 60, 
             //   plus seconds divided by 3600
-
             return degrees + (minutes / 60) + (seconds / 3600);
+        }
+
+        public static int AstroCycleIncrease(int house, int increment)
+        {
+            IntCircle circle = new IntCircle(12, house);
+            int i = circle.Add(increment);
+            if (i == 0)
+                return 12;
+            else
+                return i;
+        }
+
+        /// <summary>
+        /// house =1, increment = 3, return is 3
+        /// </summary>
+        /// <param name="house"></param>
+        /// <param name="increment"></param>
+        /// <returns></returns>
+        public static int AstroCycleIncreaseNew(int house, int increment)
+        {
+            IntCircle circle = new IntCircle(12, house - 1);
+            int i = circle.Add(increment);
+            if (i == 0)
+                return 12;
+            else
+                return i;
+        }
+
+        public static int AstroCycleDecreaseNew(int house, int dicrement)
+        {
+            IntCircle circle = new IntCircle(12, house);
+            int i = circle.GoBack(dicrement);
+            if (i == 0)
+                return 1;
+            else
+                return i;
+        }
+
+        /// <summary>
+        /// H1=1, H2=1 Gap = 1
+        /// H1=1, H2=10 Gap = 11
+        /// </summary>
+        /// <param name="house1"></param>
+        /// <param name="house2"></param>
+        /// <returns></returns>
+        public static int HouseGab(int house1, int house2)
+        {
+            if (house1 < house2)
+                return 1 + house2 - house1;
+            else if (house1 == house2)
+                return 1;
+            else
+                return 13 - (house1 - house2);
+        }
+
+        public static int AstroCycleDecrease(int house, int decrease)
+        {
+            IntCircle circle = new IntCircle(12, house);
+            return circle.Minus(decrease);
+        }
+
+        public static void TimeSpanToDateParts(DateTime d1
+            , DateTime d2, out int years, out int months
+            , out int days, out int hours, out int minutes)
+        {
+            if (d1 < d2)
+            {
+                var d3 = d2;
+                d2 = d1;
+                d1 = d3;
+            }
+
+            var span = d1 - d2;
+            months = 12 * (d1.Year - d2.Year) + (d1.Month - d2.Month);
+            //month may need to be decremented because the above calculates
+            //the ceiling of the months, not the floor.
+            //to do so we increase d2 by the same number of months and compare.
+            //(500ms fudge factor because datetimes are not precise enough
+            //to compare exactly)
+            if (d1.CompareTo(d2.AddMonths(months).AddMilliseconds(-500)) <= 0)
+                --months;
+            years = months / 12;
+            months -= years * 12;
+            if (months == 0 && years == 0)
+                days = span.Days;
+            else
+            {
+                var md1 = new DateTime(d1.Year, d1.Month, d1.Day);
+                // Fixed to use d2.Day instead of d1.Day
+                var md2 = new DateTime(d2.Year, d2.Month, d2.Day);
+                var mDays = (int)(md1 - md2).TotalDays;
+
+                if (mDays > span.Days)
+                    mDays = (int)(md1.AddMonths(-1) - md2).TotalDays;
+
+                days = span.Days - mDays;
+            }
+            hours = span.Hours;
+            minutes = span.Minutes;
+        }
+
+        public static DateTime AdjustTime(double longitude, DateTime dateTime)
+        {
+            double actualOffset = longitude / 15.0;
+            TimeSpan ts = TimeZoneInfo.Local.BaseUtcOffset;
+            double standardOffset = ts.TotalMinutes / 60.0;
+            double adjustment = (actualOffset - standardOffset) * 60;
+
+            double minAdjustment = (int)adjustment;
+            double secAdjustment = (adjustment - minAdjustment) * 60;
+
+            DateTime adjustedDateTime = dateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
+            return adjustedDateTime;
+            /*
+            this.TimeZone = -1 * actualOffset;
+            this.BirthDate = adjustedDateTime.Date;
+            this.BirthTime = adjustedDateTime.TimeOfDay;
+            OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second);*/
+        }
+
+        public static void DateDiff(DateTime dt1, DateTime dt2, out int years, out int months
+            , out int days)
+        {
+            if (dt1 > dt2)
+            {
+                var dt3 = dt2;
+                dt2 = dt1;
+                dt1 = dt3;
+            }
+
+            DateTime zeroTime = new DateTime(1, 1, 1);
+
+            int leapDaysInBetween = CountLeapDays(dt1, dt2);
+
+            TimeSpan span = dt2 - dt1;
+
+            years = (zeroTime + span).Year - 1;
+            months = (zeroTime + span).Month - 1;
+            days = (zeroTime + span).Day - (leapDaysInBetween % 2 == 1 ? 1 : 0);
+        }
+
+        private static int CountLeapDays(DateTime dt1, DateTime dt2)
+        {
+            int leapDaysInBetween = 0;
+            int year1 = dt1.Year, year2 = dt2.Year;
+            DateTime dateValue;
+
+            for (int i = year1; i <= year2; i++)
+            {
+                if (DateTime.TryParse("02/29/" + i.ToString(), out dateValue))
+                {
+                    if (dateValue >= dt1 && dateValue <= dt2)
+                        leapDaysInBetween++;
+                }
+            }
+
+            return leapDaysInBetween;
         }
     }
 }

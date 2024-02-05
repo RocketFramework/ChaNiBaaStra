@@ -33,10 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenAI_API, Version=1.5.0.0, Culture=neutral, PublicKeyToken=1b0a4c0430762146, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\OpenAI.1.5.0\lib\netstandard2.0\OpenAI_API.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SwissEphNet">
+      <HintPath>..\..\AfterHora\packages\SwissEphNet.2.6.0.21\lib\net40\SwissEphNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,42 +66,125 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xceed.Wpf.DataGrid, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\AfterHora\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AstroYogaConfigurationItem.cs" />
+    <Compile Include="Configuration\EventAutoUpdator.cs" />
+    <Compile Include="Configuration\YogaAutoUpdator.cs" />
+    <Compile Include="Configuration\YogaController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\YogaController.Designer.cs">
+      <DependentUpon>YogaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\YogaEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuration\YogaEditor.Designer.cs">
+      <DependentUpon>YogaEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration\YogaEventFinder.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChaniBhastraSecret.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChaniBhastraSecret.Designer.cs">
+      <DependentUpon>ChaniBhastraSecret.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetBirthData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetBirthData.Designer.cs">
+      <DependentUpon>GetBirthData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoroscopeFullView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HoroscopeFullView.Designer.cs">
+      <DependentUpon>HoroscopeFullView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoroscopeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HoroscopeView.Designer.cs">
+      <DependentUpon>HoroscopeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanetSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlanetSummary.Designer.cs">
+      <DependentUpon>PlanetSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanetView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlanetView.Designer.cs">
+      <DependentUpon>PlanetView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PlanetHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlanetHolder.Designer.cs">
+      <DependentUpon>PlanetHolder.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Configuration\YogaController.resx">
+      <DependentUpon>YogaController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\YogaEditor.resx">
+      <DependentUpon>YogaEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChaniBhastraSecret.resx">
+      <DependentUpon>ChaniBhastraSecret.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetBirthData.resx">
+      <DependentUpon>GetBirthData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoroscopeFullView.resx">
+      <DependentUpon>HoroscopeFullView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoroscopeView.resx">
+      <DependentUpon>HoroscopeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanetSummary.resx">
+      <DependentUpon>PlanetSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanetView.resx">
+      <DependentUpon>PlanetView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,8 +194,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PlanetHolder.resx">
+      <DependentUpon>PlanetHolder.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ChaNiBaaStra.Utilities.CountryList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +223,41 @@
       <Project>{0fe6b0ff-c5de-449b-8d83-0cae78c64c69}</Project>
       <Name>ChaNiBaaStra.Dal</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ChaNiBaaStra.DataModels\ChaNiBaaStra.DataModels.csproj">
+      <Project>{afaf803a-7897-4c73-8a2e-bb0638663bdf}</Project>
+      <Name>ChaNiBaaStra.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChaNiBaaStra.Utilities\ChaNiBaaStra.Utilities.csproj">
+      <Project>{7aba334b-c713-495e-8c15-4df6e0fc0fa2}</Project>
+      <Name>ChaNiBaaStra.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horoscope.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skeliton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeeIncon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeeIncon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Users\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

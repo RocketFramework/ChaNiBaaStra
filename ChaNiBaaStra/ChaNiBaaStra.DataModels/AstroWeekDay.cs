@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ChaNiBaaStra.Dal.Handlers;
 using ChaNiBaaStra.Dal.Models;
 using ChaNiBaaStra.Utilities;
+using ChaNiBaaStra.Dal.DB;
 
 namespace ChaNiBaaStra.DataModels
 {
@@ -46,11 +47,7 @@ namespace ChaNiBaaStra.DataModels
         public double Zone { get; set; }
         public AstroWeekDay(EnumWeekDay weekDay) : base(weekDay, 7, AstroConsts.InvalidIntInput)
         {
-            this.DataModel = new WeekDayHandler()
-                .Include(x => x.NakathThithiWeekDays).Include(x => x.NakathWeekDays)
-                .Include(x => x.ThithiSiddhas).Include(x => x.ThithiWeekDays)
-                .GetFirstGeneric(x => x.WeekDayId == this.CurrentInt)
-                .Result;
+            this.DataModel = new WeekDayHandler().Get(x => x.WeekDayId == this.CurrentInt);
         }
 
         private string[] Rahukala = {
@@ -125,6 +122,14 @@ namespace ChaNiBaaStra.DataModels
                 , actualTimingEndTime);
         }
 
-        public bool IsGood { get { return this.DataModel.IsGood.HasValue ? this.DataModel.IsGood.Value : true; } }
+        public bool IsGood
+        {
+            get
+            {
+                return !(this.Current == EnumWeekDay.Sunday ||
+                        this.Current == EnumWeekDay.Tuesday ||  
+                        this.Current == EnumWeekDay.Saturday);
+            }
+        }
     }
 }

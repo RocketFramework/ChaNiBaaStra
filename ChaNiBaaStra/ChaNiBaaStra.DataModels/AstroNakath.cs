@@ -57,9 +57,6 @@ namespace ChaNiBaaStra.DataModels
         }
         public void Init()
         {
-            this.DataModel = new NakathHandler().Include(x => x.FocusNakathNakathRelations)
-                .Include(x => x.RelatedNakathNakathRelations)
-                .GetFirstGeneric(x => x.NakathId == this.CurrentInt).Result;
         }
         public int Pada { get; set; }
         public static List<AstroNakath> ofRasi(AstroRasi rasi)
@@ -83,6 +80,8 @@ namespace ChaNiBaaStra.DataModels
             return (EnumRelationshipTypes)(((id % 9) == 0) ? 15 : id % 9 + 15);
         }
         public DateTime? EndTime { get; set; }
-        public bool IsGood { get { return this.DataModel.IsGood; } }
+        public bool IsGood { get { return !(CurrentInt == 2 || CurrentInt==3||
+                    CurrentInt==6||CurrentInt==9||CurrentInt==11||CurrentInt==16||
+                    CurrentInt==18||CurrentInt==20||CurrentInt==24||CurrentInt==25); } }
     }
 }
