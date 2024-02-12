@@ -1,6 +1,6 @@
 ﻿namespace ChaNiBaaStra
 {
-    partial class HoroscopeView
+    partial class AlternativeView
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoroscopeView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlternativeView));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,6 +63,18 @@
             this.button12 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.toolTipBotton = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,130 +86,129 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(284, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(284, 34);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 196);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 162);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.MouseHover += new System.EventHandler(this.flowLayoutPanel1_MouseHover);
             // 
             // flowLayoutPanel12
             // 
+            this.flowLayoutPanel12.AutoScroll = true;
             this.flowLayoutPanel12.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel12.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel12.Location = new System.Drawing.Point(465, 0);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(143, 196);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(143, 115);
             this.flowLayoutPanel12.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(137, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(147, 196);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(147, 115);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // flowLayoutPanel6
             // 
+            this.flowLayoutPanel6.AutoScroll = true;
             this.flowLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(137, 0);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(137, 71);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(147, 193);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(147, 122);
             this.flowLayoutPanel6.TabIndex = 5;
             // 
             // flowLayoutPanel8
             // 
+            this.flowLayoutPanel8.AutoScroll = true;
             this.flowLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(465, 0);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(465, 77);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(142, 193);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(142, 116);
             this.flowLayoutPanel8.TabIndex = 4;
             // 
             // flowLayoutPanel7
             // 
+            this.flowLayoutPanel7.AutoScroll = true;
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel7.Location = new System.Drawing.Point(284, 0);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(181, 193);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(181, 147);
             this.flowLayoutPanel7.TabIndex = 3;
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 74);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(137, 196);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(137, 122);
             this.flowLayoutPanel3.TabIndex = 3;
             // 
             // flowLayoutPanel4
             // 
+            this.flowLayoutPanel4.AutoScroll = true;
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(63, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(274, 124);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(211, 124);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
             // flowLayoutPanel10
             // 
+            this.flowLayoutPanel10.AutoScroll = true;
             this.flowLayoutPanel10.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(456, 0);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(454, 0);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(283, 124);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(212, 124);
             this.flowLayoutPanel10.TabIndex = 5;
             // 
             // flowLayoutPanel5
             // 
+            this.flowLayoutPanel5.AutoScroll = true;
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(137, 193);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(137, 121);
             this.flowLayoutPanel5.TabIndex = 4;
             // 
             // flowLayoutPanel11
             // 
+            this.flowLayoutPanel11.AutoScroll = true;
             this.flowLayoutPanel11.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel11.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(608, 0);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(608, 74);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
             this.flowLayoutPanel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(147, 196);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(147, 122);
             this.flowLayoutPanel11.TabIndex = 6;
             // 
             // flowLayoutPanel9
             // 
+            this.flowLayoutPanel9.AutoScroll = true;
             this.flowLayoutPanel9.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel9.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel9.Location = new System.Drawing.Point(607, 0);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
             this.flowLayoutPanel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(148, 193);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(148, 121);
             this.flowLayoutPanel9.TabIndex = 5;
             // 
             // centerLabel
             // 
             this.centerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.centerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.centerLabel.Location = new System.Drawing.Point(274, 0);
             this.centerLabel.Margin = new System.Windows.Forms.Padding(10);
@@ -254,6 +265,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.flowLayoutPanel11);
             this.panel2.Controls.Add(this.flowLayoutPanel12);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
@@ -352,6 +368,11 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.flowLayoutPanel9);
             this.panel5.Controls.Add(this.flowLayoutPanel8);
             this.panel5.Controls.Add(this.flowLayoutPanel7);
@@ -408,6 +429,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.centerLabel);
             this.panel7.Controls.Add(this.flowLayoutPanel10);
             this.panel7.Controls.Add(this.flowLayoutPanel4);
@@ -424,7 +447,115 @@
             this.toolTipBotton.IsBalloon = true;
             this.toolTipBotton.ReshowDelay = 0;
             // 
-            // HoroscopeView
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(341, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(66, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(143, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(66, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(341, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "label7";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(631, 169);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(524, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(672, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 20);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(524, 173);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "label11";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(631, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(60, 20);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "label12";
+            // 
+            // AlternativeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,15 +568,18 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
-            this.Name = "HoroscopeView";
+            this.Name = "AlternativeView";
             this.Size = new System.Drawing.Size(885, 651);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -485,5 +619,17 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.ToolTip toolTipBotton;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label4;
     }
 }

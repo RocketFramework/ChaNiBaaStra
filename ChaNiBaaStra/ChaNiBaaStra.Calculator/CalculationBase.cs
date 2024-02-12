@@ -868,6 +868,8 @@ namespace ChaNiBaaStra.Calculator
                              .FirstOrDefault(x => x.Current == ePlanet)
                              .IsRogaPlanet = true;
 
+                SetLoard(horoScope, rasi);
+
                 foreach (AstroPlanet planet in horoScope.CompletePlanetList)
                 {
                     AddThthakalikaMythra(rasi, planet);
@@ -880,6 +882,7 @@ namespace ChaNiBaaStra.Calculator
             {
                 planetOut.Views = new AstroView(planetOut);
                 planetOut.LagnaRasi = horoScope.LagnaRasi;
+                planetOut.OriginalNawamsaRasi = horoScope.NavamsaRasi;
                 planetOut.UpdateAdhipathis();
                 if ((planetOut.Current == EnumPlanet.Saturn) ||
                     (planetOut.Current == EnumPlanet.Sun) ||
@@ -961,6 +964,27 @@ namespace ChaNiBaaStra.Calculator
             }
             horoScope.ExtraDetails = new BirthRasiExtra(horoScope);
             SetMostPowerfulPlanet(horoScope);
+            SetLoard(horoScope, horoScope.LagnaRasi);
+            SetLoard(horoScope, horoScope.NavamsaRasi);
+        }
+
+        private void SetLoard(Horoscope horoScope, AstroRasi rasi)
+        {
+            switch (rasi.Current)
+            {
+                case EnumRasi.Mesha: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mars); break;
+                case EnumRasi.Vrishabha: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus); break;
+                case EnumRasi.Mithuna: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mercury); break;
+                case EnumRasi.Kataka: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Moon); break;
+                case EnumRasi.Simha: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Sun); break;
+                case EnumRasi.Kanya: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mercury); break;
+                case EnumRasi.Thula: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Venus); break;
+                case EnumRasi.Vrichika: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Mars); break;
+                case EnumRasi.Dhanus: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Jupiter); break;
+                case EnumRasi.Makara: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn); break;
+                case EnumRasi.Kumbha: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Saturn); break;
+                case EnumRasi.Meena: rasi.Loard = horoScope.CompletePlanetList.FirstOrDefault(x => x.Current == EnumPlanet.Jupiter); break;
+            }
         }
 
         private void SetMostPowerfulPlanet(Horoscope horoScope)
@@ -969,6 +993,7 @@ namespace ChaNiBaaStra.Calculator
             int prevScore = 0;
             foreach (AstroPlanet planet in horoScope.CompletePlanetList)
             {
+                SetLoard(horoScope, planet.NawamsaRasi);
                 planet.SetBala();
                 if (!((planet.Current == EnumPlanet.Uranus) ||
                     (planet.Current == EnumPlanet.Neptune) ||
@@ -1021,12 +1046,13 @@ namespace ChaNiBaaStra.Calculator
                     if (AstroView.CanPlanetSeeThisRashiHouse(planet.Current, planet.HouseNumber, rasi.HouseNumber))
                         rasi.WhoSeesMe.Add(planet);
                     SetDrosKanaya(planet, rasi);
+                    rasi.FinalActions();
                 }
 
                 SetThrishansa(horoScope, planet);
                 SetDwadasansa(horoScope, planet);
                 SetSapthansa(horoScope, planet);
-
+                planet.FinalActions();
             }
         }
 

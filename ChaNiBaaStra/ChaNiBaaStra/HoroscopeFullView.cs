@@ -12,12 +12,14 @@ using ChaNiBaaStra.Utilities;
 using ChaNiBaaStra.Dal.Models;
 using static ChaNiBaaStra.Calculator.AstroCalculator;
 using ChaNiBaaStra.DataModels.Varga;
+using ChaNiBaaStra.Calculator;
 
 namespace ChaNiBaaStra
 {
     public partial class HoroscopeFullView : UserControl
     {
         public Horoscope CurrentHoroscope { get; set; }
+        public D9Chart NawamsaHoroscope { get; set; }
         public Horoscope TransitHoroscope { get; set; }
         public bool IsBhavaView { get; set; }
 
@@ -101,17 +103,23 @@ namespace ChaNiBaaStra
                 + "\r\nN (" + CurrentHoroscope.NavamsaRasi.AdhipathiEnumPlanets.FirstOrDefault()
                 + ") " + Math.Truncate(CurrentHoroscope.NavamsaRasi.RasiEndDegreesFromHorizon)
                 + "°";
+
             ResetLabels();
             if (IsBhavaView)
                 foreach (AstroBhava rasi in CurrentHoroscope.BhavaHouseList)
+                {
                     CreateNawamsaHoroscope(rasi.Planets);
+                }
             else
                 foreach (AstroRasi rasi in CurrentHoroscope.RasiHouseList)
-                    CreateNawamsaHoroscope(rasi.Planets);
+                {
+                    CreateNawamsaHoroscope(rasi.Planets); 
+                }
         }
 
         private void CreateNawamsaHoroscope(List<AstroPlanet> planets)
-        {
+        {            
+            //NawamsaHoroscope.Planets.AddRange(planets);
             foreach (AstroPlanet planet in planets)
             {
                 int houseNumber = CurrentHoroscope
@@ -119,44 +127,67 @@ namespace ChaNiBaaStra
                 switch (houseNumber)
                 {
                     case 1:
-                        updateNawamsa(this.labelNW1, planet.ShortName);
+                        {
+                            //CreateHouseObject(NawamsaHoroscope.House1, planet);
+                            updateNawamsa(this.labelNW1, planet.ShortName);
+                        }
                         break;
                     case 2:
-                        updateNawamsa(this.labelNW2, planet.ShortName);
+                        {
+                            //CreateHouseObject(NawamsaHoroscope.House2, planet);
+                            updateNawamsa(this.labelNW2, planet.ShortName);
+                        }
                         break;
                     case 3:
+                        //CreateHouseObject(NawamsaHoroscope.House3, planet);
                         updateNawamsa(this.labelNW3, planet.ShortName);
                         break;
                     case 4:
+                        //CreateHouseObject(NawamsaHoroscope.House4, planet);
                         updateNawamsa(this.labelNW4, planet.ShortName);
                         break;
                     case 5:
+                        //CreateHouseObject(NawamsaHoroscope.House5, planet);
                         updateNawamsa(this.labelNW5, planet.ShortName);
                         break;
                     case 6:
+                        //CreateHouseObject(NawamsaHoroscope.House6, planet);
                         updateNawamsa(this.labelNW6, planet.ShortName);
                         break;
                     case 7:
+                        //CreateHouseObject(NawamsaHoroscope.House7, planet);
                         updateNawamsa(this.labelNW7, planet.ShortName);
                         break;
                     case 8:
+                        //CreateHouseObject(NawamsaHoroscope.House8, planet);
                         updateNawamsa(this.labelNW8, planet.ShortName);
                         break;
                     case 9:
+                        //CreateHouseObject(NawamsaHoroscope.House9, planet);
                         updateNawamsa(this.labelNW9, planet.ShortName);
                         break;
                     case 10:
+                        //CreateHouseObject(NawamsaHoroscope.House10, planet);
                         updateNawamsa(this.labelNW10, planet.ShortName);
                         break;
                     case 11:
+                        //CreateHouseObject(NawamsaHoroscope.House11, planet);
                         updateNawamsa(this.labelNW11, planet.ShortName);
                         break;
                     case 12:
+                        //CreateHouseObject(NawamsaHoroscope.House12, planet);
                         updateNawamsa(this.labelNW12, planet.ShortName);
                         break;
                 }
             }
         }
+
+        /*private void CreateHouseObject(House house, AstroPlanet planet)
+        {
+            house = House.GetInstance().Set(planet.NawamsaRasi);
+            house.HouseRasi = planet.NawamsaRasi;
+            house.HousePlanets.Add(planet);
+        }*/
 
         private void updateNawamsa(Label nawamsaLabel, string planetName)
         {
@@ -193,7 +224,9 @@ namespace ChaNiBaaStra
                     CreateTransitHoroscope(rasi.BhavaNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
             else
                 foreach (AstroRasi rasi in TransitHoroscope.RasiHouseList)
+                {
                     CreateTransitHoroscope(rasi.HouseNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
+                }
             //CreateTransitHoroscope(AstroUtility.AstroCycleIncreaseNew(rasi.HouseNumber, Math.Abs(TransitHoroscope.LagnaRasi.CurrentInt - CurrentHoroscope.LagnaRasi.CurrentInt+1)), rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
         }
 
@@ -260,13 +293,48 @@ namespace ChaNiBaaStra
             if (IsBhavaView)
                 foreach (AstroBhava rasi in CurrentHoroscope.BhavaHouseList)
                 {
-                    CeateHoroscope(rasi.BhavaNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
+                    CeateBavaHoroscope(rasi, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
                 }
             else
                 foreach (AstroRasi rasi in CurrentHoroscope.RasiHouseList)
                 {
-                    CeateHoroscope(rasi.HouseNumber, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
+                    CreateRashiHoroscope(rasi, rasi.Planets.OrderBy(x => x.AjustedLongitude).ToList());
+
                 }
+        }
+
+        private void CeateBavaHoroscope(AstroBhava rasi, List<AstroPlanet> planets)
+        {
+            UpdateLoard(rasi);
+            CeateHoroscope(rasi.BhavaNumber, planets);
+        }
+
+        private void CreateRashiHoroscope(AstroRasi rasi, List<AstroPlanet> planets)
+        {
+            UpdateLoard(rasi);
+            UpdateAdhipathi(rasi);
+            CeateHoroscope(rasi.HouseNumber, planets);
+        }
+
+        private void UpdateLoard(AstroRasi rasi)
+        {
+            Label labelLord = (this.Controls.OfType<Label>())
+                .Where(x => x.Name == "labelLord" + rasi.HouseNumber).FirstOrDefault();
+            labelLord.Text = rasi.Loard.ShortName + " ♔";
+            AstroPlanet adhipathi = rasi.AdhipathiAstroPlanets.Last();
+            if (rasi.Loard.Current == adhipathi.Current)
+                labelLord.Text += "♕";
+        }
+
+        private void UpdateAdhipathi(AstroRasi rasi)
+        {
+            AstroPlanet adhipathi = rasi.AdhipathiAstroPlanets.Last();
+            if (rasi.Loard.Current != adhipathi.Current)
+            {
+                Label labelAdhipathi = (this.Controls.OfType<Label>())
+                    .Where(x => x.Name == "labelAdhipathi" + rasi.HouseNumber).FirstOrDefault();
+                labelAdhipathi.Text = rasi.AdhipathiAstroPlanets.Last().ShortName + " ♕";
+            }
         }
 
         private void CeateHoroscope(int house, List<AstroPlanet> planets)
@@ -503,7 +571,7 @@ namespace ChaNiBaaStra
         }
 
         private void UpdateDistanceToClickedPlanet(Panel adhipathyIndicator
-            , Label gapLabel, int gap)
+            , Label gapLabel, int gap, int score)
         {
             adhipathyIndicator.Visible = true;
             gapLabel.Text = "(" + gap + ")";
@@ -529,7 +597,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT1RashiHead
                                 : this.panelN1RashiHead, (isTransit) ? this.labelT1
                                 : this.labelN1, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 2:
@@ -537,7 +605,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT2RashiHead
                                 : this.panelN2RashiHead, (isTransit) ? this.labelT2
                                 : this.labelN2, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 3:
@@ -545,7 +613,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT3RashiHead
                                 : this.panelN3RashiHead, (isTransit) ? this.labelT3
                                 : this.labelN3, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 4:
@@ -553,7 +621,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT4RashiHead
                                 : this.panelN4RashiHead, (isTransit) ? this.labelT4
                                 : this.labelN4, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 5:
@@ -561,7 +629,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT5RashiHead
                                 : this.panelN5RashiHead, (isTransit) ? this.labelT5
                                 : this.labelN5, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 6:
@@ -569,7 +637,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT6RashiHead
                                 : this.panelN6RashiHead, (isTransit) ? this.labelT6
                                 : this.labelN6, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 7:
@@ -577,7 +645,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT7RashiHead
                                 : this.panelN7RashiHead, (isTransit) ? this.labelT7
                                 : this.labelN7, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 8:
@@ -585,7 +653,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT8RashiHead
                                 : this.panelN8RashiHead, (isTransit) ? this.labelT8
                                 : this.labelN8, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 9:
@@ -593,7 +661,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT9RashiHead
                                 : this.panelN9RashiHead, (isTransit) ? this.labelT9
                                 : this.labelN9, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 10:
@@ -601,7 +669,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT10RashiHead
                                 : this.panelN10RashiHead, (isTransit) ? this.labelT10
                                 : this.labelN10, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 11:
@@ -609,7 +677,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT11RashiHead
                                 : this.panelN11RashiHead, (isTransit) ? this.labelT11
                                 : this.labelN11, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                     case 12:
@@ -617,7 +685,7 @@ namespace ChaNiBaaStra
                             UpdateDistanceToClickedPlanet((isTransit) ? this.panelT12RashiHead
                                 : this.panelN12RashiHead, (isTransit) ? this.labelT12
                                 : this.labelN12, AstroUtility.HouseGab(houseNumber, (this.IsBhavaView)
-                                ? p.Bhava.BhavaNumber : p.HouseNumber));
+                                ? p.Bhava.BhavaNumber : p.HouseNumber), p.RashiAdhipathiScore);
                             break;
                         }
                 }
@@ -725,6 +793,114 @@ namespace ChaNiBaaStra
         {
             ((ChaniBhastraSecret)this.Parent.Parent.Parent).UpdateDisplayMessage(((FlowLayoutPanel)sender).Tag.ToString(), true);
 
+        }
+
+        private void labelNawamsa_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun))
+                message += "\r\nSun in 1, 5, 9th in D9. The person has rhythm, may play some musical instrument, and is very interested in music.The person may also read a lot.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon))
+                message += "\r\nMoon in 1, 5, 9th in D9. Has a very nice voice and could be a singer.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars))
+                message += "\r\nMars in 1, 5, 9th in D9. Short-tempered, courageous, and warrior tendencies.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury))
+                message += "\r\nMercury in 1, 5, 9th in D9. Very good speaker, does not like conflicts and is good in business";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter))
+                message += "\r\nJupiter in 1, 5, 9th in D9.  wise and knowledgeable. Has a lot of knowledge about various things.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn))
+                message += "\r\nSaturn in 1, 5, 9th in D9. Hard-working, traditional and orthodox.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus))
+                message += "\r\nVenus in 1, 5, 9th in D9. Eye for details, artistic abilities, photographic memory, better with faces than names.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu))
+                message += "\r\nRahu in 1, 5, 9th in D9. Ability to handle big machines without fear. Skilled in research, philosophy, and mathematics.";
+
+            if (NawamsaHoroscope.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu) ||
+                NawamsaHoroscope.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu) ||
+                NawamsaHoroscope.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu))
+                message += "\r\nKethu in 1, 5, 9th in D9. Great with mobile devices, computers, and electronics. Very spiritual and has the capability to show the path for people.";
+
+            AstroRasi rasi = CurrentHoroscope.RasiHouseList.FirstOrDefault(x => x.HouseNumber == 9);
+            if (rasi.Loard.IsExtremelyExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current))
+                message += "\r\nLoard of 9th house " + rasi.Loard.Name + " of D1 chart is exalted in the D9 chart. It signifies great fortune";
+            else if (rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current))
+                message += "\r\nLoard of 9th house " + rasi.Loard.Name + " of D1 chart is deblitated in the D9 chart. You may have to work harder and life could be challenging";
+
+            if (NawamsaHoroscope.CurrentLagnaRashi.Loard.IsExtremelyExaltedInRashi(NawamsaHoroscope.CurrentLagnaRashi.Loard.NawamsaRasi.Current) || NawamsaHoroscope.CurrentLagnaRashi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || NawamsaHoroscope.CurrentLagnaRashi.Loard.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Swashesthra)
+                message += "\r\nLoard of D9 " + NawamsaHoroscope.CurrentLagnaRashi.Loard.Name + " is exalted or in own house. Add strength to the chart";
+
+            if (NawamsaHoroscope.CurrentLagnaRashi.Current == CurrentHoroscope.LagnaRasi.Current)
+                message += "\r\nD9 lagna " + NawamsaHoroscope.CurrentLagnaRashi.Name + " is vargottama, therefore it promises a long life.";
+
+            if (NawamsaHoroscope.CurrentLagnaRashi.GetIncrementRashi(7) == CurrentHoroscope.NavamsaRasi.Current)
+                message += "\r\nNavamsha lagna " + CurrentHoroscope.NavamsaRasi.Name + " is in the 8th house of Rashi lagna. So there will be one setback in your life which will make you very spiritual.";
+
+            if (NawamsaHoroscope.House10.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Melific))
+                message += "\r\nThe 10th house in d9 shows the flow of money or income. You have malefic planets here so the wealth may be fluctuating.";
+            else if (NawamsaHoroscope.House10.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Benefic))
+                message += "\r\nThe 10th house in d9 shows the flow of money or income. You have benefic planets here so the wealth may flow steadilly.";
+
+            if (NawamsaHoroscope.House7.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Melific))
+                message += "\r\nMalefic planets placed in the 7th house of the D9 chart. Can create problems in relationships.";
+            else if (NawamsaHoroscope.House7.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Benefic))
+                message += "\r\nBenefic planets placed in the 7th house of the D9 chart. It is good for relationships.";
+
+            List<AstroPlanet> planets = NawamsaHoroscope.Planets.FindAll(x => x.NawamsaRasi.Current == EnumRasi.Thula || x.NawamsaRasi.Current == EnumRasi.Vrishabha);
+            if (planets.Count > 0)
+                foreach (AstroPlanet p in planets)
+                    message += "\r\n Your life style influenced by the previous birth is  " + p.GetPlanetQuality();
+            EnumPlanet enumSaniNawamsaLoardPlanet = NawamsaHoroscope.Planets.FirstOrDefault(x => x.Current == EnumPlanet.Saturn).NawamsaRasi.Loard.Current;
+            AstroPlanet saniNawamsaLoardPlanet = CurrentHoroscope.CompletePlanetList.FirstOrDefault(x => x.Current == enumSaniNawamsaLoardPlanet);
+            if (saniNawamsaLoardPlanet.IsVargoththama || saniNawamsaLoardPlanet.IsPowerful)
+                message += "\r\nThe rashi load (" + saniNawamsaLoardPlanet.Name + ") of D9 where Saturn is placed either vargoththama or well placed. You will somehow come out of suffering and pain in life";
+
+            if (NawamsaHoroscope.House1.HouseRasi.Loard.IsPowerful)
+                message += "\r\nStrong Navamsa lagna lord, " + NawamsaHoroscope.House1.HouseRasi.Loard.Name + " in Rashi (D1) chart promises good health";
+            if (NawamsaHoroscope.House10.HouseRasi.Loard.IsPowerful)
+                message += "\r\n10th house lord of Navamsa, " + NawamsaHoroscope.House10.HouseRasi.Loard.Name + " is strong in Rashi so it promises great wealth";
+            if (NawamsaHoroscope.House4.HouseRasi.Loard.IsPowerful)
+                message += "\r\n4th house lord of Navamsa, " + NawamsaHoroscope.House4.HouseRasi.Loard.Name + " is strong in Rashi so it is great for spirituality";
+            if (NawamsaHoroscope.House7.HouseRasi.Loard.IsPowerful)
+                message += "\r\n7th house lord of Navamsa, " + NawamsaHoroscope.House7.HouseRasi.Loard.Name + " is strong in Rashi so it is  good for joy and happiness in life";
+            AstroPlanet moonPlanet = NawamsaHoroscope.Planets.FirstOrDefault(x => x.Current == EnumPlanet.Moon);
+
+            message += "\r\nMoon Khara Nawamsa =" + CurrentHoroscope.GetKharaNavamsa(EnumPlanet.Moon) + ", The Loard (Look for depression, diseases or problems related with water or even death) = " + CurrentHoroscope.GetKharaNavamsaLoard(EnumPlanet.Moon).Name;
+            message += "\r\nLagna Khara Nawamsa =" + CurrentHoroscope.GetLagnaKharaNawamsa() + ", The Loard (Look for diseases, accidents or physical pains in their Dasha or Antardasha) = " + CurrentHoroscope.GetLagnaKharakaNawamsaLoard().Name;
+            message += "\r\nKhara Nawamsa =" + NawamsaHoroscope.House4.HouseRasi.Name + ", The planets (Look for diseases, accidents or physical pains in its Dasha or Antardasha) =" + NawamsaHoroscope.House4.HousePlanets.ToAstroPlanetShortString();
+
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(11))
+                message += "\r\nThe person will be core and awful.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(8))
+                message += "\r\nThe person will be passionate.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(10))
+                message += "\r\nThe person will obtain moksha.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(6))
+                message += "\r\nThe person will not be ethical.";
+
+            this.toolTipFullView.SetToolTip(labelNawamsa, message);
         }
     }
 }

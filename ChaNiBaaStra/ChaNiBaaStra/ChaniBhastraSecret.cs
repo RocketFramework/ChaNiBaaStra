@@ -417,5 +417,18 @@ namespace ChaNiBaaStra
             AstroDasa dasa = getSelectedAntharAthuruDasa();
             DisplayDasaMessage(dasa);
         }
+
+        private void planetPlancementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alternativeViewsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SecondaryView secondView = new SecondaryView();
+            secondView.CurrentHoroscope = birthHoroscope;
+
+            secondView.Show();
+        }
     }
 }

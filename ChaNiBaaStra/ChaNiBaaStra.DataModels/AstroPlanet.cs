@@ -168,6 +168,17 @@ namespace ChaNiBaaStra.DataModels
             return s.Trim(new char[] { ' ', ',' , '\r', '\n'});
         }
 
+        public static string ToAstroPlanetShortString(this List<AstroPlanet> me)
+        {
+            if (me.Count == 0) return " Empty";
+            string s = "";
+            foreach (AstroPlanet planet in me)
+            {
+                s += planet.Name + ", ";
+            }
+            return s.Trim(new char[] { ' ', ',', '\r', '\n' });
+        }
+
         public static string ToShortString(this EnumPlanetRasiRelationTypes me)
         {
             switch (me)
@@ -309,6 +320,10 @@ namespace ChaNiBaaStra.DataModels
     public class AstroPlanet : AstroBase<EnumPlanet, Planet>
     {
 
+        public AstroPlanet(EnumPlanet palnet) : base()
+        {
+
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -343,6 +358,7 @@ namespace ChaNiBaaStra.DataModels
             IsReversing = ((planetLocations[3] < 0) && (!AstroPlanet.IsNode(Current)));
             Nakatha = new AstroNakath(Longitude);
             NawamsaRasi = new AstroRasi(AstroBase.GetNawamsaRasi(Longitude));
+            
             /* target address for 6 position values: longitude, latitude, distance,
                                    long. speed, lat. speed, dist. speed */
             Latitude = planetLocations[1];
@@ -393,6 +409,17 @@ namespace ChaNiBaaStra.DataModels
             BalaFinalization();
 
         }
+
+        /// <summary>
+        /// TODO: KHARA NAWAMSA CALCULATION
+        /// Khara Navamsa
+        /// The 64th navamsa from Moon and Lagna which is the 4th sign from Moon and Lagna in the Navamsa chart 
+        /// is called “Khara”. The lord of these houses may be problematic especially when Saturn transits over 
+        /// them or during their antar dashas.Remedies are needed during such transits.
+        /// </summary>
+        /// <param name="moonDegreeOrLagnaDegree"></param>
+        /// <returns></returns>
+
 
         /// <summary>
         /// Page 11 Uththara Kala Mruthaya
@@ -454,6 +481,13 @@ namespace ChaNiBaaStra.DataModels
         public AstroNakath Nakatha { get; set; }
         public int NakathPadaya { get { return Nakatha.Pada; } }
         public AstroRasi Rasi { get; set; }
+        /// <summary>
+        /// Depending on the chart the CurrentlyActiveRashi
+        /// varies. Example if Nawamsa is Kataka then active Rashi is 
+        /// calculated relatively to the Kataka rashi
+        /// </summary>
+        public AstroRasi CurrentlyActiveRashi { get; set; }
+        public int CurrentlyActiveHouseNumber { get; set; }
         public AstroBhava Bhava { get; set; }
         public EnumPlanet RashyardhaHora { get { return (((this.Rasi.IsOddRashi && this.AjustedLongitude < 15) || (!this.Rasi.IsOddRashi && this.AjustedLongitude > 15)) ? EnumPlanet.Sun : EnumPlanet.Moon); } }
         public AstroPlanet DroskanaAdhipathi { get; set; }//get { switch (DrosKanaya) { case 1: return Rasi.FirstDrosKanaAdhipathi; case 2: return Rasi.SecondDrosKanaAdhipathi; case 3: return Rasi.ThirdDrosKanaAdhipathi; } return null; } }
@@ -549,7 +583,7 @@ namespace ChaNiBaaStra.DataModels
         {
             get
             {
-                return this.PlanetRasiRelation < EnumPlanetRasiRelationTypes.SamaMuta;
+                return this.PlanetRasiRelation < EnumPlanetRasiRelationTypes.Sama;
 ;
             }
         }
@@ -565,6 +599,10 @@ namespace ChaNiBaaStra.DataModels
             }
         }
 
+        public bool IsExaltedInRashi(EnumRasi rasi)
+        {
+            return this.GetRelationToRasi(rasi) == EnumPlanetRasiRelationTypes.Uchcha;
+        }
         /// <summary>
         /// In most powerful angle with Rashi
         /// </summary>
@@ -573,8 +611,16 @@ namespace ChaNiBaaStra.DataModels
             get
             {
                 return ((this.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Uchcha)
-                    && (Horoscope.GetExtremeStateDegree(this.Current) == (int)AjustedLongitude));
+                    && (Horoscope.GetExtremeStateDegree(this.Current) <= (int)AjustedLongitude + 1)
+                    && (Horoscope.GetExtremeStateDegree(this.Current) >= (int)AjustedLongitude - 1));
             }
+        }
+
+        public bool IsExtremelyExaltedInRashi(EnumRasi rasi)
+        {
+            return ((this.GetRelationToRasi(rasi) == EnumPlanetRasiRelationTypes.Uchcha)
+                    && (Horoscope.GetExtremeStateDegree(this.Current) <= (int)AjustedLongitude + 1)
+                    && (Horoscope.GetExtremeStateDegree(this.Current) >= (int)AjustedLongitude - 1));
         }
 
         public bool IsDebilitated
@@ -590,8 +636,16 @@ namespace ChaNiBaaStra.DataModels
             get
             {
                 return ((this.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Neecha)
-                    && (Horoscope.GetExtremeStateDegree(this.Current) == (int)AjustedLongitude));
+                    && (Horoscope.GetExtremeStateDegree(this.Current) <= (int)AjustedLongitude + 1)
+                    && (Horoscope.GetExtremeStateDegree(this.Current) >= (int)AjustedLongitude - 1));
             }
+        }
+
+        public bool IsExtremelyDebilitatedInRashi(EnumRasi rasi)
+        {
+            return ((this.GetRelationToRasi(rasi) == EnumPlanetRasiRelationTypes.Neecha)
+                && (Horoscope.GetExtremeStateDegree(this.Current) <= (int)AjustedLongitude + 1)
+                && (Horoscope.GetExtremeStateDegree(this.Current) >= (int)AjustedLongitude - 1));
         }
 
         public EnumPlanetRasiRelationTypes PlanetRasiRelation
@@ -847,6 +901,10 @@ namespace ChaNiBaaStra.DataModels
                 }
             }
             return message;
+        }
+
+        public void FinalActions()
+        {
         }
 
         private string GetMercuryInHouses(int houseNumber)
@@ -1434,6 +1492,103 @@ namespace ChaNiBaaStra.DataModels
                         AdhipathiHouses.Add(this.LagnaRasi.absoluteHouseFromRasi(EnumRasi.Simha));
                         AdhipathiHouses.Add(this.LagnaRasi.absoluteHouseFromRasi(EnumRasi.Mesha));
                     } break;
+            }
+            AdhipathiHouses = AdhipathiHouses.OrderBy(x => x).ToList();
+        }
+
+        public void GenericUpdateAdhipathis()
+        {
+            AdhipathiHouses = new List<int>();
+            switch (this.Current)
+            {
+                case EnumPlanet.Sun:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Mesha, EnumRasi.Simha };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Mesha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Simha));
+                    }
+                    break;
+                case EnumPlanet.Moon:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Vrishabha, EnumRasi.Kataka };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrishabha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kataka));
+                    }
+                    break;
+                case EnumPlanet.Mars:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Mesha, EnumRasi.Vrichika, EnumRasi.Makara };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Mesha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrichika));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Makara));
+                    }
+                    break;
+                case EnumPlanet.Mercury:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Mithuna, EnumRasi.Kanya };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Mithuna));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kanya));
+                    }
+                    break;
+                case EnumPlanet.Jupiter:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Kataka, EnumRasi.Dhanus, EnumRasi.Meena };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kataka));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Dhanus));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Meena));
+                    }
+                    break;
+                case EnumPlanet.Venus:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Vrishabha, EnumRasi.Thula, EnumRasi.Meena };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrishabha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Thula));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Meena));
+                    }
+                    break;
+                case EnumPlanet.Saturn:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Thula, EnumRasi.Makara, EnumRasi.Kumbha };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Thula));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Makara));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kumbha));
+                    }
+                    break;
+                case EnumPlanet.Rahu:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Vrishabha, EnumRasi.Kanya };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrishabha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kanya));
+                    }
+                    break;
+                case EnumPlanet.Kethu:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Vrichika, EnumRasi.Meena };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrichika));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Meena));
+                    }
+                    break;
+                case EnumPlanet.Uranus:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Vrichika, EnumRasi.Kumbha };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Vrichika));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kumbha));
+                    }
+                    break;
+                case EnumPlanet.Neptune:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Kataka, EnumRasi.Meena };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Kataka));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Meena));
+                    }
+                    break;
+                case EnumPlanet.Pluto:
+                    {
+                        AdhipathiRasis = new List<EnumRasi>() { EnumRasi.Simha, EnumRasi.Mesha };
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Simha));
+                        AdhipathiHouses.Add(this.OriginalNawamsaRasi.absoluteHouseFromRasi(EnumRasi.Mesha));
+                    }
+                    break;
             }
             AdhipathiHouses = AdhipathiHouses.OrderBy(x => x).ToList();
         }
@@ -2186,6 +2341,11 @@ namespace ChaNiBaaStra.DataModels
             return "";
         }
 
+        public bool IsWellPlaced()
+        {
+            return false;
+        }
+
         public string GetSpecialMessages()
         {
             SpecialMessage = "***";
@@ -2213,6 +2373,8 @@ namespace ChaNiBaaStra.DataModels
             SpecialMessage += "\r\nCurrent Rashi: " + this.Rasi.Current.ToString();
             SpecialMessage += "\r\nThe planet bala is " + this.PlanetBala;
             SpecialMessage += "\r\nHora Adhipathi is \t\t\t " + this.RashyardhaHora.ToString() + "-" + ((this.Rasi.IsOddRashi && !this.IsGoodPlanet && this.RashyardhaHora == EnumPlanet.Sun) ? "Famous, Couregeous, Powerful" : (!this.Rasi.IsOddRashi && this.IsGoodPlanet && this.RashyardhaHora == EnumPlanet.Moon) ? "Mrudu, Nice Body, Attractive, Genius, Attractive Speach" : "");
+            SpecialMessage += "\r\nLoard of the House is \t\t" + this.Rasi.Loard.Name;
+
             if (this.DroskanaAdhipathi != null)
                 SpecialMessage += "\r\nThe DrosKana Adhipath is \t\t" + this.DroskanaAdhipathi.Current;
             if (this.SapthansaAdhipathi != null)
@@ -2256,6 +2418,7 @@ namespace ChaNiBaaStra.DataModels
         }
 
         public AstroRasi LagnaRasi { get; set; }
+        public AstroRasi OriginalNawamsaRasi { get; set; }
 
         public AstroView Views { get; set; }
         /// <summary>
@@ -2288,6 +2451,10 @@ namespace ChaNiBaaStra.DataModels
         public int HouseNumber { get { return Rasi.HouseNumber; } }
         public Planet PlanetData { get; set; }
         public bool IsGoodPlanet { get { return AstroGoodBad.GetGoodPlanet().Contains(this.Current); } }
+
+        public bool IsLord { get { return (Rasi.Loard.Name == this.Name); } }
+
+        public int RashiAdhipathiScore { get; set; }
 
         public static EnumPlanet[] GetAllPlanets()
         {

@@ -19,6 +19,7 @@ namespace ChaNiBaaStra.DataModels
             if (j == 0) j = 12;
             return (EnumRasi)j;
         }
+
         public class Interval
         {
             public Interval(double startDeg, double endDeg)

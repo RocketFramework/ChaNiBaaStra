@@ -47,7 +47,7 @@ namespace ChaNiBaaStra
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    AstroCalculator birthCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", "", form.Latitude, form.Longitute, form.BirthTime, true));
+                    /*AstroCalculator birthCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", "", form.Latitude, form.Longitute, form.BirthTime, true));
                     AstroCalculator transitCalculator = new AstroCalculator(new DataModels.AstroPlace("", "", "", form.Latitude, form.Longitute, System.DateTime.Now, true));
                     //AstroTransitDate birthDate = new AstroTransitDate(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, form.BirthTime), false);
                     //AstroTransitDate transitDate = new AstroTransitDate(new DataModels.AstroPlace("", "", form.Latitude, form.Longitute, TransitDate), false);
@@ -67,7 +67,7 @@ namespace ChaNiBaaStra
                     //Horoscope transitHoroscope = birthDate.CalculateHoroscope(transitPlantes);
 
                     this.horoscopeView1.UpdateUI(birthHoroscope, true);
-                    this.horoscopeView2.UpdateUI(birthHoroscope, false);
+                    this.horoscopeView2.UpdateUI(birthHoroscope, false);*/
 
                 }
             }

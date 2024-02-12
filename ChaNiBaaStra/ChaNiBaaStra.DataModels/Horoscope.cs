@@ -37,6 +37,25 @@ namespace ChaNiBaaStra.DataModels
         public bool IsBhavaView { get; set; }
         public AstroPlanet MostPowerfulPlanet { get; set; }
 
+        public AstroPlanet GetKharaNavamsaLoard(EnumPlanet planet)
+        {
+            EnumRasi rasi = GetKharaNavamsa(planet);
+            return this.RasiHouseList.FirstOrDefault(x => x.Current == rasi).Loard;
+        }
+        public EnumRasi GetKharaNavamsa(EnumPlanet planet)
+        {
+            return this.CompletePlanetList.FirstOrDefault(x=>x.Current == planet).NawamsaRasi.GetIncrementRashi(3);
+        }
+
+        public EnumRasi GetLagnaKharaNawamsa()
+        {
+            return this.NavamsaRasi.GetIncrementRashi(3);
+        }
+        public AstroPlanet GetLagnaKharakaNawamsaLoard()
+        {
+            EnumRasi rasi = this.GetLagnaKharaNawamsa();
+            return this.RasiHouseList.FirstOrDefault(x => x.Current == rasi).Loard;
+        }
         public int IsMaleHoroscope()
         {
             int isMale = 0;
@@ -159,13 +178,13 @@ namespace ChaNiBaaStra.DataModels
         {
             switch (enumPlanet)
             {
-                case EnumPlanet.Sun: return 10;
+                case EnumPlanet.Sun: return 19;
                 case EnumPlanet.Moon: return 3;
                 case EnumPlanet.Mars: return 28;
                 case EnumPlanet.Mercury: return 15;
                 case EnumPlanet.Jupiter: return 5;
                 case EnumPlanet.Venus: return 27;
-                case EnumPlanet.Saturn: return 20;
+                case EnumPlanet.Saturn: return 21;
                 case EnumPlanet.Rahu: return 3;
                 case EnumPlanet.Kethu: return 3;
             }
