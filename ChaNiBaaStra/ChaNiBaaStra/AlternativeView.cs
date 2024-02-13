@@ -16,6 +16,7 @@ namespace ChaNiBaaStra
 {
     public partial class AlternativeView : UserControl
     {
+        public ChartBase D9Chart { get; set; }
         public AlternativeView()
         {
             InitializeComponent();
@@ -183,6 +184,113 @@ namespace ChaNiBaaStra
                 case 11: { this.toolTipBotton.ToolTipTitle = "Income and Gains"; this.toolTipBotton.Show(ChaNiBaaStra.Utilities.HouseData.GetHouseData(11), b, 10000); break; }
                 case 12: { this.toolTipBotton.ToolTipTitle = "Expenditure & Losses"; this.toolTipBotton.Show(ChaNiBaaStra.Utilities.HouseData.GetHouseData(12), b, 10000); break; }
             }
+        }
+
+        private void labelNawamsa_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Sun))
+                message += "\r\nSun in 1, 5, 9th in D9. The person has rhythm, may play some musical instrument, and is very interested in music.The person may also read a lot.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Moon))
+                message += "\r\nMoon in 1, 5, 9th in D9. Has a very nice voice and could be a singer.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Mars))
+                message += "\r\nMars in 1, 5, 9th in D9. Short-tempered, courageous, and warrior tendencies.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Mercury))
+                message += "\r\nMercury in 1, 5, 9th in D9. Very good speaker, does not like conflicts and is good in business";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Jupiter))
+                message += "\r\nJupiter in 1, 5, 9th in D9.  wise and knowledgeable. Has a lot of knowledge about various things.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Saturn))
+                message += "\r\nSaturn in 1, 5, 9th in D9. Hard-working, traditional and orthodox.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Venus))
+                message += "\r\nVenus in 1, 5, 9th in D9. Eye for details, artistic abilities, photographic memory, better with faces than names.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Rahu))
+                message += "\r\nRahu in 1, 5, 9th in D9. Ability to handle big machines without fear. Skilled in research, philosophy, and mathematics.";
+
+            if (D9Chart.House1.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu) ||
+                D9Chart.House5.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu) ||
+                D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu))
+                message += "\r\nKethu in 1, 5, 9th in D9. Great with mobile devices, computers, and electronics. Very spiritual and has the capability to show the path for people.";
+
+            AstroRasi rasi = CurrentHoroscope.RasiHouseList.FirstOrDefault(x => x.HouseNumber == 9);
+            if (rasi.Loard.IsExtremelyExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current))
+                message += "\r\nLoard of 9th house " + rasi.Loard.Name + " of D1 chart is exalted in the D9 chart. It signifies great fortune";
+            else if (rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current))
+                message += "\r\nLoard of 9th house " + rasi.Loard.Name + " of D1 chart is deblitated in the D9 chart. You may have to work harder and life could be challenging";
+
+            if (D9Chart.CurrentLagnaRashi.Loard.IsExtremelyExaltedInRashi(D9Chart.CurrentLagnaRashi.Loard.NawamsaRasi.Current) || D9Chart.CurrentLagnaRashi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || D9Chart.CurrentLagnaRashi.Loard.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Swashesthra)
+                message += "\r\nLoard of D9 " + D9Chart.CurrentLagnaRashi.Loard.Name + " is exalted or in own house. Add strength to the chart";
+
+            if (D9Chart.CurrentLagnaRashi.Current == CurrentHoroscope.LagnaRasi.Current)
+                message += "\r\nD9 lagna " + D9Chart.CurrentLagnaRashi.Name + " is vargottama, therefore it promises a long life.";
+
+            if (D9Chart.CurrentLagnaRashi.GetIncrementRashi(7) == CurrentHoroscope.NavamsaRasi.Current)
+                message += "\r\nNavamsha lagna " + CurrentHoroscope.NavamsaRasi.Name + " is in the 8th house of Rashi lagna. So there will be one setback in your life which will make you very spiritual.";
+
+            if (D9Chart.House10.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Melific))
+                message += "\r\nThe 10th house in d9 shows the flow of money or income. You have malefic planets here so the wealth may be fluctuating.";
+            else if (D9Chart.House10.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Benefic))
+                message += "\r\nThe 10th house in d9 shows the flow of money or income. You have benefic planets here so the wealth may flow steadilly.";
+
+            if (D9Chart.House7.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Melific))
+                message += "\r\nMalefic planets placed in the 7th house of the D9 chart. Can create problems in relationships.";
+            else if (D9Chart.House7.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Benefic))
+                message += "\r\nBenefic planets placed in the 7th house of the D9 chart. It is good for relationships.";
+
+            List<AstroPlanet> planets = D9Chart.Planets.FindAll(x => x.NawamsaRasi.Current == EnumRasi.Thula || x.NawamsaRasi.Current == EnumRasi.Vrishabha);
+            if (planets.Count > 0)
+                foreach (AstroPlanet p in planets)
+                    message += "\r\n Your life style influenced by the previous birth is  " + p.GetPlanetQuality();
+            AstroPlanet saniNawamsaLoardPlanet = D9Chart.Planets.FirstOrDefault(x => x.Current == EnumPlanet.Saturn).NawamsaRasi.Loard;
+            if (saniNawamsaLoardPlanet.IsVargoththama || saniNawamsaLoardPlanet.IsPowerful)
+                message += "\r\nThe rashi load (" + saniNawamsaLoardPlanet.Name + ") of D9 where Saturn is placed either vargoththama or well placed. You will somehow come out of suffering and pain in life";
+
+            if (D9Chart.House1.HouseRasi.Loard.IsPowerful)
+                message += "\r\nStrong Navamsa lagna lord, " + D9Chart.House1.HouseRasi.Loard.Name + " in Rashi (D1) chart promises good health";
+            if (D9Chart.House10.HouseRasi.Loard.IsPowerful)
+                message += "\r\n10th house lord of Navamsa, " + D9Chart.House10.HouseRasi.Loard.Name + " is strong in Rashi so it promises great wealth";
+            if (D9Chart.House4.HouseRasi.Loard.IsPowerful)
+                message += "\r\n4th house lord of Navamsa, " + D9Chart.House4.HouseRasi.Loard.Name + " is strong in Rashi so it is great for spirituality";
+            if (D9Chart.House7.HouseRasi.Loard.IsPowerful)
+                message += "\r\n7th house lord of Navamsa, " + D9Chart.House7.HouseRasi.Loard.Name + " is strong in Rashi so it is  good for joy and happiness in life";
+            AstroPlanet moonPlanet = D9Chart.Planets.FirstOrDefault(x => x.Current == EnumPlanet.Moon);
+
+            message += "\r\nMoon Khara Nawamsa =" + CurrentHoroscope.GetKharaNavamsa(EnumPlanet.Moon) + ", The Loard (Look for depression, diseases or problems related with water or even death) = " + CurrentHoroscope.GetKharaNavamsaLoard(EnumPlanet.Moon).Name;
+            message += "\r\nLagna Khara Nawamsa =" + CurrentHoroscope.GetLagnaKharaNawamsa() + ", The Loard (Look for diseases, accidents or physical pains in their Dasha or Antardasha) = " + CurrentHoroscope.GetLagnaKharakaNawamsaLoard().Name;
+            message += "\r\nKhara Nawamsa =" + D9Chart.House4.HouseRasi.Name + ", The planets (Look for diseases, accidents or physical pains in its Dasha or Antardasha) =" + D9Chart.House4.HousePlanets.ToAstroPlanetShortString();
+
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(11))
+                message += "\r\nThe person will be core and awful.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(8))
+                message += "\r\nThe person will be passionate.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(10))
+                message += "\r\nThe person will obtain moksha.";
+            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(6))
+                message += "\r\nThe person will not be ethical.";
+
+            this.toolTipFullView.SetToolTip(labelNawamsa, message);
         }
     }
 }

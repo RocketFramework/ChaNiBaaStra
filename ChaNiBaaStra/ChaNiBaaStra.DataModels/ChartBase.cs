@@ -8,7 +8,8 @@ namespace ChaNiBaaStra.DataModels
 {
     public abstract class ChartBase
     {
-        public ChartBase(Horoscope horoscope) { Planets = new List<AstroPlanet>(); }
+        public ChartBase(Horoscope horoscope) { Planets = new List<AstroPlanet>(); this.OriginalHoroscope = horoscope; }
+        public Horoscope OriginalHoroscope { get; set; }
         public AstroRasi OriginalRagnaRashi { get; set; }
         public AstroRasi CurrentLagnaRashi { get; set; }
         public List<AstroPlanet> Planets { get; set; }
@@ -73,6 +74,25 @@ namespace ChaNiBaaStra.DataModels
 
     public class D9Chart: ChartBase
     {
+        public AstroPlanet GetKharaNavamsaLoard(EnumPlanet planet)
+        {
+            EnumRasi rasi = GetKharaNavamsa(planet);
+            return this.OriginalHoroscope.RasiHouseList.FirstOrDefault(x => x.Current == rasi).Loard;
+        }
+        public EnumRasi GetKharaNavamsa(EnumPlanet planet)
+        {
+            return this.Planets.FirstOrDefault(x => x.Current == planet).NawamsaRasi.GetIncrementRashi(3);
+        }
+
+        public EnumRasi GetLagnaKharaNawamsa()
+        {
+            return this.CurrentLagnaRashi.GetIncrementRashi(3);
+        }
+        public AstroPlanet GetLagnaKharakaNawamsaLoard()
+        {
+            EnumRasi rasi = this.GetLagnaKharaNawamsa();
+            return this.OriginalHoroscope.RasiHouseList.FirstOrDefault(x => x.Current == rasi).Loard;
+        }
         public D9Chart(Horoscope horoscope) : base(horoscope)
         {
             int gap = horoscope.LagnaRasi.ofRasi(horoscope.NavamsaRasi.Current - 1);
