@@ -16,7 +16,7 @@ namespace ChaNiBaaStra
 {
     public partial class AlternativeView : UserControl
     {
-        public ChartBase D9Chart { get; set; }
+        public D9Chart D9Chart { get; set; }
         public AlternativeView()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace ChaNiBaaStra
 
         public void UpdateUI(ChartBase hrScope, bool isLagna)
         {
+            D9Chart = new D9Chart(hrScope.OriginalHoroscope);
             if (this.Visible)
             {
                 this.label1.Text = "[" + hrScope.House1.Loard.Name + "]";
@@ -234,7 +235,7 @@ namespace ChaNiBaaStra
                 D9Chart.House9.HousePlanets.Exists(x => x.Current == EnumPlanet.Kethu))
                 message += "\r\nKethu in 1, 5, 9th in D9. Great with mobile devices, computers, and electronics. Very spiritual and has the capability to show the path for people.";
 
-            AstroRasi rasi = CurrentHoroscope.RasiHouseList.FirstOrDefault(x => x.HouseNumber == 9);
+            AstroRasi rasi = D9Chart.OriginalHoroscope.RasiHouseList.FirstOrDefault(x => x.HouseNumber == 9);
             if (rasi.Loard.IsExtremelyExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current))
                 message += "\r\nLoard of 9th house " + rasi.Loard.Name + " of D1 chart is exalted in the D9 chart. It signifies great fortune";
             else if (rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current) || rasi.Loard.IsExtremelyDebilitatedInRashi(rasi.Loard.NawamsaRasi.Current))
@@ -243,11 +244,11 @@ namespace ChaNiBaaStra
             if (D9Chart.CurrentLagnaRashi.Loard.IsExtremelyExaltedInRashi(D9Chart.CurrentLagnaRashi.Loard.NawamsaRasi.Current) || D9Chart.CurrentLagnaRashi.Loard.IsExaltedInRashi(rasi.Loard.NawamsaRasi.Current) || D9Chart.CurrentLagnaRashi.Loard.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Swashesthra)
                 message += "\r\nLoard of D9 " + D9Chart.CurrentLagnaRashi.Loard.Name + " is exalted or in own house. Add strength to the chart";
 
-            if (D9Chart.CurrentLagnaRashi.Current == CurrentHoroscope.LagnaRasi.Current)
+            if (D9Chart.CurrentLagnaRashi.Current == D9Chart.OriginalHoroscope.LagnaRasi.Current)
                 message += "\r\nD9 lagna " + D9Chart.CurrentLagnaRashi.Name + " is vargottama, therefore it promises a long life.";
 
-            if (D9Chart.CurrentLagnaRashi.GetIncrementRashi(7) == CurrentHoroscope.NavamsaRasi.Current)
-                message += "\r\nNavamsha lagna " + CurrentHoroscope.NavamsaRasi.Name + " is in the 8th house of Rashi lagna. So there will be one setback in your life which will make you very spiritual.";
+            if (D9Chart.CurrentLagnaRashi.GetIncrementRashi(7) == D9Chart.OriginalHoroscope.NavamsaRasi.Current)
+                message += "\r\nNavamsha lagna " + D9Chart.OriginalHoroscope.NavamsaRasi.Name + " is in the 8th house of Rashi lagna. So there will be one setback in your life which will make you very spiritual.";
 
             if (D9Chart.House10.HousePlanets.Exists(x => x.MelificOrBenific == PlanetTypes.Melific))
                 message += "\r\nThe 10th house in d9 shows the flow of money or income. You have malefic planets here so the wealth may be fluctuating.";
@@ -267,30 +268,30 @@ namespace ChaNiBaaStra
             if (saniNawamsaLoardPlanet.IsVargoththama || saniNawamsaLoardPlanet.IsPowerful)
                 message += "\r\nThe rashi load (" + saniNawamsaLoardPlanet.Name + ") of D9 where Saturn is placed either vargoththama or well placed. You will somehow come out of suffering and pain in life";
 
-            if (D9Chart.House1.HouseRasi.Loard.IsPowerful)
-                message += "\r\nStrong Navamsa lagna lord, " + D9Chart.House1.HouseRasi.Loard.Name + " in Rashi (D1) chart promises good health";
-            if (D9Chart.House10.HouseRasi.Loard.IsPowerful)
-                message += "\r\n10th house lord of Navamsa, " + D9Chart.House10.HouseRasi.Loard.Name + " is strong in Rashi so it promises great wealth";
-            if (D9Chart.House4.HouseRasi.Loard.IsPowerful)
-                message += "\r\n4th house lord of Navamsa, " + D9Chart.House4.HouseRasi.Loard.Name + " is strong in Rashi so it is great for spirituality";
-            if (D9Chart.House7.HouseRasi.Loard.IsPowerful)
-                message += "\r\n7th house lord of Navamsa, " + D9Chart.House7.HouseRasi.Loard.Name + " is strong in Rashi so it is  good for joy and happiness in life";
+            if (D9Chart.House1.Loard.IsPowerful)
+                message += "\r\nStrong Navamsa lagna lord, " + D9Chart.House1.Loard.Name + " in Rashi (D1) chart promises good health";
+            if (D9Chart.House10.Loard.IsPowerful)
+                message += "\r\n10th house lord of Navamsa, " + D9Chart.House10.Loard.Name + " is strong in Rashi so it promises great wealth";
+            if (D9Chart.House4.Loard.IsPowerful)
+                message += "\r\n4th house lord of Navamsa, " + D9Chart.House4.Loard.Name + " is strong in Rashi so it is great for spirituality";
+            if (D9Chart.House7.Loard.IsPowerful)
+                message += "\r\n7th house lord of Navamsa, " + D9Chart.House7.Loard.Name + " is strong in Rashi so it is  good for joy and happiness in life";
             AstroPlanet moonPlanet = D9Chart.Planets.FirstOrDefault(x => x.Current == EnumPlanet.Moon);
 
-            message += "\r\nMoon Khara Nawamsa =" + CurrentHoroscope.GetKharaNavamsa(EnumPlanet.Moon) + ", The Loard (Look for depression, diseases or problems related with water or even death) = " + CurrentHoroscope.GetKharaNavamsaLoard(EnumPlanet.Moon).Name;
-            message += "\r\nLagna Khara Nawamsa =" + CurrentHoroscope.GetLagnaKharaNawamsa() + ", The Loard (Look for diseases, accidents or physical pains in their Dasha or Antardasha) = " + CurrentHoroscope.GetLagnaKharakaNawamsaLoard().Name;
+            message += "\r\nMoon Khara Nawamsa =" + ((D9Chart)D9Chart).GetKharaNavamsa(EnumPlanet.Moon) + ", The Loard (Look for depression, diseases or problems related with water or even death) = " + D9Chart.OriginalHoroscope.GetKharaNavamsaLoard(EnumPlanet.Moon).Name;
+            message += "\r\nLagna Khara Nawamsa =" + D9Chart.OriginalHoroscope.GetLagnaKharaNawamsa() + ", The Loard (Look for diseases, accidents or physical pains in their Dasha or Antardasha) = " + D9Chart.OriginalHoroscope.GetLagnaKharakaNawamsaLoard().Name;
             message += "\r\nKhara Nawamsa =" + D9Chart.House4.HouseRasi.Name + ", The planets (Look for diseases, accidents or physical pains in its Dasha or Antardasha) =" + D9Chart.House4.HousePlanets.ToAstroPlanetShortString();
 
-            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(11))
+            if (D9Chart.OriginalHoroscope.NavamsaRasi.Current == D9Chart.OriginalHoroscope.LagnaRasi.GetIncrementRashi(11))
                 message += "\r\nThe person will be core and awful.";
-            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(8))
+            if (D9Chart.OriginalHoroscope.NavamsaRasi.Current == D9Chart.OriginalHoroscope.LagnaRasi.GetIncrementRashi(8))
                 message += "\r\nThe person will be passionate.";
-            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(10))
+            if (D9Chart.OriginalHoroscope.NavamsaRasi.Current == D9Chart.OriginalHoroscope.LagnaRasi.GetIncrementRashi(10))
                 message += "\r\nThe person will obtain moksha.";
-            if (CurrentHoroscope.NavamsaRasi.Current == CurrentHoroscope.LagnaRasi.GetIncrementRashi(6))
+            if (D9Chart.OriginalHoroscope.NavamsaRasi.Current == D9Chart.OriginalHoroscope.LagnaRasi.GetIncrementRashi(6))
                 message += "\r\nThe person will not be ethical.";
 
-            this.toolTipFullView.SetToolTip(labelNawamsa, message);
+            //this.SetToolTip(toolTipBotton, message);
         }
     }
 }

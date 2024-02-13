@@ -489,7 +489,6 @@
             this.labelNawamsa.TabIndex = 41;
             this.labelNawamsa.Text = "label15";
             this.labelNawamsa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelNawamsa.Click += new System.EventHandler(this.labelNawamsa_Click);
             // 
             // flowLayoutPanelN5
             // 
