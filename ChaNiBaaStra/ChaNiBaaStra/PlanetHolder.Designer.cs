@@ -34,7 +34,6 @@
             this.labelBottom = new System.Windows.Forms.Label();
             this.labelTop = new System.Windows.Forms.Label();
             this.toolTipPlanet = new System.Windows.Forms.ToolTip(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // buttonMiddle
@@ -44,7 +43,7 @@
             this.buttonMiddle.Location = new System.Drawing.Point(13, 14);
             this.buttonMiddle.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMiddle.Name = "buttonMiddle";
-            this.buttonMiddle.Size = new System.Drawing.Size(52, 18);
+            this.buttonMiddle.Size = new System.Drawing.Size(42, 18);
             this.buttonMiddle.TabIndex = 0;
             this.buttonMiddle.Text = "Mo";
             this.buttonMiddle.UseVisualStyleBackColor = true;
@@ -68,7 +67,7 @@
             this.labelBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBottom.Location = new System.Drawing.Point(0, 32);
             this.labelBottom.Name = "labelBottom";
-            this.labelBottom.Size = new System.Drawing.Size(78, 13);
+            this.labelBottom.Size = new System.Drawing.Size(55, 13);
             this.labelBottom.TabIndex = 3;
             this.labelBottom.Text = "V";
             this.labelBottom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +79,7 @@
             this.labelTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTop.Location = new System.Drawing.Point(0, 0);
             this.labelTop.Name = "labelTop";
-            this.labelTop.Size = new System.Drawing.Size(78, 14);
+            this.labelTop.Size = new System.Drawing.Size(55, 14);
             this.labelTop.TabIndex = 4;
             this.labelTop.Text = "NMS";
             this.labelTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,31 +90,17 @@
             this.toolTipPlanet.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipPlanet.ToolTipTitle = "General Infomation";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.AutoEllipsis = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton1.Location = new System.Drawing.Point(65, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(13, 18);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
             // PlanetHolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonMiddle);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.labelLeft);
             this.Controls.Add(this.labelBottom);
             this.Controls.Add(this.labelTop);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PlanetHolder";
-            this.Size = new System.Drawing.Size(78, 45);
+            this.Size = new System.Drawing.Size(55, 45);
             this.ResumeLayout(false);
 
         }
@@ -127,6 +112,5 @@
         private System.Windows.Forms.Label labelBottom;
         private System.Windows.Forms.Label labelTop;
         private System.Windows.Forms.ToolTip toolTipPlanet;
-        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

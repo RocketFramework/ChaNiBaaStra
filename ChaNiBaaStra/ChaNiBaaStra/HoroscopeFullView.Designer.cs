@@ -129,6 +129,30 @@
             this.labelAsktakaVarga10 = new System.Windows.Forms.Label();
             this.labelAsktakaVarga9 = new System.Windows.Forms.Label();
             this.labelAsktakaVarga8 = new System.Windows.Forms.Label();
+            this.labelLord1 = new System.Windows.Forms.Label();
+            this.labelLord2 = new System.Windows.Forms.Label();
+            this.labelLord3 = new System.Windows.Forms.Label();
+            this.labelLord4 = new System.Windows.Forms.Label();
+            this.labelLord5 = new System.Windows.Forms.Label();
+            this.labelLord6 = new System.Windows.Forms.Label();
+            this.labelLord7 = new System.Windows.Forms.Label();
+            this.labelLord8 = new System.Windows.Forms.Label();
+            this.labelLord9 = new System.Windows.Forms.Label();
+            this.labelLord10 = new System.Windows.Forms.Label();
+            this.labelLord11 = new System.Windows.Forms.Label();
+            this.labelLord12 = new System.Windows.Forms.Label();
+            this.labelAdhipathi1 = new System.Windows.Forms.Label();
+            this.labelAdhipathi2 = new System.Windows.Forms.Label();
+            this.labelAdhipathi3 = new System.Windows.Forms.Label();
+            this.labelAdhipathi4 = new System.Windows.Forms.Label();
+            this.labelAdhipathi5 = new System.Windows.Forms.Label();
+            this.labelAdhipathi6 = new System.Windows.Forms.Label();
+            this.labelAdhipathi7 = new System.Windows.Forms.Label();
+            this.labelAdhipathi8 = new System.Windows.Forms.Label();
+            this.labelAdhipathi9 = new System.Windows.Forms.Label();
+            this.labelAdhipathi10 = new System.Windows.Forms.Label();
+            this.labelAdhipathi11 = new System.Windows.Forms.Label();
+            this.labelAdhipathi12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flowLayoutPanelT1
@@ -188,7 +212,7 @@
             // flowLayoutPanelN2
             // 
             this.flowLayoutPanelN2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelN2.Location = new System.Drawing.Point(379, 146);
+            this.flowLayoutPanelN2.Location = new System.Drawing.Point(379, 165);
             this.flowLayoutPanelN2.Name = "flowLayoutPanelN2";
             this.flowLayoutPanelN2.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN2.TabIndex = 23;
@@ -197,7 +221,7 @@
             // flowLayoutPanelN12
             // 
             this.flowLayoutPanelN12.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelN12.Location = new System.Drawing.Point(884, 146);
+            this.flowLayoutPanelN12.Location = new System.Drawing.Point(881, 165);
             this.flowLayoutPanelN12.Name = "flowLayoutPanelN12";
             this.flowLayoutPanelN12.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN12.TabIndex = 23;
@@ -224,7 +248,7 @@
             // flowLayoutPanelN8
             // 
             this.flowLayoutPanelN8.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelN8.Location = new System.Drawing.Point(881, 750);
+            this.flowLayoutPanelN8.Location = new System.Drawing.Point(877, 734);
             this.flowLayoutPanelN8.Name = "flowLayoutPanelN8";
             this.flowLayoutPanelN8.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN8.TabIndex = 23;
@@ -233,7 +257,7 @@
             // flowLayoutPanelN6
             // 
             this.flowLayoutPanelN6.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelN6.Location = new System.Drawing.Point(379, 750);
+            this.flowLayoutPanelN6.Location = new System.Drawing.Point(385, 734);
             this.flowLayoutPanelN6.Name = "flowLayoutPanelN6";
             this.flowLayoutPanelN6.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN6.TabIndex = 23;
@@ -465,6 +489,7 @@
             this.labelNawamsa.TabIndex = 41;
             this.labelNawamsa.Text = "label15";
             this.labelNawamsa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNawamsa.Click += new System.EventHandler(this.labelNawamsa_Click);
             // 
             // flowLayoutPanelN5
             // 
@@ -630,7 +655,7 @@
             // panelN12RashiHead
             // 
             this.panelN12RashiHead.BackColor = System.Drawing.Color.Blue;
-            this.panelN12RashiHead.Location = new System.Drawing.Point(997, 134);
+            this.panelN12RashiHead.Location = new System.Drawing.Point(985, 134);
             this.panelN12RashiHead.Name = "panelN12RashiHead";
             this.panelN12RashiHead.Size = new System.Drawing.Size(214, 7);
             this.panelN12RashiHead.TabIndex = 5;
@@ -681,7 +706,7 @@
             // 
             this.labelN11.AutoSize = true;
             this.labelN11.BackColor = System.Drawing.Color.Transparent;
-            this.labelN11.Location = new System.Drawing.Point(1266, 219);
+            this.labelN11.Location = new System.Drawing.Point(1260, 228);
             this.labelN11.Name = "labelN11";
             this.labelN11.Size = new System.Drawing.Size(37, 20);
             this.labelN11.TabIndex = 53;
@@ -691,7 +716,7 @@
             // 
             this.labelN12.AutoSize = true;
             this.labelN12.BackColor = System.Drawing.Color.Transparent;
-            this.labelN12.Location = new System.Drawing.Point(1174, 142);
+            this.labelN12.Location = new System.Drawing.Point(1125, 142);
             this.labelN12.Name = "labelN12";
             this.labelN12.Size = new System.Drawing.Size(37, 20);
             this.labelN12.TabIndex = 54;
@@ -781,7 +806,7 @@
             // 
             this.labelN4.AutoSize = true;
             this.labelN4.BackColor = System.Drawing.Color.Transparent;
-            this.labelN4.Location = new System.Drawing.Point(201, 490);
+            this.labelN4.Location = new System.Drawing.Point(204, 490);
             this.labelN4.Name = "labelN4";
             this.labelN4.Size = new System.Drawing.Size(37, 20);
             this.labelN4.TabIndex = 63;
@@ -811,7 +836,7 @@
             // 
             this.labelN2.AutoSize = true;
             this.labelN2.BackColor = System.Drawing.Color.Transparent;
-            this.labelN2.Location = new System.Drawing.Point(299, 141);
+            this.labelN2.Location = new System.Drawing.Point(336, 142);
             this.labelN2.Name = "labelN2";
             this.labelN2.Size = new System.Drawing.Size(37, 20);
             this.labelN2.TabIndex = 65;
@@ -821,7 +846,7 @@
             // 
             this.labelN3.AutoSize = true;
             this.labelN3.BackColor = System.Drawing.Color.Transparent;
-            this.labelN3.Location = new System.Drawing.Point(203, 219);
+            this.labelN3.Location = new System.Drawing.Point(210, 234);
             this.labelN3.Name = "labelN3";
             this.labelN3.Size = new System.Drawing.Size(37, 20);
             this.labelN3.TabIndex = 66;
@@ -831,7 +856,7 @@
             // 
             this.labelN5.AutoSize = true;
             this.labelN5.BackColor = System.Drawing.Color.Transparent;
-            this.labelN5.Location = new System.Drawing.Point(203, 756);
+            this.labelN5.Location = new System.Drawing.Point(206, 745);
             this.labelN5.Name = "labelN5";
             this.labelN5.Size = new System.Drawing.Size(37, 20);
             this.labelN5.TabIndex = 67;
@@ -841,7 +866,7 @@
             // 
             this.labelN9.AutoSize = true;
             this.labelN9.BackColor = System.Drawing.Color.Transparent;
-            this.labelN9.Location = new System.Drawing.Point(1266, 756);
+            this.labelN9.Location = new System.Drawing.Point(1255, 747);
             this.labelN9.Name = "labelN9";
             this.labelN9.Size = new System.Drawing.Size(37, 20);
             this.labelN9.TabIndex = 68;
@@ -851,7 +876,7 @@
             // 
             this.labelN6.AutoSize = true;
             this.labelN6.BackColor = System.Drawing.Color.Transparent;
-            this.labelN6.Location = new System.Drawing.Point(299, 842);
+            this.labelN6.Location = new System.Drawing.Point(336, 839);
             this.labelN6.Name = "labelN6";
             this.labelN6.Size = new System.Drawing.Size(37, 20);
             this.labelN6.TabIndex = 71;
@@ -861,7 +886,7 @@
             // 
             this.labelN7.AutoSize = true;
             this.labelN7.BackColor = System.Drawing.Color.Transparent;
-            this.labelN7.Location = new System.Drawing.Point(731, 842);
+            this.labelN7.Location = new System.Drawing.Point(722, 842);
             this.labelN7.Name = "labelN7";
             this.labelN7.Size = new System.Drawing.Size(37, 20);
             this.labelN7.TabIndex = 70;
@@ -871,7 +896,7 @@
             // 
             this.labelN8.AutoSize = true;
             this.labelN8.BackColor = System.Drawing.Color.Transparent;
-            this.labelN8.Location = new System.Drawing.Point(1174, 843);
+            this.labelN8.Location = new System.Drawing.Point(1125, 842);
             this.labelN8.Name = "labelN8";
             this.labelN8.Size = new System.Drawing.Size(37, 20);
             this.labelN8.TabIndex = 69;
@@ -1037,6 +1062,235 @@
             this.labelAsktakaVarga8.TabIndex = 84;
             this.labelAsktakaVarga8.Text = "11111000";
             // 
+            // labelLord1
+            // 
+            this.labelLord1.AutoSize = true;
+            this.labelLord1.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord1.Location = new System.Drawing.Point(647, 146);
+            this.labelLord1.Name = "labelLord1";
+            this.labelLord1.Size = new System.Drawing.Size(51, 20);
+            this.labelLord1.TabIndex = 85;
+            this.labelLord1.Text = "label1";
+            // 
+            // labelLord2
+            // 
+            this.labelLord2.AutoSize = true;
+            this.labelLord2.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelLord2.Location = new System.Drawing.Point(260, 141);
+            this.labelLord2.Name = "labelLord2";
+            this.labelLord2.Size = new System.Drawing.Size(51, 20);
+            this.labelLord2.TabIndex = 86;
+            this.labelLord2.Text = "label2";
+            // 
+            // labelLord3
+            // 
+            this.labelLord3.AutoSize = true;
+            this.labelLord3.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord3.Location = new System.Drawing.Point(209, 193);
+            this.labelLord3.Name = "labelLord3";
+            this.labelLord3.Size = new System.Drawing.Size(51, 20);
+            this.labelLord3.TabIndex = 87;
+            this.labelLord3.Text = "label3";
+            // 
+            // labelLord4
+            // 
+            this.labelLord4.AutoSize = true;
+            this.labelLord4.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord4.Location = new System.Drawing.Point(207, 419);
+            this.labelLord4.Name = "labelLord4";
+            this.labelLord4.Size = new System.Drawing.Size(51, 20);
+            this.labelLord4.TabIndex = 88;
+            this.labelLord4.Text = "label4";
+            // 
+            // labelLord5
+            // 
+            this.labelLord5.AutoSize = true;
+            this.labelLord5.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord5.Location = new System.Drawing.Point(206, 706);
+            this.labelLord5.Name = "labelLord5";
+            this.labelLord5.Size = new System.Drawing.Size(51, 20);
+            this.labelLord5.TabIndex = 89;
+            this.labelLord5.Text = "label5";
+            // 
+            // labelLord6
+            // 
+            this.labelLord6.AutoSize = true;
+            this.labelLord6.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord6.Location = new System.Drawing.Point(233, 842);
+            this.labelLord6.Name = "labelLord6";
+            this.labelLord6.Size = new System.Drawing.Size(51, 20);
+            this.labelLord6.TabIndex = 90;
+            this.labelLord6.Text = "label6";
+            // 
+            // labelLord7
+            // 
+            this.labelLord7.AutoSize = true;
+            this.labelLord7.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord7.Location = new System.Drawing.Point(647, 839);
+            this.labelLord7.Name = "labelLord7";
+            this.labelLord7.Size = new System.Drawing.Size(51, 20);
+            this.labelLord7.TabIndex = 91;
+            this.labelLord7.Text = "label7";
+            // 
+            // labelLord8
+            // 
+            this.labelLord8.AutoSize = true;
+            this.labelLord8.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord8.Location = new System.Drawing.Point(1191, 840);
+            this.labelLord8.Name = "labelLord8";
+            this.labelLord8.Size = new System.Drawing.Size(51, 20);
+            this.labelLord8.TabIndex = 92;
+            this.labelLord8.Text = "label8";
+            // 
+            // labelLord9
+            // 
+            this.labelLord9.AutoSize = true;
+            this.labelLord9.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord9.Location = new System.Drawing.Point(1233, 706);
+            this.labelLord9.Name = "labelLord9";
+            this.labelLord9.Size = new System.Drawing.Size(51, 20);
+            this.labelLord9.TabIndex = 93;
+            this.labelLord9.Text = "label9";
+            // 
+            // labelLord10
+            // 
+            this.labelLord10.AutoSize = true;
+            this.labelLord10.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord10.Location = new System.Drawing.Point(1239, 425);
+            this.labelLord10.Name = "labelLord10";
+            this.labelLord10.Size = new System.Drawing.Size(60, 20);
+            this.labelLord10.TabIndex = 94;
+            this.labelLord10.Text = "label10";
+            // 
+            // labelLord11
+            // 
+            this.labelLord11.AutoSize = true;
+            this.labelLord11.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord11.Location = new System.Drawing.Point(1232, 194);
+            this.labelLord11.Name = "labelLord11";
+            this.labelLord11.Size = new System.Drawing.Size(60, 20);
+            this.labelLord11.TabIndex = 95;
+            this.labelLord11.Text = "label11";
+            // 
+            // labelLord12
+            // 
+            this.labelLord12.AutoSize = true;
+            this.labelLord12.BackColor = System.Drawing.Color.Transparent;
+            this.labelLord12.Location = new System.Drawing.Point(1191, 142);
+            this.labelLord12.Name = "labelLord12";
+            this.labelLord12.Size = new System.Drawing.Size(60, 20);
+            this.labelLord12.TabIndex = 96;
+            this.labelLord12.Text = "label12";
+            // 
+            // labelAdhipathi1
+            // 
+            this.labelAdhipathi1.AutoSize = true;
+            this.labelAdhipathi1.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi1.Location = new System.Drawing.Point(809, 144);
+            this.labelAdhipathi1.Name = "labelAdhipathi1";
+            this.labelAdhipathi1.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi1.TabIndex = 97;
+            // 
+            // labelAdhipathi2
+            // 
+            this.labelAdhipathi2.AutoSize = true;
+            this.labelAdhipathi2.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi2.Location = new System.Drawing.Point(421, 142);
+            this.labelAdhipathi2.Name = "labelAdhipathi2";
+            this.labelAdhipathi2.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi2.TabIndex = 98;
+            // 
+            // labelAdhipathi3
+            // 
+            this.labelAdhipathi3.AutoSize = true;
+            this.labelAdhipathi3.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi3.Location = new System.Drawing.Point(209, 275);
+            this.labelAdhipathi3.Name = "labelAdhipathi3";
+            this.labelAdhipathi3.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi3.TabIndex = 99;
+            // 
+            // labelAdhipathi4
+            // 
+            this.labelAdhipathi4.AutoSize = true;
+            this.labelAdhipathi4.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi4.Location = new System.Drawing.Point(206, 560);
+            this.labelAdhipathi4.Name = "labelAdhipathi4";
+            this.labelAdhipathi4.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi4.TabIndex = 100;
+            // 
+            // labelAdhipathi5
+            // 
+            this.labelAdhipathi5.AutoSize = true;
+            this.labelAdhipathi5.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi5.Location = new System.Drawing.Point(206, 788);
+            this.labelAdhipathi5.Name = "labelAdhipathi5";
+            this.labelAdhipathi5.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi5.TabIndex = 101;
+            // 
+            // labelAdhipathi6
+            // 
+            this.labelAdhipathi6.AutoSize = true;
+            this.labelAdhipathi6.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi6.Location = new System.Drawing.Point(421, 842);
+            this.labelAdhipathi6.Name = "labelAdhipathi6";
+            this.labelAdhipathi6.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi6.TabIndex = 102;
+            // 
+            // labelAdhipathi7
+            // 
+            this.labelAdhipathi7.AutoSize = true;
+            this.labelAdhipathi7.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi7.Location = new System.Drawing.Point(791, 839);
+            this.labelAdhipathi7.Name = "labelAdhipathi7";
+            this.labelAdhipathi7.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi7.TabIndex = 103;
+            // 
+            // labelAdhipathi8
+            // 
+            this.labelAdhipathi8.AutoSize = true;
+            this.labelAdhipathi8.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi8.Location = new System.Drawing.Point(1046, 842);
+            this.labelAdhipathi8.Name = "labelAdhipathi8";
+            this.labelAdhipathi8.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi8.TabIndex = 104;
+            // 
+            // labelAdhipathi9
+            // 
+            this.labelAdhipathi9.AutoSize = true;
+            this.labelAdhipathi9.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi9.Location = new System.Drawing.Point(1233, 788);
+            this.labelAdhipathi9.Name = "labelAdhipathi9";
+            this.labelAdhipathi9.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi9.TabIndex = 105;
+            // 
+            // labelAdhipathi10
+            // 
+            this.labelAdhipathi10.AutoSize = true;
+            this.labelAdhipathi10.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi10.Location = new System.Drawing.Point(1243, 560);
+            this.labelAdhipathi10.Name = "labelAdhipathi10";
+            this.labelAdhipathi10.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi10.TabIndex = 106;
+            // 
+            // labelAdhipathi11
+            // 
+            this.labelAdhipathi11.AutoSize = true;
+            this.labelAdhipathi11.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi11.Location = new System.Drawing.Point(1232, 266);
+            this.labelAdhipathi11.Name = "labelAdhipathi11";
+            this.labelAdhipathi11.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi11.TabIndex = 107;
+            // 
+            // labelAdhipathi12
+            // 
+            this.labelAdhipathi12.AutoSize = true;
+            this.labelAdhipathi12.BackColor = System.Drawing.Color.Transparent;
+            this.labelAdhipathi12.Location = new System.Drawing.Point(1037, 141);
+            this.labelAdhipathi12.Name = "labelAdhipathi12";
+            this.labelAdhipathi12.Size = new System.Drawing.Size(0, 20);
+            this.labelAdhipathi12.TabIndex = 108;
+            // 
             // HoroscopeFullView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1045,6 +1299,30 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Skeliton;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.labelAdhipathi12);
+            this.Controls.Add(this.labelAdhipathi11);
+            this.Controls.Add(this.labelAdhipathi10);
+            this.Controls.Add(this.labelAdhipathi9);
+            this.Controls.Add(this.labelAdhipathi8);
+            this.Controls.Add(this.labelAdhipathi7);
+            this.Controls.Add(this.labelAdhipathi6);
+            this.Controls.Add(this.labelAdhipathi5);
+            this.Controls.Add(this.labelAdhipathi4);
+            this.Controls.Add(this.labelAdhipathi3);
+            this.Controls.Add(this.labelAdhipathi2);
+            this.Controls.Add(this.labelAdhipathi1);
+            this.Controls.Add(this.labelLord12);
+            this.Controls.Add(this.labelLord11);
+            this.Controls.Add(this.labelLord10);
+            this.Controls.Add(this.labelLord9);
+            this.Controls.Add(this.labelLord8);
+            this.Controls.Add(this.labelLord7);
+            this.Controls.Add(this.labelLord6);
+            this.Controls.Add(this.labelLord5);
+            this.Controls.Add(this.labelLord4);
+            this.Controls.Add(this.labelLord3);
+            this.Controls.Add(this.labelLord2);
+            this.Controls.Add(this.labelLord1);
             this.Controls.Add(this.labelAsktakaVarga8);
             this.Controls.Add(this.labelAsktakaVarga9);
             this.Controls.Add(this.labelAsktakaVarga10);
@@ -1255,5 +1533,29 @@
         private System.Windows.Forms.Label labelAsktakaVarga10;
         private System.Windows.Forms.Label labelAsktakaVarga9;
         private System.Windows.Forms.Label labelAsktakaVarga8;
+        private System.Windows.Forms.Label labelLord1;
+        private System.Windows.Forms.Label labelLord2;
+        private System.Windows.Forms.Label labelLord3;
+        private System.Windows.Forms.Label labelLord4;
+        private System.Windows.Forms.Label labelLord5;
+        private System.Windows.Forms.Label labelLord6;
+        private System.Windows.Forms.Label labelLord7;
+        private System.Windows.Forms.Label labelLord8;
+        private System.Windows.Forms.Label labelLord9;
+        private System.Windows.Forms.Label labelLord10;
+        private System.Windows.Forms.Label labelLord11;
+        private System.Windows.Forms.Label labelLord12;
+        private System.Windows.Forms.Label labelAdhipathi1;
+        private System.Windows.Forms.Label labelAdhipathi2;
+        private System.Windows.Forms.Label labelAdhipathi3;
+        private System.Windows.Forms.Label labelAdhipathi4;
+        private System.Windows.Forms.Label labelAdhipathi5;
+        private System.Windows.Forms.Label labelAdhipathi6;
+        private System.Windows.Forms.Label labelAdhipathi7;
+        private System.Windows.Forms.Label labelAdhipathi8;
+        private System.Windows.Forms.Label labelAdhipathi9;
+        private System.Windows.Forms.Label labelAdhipathi10;
+        private System.Windows.Forms.Label labelAdhipathi11;
+        private System.Windows.Forms.Label labelAdhipathi12;
     }
 }

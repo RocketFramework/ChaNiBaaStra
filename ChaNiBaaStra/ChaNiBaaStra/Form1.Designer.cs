@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.horoscopeView2 = new ChaNiBaaStra.HoroscopeView();
-            this.horoscopeView1 = new ChaNiBaaStra.HoroscopeView();
+            this.horoscopeView2 = new ChaNiBaaStra.AlternativeView();
+            this.horoscopeView1 = new ChaNiBaaStra.AlternativeView();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -146,8 +146,8 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelTop;
-        private HoroscopeView horoscopeView2;
-        private HoroscopeView horoscopeView1;
+        private AlternativeView horoscopeView2;
+        private AlternativeView horoscopeView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

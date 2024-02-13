@@ -137,8 +137,8 @@ namespace ChaNiBaaStra.DataModels
         public List<AstroPlanet> WhoSeesMe { get; set; }
         public List<AstroPlanet> ThathKalikaMythra { get; set; }
         public List<AstroPlanet> ThathKalikaSathuru { get; set; }
-
         public List<AstroPlanet> AdhipathiAstroPlanets { get; set; }
+        public AstroPlanet Loard { get; set; }
         public AstroPlanet FirstDrosKanaAdhipathi { get; set; }
         public AstroPlanet SecondDrosKanaAdhipathi { get; set; }
         public AstroPlanet ThirdDrosKanaAdhipathi { get; set; }
@@ -542,6 +542,11 @@ namespace ChaNiBaaStra.DataModels
             return (EnumRasi)AstroUtility.AstroCycleIncrease(this.CurrentInt, increment);
         }
 
+        public void FinalActions()
+        {
+            RashiAdhipathiFinder finder = new RashiAdhipathiFinder();
+            this.AdhipathiAstroPlanets = finder.UpdateRashiAdhipatiScore(this.AdhipathiAstroPlanets);
+        }
         /// <summary>
         /// Neecha or Sathuru
         /// </summary>

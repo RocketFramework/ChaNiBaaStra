@@ -28,11 +28,15 @@ namespace ChaNiBaaStra
             //CurrentPlanet = planet;
             this.buttonMiddle.Text = (planet.IsReversing) ? "(" + planet.Name.Substring(0, 2) 
                 + ")" : planet.Name.Substring(0, 2);
+            if ((planet.CurrentlyActiveRashi.Loard.Name == planet.Name) 
+                || planet.CurrentlyActiveRashi.AdhipathiAstroPlanets.Exists(x=>x.Name == planet.Name))
+                this.buttonMiddle.BackColor = Color.Yellow;
             this.labelTop.Text = Horoscope.GetPlanetRelationToRasi(planet.Current
-                , planet.NawamsaRasi.Current).ToShortString();
+                , planet.CurrentlyActiveRashi.Current).ToShortString();
+
             this.labelTop.Tag = new String(new char[] { 'c' });
             this.labelTop.Tag = Horoscope.GetPlanetRelationToRasi(planet.Current
-                , planet.NawamsaRasi.Current).ToLongString();
+                , planet.CurrentlyActiveRashi.Current).ToLongString();
         }
 
         public void UpdateUI(AstroPlanet planet)
