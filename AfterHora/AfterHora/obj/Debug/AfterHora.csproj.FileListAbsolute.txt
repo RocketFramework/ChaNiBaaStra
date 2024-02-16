@@ -58,22 +58,9 @@ C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.exe
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\AfterHora\AfterHora\obj\Debug\AfterHora.pdb
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.exe.config
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.exe
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.pdb
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.AssemblyReference.cache
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.SuggestedBindingRedirects.cache
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\MainWindow.g.cs
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\App.g.cs
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.cache
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.lref
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\MainWindow.baml
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.g.resources
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.Properties.Resources.resources
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.GenerateResource.cache
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CoreCompileInputs.cache
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.exe
-C:\Users\user_\Source\Repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.pdb
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.exe.config
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.exe
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\AfterHora.pdb
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
@@ -108,4 +95,17 @@ C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.AssemblyReference.cache
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.SuggestedBindingRedirects.cache
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\MainWindow.g.cs
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\App.g.cs
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.cache
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora_MarkupCompile.lref
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\MainWindow.baml
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.g.resources
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.Properties.Resources.resources
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.GenerateResource.cache
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CoreCompileInputs.cache
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.csproj.CopyComplete
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.exe
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\AfterHora\AfterHora\obj\Debug\AfterHora.pdb

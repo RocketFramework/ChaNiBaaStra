@@ -16,6 +16,8 @@ namespace ChaNiBaaStra
 {
     public partial class AlternativeView : UserControl
     {
+        internal TextBox MessageText;
+
         public D9Chart D9Chart { get; set; }
         public AlternativeView()
         {
@@ -291,7 +293,8 @@ namespace ChaNiBaaStra
             if (D9Chart.OriginalHoroscope.NavamsaRasi.Current == D9Chart.OriginalHoroscope.LagnaRasi.GetIncrementRashi(6))
                 message += "\r\nThe person will not be ethical.";
 
-            //this.SetToolTip(toolTipBotton, message);
+            MessageText.Text = message;
+            this.toolTipBotton.SetToolTip((Label)sender, message);
         }
     }
 }

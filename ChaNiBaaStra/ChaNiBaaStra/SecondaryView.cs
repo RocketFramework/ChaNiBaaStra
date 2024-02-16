@@ -13,6 +13,7 @@ namespace ChaNiBaaStra
 {
     public partial class SecondaryView : Form
     {
+ 
         public Horoscope CurrentHoroscope { get; set; }    
         public SecondaryView()
         {
@@ -33,8 +34,14 @@ namespace ChaNiBaaStra
         private void LoadNawamsaChart()
         {
             D9Chart chart = new DataModels.D9Chart(CurrentHoroscope);
-
             this.NawamsaView.UpdateUI(chart, true);
+            this.NawamsaView.MessageText = this.textBoxData;
+        }
+
+        private void SecondaryView_Load(object sender, EventArgs e)
+        {
+            if (tabControlMain.SelectedIndex == 0)
+                LoadNawamsaChart();
         }
     }
 }

@@ -14,13 +14,13 @@ namespace ChaNiBaaStra.DataModels
 
         }
 
-        public List<AstroPlanet> UpdateRashiAdhipatiScore(List<AstroPlanet> planets)
+        public List<AstroPlanet> UpdateRashiAdhipatiScore(List<AstroPlanet> planets, AstroRasi currentRashi)
         {
             List<AstroPlanet> newList = new List<AstroPlanet>();
             foreach (AstroPlanet planet in planets)
             {
                 // sthana bala
-                UpdateAdhipathiScore(planet);
+                UpdateAdhipathiScore(planet, currentRashi);
                 newList.Add(planet);
             }
             // Sthana bala
@@ -30,11 +30,11 @@ namespace ChaNiBaaStra.DataModels
             return newList.OrderBy(x => x.RashiAdhipathiScore).ToList();
         }
 
-        private void UpdateAdhipathiScore(AstroPlanet planet)
+        private void UpdateAdhipathiScore(AstroPlanet planet, AstroRasi currentRashi)
         {
-            MarkLocationalPower(planet);
-            MarkDirectionalPower(planet);
-            MarkChestaBalaPower(planet);
+            MarkLocationalPower(planet, currentRashi);
+            MarkDirectionalPower(planet, currentRashi);
+            MarkChestaBalaPower(planet, currentRashi);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace ChaNiBaaStra.DataModels
         /// for moon we need to consider sukla bala or something
         /// </summary>
         /// <param name="planet"></param>
-        private static void MarkChestaBalaPower(AstroPlanet planet)
+        private static void MarkChestaBalaPower(AstroPlanet planet, AstroRasi currentRashi)
         {
             /*
              * Sun: Approximately 1 degree per day.
@@ -82,40 +82,36 @@ namespace ChaNiBaaStra.DataModels
                 planet.RashiAdhipathiScore += 6;
         }
 
-        private static void MarkDirectionalPower(AstroPlanet planet)
+        private static void MarkDirectionalPower(AstroPlanet planet, AstroRasi currentRashi)
         {
-            if ((planet.Current == EnumPlanet.Sun || planet.Current == EnumPlanet.Mars) && planet.HouseNumber == 10)
+
+            if ((planet.Current == EnumPlanet.Sun || planet.Current == EnumPlanet.Mars) && currentRashi.HouseNumber == 10)
                 planet.RashiAdhipathiScore += 10;
-            else if ((planet.Current == EnumPlanet.Moon || planet.Current == EnumPlanet.Venus) && planet.HouseNumber == 4)
+            else if ((planet.Current == EnumPlanet.Moon || planet.Current == EnumPlanet.Venus) && currentRashi.HouseNumber == 4)
                 planet.RashiAdhipathiScore += 10;
-            if ((new List<int>() { 6, 8, 12 }).Contains(planet.HouseNumber))
+            if ((new List<int>() { 6, 8, 12 }).Contains(currentRashi.HouseNumber))
                 planet.RashiAdhipathiScore += 2;
-            else if ((new List<int>() { 3, 6, 9, 12 }).Contains(planet.HouseNumber))
+            else if ((new List<int>() { 3, 6, 9, 12 }).Contains(currentRashi.HouseNumber))
                 planet.RashiAdhipathiScore += 4;
-            else if ((new List<int>() { 2, 5, 8, 11 }).Contains(planet.HouseNumber))
+            else if ((new List<int>() { 2, 5, 8, 11 }).Contains(currentRashi.HouseNumber))
                 planet.RashiAdhipathiScore += 6;
-            else if ((new List<int>() { 1, 4, 7, 10 }).Contains(planet.HouseNumber))
+            else if ((new List<int>() { 1, 4, 7, 10 }).Contains(currentRashi.HouseNumber))
                 planet.RashiAdhipathiScore += 8;
         }
 
-        private void MarkLocationalPower(AstroPlanet planet)
+        private void MarkLocationalPower(AstroPlanet planet, AstroRasi currentRashi)
         {
-            if (planet.IsExtremelyExalted)
-                planet.RashiAdhipathiScore += 12;
-            if (planet.IsExalted || planet.IsLord)
+
+            if (planet.GetRelationToRasi(currentRashi.Current) <= EnumPlanetRasiRelationTypes.UchchaMulaThrikona)
                 planet.RashiAdhipathiScore += 10;
-            else if (planet.PlanetRasiRelation >= EnumPlanetRasiRelationTypes.Mithra)
+            else if (planet.GetRelationToRasi(currentRashi.Current) >= EnumPlanetRasiRelationTypes.Mithra)
                 planet.RashiAdhipathiScore += 8;
-            else if (planet.PlanetRasiRelation == EnumPlanetRasiRelationTypes.Sama || planet.PlanetRasiRelation == EnumPlanetRasiRelationTypes.SamaMuta)
+            else if (planet.GetRelationToRasi(currentRashi.Current) == EnumPlanetRasiRelationTypes.Sama || planet.GetRelationToRasi(currentRashi.Current) == EnumPlanetRasiRelationTypes.SamaMuta)
                 planet.RashiAdhipathiScore += 5;
-            if (planet.IsExtremelyDebilitated)
-                planet.RashiAdhipathiScore += 1;
-            else if (planet.IsDebilitated)
-                planet.RashiAdhipathiScore += 2;
-            else if (planet.PlanetRasiRelation <= EnumPlanetRasiRelationTypes.NeechaSamaMuta)
-                planet.RashiAdhipathiScore += 3;
-            else if (planet.PlanetRasiRelation <= EnumPlanetRasiRelationTypes.SathuruMuta)
+            else if (planet.GetRelationToRasi(currentRashi.Current) <= EnumPlanetRasiRelationTypes.SathuruMuta)
                 planet.RashiAdhipathiScore += 4;
+            else
+                planet.RashiAdhipathiScore += 3;
         }
     }
 }

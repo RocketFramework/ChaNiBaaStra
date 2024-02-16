@@ -32,11 +32,11 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageNawamsa = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.NawamsaView = new ChaNiBaaStra.AlternativeView();
+            this.tabPageAsktakaVarga = new System.Windows.Forms.TabPage();
             this.panelRight = new System.Windows.Forms.Panel();
             this.textBoxData = new System.Windows.Forms.TextBox();
             this.splitterH = new System.Windows.Forms.Splitter();
-            this.NawamsaView = new ChaNiBaaStra.AlternativeView();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageNawamsa.SuspendLayout();
@@ -56,7 +56,7 @@
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabPageNawamsa);
-            this.tabControlMain.Controls.Add(this.tabPage2);
+            this.tabControlMain.Controls.Add(this.tabPageAsktakaVarga);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
@@ -77,15 +77,25 @@
             this.tabPageNawamsa.Text = "Nawamsa";
             this.tabPageNawamsa.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // NawamsaView
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(999, 754);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.NawamsaView.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NawamsaView.BackgroundImage")));
+            this.NawamsaView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NawamsaView.D9Chart = null;
+            this.NawamsaView.Location = new System.Drawing.Point(6, 6);
+            this.NawamsaView.Name = "NawamsaView";
+            this.NawamsaView.Size = new System.Drawing.Size(885, 651);
+            this.NawamsaView.TabIndex = 0;
+            // 
+            // tabPageAsktakaVarga
+            // 
+            this.tabPageAsktakaVarga.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAsktakaVarga.Name = "tabPageAsktakaVarga";
+            this.tabPageAsktakaVarga.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAsktakaVarga.Size = new System.Drawing.Size(999, 754);
+            this.tabPageAsktakaVarga.TabIndex = 1;
+            this.tabPageAsktakaVarga.Text = "Asktaka Varga";
+            this.tabPageAsktakaVarga.UseVisualStyleBackColor = true;
             // 
             // panelRight
             // 
@@ -114,15 +124,6 @@
             this.splitterH.TabIndex = 2;
             this.splitterH.TabStop = false;
             // 
-            // NawamsaView
-            // 
-            this.NawamsaView.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NawamsaView.BackgroundImage")));
-            this.NawamsaView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.NawamsaView.Location = new System.Drawing.Point(6, 6);
-            this.NawamsaView.Name = "NawamsaView";
-            this.NawamsaView.Size = new System.Drawing.Size(885, 651);
-            this.NawamsaView.TabIndex = 0;
-            // 
             // SecondaryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -133,6 +134,7 @@
             this.Controls.Add(this.panelRight);
             this.Name = "SecondaryView";
             this.Text = "SecondaryView";
+            this.Load += new System.EventHandler(this.SecondaryView_Load);
             this.panelMain.ResumeLayout(false);
             this.tabControlMain.ResumeLayout(false);
             this.tabPageNawamsa.ResumeLayout(false);
@@ -149,7 +151,7 @@
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageNawamsa;
         private AlternativeView NawamsaView;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageAsktakaVarga;
         private System.Windows.Forms.Splitter splitterH;
         private System.Windows.Forms.TextBox textBoxData;
     }

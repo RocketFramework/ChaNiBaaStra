@@ -129,6 +129,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxBinnashtaka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoxBinnashtaka.Designer.cs">
+      <DependentUpon>BoxBinnashtaka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\AstroYogaConfigurationItem.cs" />
     <Compile Include="Configuration\EventAutoUpdator.cs" />
     <Compile Include="Configuration\YogaAutoUpdator.cs" />
@@ -201,6 +207,15 @@
     <Compile Include="SecondaryView.Designer.cs">
       <DependentUpon>SecondaryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlAsktakaVarga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlAsktakaVarga.Designer.cs">
+      <DependentUpon>UserControlAsktakaVarga.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BoxBinnashtaka.resx">
+      <DependentUpon>BoxBinnashtaka.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuration\YogaController.resx">
       <DependentUpon>YogaController.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SecondaryView.resx">
       <DependentUpon>SecondaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlAsktakaVarga.resx">
+      <DependentUpon>UserControlAsktakaVarga.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ChaNiBaaStra.Utilities.CountryList.datasource" />

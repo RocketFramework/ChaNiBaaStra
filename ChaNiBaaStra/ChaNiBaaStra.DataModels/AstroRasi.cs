@@ -545,7 +545,7 @@ namespace ChaNiBaaStra.DataModels
         public void FinalActions()
         {
             RashiAdhipathiFinder finder = new RashiAdhipathiFinder();
-            this.AdhipathiAstroPlanets = finder.UpdateRashiAdhipatiScore(this.AdhipathiAstroPlanets);
+            this.AdhipathiAstroPlanets = finder.UpdateRashiAdhipatiScore(this.AdhipathiAstroPlanets, this);
         }
         /// <summary>
         /// Neecha or Sathuru

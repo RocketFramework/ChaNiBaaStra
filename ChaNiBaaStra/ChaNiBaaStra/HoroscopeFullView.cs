@@ -44,9 +44,9 @@ namespace ChaNiBaaStra
 
         public void SetAsktakaVarga(AstroPlanet clickedPlanet)
         {
-            if (clickedPlanet.IsTransitPlanet)
+            if (!clickedPlanet.IsTransitPlanet)
             {
-                AstakaVargaMaster varga = new AstakaVargaMaster(CurrentHoroscope.CompletePlanetList);
+                AstakaVargaMaster varga = new AstakaVargaMaster(CurrentHoroscope);
                 switch (clickedPlanet.Current)
                 {
                     case EnumPlanet.Sun: SetVarga(varga.SunVarga); break;
