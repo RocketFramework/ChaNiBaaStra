@@ -64,6 +64,13 @@
             this.label9Sav = new System.Windows.Forms.Label();
             this.label10Sav = new System.Windows.Forms.Label();
             this.label11Sav = new System.Windows.Forms.Label();
+            this.buttonSun = new System.Windows.Forms.Button();
+            this.buttonSaturn = new System.Windows.Forms.Button();
+            this.buttonVenus = new System.Windows.Forms.Button();
+            this.buttonMercury = new System.Windows.Forms.Button();
+            this.buttonMoon = new System.Windows.Forms.Button();
+            this.buttonJupiter = new System.Windows.Forms.Button();
+            this.buttonMars = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -462,12 +469,82 @@
             this.label11Sav.Text = "23";
             this.label11Sav.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonSun
+            // 
+            this.buttonSun.Location = new System.Drawing.Point(515, 363);
+            this.buttonSun.Name = "buttonSun";
+            this.buttonSun.Size = new System.Drawing.Size(53, 40);
+            this.buttonSun.TabIndex = 36;
+            this.buttonSun.Text = "Su";
+            this.buttonSun.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaturn
+            // 
+            this.buttonSaturn.Location = new System.Drawing.Point(616, 416);
+            this.buttonSaturn.Name = "buttonSaturn";
+            this.buttonSaturn.Size = new System.Drawing.Size(53, 40);
+            this.buttonSaturn.TabIndex = 37;
+            this.buttonSaturn.Text = "Sa";
+            this.buttonSaturn.UseVisualStyleBackColor = true;
+            // 
+            // buttonVenus
+            // 
+            this.buttonVenus.Location = new System.Drawing.Point(710, 465);
+            this.buttonVenus.Name = "buttonVenus";
+            this.buttonVenus.Size = new System.Drawing.Size(53, 40);
+            this.buttonVenus.TabIndex = 38;
+            this.buttonVenus.Text = "Ve";
+            this.buttonVenus.UseVisualStyleBackColor = true;
+            // 
+            // buttonMercury
+            // 
+            this.buttonMercury.Location = new System.Drawing.Point(710, 412);
+            this.buttonMercury.Name = "buttonMercury";
+            this.buttonMercury.Size = new System.Drawing.Size(53, 40);
+            this.buttonMercury.TabIndex = 39;
+            this.buttonMercury.Text = "Me";
+            this.buttonMercury.UseVisualStyleBackColor = true;
+            // 
+            // buttonMoon
+            // 
+            this.buttonMoon.Location = new System.Drawing.Point(710, 363);
+            this.buttonMoon.Name = "buttonMoon";
+            this.buttonMoon.Size = new System.Drawing.Size(53, 40);
+            this.buttonMoon.TabIndex = 40;
+            this.buttonMoon.Text = "Mo";
+            this.buttonMoon.UseVisualStyleBackColor = true;
+            // 
+            // buttonJupiter
+            // 
+            this.buttonJupiter.Location = new System.Drawing.Point(515, 465);
+            this.buttonJupiter.Name = "buttonJupiter";
+            this.buttonJupiter.Size = new System.Drawing.Size(53, 40);
+            this.buttonJupiter.TabIndex = 41;
+            this.buttonJupiter.Text = "Ju";
+            this.buttonJupiter.UseVisualStyleBackColor = true;
+            // 
+            // buttonMars
+            // 
+            this.buttonMars.Location = new System.Drawing.Point(515, 416);
+            this.buttonMars.Name = "buttonMars";
+            this.buttonMars.Size = new System.Drawing.Size(53, 40);
+            this.buttonMars.TabIndex = 42;
+            this.buttonMars.Text = "Ma";
+            this.buttonMars.UseVisualStyleBackColor = true;
+            // 
             // BoxBinnashtaka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Horoscope;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.buttonMars);
+            this.Controls.Add(this.buttonJupiter);
+            this.Controls.Add(this.buttonMoon);
+            this.Controls.Add(this.buttonMercury);
+            this.Controls.Add(this.buttonVenus);
+            this.Controls.Add(this.buttonSaturn);
+            this.Controls.Add(this.buttonSun);
             this.Controls.Add(this.label9Asc);
             this.Controls.Add(this.label10Asc);
             this.Controls.Add(this.label11Asc);
@@ -505,7 +582,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BoxBinnashtaka";
-            this.Size = new System.Drawing.Size(1365, 909);
+            this.Size = new System.Drawing.Size(1285, 873);
             this.ResumeLayout(false);
 
         }
@@ -548,5 +625,12 @@
         private System.Windows.Forms.Label label9Sav;
         private System.Windows.Forms.Label label10Sav;
         private System.Windows.Forms.Label label11Sav;
+        private System.Windows.Forms.Button buttonSun;
+        private System.Windows.Forms.Button buttonSaturn;
+        private System.Windows.Forms.Button buttonVenus;
+        private System.Windows.Forms.Button buttonMercury;
+        private System.Windows.Forms.Button buttonMoon;
+        private System.Windows.Forms.Button buttonJupiter;
+        private System.Windows.Forms.Button buttonMars;
     }
 }

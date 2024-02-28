@@ -38,9 +38,9 @@ namespace ChaNiBaaStra
                 this.label7.Text = "[" + hrScope.House7.Loard.Name + "]";
                 this.label8.Text = "[" + hrScope.House8.Loard.Name + "]";
                 this.label9.Text = "[" + hrScope.House9.Loard.Name + "]";
-                this.label10.Text = "[" + hrScope.House10.HouseRasi.Name + "]";
-                this.label11.Text = "[" + hrScope.House11.HouseRasi.Name + "]";
-                this.label12.Text = "[" + hrScope.House12.HouseRasi.Name + "]";
+                this.label10.Text = "[" + hrScope.House10.Loard.Name + "]";
+                this.label11.Text = "[" + hrScope.House11.Loard.Name + "]";
+                this.label12.Text = "[" + hrScope.House12.Loard.Name + "]";
 
                 this.flowLayoutPanel1.Controls.Clear();
                 this.flowLayoutPanel2.Controls.Clear();

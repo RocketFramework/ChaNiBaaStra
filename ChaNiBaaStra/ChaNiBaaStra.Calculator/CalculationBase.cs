@@ -966,6 +966,7 @@ namespace ChaNiBaaStra.Calculator
             SetMostPowerfulPlanet(horoScope);
             SetLoard(horoScope, horoScope.LagnaRasi);
             SetLoard(horoScope, horoScope.NavamsaRasi);
+
         }
 
         private void SetLoard(Horoscope horoScope, AstroRasi rasi)
@@ -1053,6 +1054,7 @@ namespace ChaNiBaaStra.Calculator
                 SetDwadasansa(horoScope, planet);
                 SetSapthansa(horoScope, planet);
                 planet.FinalActions();
+                planet.UpdateViewDetails(horoScope.CompletePlanetList);
             }
         }
 

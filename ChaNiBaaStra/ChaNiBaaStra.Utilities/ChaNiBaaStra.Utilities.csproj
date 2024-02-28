@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AstroUtility.cs" />
+    <Compile Include="BaziCalculator.cs" />
     <Compile Include="ChatGTPWrapper.cs" />
     <Compile Include="ContryList.cs" />
     <Compile Include="Converter.cs" />

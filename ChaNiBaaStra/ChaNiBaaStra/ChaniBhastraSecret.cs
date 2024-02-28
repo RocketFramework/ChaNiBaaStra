@@ -40,7 +40,6 @@ namespace ChaNiBaaStra
         public bool IsMale { get; set; }
         public bool IsBirthDateTimeChange { get; set; }
         public bool IsTransitDateTimeChange { get; set; }
-
         private AstroCalculator birthCalculator;
         private AstroCalculator transitCalculator;
         private AppDataObject appDataObject;
@@ -70,11 +69,11 @@ namespace ChaNiBaaStra
 
             HoraKala current = transitCalculator.Muthurtha.CurrentHoraKala;
             AstroMuhurtha muhurtha = transitCalculator.Muthurtha;
-            this.toolStripStatusLabelHora.Text = current.KalaAdhipathiPlanet.ToString();
-            this.toolStripStatusLabelPanchamaHora.Text = muhurtha.ThisPachamaHoraAdhipathiPlanet.ToString() + (((muhurtha.ThisPachamaHora != null) && muhurtha.ThisPachamaHora.IsVisha) ? "*" : "");
-            this.toolStripStatusLabelSukshamaHora.Text = muhurtha.ThisSukshamaHoraAdhipathiPlanet.ToString() + (((muhurtha.ThisSukshamaHora != null) && muhurtha.ThisSukshamaHora.IsVisha) ? "*" : "");
-            this.toolStripStatusLabelCharaThira.Text = (birthHoroscope.LagnaRasi.IsThiraRashi ? "Firm" : birthHoroscope.LagnaRasi.IsCharaRashi ? "Waving" : "Firm and Waving");
-            this.toolStripStatusLabelMruduThada.Text = (birthHoroscope.LagnaRasi.IsOddRashi ? "Thejas" : "Mrudu");
+            this.toolStripStatusLabelHora.Text = "Kala Adhipathi: " + current.KalaAdhipathiPlanet.ToString();
+            this.toolStripStatusLabelPanchamaHora.Text = "Horadhipathi: " + muhurtha.ThisPachamaHoraAdhipathiPlanet.ToString() + (((muhurtha.ThisPachamaHora != null) && muhurtha.ThisPachamaHora.IsVisha) ? "*" : "");
+            this.toolStripStatusLabelSukshamaHora.Text = "SukshamaHora: " + muhurtha.ThisSukshamaHoraAdhipathiPlanet.ToString() + (((muhurtha.ThisSukshamaHora != null) && muhurtha.ThisSukshamaHora.IsVisha) ? "*" : "");
+            this.toolStripStatusLabelCharaThira.Text =  (birthHoroscope.LagnaRasi.IsThiraRashi ? "Firm Rashi" : birthHoroscope.LagnaRasi.IsCharaRashi ? "Waving Rashi" : "Firm and Waving Rashi");
+            this.toolStripStatusLabelMruduThada.Text = (birthHoroscope.LagnaRasi.IsOddRashi ? "Lagna Thejas" : "Lagna Mrudu");
         }
 
         private void UpdateGeneraData(Horoscope birthHoroscope)
@@ -104,8 +103,6 @@ namespace ChaNiBaaStra
             var bindingList = new BindingList<AstroDasa>(birthHoroscope.AstroDasaDetails.FutureDasas);
             var source = new BindingSource(bindingList, null);
             this.dataGridViewMainDasa.DataSource = source;
-            //dataGridViewMainDasa.SelectedRows.Clear();
-            //this.dataGridViewMainDasa.Rows.OfType<DataGridViewRow>().Where(x=>(DateTime)x.Cells[3].Value > DateTime.Now && (DateTime)x.Cells[4].Value < DateTime.Now).ToArray<DataGridViewRow>()[0].Selected = true;
         }
 
         public void UpdateforTransit(DateTime dateTime)
@@ -143,7 +140,12 @@ namespace ChaNiBaaStra
                 : planet.AjustedBhavaLongitude).ToDegreeString()
                 , planet.Nakatha.Name, planet.NawamsaRasi.Name);
             analyzer.AddString(this.richTextBoxClickedPlanet.Text);
-            this.richTextBoxSummary.Text = analyzer.GetSummary();    
+            this.richTextBoxSummary.Text = analyzer.GetSummary();
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = planet.ViewDetails.ISeeThemDetails.Select(x => new { PlanetName = x.SourceCanSeeThisPlanet.Name, ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
+
+            this.dataGridViewViews.DataSource = bindingSource;
         }
 
         public void UpdateDisplayMessage(string message, bool isAppend)
@@ -350,6 +352,7 @@ namespace ChaNiBaaStra
             if (rowsCount == 0 || rowsCount > 1) return null;
             var row = dataGridViewMainDasa.SelectedRows[0];
             if (row == null) return null;
+
             return ((AstroDasa)row.DataBoundItem);
         }
 
@@ -359,6 +362,7 @@ namespace ChaNiBaaStra
             if (rowsCount == 0 || rowsCount > 1) return null;
             var row = dataGridViewSubDasa.SelectedRows[0];
             if (row == null) return null;
+
             return ((AstroDasa)row.DataBoundItem);
         }
 
@@ -368,6 +372,7 @@ namespace ChaNiBaaStra
             if (rowsCount == 0 || rowsCount > 1) return null;
             var row = dataGridViewSubSubDasa.SelectedRows[0];
             if (row == null) return null;
+
             return ((AstroDasa)row.DataBoundItem);
         }
 
@@ -381,6 +386,7 @@ namespace ChaNiBaaStra
             if (birthCalculator != null)
                 return birthCalculator
                     .CalculateHoroscope(dasaPlantes);
+
             return null;
         }
 
@@ -429,6 +435,11 @@ namespace ChaNiBaaStra
             secondView.CurrentHoroscope = birthHoroscope;
 
             secondView.Show();
+        }
+
+        private void tabControlLeft_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.richTextBoxEDM.Text = BaziCalculator.CalculateEarthDayMasterPrediction(birthHoroscope.CurrentTransitDate.CurrentDateTime);
         }
     }
 }

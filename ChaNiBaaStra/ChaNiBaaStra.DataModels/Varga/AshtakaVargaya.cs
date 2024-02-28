@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace ChaNiBaaStra.DataModels.Varga
 {
-
     public abstract class AshtakaVargayaBase
     {
         public int[] AshtakaVargaList = new int[12];
-
         protected abstract List<int> sunList { get; }
         protected abstract List<int> moonList { get; }
         protected abstract List<int> marsList { get; }
@@ -21,7 +19,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected abstract List<int> venusList { get; }
         protected abstract List<int> saturnList { get; }
         protected abstract List<int> lagnaList { get; }
-
         protected List<int> SunList { get { return sunList; } }
         protected List<int> MoonList { get { return moonList; } }
         protected List<int> MarsList { get { return marsList; } }
@@ -104,7 +101,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 6, 7, 12 }; } }
         protected override List<int> saturnList { get { return new List<int> { 1, 2, 4, 7, 8, 9, 10, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 3, 4, 6, 10, 11, 12 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -121,7 +117,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 3, 4, 5, 7, 9, 10, 11 }; } }
         protected override List<int> saturnList { get { return new List<int> { 3, 5, 6, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 3, 6, 10, 11 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -138,7 +133,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 6, 8, 11, 12 }; } }
         protected override List<int> saturnList { get { return new List<int> { 1, 4, 7, 8, 9, 10, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 1, 3, 6, 10, 11 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -155,7 +149,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 1, 2, 3, 4, 5, 8, 9, 11 }; } }
         protected override List<int> saturnList { get { return new List<int> { 1, 2, 4, 7, 8, 9, 10, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 1, 2, 4, 6, 8, 10, 11 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -190,7 +183,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 1, 2, 3, 4, 5, 8, 9, 10, 11 }; } }
         protected override List<int> saturnList { get { return new List<int> { 3, 4, 5, 8, 9, 10, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 1, 2, 3, 4, 5, 8, 9, 11 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -207,7 +199,6 @@ namespace ChaNiBaaStra.DataModels.Varga
         protected override List<int> venusList { get { return new List<int> { 6, 11, 12 }; } }
         protected override List<int> saturnList { get { return new List<int> { 3, 5, 6, 11 }; } }
         protected override List<int> lagnaList { get { return new List<int> { 1, 3, 4, 6, 10, 11 }; } }
-
         public void SetAsktakaVargaya(List<AstroPlanet> birthPlanetList)
         {
             base.SetVargaya(birthPlanetList);
@@ -236,14 +227,10 @@ namespace ChaNiBaaStra.DataModels.Varga
         public static void Add(this int[] array, int[] otherArray)
         {
             if (array.Length != otherArray.Length)
-            {
                 throw new ArgumentException("Arrays must be of the same length");
-            }
 
             for (int i = 0; i < array.Length; i++)
-            {
                 array[i] += otherArray[i];
-            }
         }
     }
 
@@ -281,13 +268,11 @@ namespace ChaNiBaaStra.DataModels.Varga
         public VenusAsktakaVargaya VenusVarga { get; set; }
         public SaturnAsktakaVargaya SaturnVarga { get; set; }
         public AscendantAsktakaVargaya AscVarga { get; set; }
-
         public int[] SavAsktakaVarga { get; set; }
         
         public AstakaVargaMaster(Horoscope horoscope)
         {
             SavAsktakaVarga = new int[12];
-
             List<AstroPlanet> birthPlanets = horoscope.CompletePlanetList;
 
             MoonVarga = new MoonAsktakaVargaya();
@@ -313,7 +298,6 @@ namespace ChaNiBaaStra.DataModels.Varga
             SavAsktakaVarga.Add(SaturnVarga.AshtakaVargaList);
             AscVarga = new AscendantAsktakaVargaya();
             AscVarga.SetAsktakaVargaya(birthPlanets);
-
         }
     }
 }

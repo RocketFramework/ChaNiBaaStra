@@ -71,15 +71,18 @@ namespace ChaNiBaaStra
         }
 
         private void UpdateMessages()
-        {
+        {                    
+            RashiLordInHouse rashiLordInHouse = new RashiLordInHouse();
             for (int i = 1; i <= 12; i++)
             {
                 FlowLayoutPanel laoutPanelN = (this.Controls.OfType<FlowLayoutPanel>())
                 .Where(x => x.Name == "flowLayoutPanelN" + i).FirstOrDefault();
                 if (laoutPanelN != null)
                 {
-                    string message = this.CurrentHoroscope.RasiHouseList
-                        .Where(x => x.HouseNumber == i).FirstOrDefault().GetPowerBasedOnViews();
+                    AstroRasi rasi = this.CurrentHoroscope.RasiHouseList
+                        .Where(x => x.HouseNumber == i).FirstOrDefault();
+                    string message = rashiLordInHouse.GetPrediction(i, this.CurrentHoroscope.LagnaRasi.Current, rasi.Loard.Current, rasi.Loard.HouseNumber);
+                    message += rasi.GetPowerBasedOnViews();
                     this.toolTipFullView.SetToolTip(laoutPanelN
                         , message);
                     laoutPanelN.Tag = message;
@@ -324,6 +327,14 @@ namespace ChaNiBaaStra
             AstroPlanet adhipathi = rasi.AdhipathiAstroPlanets.Last();
             if (rasi.Loard.Current == adhipathi.Current)
                 labelLord.Text += "♕";
+
+            AstakaVargaMaster varga = new AstakaVargaMaster(CurrentHoroscope);
+            for (int i = 0; i < 12; i++)
+            {
+                Label labelS = (this.Controls.OfType<Label>())
+                .Where(x => x.Name == "labelSav" + (i + 1)).FirstOrDefault();
+                labelS.Text = varga.SavAsktakaVarga[i].ToString();
+            }
         }
 
         private void UpdateAdhipathi(AstroRasi rasi)

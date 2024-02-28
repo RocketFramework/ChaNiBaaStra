@@ -510,7 +510,7 @@ namespace ChaNiBaaStra.DataModels
         public AstroRasi DwadasanshayaRasi{ get; set; }
         public AstroRasi ThrishanshayaRasi { get; set; }
 
-    public double RasiStart { get; set; }
+        public double RasiStart { get; set; }
         public double RasiEnd { get; set; }
         public double Latitude { get; set; }
         public bool IsMarakaPlanet { get; set; }
@@ -1946,7 +1946,7 @@ namespace ChaNiBaaStra.DataModels
                                 case 8: return "The 8th house in Vedic astrology represents marriage, corporate resources and the property or money inherited. It’s also the house of hidden matters, occult, mysticism, death, and rebirth.\r\nWill marry a wealthy partner. Others like to give money and wealth to these people, they manage other peoples money and wealth.This placement indicates that the native will have a partner who is well informed of money matters and would be someone who will provide richness and comforts in life.\r\nHowever, in the case of afflicted Venus, it could make the native lazy and careless. The native might even experience disappointments in their love life.\r\nThe presence of Planet Venus in this house draws the native to people who have darkness in them. They are always attracted to the mysterious and dark energy that people possess.\r\nNative is likely to get into a relationship with someone who is mysterious, sexual and wealthy. On the other hand, others find the native charming and enchanting without being able to identify the reason why.";
                                 case 9: return "This house is concerned with the long-distance travels like a pilgrimage or foreign travel etc. and the knowledge obtained during it. it’s also related to the religious and philosophical ideas, together with the higher learnings of the native.\r\nWhen Venus is position in this house, it makes the native very fond of traveling, they are always excited about discovering new places, culture, music, and art.\r\nThere are chances that the natives might get married to some foreigner or someone who’s settled in foreign lands. The native tends to live far from his/her native land.\r\nA badly aspected Venus may give the tendency to escapism, especially at a younger age or the native might cut his studies short either by their own choice or due to some obstacles.\r\nThese people take great interest in religious and philosophical discussions and are tend to be fair-minded.";
                                 case 10: return "In Vedic astrology, the 10th house is considered as the house that represents a career or profession. It shows if the person will achieve fame and grandness in his life. It is also the house fathers.\r\nWhen Venus is positioned in this house, it gives the native a cheerful and friendly behavior with a harmonious and compelling personality which makes them gain a lot of attention in their workplace.\r\nThe native tends to be an easygoing and sociable person and have a positive outlook on life. This quality of theirs helps them a lot in their life. The native shares a good relation with his father.\r\nWith this placement in the native’s horoscope, they tend to be more enticed towards making a career in music, speaking or even politics.\r\nIf badly aspected, this position might affect the native’s public image. They might even use their talent and abilities selfishly to gain money.";
-                                case 11: return "The 11th house is a strong indicator of sudden wealth and gains. It represents prosperity, sudden income and good wealth. This is also the house that depicts one’s social circle.\r\nPlacement of Planet Venus in the 11th house grants the native with a gracious personality. It further helps them in making friends easily. The native might attract many friends from the opposite sex.\r\nNative is naturally blessed with a persona that he is easily able to financially gain from their social activities.\r\nNative with this placement has a strong desire of being surrounded by their friends. They attract financially sound people who can further give them financial assistance when needed.\r\nIn the case of afflicted Venus, the native should not overindulge in social groups and with hanging with friends, as it might affect them unfavorably.";
+                                case 11: return "The 11th house is a strong indicator of sudden wealth and gains. It represents prosperity, sudden income and good wealth. This is also the house that depicts one’s social circle.\r\nPlacement of Planet Venus in the 11th house grants the native with a gracious personality. It further helps them in making friends easily. The native might attract many friends from the opposite sex. He will be worried about future and Masturbate much, he will have excessive lust. He must learn to respect females.\r\nNative is naturally blessed with a persona that he is easily able to financially gain from their social activities.\r\nNative with this placement has a strong desire of being surrounded by their friends. They attract financially sound people who can further give them financial assistance when needed.\r\nIn the case of afflicted Venus, the native should not overindulge in social groups and with hanging with friends, as it might affect them unfavorably.";
                                 case 12: return "It’s the house of secrets, fears, the subconscious mind and isolated places. It also represents liberation and detachments from the materialistic desires of life and indicates one’s inclination towards spirituality.\r\nWhen Planet Venus is placed in the 12th house, it depicts that the native would love to spend time alone. Moreover, they may have hidden love affairs as they like to keep things hidden from people.\r\nThe native is likely to be shy and introvert. They enjoy mystical and artistic things. Being themselves very creative and artistic, they are usually unaware of their artistic talents or keep that hidden from the world.\r\nThe presence of Venus in the 12th house makes the native unaware of his personal charm. So, these people are likely to be more attractive and charismatic then what they think. ";
                             }
                             break;
@@ -2346,6 +2346,11 @@ namespace ChaNiBaaStra.DataModels
             return false;
         }
 
+        public void UpdateViewDetails(List<AstroPlanet> completePlanetList)
+        {
+            this.ViewDetails = new AstroViewDetails(this, completePlanetList);
+        }
+
         public string GetSpecialMessages()
         {
             SpecialMessage = "***";
@@ -2421,6 +2426,8 @@ namespace ChaNiBaaStra.DataModels
         public AstroRasi OriginalNawamsaRasi { get; set; }
 
         public AstroView Views { get; set; }
+
+        public AstroViewDetails ViewDetails { get; set; }
         /// <summary>
         /// Distance in AU
         /// </summary>
