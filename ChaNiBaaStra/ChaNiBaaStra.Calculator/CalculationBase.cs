@@ -133,6 +133,10 @@ namespace ChaNiBaaStra.Calculator
                 sunrise = sunset;
                 sunset = sunrise2;
             }
+            //var test = SunriseSunsetCalculator.CalculateSunriseSunset(PlaceData.Latitude, PlaceData.Longitude, PlaceData.AdjustedBirthDateTime);
+            
+            //SunRise = PlaceData.GetStandardTime(test.sunrise);
+            //SunSet = PlaceData.GetStandardTime(test.sunset);
             SunRise = PlaceData.GetStandardTime(sunrise);
             SunSet = PlaceData.GetStandardTime(sunset);
             Muthurtha = new AstroMuhurtha(PlaceData.OriginalDateTime, SunRise, SunSet);

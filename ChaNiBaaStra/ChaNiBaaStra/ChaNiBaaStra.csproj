@@ -187,6 +187,12 @@
     <Compile Include="AlternativeView.Designer.cs">
       <DependentUpon>AlternativeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="NakathFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NakathFinder.Designer.cs">
+      <DependentUpon>NakathFinder.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanetSummary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     </Compile>
     <Compile Include="PlanetHolder.Designer.cs">
       <DependentUpon>PlanetHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelationFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationFinder.Designer.cs">
+      <DependentUpon>RelationFinder.cs</DependentUpon>
     </Compile>
     <Compile Include="SecondaryView.cs">
       <SubType>Form</SubType>
@@ -247,6 +259,9 @@
     <EmbeddedResource Include="AlternativeView.resx">
       <DependentUpon>AlternativeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NakathFinder.resx">
+      <DependentUpon>NakathFinder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanetSummary.resx">
       <DependentUpon>PlanetSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +280,9 @@
     </Compile>
     <EmbeddedResource Include="PlanetHolder.resx">
       <DependentUpon>PlanetHolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelationFinder.resx">
+      <DependentUpon>RelationFinder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SecondaryView.resx">
       <DependentUpon>SecondaryView.cs</DependentUpon>

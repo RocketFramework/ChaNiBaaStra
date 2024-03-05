@@ -179,6 +179,23 @@ namespace ChaNiBaaStra.DataModels
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
         }
 
+        public AstroPlace(double latitude, double longitude, DateTime dateTime)
+        {
+            //+
+            OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day
+                , dateTime.Hour, dateTime.Minute, dateTime.Second);
+            AdjustTime(longitude, dateTime);
+
+            this.Country = "Unknown";
+            this.City = "Unknown";
+            this.Longitude = longitude;
+            this.Latitude = latitude;
+            this.PersonName = "Unknown";
+            this.IsMale = false;
+            int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
+            this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
+        }
+
         private void AdjustTime(double longitude, DateTime dateTime)
         {
             //OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day

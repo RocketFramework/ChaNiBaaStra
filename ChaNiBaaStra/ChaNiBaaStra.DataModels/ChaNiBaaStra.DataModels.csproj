@@ -164,6 +164,7 @@
     <Compile Include="AstroView.cs" />
     <Compile Include="AstroWeekDay.cs" />
     <Compile Include="AstroYoga.cs" />
+    <Compile Include="BirthData.cs" />
     <Compile Include="BirthDataSaveObject.cs" />
     <Compile Include="BirthRasiExtra.cs" />
     <Compile Include="ChartBase.cs" />

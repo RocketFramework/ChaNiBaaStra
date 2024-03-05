@@ -131,7 +131,7 @@ namespace ChaNiBaaStra
 
         public void UpdateDisplayPlanetMessages(AstroPlanet planet, bool isBhavaView)
         {
-            this.richTextBoxClickedPlanet.Text = "===Rashi Data===\r\n" + planet.Rasi.GetRashiQuality(); 
+            this.richTextBoxClickedPlanet.Text = "===Rashi Data===\r\n" + planet.Rasi.GetRashiQuality();
             this.richTextBoxClickedPlanet.Text += "\r\n===Planet Data===\r\n" + planet.GetPlanetQuality();
             this.richTextBoxClickedPlanet.Text += "\r\n===Planet On House===\r\n" + planet.GetPlanetQualityOnHouse();
             this.richTextBoxClickedPlanet.Text += "\r\n===Planet Special Message===\r\n" + planet.GetSpecialMessages();
@@ -142,10 +142,15 @@ namespace ChaNiBaaStra
             analyzer.AddString(this.richTextBoxClickedPlanet.Text);
             this.richTextBoxSummary.Text = analyzer.GetSummary();
 
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = planet.ViewDetails.ISeeThemDetails.Select(x => new { PlanetName = x.SourceCanSeeThisPlanet.Name, ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
+            BindingSource bindingSourceISee = new BindingSource();
+            bindingSourceISee.DataSource = planet.ViewDetails.ISeeThemDetails.Select(x => new { SourceSeeThis = x.SourceCanSeeThisPlanet.Name, GoodPlanet = (x.SourcePlanet.IsGoodPlanet) ? "Yes" : "No", Relation = x.SourcePlanet.GetPlanetRelation(x.SourceCanSeeThisPlanet.Current), ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
 
-            this.dataGridViewViews.DataSource = bindingSource;
+            BindingSource bindingSourceTheySee = new BindingSource();
+            bindingSourceTheySee.DataSource = planet.ViewDetails.TheySeeMeDetails.Select(x => new { ThisSeeTheSource = x.SourceCanSeeThisPlanet.Name, GoodPlanet = (x.SourceCanSeeThisPlanet.IsGoodPlanet) ? "Yes" : "No", Relation = x.SourceCanSeeThisPlanet.GetPlanetRelation(x.SourcePlanet.Current), ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
+
+
+            this.dataGridViewViews.DataSource = bindingSourceISee;
+            this.dataGridViewTheySeeMe.DataSource = bindingSourceTheySee;
         }
 
         public void UpdateDisplayMessage(string message, bool isAppend)
@@ -177,6 +182,8 @@ namespace ChaNiBaaStra
         private void buttonReset_Click(object sender, EventArgs e)
         {
             originalValue = System.DateTime.Now;
+            GPT3Interactor wrapper = new GPT3Interactor();
+            wrapper.Chat();
         }
 
         private void radioButtonBhavaOn_CheckedChanged(object sender, EventArgs e)
@@ -404,7 +411,7 @@ namespace ChaNiBaaStra
                 DasaResultTypes b = dasa.IsDasaTransitTimeGood(dasaHoroscope.CompletePlanetList);
                 string s = AstroGoodBad.GetDasaQualityBasedOnMoonPlacement(dasaHoroscope.CurrentTransitDate.Moon.Rasi.Current);
                 s += "\r\nData Effect by Birth: " + dasa.GetDasaBirthPlanetEffect(birthHoroscope.CompletePlanetList)
-                + "\r\nDescription: " + AstroGoodBad.GetDasaQualityBasedOnDasaPlanet(dasa.DasaPlanet, b < DasaResultTypes.Mixed );
+                + "\r\nDescription: " + AstroGoodBad.GetDasaQualityBasedOnDasaPlanet(dasa.DasaPlanet, b < DasaResultTypes.Mixed);
                 System.Windows.Forms.MessageBox.Show("This is a " + b.ToString() + " Dasa transit for you - " + s);
             }
         }
@@ -433,13 +440,24 @@ namespace ChaNiBaaStra
         {
             SecondaryView secondView = new SecondaryView();
             secondView.CurrentHoroscope = birthHoroscope;
-
             secondView.Show();
         }
 
         private void tabControlLeft_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.richTextBoxEDM.Text = BaziCalculator.CalculateEarthDayMasterPrediction(birthHoroscope.CurrentTransitDate.CurrentDateTime);
+        }
+
+        private void nakathFinderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NakathFinder finder = new NakathFinder();
+            finder.Show();
+        }
+
+        private void relationFinderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelationFinder finder = new RelationFinder();
+            finder.Show();
         }
     }
 }

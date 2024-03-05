@@ -887,7 +887,7 @@
             // 
             this.labelN6.AutoSize = true;
             this.labelN6.BackColor = System.Drawing.Color.Transparent;
-            this.labelN6.Location = new System.Drawing.Point(384, 839);
+            this.labelN6.Location = new System.Drawing.Point(370, 839);
             this.labelN6.Name = "labelN6";
             this.labelN6.Size = new System.Drawing.Size(37, 20);
             this.labelN6.TabIndex = 71;
@@ -1234,7 +1234,7 @@
             // 
             this.labelAdhipathi5.AutoSize = true;
             this.labelAdhipathi5.BackColor = System.Drawing.Color.Transparent;
-            this.labelAdhipathi5.Location = new System.Drawing.Point(206, 788);
+            this.labelAdhipathi5.Location = new System.Drawing.Point(209, 788);
             this.labelAdhipathi5.Name = "labelAdhipathi5";
             this.labelAdhipathi5.Size = new System.Drawing.Size(0, 20);
             this.labelAdhipathi5.TabIndex = 101;
@@ -1243,7 +1243,7 @@
             // 
             this.labelAdhipathi6.AutoSize = true;
             this.labelAdhipathi6.BackColor = System.Drawing.Color.Transparent;
-            this.labelAdhipathi6.Location = new System.Drawing.Point(421, 842);
+            this.labelAdhipathi6.Location = new System.Drawing.Point(418, 842);
             this.labelAdhipathi6.Name = "labelAdhipathi6";
             this.labelAdhipathi6.Size = new System.Drawing.Size(0, 20);
             this.labelAdhipathi6.TabIndex = 102;
@@ -1261,7 +1261,7 @@
             // 
             this.labelAdhipathi8.AutoSize = true;
             this.labelAdhipathi8.BackColor = System.Drawing.Color.Transparent;
-            this.labelAdhipathi8.Location = new System.Drawing.Point(1046, 842);
+            this.labelAdhipathi8.Location = new System.Drawing.Point(1025, 842);
             this.labelAdhipathi8.Name = "labelAdhipathi8";
             this.labelAdhipathi8.Size = new System.Drawing.Size(0, 20);
             this.labelAdhipathi8.TabIndex = 104;
@@ -1297,7 +1297,7 @@
             // 
             this.labelAdhipathi12.AutoSize = true;
             this.labelAdhipathi12.BackColor = System.Drawing.Color.Transparent;
-            this.labelAdhipathi12.Location = new System.Drawing.Point(1037, 141);
+            this.labelAdhipathi12.Location = new System.Drawing.Point(1019, 141);
             this.labelAdhipathi12.Name = "labelAdhipathi12";
             this.labelAdhipathi12.Size = new System.Drawing.Size(0, 20);
             this.labelAdhipathi12.TabIndex = 108;

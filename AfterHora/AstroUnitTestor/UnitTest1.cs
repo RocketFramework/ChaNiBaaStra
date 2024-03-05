@@ -74,7 +74,8 @@ namespace AstroUnitTestor
         [TestMethod]
         public void TestMethodCallChatGTPToSummarize()
         {
-            ChatGTPWrapper wrapper = new ChatGTPWrapper();
+            GPT3Interactor wrapper = new GPT3Interactor();
+            wrapper.Chat();
             //wrapper.CallChatGTPToSummarize();
         }
 

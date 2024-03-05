@@ -121,6 +121,8 @@ C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBa
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CopyComplete
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
 C:\Users\LENOVO\Downloads\Projects\Projects\Astro - ChatGTP\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
+C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll.config
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.dll
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\ChaNiBaaStra.Calculator.pdb
@@ -284,8 +286,6 @@ C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaSt
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\bin\Debug\PropertyChanged.xml
-C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.AssemblyReference.cache
-C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CoreCompileInputs.cache
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.csproj.CopyComplete
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.dll
 C:\Users\user_\source\repos\RocketFramework\ChaNiBaaStra\ChaNiBaaStra\ChaNiBaaStra.Calculator\obj\Debug\ChaNiBaaStra.Calculator.pdb
