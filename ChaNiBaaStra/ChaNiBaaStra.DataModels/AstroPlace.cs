@@ -69,15 +69,12 @@ namespace ChaNiBaaStra.DataModels
             get { return eventTimeField.ToString(DateTimeOffsetFormatString); }
             set { eventTimeField = DateTimeOffset.Parse(value); }
         }
-
         public DateTime OriginalDateTime { get { return DateTime.Parse(EventTime); } 
             set { eventTimeField = value; } }
-
         public DateTime AdjustedBirthDate
         {
             get { return adjustedBirthDateTime.Date; }
         }
-
         public DateTime AdjustedBirthDateTime
         {
             get { return adjustedBirthDateTime; }
@@ -113,7 +110,6 @@ namespace ChaNiBaaStra.DataModels
         }*/
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         /*public TimeSpan AdjustedBirthTime
         {
             get { return adjustedBirthDateTime.TimeOfDay; }
@@ -124,7 +120,6 @@ namespace ChaNiBaaStra.DataModels
                     , value.Hours, value.Minutes, value.Seconds);
             }
         }*/
-
         public string City { get; set; }
         public string Country { get; set; }
         public double Longitude { get; set; }
@@ -160,7 +155,6 @@ namespace ChaNiBaaStra.DataModels
         public string TimeZoneString { get; set; }
         public string PersonName { get; set; }
         public bool IsMale { get; }
-
         public AstroPlace(string city, string country, string name
             , double latitude, double longitude, DateTime dateTime, bool isMale)
         {
@@ -178,7 +172,6 @@ namespace ChaNiBaaStra.DataModels
             int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
         }
-
         public AstroPlace(double latitude, double longitude, DateTime dateTime)
         {
             //+
@@ -195,7 +188,6 @@ namespace ChaNiBaaStra.DataModels
             int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
         }
-
         private void AdjustTime(double longitude, DateTime dateTime)
         {
             //OriginalDateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day
@@ -215,7 +207,6 @@ namespace ChaNiBaaStra.DataModels
             //this.AdjustedBirthDate = adjustedDateTime.Date;
             //this.AdjustedBirthTime = adjustedDateTime.TimeOfDay;
         }
-
         public AstroPlace()
         {
             //+
@@ -231,10 +222,8 @@ namespace ChaNiBaaStra.DataModels
             this.IsMale = true;
             int[] tz = AstroUtility.GetDegreeMinuteSeconds(TimeZone);
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
-
             //this.adjustedBirthDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
         }
-
         public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)
         {
             double actualOffset = longitude / 15.0;
@@ -242,26 +231,21 @@ namespace ChaNiBaaStra.DataModels
             double secAdjustment = (minAdjustment - (int)minAdjustment) * 60;
             return locationDateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
         }
-
         public DateTime GetStandardTime(DateTime adjustedTime)
         {
             double actualOffset = Longitude / 15.0;
             TimeSpan ts = TimeZoneInfo.Local.BaseUtcOffset;
             double standardOffset = ts.TotalMinutes / 60.0;
             double adjustment = (actualOffset - standardOffset) * 60;
-
             double minAdjustment = (int)adjustment;
             double secAdjustment = (adjustment - minAdjustment) * 60;
-
             return adjustedTime.AddMinutes((int)minAdjustment * -1).AddSeconds(secAdjustment * -1);
         }
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
-            {
                 handler(this, new PropertyChangedEventArgs(name));
-            }
         }
     }
 }

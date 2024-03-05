@@ -242,7 +242,7 @@
             // flowLayoutPanelN11
             // 
             this.flowLayoutPanelN11.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelN11.Location = new System.Drawing.Point(1062, 283);
+            this.flowLayoutPanelN11.Location = new System.Drawing.Point(1062, 285);
             this.flowLayoutPanelN11.Name = "flowLayoutPanelN11";
             this.flowLayoutPanelN11.Size = new System.Drawing.Size(235, 109);
             this.flowLayoutPanelN11.TabIndex = 23;
@@ -1406,7 +1406,7 @@
             // 
             this.labelSav11.AutoSize = true;
             this.labelSav11.BackColor = System.Drawing.Color.Transparent;
-            this.labelSav11.Location = new System.Drawing.Point(1040, 394);
+            this.labelSav11.Location = new System.Drawing.Point(1040, 395);
             this.labelSav11.Name = "labelSav11";
             this.labelSav11.Size = new System.Drawing.Size(51, 20);
             this.labelSav11.TabIndex = 119;
