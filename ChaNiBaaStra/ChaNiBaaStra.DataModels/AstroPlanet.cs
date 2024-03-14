@@ -321,9 +321,8 @@ namespace ChaNiBaaStra.DataModels
     {
 
         public AstroPlanet(EnumPlanet palnet) : base()
-        {
+        { }
 
-        }
         /// <summary>
         /// 
         /// </summary>
@@ -2351,6 +2350,15 @@ namespace ChaNiBaaStra.DataModels
             this.ViewDetails = new AstroViewDetails(this, completePlanetList);
         }
 
+        public void UpdateTransitHoroscopeViewDetails(List<AstroPlanet> completeOtherHoroscopePlanetList)
+        {
+            this.ViewDetails.AstroTransitViewDetails(this, completeOtherHoroscopePlanetList);
+        }
+
+        public void UpdateBirthHoroscopeViewDetails(List<AstroPlanet> completeOtherHoroscopePlanetList)
+        {
+            this.ViewDetails.AstroBirthViewDetails(this, completeOtherHoroscopePlanetList);
+        }
         public string GetSpecialMessages()
         {
             SpecialMessage = "***";
@@ -2409,7 +2417,7 @@ namespace ChaNiBaaStra.DataModels
             SpecialMessage += "\r\nKaraka: " + this.KarakaState.ToString();
             SpecialMessage += "\r\nAdhipathi Houses: " + this.AdhipathiHouses.ToJSON();
             SpecialMessage += "\r\nI See: " + AstroView.GetAllHousesPlanetSee(this.Current, this.HouseNumber).ToJSON();
-            SpecialMessage += "\r\nNext Transit Date: " + this.NextTransitDateTime.ToShortDateString();
+            SpecialMessage += "\r\nNext Transit Date: " + this.NextTransitDateTime.ToShortDateString() + " - " + this.NextTransitDateTime.ToShortTimeString();
 
             if (this.IsTransitPlanet)
             {

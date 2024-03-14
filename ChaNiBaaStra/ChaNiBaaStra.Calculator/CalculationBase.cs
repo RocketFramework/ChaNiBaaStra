@@ -12,6 +12,7 @@ using static log4net.Appender.RollingFileAppender;
 using static ChaNiBaaStra.Calculator.AstroCalculator;
 using System.Windows.Controls;
 using System.Security.Cryptography.X509Certificates;
+using SunriseCalculator;
 
 namespace ChaNiBaaStra.Calculator
 {
@@ -61,7 +62,7 @@ namespace ChaNiBaaStra.Calculator
             KarnaEndDateTime = null;
             YogaEndDateTime = null;
             swissEph.swe_set_topo(locationData.Longitude, locationData.Latitude, 0.0);
-
+            swissEph.swe_set_ephe_path(null);// They say it is important to call this for accurate results
             DateTime dateTime = locationData.AdjustedBirthDateTime;
             PlaceData = locationData;
             CurrentDateTime = dateTime;
@@ -100,7 +101,7 @@ namespace ChaNiBaaStra.Calculator
             Horoscope.ExtraDetails = new BirthRasiExtra(Horoscope);
             Horoscope.ExtraDetails.ThithiNumber = Thithi.Current;
             Horoscope.ExtraDetails.IsPura = (Thithi.ThithiPaksha == EnumPaksha.Krishna);
-//            Horoscope.Nakath = Nakath;
+            //Horoscope.Nakath = Nakath;
 
             Init();
         }
@@ -112,7 +113,7 @@ namespace ChaNiBaaStra.Calculator
             DateTime sunset = DateTime.Now;
             int ltD = (int)PlaceData.Latitude;
             //DateTime = DateTime.AddDays(10);
-
+            /*
             SunTimes.Instance.CalculateSunRiseSetTimes(new SunTimes.LatitudeCoords
                                    ((int)PlaceData.Latitude, (int)((PlaceData.Latitude - (int)PlaceData.Latitude) * 60), 0, SunTimes.LatitudeCoords.Direction.North),
                                                 new SunTimes.LongitudeCoords
@@ -133,12 +134,21 @@ namespace ChaNiBaaStra.Calculator
                 sunrise = sunset;
                 sunset = sunrise2;
             }
-            //var test = SunriseSunsetCalculator.CalculateSunriseSunset(PlaceData.Latitude, PlaceData.Longitude, PlaceData.AdjustedBirthDateTime);
-            
-            //SunRise = PlaceData.GetStandardTime(test.sunrise);
-            //SunSet = PlaceData.GetStandardTime(test.sunset);
-            SunRise = PlaceData.GetStandardTime(sunrise);
-            SunSet = PlaceData.GetStandardTime(sunset);
+
+            int iyear_out, imonth_out, iday_out, ihour_out, imin_out;
+            double dsec_out;
+            //GetUT(out iyear_out, out imonth_out, out iday_out, out ihour_out, out imin_out, out dsec_out);
+            var test = SunriseSunsetCalculator.GetSunriseSunset(PlaceData.AdjustedBirthDate, PlaceData.Longitude, PlaceData.Latitude);
+            */
+            SunriseCalc newYorkCity = new SunriseCalc(latitude: PlaceData.Latitude, longitude: PlaceData.Longitude, PlaceData.AdjustedBirthDate);
+           
+            // Get today's sunrise and sunset times for New York City, in UTC.
+            newYorkCity.GetRiseAndSet(out DateTime todaysSunriseUTC, out DateTime todaysSunsetUTC);
+
+            SunRise = todaysSunriseUTC.AddHours(PlaceData.Longitude / 15);
+            SunSet = todaysSunsetUTC.AddHours(PlaceData.Longitude / 15);
+            //SunRise = PlaceData.GetStandardTime(sunrise);
+            //SunSet = PlaceData.GetStandardTime(sunset);
             Muthurtha = new AstroMuhurtha(PlaceData.OriginalDateTime, SunRise, SunSet);
         }
         /*public DateTime SunRise { get; set; }
@@ -154,7 +164,7 @@ namespace ChaNiBaaStra.Calculator
             long iflgret;
             int planet;
 
-            swissEph.swe_set_ephe_path(null);
+            //swissEph.swe_set_ephe_path(null);
 
             DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
             TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
@@ -184,7 +194,6 @@ namespace ChaNiBaaStra.Calculator
                 // Speed in longitude(deg / day)
                 // Speed in latitude(deg / day)
                 // Speed in distance(AU / day)
-
                 pReturn = new AstroPlanet(planet, cusps, PlaceData);
                 /*
                  * if there is a problem, a negative value is returned and an
@@ -422,277 +431,287 @@ namespace ChaNiBaaStra.Calculator
             }
         }
 
-        public List<AstroPlanet> CalculatePlanetPositionWithDetails()
-        {
-            List<AstroPlanet> planets = new List<AstroPlanet>();
-            NakathEndDateTime = null;
-            double[] cusps = new double[6];
-            string serr = "";
-            long iflgret;
-            int planet;
-            swissEph.swe_set_ephe_path(null);
-            DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
-            double planetAvgSpeed = 0.0;
-            /*
-             * a loop over all planets
-             */
-            for (planet = SwissEph.SE_SUN; planet <= SwissEph.SE_CHIRON; planet++)
-            {
-                tjd_ut = tData.JulianDateTime;
-                cusps = new double[6];
-                double x2RasiStart = 0.0;
-                double x2RasiEnd = 0.0;
-                double x2NakathEnd = 0.0;
-                if (planet == SwissEph.SE_EARTH
-                    || planet == SwissEph.SE_MEAN_NODE || planet == SwissEph.SE_MEAN_APOG
-                    || planet == SwissEph.SE_OSCU_APOG || planet == SwissEph.SE_CHIRON) continue;
-                /*
-                 * do the coordinate calculation for this planet p
-                 */
-                swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);
-                bool shouldAdd = true;
-                bool transitIsCaptured = false;
-                AstroPlanet pReturn = null;
-                AstroPlanet ketu = null;
-                // Looping to find the next transit time/ reversing time of the planet body
-                while (true)
-                {
-                    /*DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
-                    if (nowDate.Subtract(dt).TotalDays > 365)
-                        break;*/ //Commented since we don't have to break;
-                    iflgret = swissEph.swe_calc_ut(tjd_ut, planet, AstroConsts.iflag, cusps, ref serr);
+        //public List<AstroPlanet> CalculatePlanetPositionWithDetails()
+        //{
+        //    List<AstroPlanet> planets = new List<AstroPlanet>();
+        //    NakathEndDateTime = null;
+        //    double[] cusps = new double[6];
+        //    string serr = "";
+        //    long iflgret;
+        //    int planet;
+        //    swissEph.swe_set_ephe_path(null);
+        //    DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
+        //    TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
+        //    double planetAvgSpeed = 0.0;
+        //    /*
+        //     * a loop over all planets
+        //     */
+        //    for (planet = SwissEph.SE_SUN; planet <= SwissEph.SE_CHIRON; planet++)
+        //    {
+        //        tjd_ut = tData.JulianDateTime;
+        //        cusps = new double[6];
+        //        double x2RasiStart = 0.0;
+        //        double x2RasiEnd = 0.0;
+        //        double x2NakathEnd = 0.0;
+        //        if (planet == SwissEph.SE_EARTH
+        //            || planet == SwissEph.SE_MEAN_NODE || planet == SwissEph.SE_MEAN_APOG
+        //            || planet == SwissEph.SE_OSCU_APOG || planet == SwissEph.SE_CHIRON) continue;
+        //        /*
+        //         * do the coordinate calculation for this planet p
+        //         */
+        //        swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);
+        //        bool shouldAdd = true;
+        //        bool transitIsCaptured = false;
+        //        AstroPlanet pReturn = null;
+        //        AstroPlanet ketu = null;
+        //        // Looping to find the next transit time/ reversing time of the planet body
+        //        while (true)
+        //        {
+        //            /*DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, LocationData.TimeZone);
+        //            if (nowDate.Subtract(dt).TotalDays > 365)
+        //                break;*/ //Commented since we don't have to break;
+        //            iflgret = swissEph.swe_calc_ut(tjd_ut, planet, AstroConsts.iflag, cusps, ref serr);
                
-                    // Longitude
-                    // Latitude
-                    // Distance in AU
-                    // Speed in longitude(deg / day)
-                    // Speed in latitude(deg / day)
-                    // Speed in distance(AU / day)
-                    if (shouldAdd)
-                    {
-                        shouldAdd = false;
-                        planetAvgSpeed = cusps[3];
-                        pReturn = new AstroPlanet(planet, cusps, PlaceData);
-                        /*
-                         * if there is a problem, a negative value is returned and an
-                         * error message is in serr.
-                         */
-                        if (iflgret < 0)
-                            pReturn.CalculationError = serr;
-                        /*
-                         * get the name of the planet p
-                         */
-                        pReturn.Name = swissEph.swe_get_planet_name(planet);
-                        planets.Add(pReturn);
-                        // Add Ketu
-                        if (planet == SwissEph.SE_TRUE_NODE)
-                        {
-                            pReturn.Name = "Rahu";
-                            double[] kethuCusps = new double[6];
-                            cusps.CopyTo(kethuCusps, 0);
-                            kethuCusps[0] = (kethuCusps[0] + 180.00) % 360;
-                            ketu = new AstroPlanet(12, kethuCusps, PlaceData);
-                            ketu.Name = "Kethu";
-                            planets.Add(ketu);
-                        }
-                        x2RasiStart = Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength;
-                        x2RasiEnd = x2RasiStart + AstroConsts.RasiLength;
-                        // Adjust the loop ending logic to include Nakath end degree 
-                        // This way we can find the NakathEndTime too
-                        if (x2NakathEnd == 0.0 && pReturn.Current == EnumPlanet.Moon)
-                            x2NakathEnd = Math.Truncate(cusps[0] / AstroConsts.NakLength) * AstroConsts.NakLength + AstroConsts.NakLength;
-                    }
-                    else if (x2RasiStart < cusps[0] && cusps[0] < x2RasiEnd)
-                    {
-                        // Planet Reversing related Calculation 
-                        if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
-                        {
-                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
-                            pReturn.IsNivrutha = true;
-                        }
-                        else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
-                        {
-                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
-                            pReturn.IsNivrutha = false;
-                        }
+        //            // Longitude
+        //            // Latitude
+        //            // Distance in AU
+        //            // Speed in longitude(deg / day)
+        //            // Speed in latitude(deg / day)
+        //            // Speed in distance(AU / day)
+        //            if (shouldAdd)
+        //            {
+        //                shouldAdd = false;
+        //                planetAvgSpeed = cusps[3];
+        //                pReturn = new AstroPlanet(planet, cusps, PlaceData);
+        //                /*
+        //                 * if there is a problem, a negative value is returned and an
+        //                 * error message is in serr.
+        //                 */
+        //                if (iflgret < 0)
+        //                    pReturn.CalculationError = serr;
+        //                /*
+        //                 * get the name of the planet p
+        //                 */
+        //                pReturn.Name = swissEph.swe_get_planet_name(planet);
+        //                planets.Add(pReturn);
+        //                // Add Ketu
+        //                if (planet == SwissEph.SE_TRUE_NODE)
+        //                {
+        //                    pReturn.Name = "Rahu";
+        //                    double[] kethuCusps = new double[6];
+        //                    cusps.CopyTo(kethuCusps, 0);
+        //                    kethuCusps[0] = (kethuCusps[0] + 180.00) % 360;
+        //                    ketu = new AstroPlanet(12, kethuCusps, PlaceData);
+        //                    ketu.Name = "Kethu";
+        //                    planets.Add(ketu);
+        //                }
+        //                x2RasiStart = Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength;
+        //                x2RasiEnd = x2RasiStart + AstroConsts.RasiLength;
+        //                // Adjust the loop ending logic to include Nakath end degree 
+        //                // This way we can find the NakathEndTime too
+        //                if (x2NakathEnd == 0.0 && pReturn.Current == EnumPlanet.Moon)
+        //                    x2NakathEnd = Math.Truncate(cusps[0] / AstroConsts.NakLength) * AstroConsts.NakLength + AstroConsts.NakLength;
+        //            }
+        //            else if (x2RasiStart < cusps[0] && cusps[0] < x2RasiEnd)
+        //            {
+        //                // Planet Reversing related Calculation 
+        //                if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
+        //                {
+        //                    pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
+        //                    pReturn.IsNivrutha = true;
+        //                }
+        //                else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
+        //                {
+        //                    pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
+        //                    pReturn.IsNivrutha = false;
+        //                }
 
-                        // When Nakath ends before the rasi ends
-                        if (pReturn.Current == EnumPlanet.Moon && NakathEndDateTime == null)
-                        {
-                            // Adjustment for actual Nakath End Time
-                            double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
-                        }
+        //                // When Nakath ends before the rasi ends
+        //                if (pReturn.Current == EnumPlanet.Moon && NakathEndDateTime == null)
+        //                {
+        //                    // Adjustment for actual Nakath End Time
+        //                    double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
+        //                    NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
+        //                }
 
-                        double degreeToGo = (!transitIsCaptured) ?
-                           Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength + AstroConsts.RasiLength - cusps[0]
-                           : x2RasiEnd - cusps[0];
+        //                double degreeToGo = (!transitIsCaptured) ?
+        //                   Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength + AstroConsts.RasiLength - cusps[0]
+        //                   : x2RasiEnd - cusps[0];
 
-                        double daysToGo = 0.5;                       
-                        double hoursToGo = Math.Abs(degreeToGo * 24 / ((planetAvgSpeed == 0) ? 1 : planetAvgSpeed));
+        //                double daysToGo = 0.5;                       
+        //                double hoursToGo = Math.Abs(degreeToGo * 24 / ((planetAvgSpeed == 0) ? 1 : planetAvgSpeed));
 
-                        tjd_ut += (daysToGo == 0) ? hoursToGo : daysToGo;
-                    }
-                    else if (pReturn != null && !transitIsCaptured)
-                    {
-                        Mod mod360 = new Mod(360);
-                        // TODO: One time sun speed was 0 and made the adjustment as I didn't have internet
-                        // Need to check it again to find out whether the 1 is a viable alternative here
-                        double rasiTimeDif = ((mod360.sub(cusps[0], x2RasiEnd)) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).TotalHours).AddMinutes(rasiTimeDif);
-                        if ((pReturn.Current == EnumPlanet.Rahu) && (ketu != null))
-                            ketu.NextTransitDateTime = pReturn.NextTransitDateTime;
-                        transitIsCaptured = true;
-                        if (pReturn.Current == EnumPlanet.Moon && x2RasiEnd < x2NakathEnd)
-                            x2RasiEnd = x2NakathEnd + 0.001; // Adustment to get it hit the internal logic
-                        else
-                            break;
-                    }
-                    else
-                        break;
-                }
-            }
-            return planets;
-        }
-        public List<AstroPlanet> CalculatePlanetPositionWithDetailsForAsync()
-        {
-            List<AstroPlanet> planets = new List<AstroPlanet>();
-            NakathEndDateTime = null;
-            double[] cusps = new double[6];
-            string serr = "";
-            long iflgret;
-            int planet;
-            swissEph.swe_set_ephe_path(null);
-            DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
-            TimeData tData = new TimeData(dt.ToUniversalTime());
-            /*
-             * a loop over all planets
-             */
-            for (planet = SwissEph.SE_SUN; planet <= SwissEph.SE_CHIRON; planet++)
-            {
-                tjd_ut = tData.JulianDateTime;
-                cusps = new double[6];
-                double x2RasiStart = 0.0;
-                double x2RasiEnd = 0.0;
-                double x2NakathEnd = 0.0;
-                if (planet == SwissEph.SE_EARTH
-                    || planet == SwissEph.SE_MEAN_NODE || planet == SwissEph.SE_MEAN_APOG
-                    || planet == SwissEph.SE_OSCU_APOG || planet == SwissEph.SE_CHIRON) continue;
-                /*
-                 * do the coordinate calculation for this planet p
-                 */
-                swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);
-                bool shouldAdd = true;
-                bool transitIsCaptured = false;
-                AstroPlanet pReturn = null;
-                // Looping to find the next transit time/ reversing time of the planet body
-                while (true)
-                {
-                    DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
-                    if (nowDate.Subtract(dt).TotalDays > 365)
-                        break;
-                    iflgret = swissEph.swe_calc_ut(tjd_ut, planet, AstroConsts.iflag, cusps, ref serr);
-                    // Longitude
-                    // Latitude
-                    // Distance in AU
-                    // Speed in longitude(deg / day)
-                    // Speed in latitude(deg / day)
-                    // Speed in distance(AU / day)
-                    if (shouldAdd)
-                    {
-                        shouldAdd = false;
-                        pReturn = new AstroPlanet(planet, cusps, PlaceData);
-                        /*
-                         * if there is a problem, a negative value is returned and an
-                         * error message is in serr.
-                         */
-                        if (iflgret < 0)
-                            pReturn.CalculationError = serr;
-                        /*
-                         * get the name of the planet p
-                         */
-                        pReturn.Name = swissEph.swe_get_planet_name(planet);
-                        planets.Add(pReturn);
-                        // Add Ketu
-                        if (planet == SwissEph.SE_TRUE_NODE)
-                        {
-                            pReturn.Name = "Rahu";
-                            cusps[0] = (cusps[0] + 180.00) % 360;
-                            AstroPlanet ketu = new AstroPlanet(12, cusps, PlaceData);
-                            ketu.Name = "Kethu";
-                            planets.Add(ketu);
-                        }
-                        x2RasiStart = Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength;
-                        x2RasiEnd = x2RasiStart + AstroConsts.RasiLength;
-                        // Adjust the loop ending logic to include Nakath end degree 
-                        // This way we can find the NakathEndTime too
-                        if (x2NakathEnd == 0.0 && pReturn.Current == EnumPlanet.Moon)
-                            x2NakathEnd = Math.Truncate(cusps[0] / AstroConsts.NakLength) * AstroConsts.NakLength + AstroConsts.NakLength;
-                    }
-                    else if (x2RasiStart < cusps[0] && cusps[0] < x2RasiEnd)
-                    {
-                        // Planet Reversing related Calculation 
-                        if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
-                        {
-                            pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
-                            pReturn.IsNivrutha = true;
-                        }
-                        else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
-                        {
-                            pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
-                            pReturn.IsNivrutha = false;
-                        }
+        //                tjd_ut += (daysToGo == 0) ? hoursToGo : daysToGo;
+        //            }
+        //            else if (pReturn != null && !transitIsCaptured)
+        //            {
+        //                Mod mod360 = new Mod(360);
+        //                // TODO: One time sun speed was 0 and made the adjustment as I didn't have internet
+        //                // Need to check it again to find out whether the 1 is a viable alternative here
+        //                double rasiTimeDif = ((mod360.sub(cusps[0], x2RasiEnd)) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
+        //                pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).TotalHours).AddMinutes(rasiTimeDif);
+        //                if ((pReturn.Current == EnumPlanet.Rahu) && (ketu != null))
+        //                    ketu.NextTransitDateTime = pReturn.NextTransitDateTime;
+        //                transitIsCaptured = true;
+        //                if (pReturn.Current == EnumPlanet.Moon && x2RasiEnd < x2NakathEnd)
+        //                    x2RasiEnd = x2NakathEnd + 0.001; // Adustment to get it hit the internal logic
+        //                else
+        //                    break;
+        //            }
+        //            else
+        //                break;
+        //        }
+        //    }
+        //    return planets;
+        //}
+        //public List<AstroPlanet> CalculatePlanetPositionWithDetailsForAsync()
+        //{
+        //    List<AstroPlanet> planets = new List<AstroPlanet>();
+        //    NakathEndDateTime = null;
+        //    double[] cusps = new double[6];
+        //    string serr = "";
+        //    long iflgret;
+        //    int planet;
+        //    swissEph.swe_set_ephe_path(null);
+        //    DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
+        //    TimeData tData = new TimeData(dt.ToUniversalTime());
+        //    /*
+        //     * a loop over all planets
+        //     */
+        //    for (planet = SwissEph.SE_SUN; planet <= SwissEph.SE_CHIRON; planet++)
+        //    {
+        //        tjd_ut = tData.JulianDateTime;
+        //        cusps = new double[6];
+        //        double x2RasiStart = 0.0;
+        //        double x2RasiEnd = 0.0;
+        //        double x2NakathEnd = 0.0;
+        //        if (planet == SwissEph.SE_EARTH
+        //            || planet == SwissEph.SE_MEAN_NODE || planet == SwissEph.SE_MEAN_APOG
+        //            || planet == SwissEph.SE_OSCU_APOG || planet == SwissEph.SE_CHIRON) continue;
+        //        /*
+        //         * do the coordinate calculation for this planet p
+        //         */
+        //        swissEph.swe_set_sid_mode(SwissEphNet.SwissEph.SE_SIDM_LAHIRI, 0, 0);
+        //        bool shouldAdd = true;
+        //        bool transitIsCaptured = false;
+        //        AstroPlanet pReturn = null;
+        //        // Looping to find the next transit time/ reversing time of the planet body
+        //        while (true)
+        //        {
+        //            DateTime nowDate = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
+        //            if (nowDate.Subtract(dt).TotalDays > 365)
+        //                break;
+        //            iflgret = swissEph.swe_calc_ut(tjd_ut, planet, AstroConsts.iflag, cusps, ref serr);
+        //            // Longitude
+        //            // Latitude
+        //            // Distance in AU
+        //            // Speed in longitude(deg / day)
+        //            // Speed in latitude(deg / day)
+        //            // Speed in distance(AU / day)
+        //            if (shouldAdd)
+        //            {
+        //                shouldAdd = false;
+        //                pReturn = new AstroPlanet(planet, cusps, PlaceData);
+        //                /*
+        //                 * if there is a problem, a negative value is returned and an
+        //                 * error message is in serr.
+        //                 */
+        //                if (iflgret < 0)
+        //                    pReturn.CalculationError = serr;
+        //                /*
+        //                 * get the name of the planet p
+        //                 */
+        //                pReturn.Name = swissEph.swe_get_planet_name(planet);
+        //                planets.Add(pReturn);
+        //                // Add Ketu
+        //                if (planet == SwissEph.SE_TRUE_NODE)
+        //                {
+        //                    pReturn.Name = "Rahu";
+        //                    cusps[0] = (cusps[0] + 180.00) % 360;
+        //                    AstroPlanet ketu = new AstroPlanet(12, cusps, PlaceData);
+        //                    ketu.Name = "Kethu";
+        //                    planets.Add(ketu);
+        //                }
+        //                x2RasiStart = Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength;
+        //                x2RasiEnd = x2RasiStart + AstroConsts.RasiLength;
+        //                // Adjust the loop ending logic to include Nakath end degree 
+        //                // This way we can find the NakathEndTime too
+        //                if (x2NakathEnd == 0.0 && pReturn.Current == EnumPlanet.Moon)
+        //                    x2NakathEnd = Math.Truncate(cusps[0] / AstroConsts.NakLength) * AstroConsts.NakLength + AstroConsts.NakLength;
+        //            }
+        //            else if (x2RasiStart < cusps[0] && cusps[0] < x2RasiEnd)
+        //            {
+        //                // Planet Reversing related Calculation 
+        //                if (pReturn.IsReversing && cusps[3] >= 0 && !pReturn.IsNode() && pReturn.ReversingEndAt == null)
+        //                {
+        //                    pReturn.ReversingEndAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
+        //                    pReturn.IsNivrutha = true;
+        //                }
+        //                else if (!pReturn.IsReversing && cusps[3] <= 0 && !pReturn.IsNode() && pReturn.ReversingStartingAt == null)
+        //                {
+        //                    pReturn.ReversingStartingAt = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone);
+        //                    pReturn.IsNivrutha = false;
+        //                }
 
-                        // When Nakath ends before the rasi ends
-                        if (pReturn.Current == EnumPlanet.Moon && NakathEndDateTime == null && x2NakathEnd < cusps[0])
-                        {
-                            // Adjustment for actual Nakath End Time
-                            double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                            NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
-                        }
+        //                // When Nakath ends before the rasi ends
+        //                if (pReturn.Current == EnumPlanet.Moon && NakathEndDateTime == null && x2NakathEnd < cusps[0])
+        //                {
+        //                    // Adjustment for actual Nakath End Time
+        //                    double nakTimeDif = ((cusps[0] - x2NakathEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
+        //                    NakathEndDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(nakTimeDif);
+        //                }
 
-                        // Optimization for NextTransitTime Calculation
-                        double degreeToGo = (!transitIsCaptured) ?
-                            Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength + AstroConsts.RasiLength - cusps[0]
-                            : x2RasiEnd - cusps[0];
-                        int daysToGo = (int)(degreeToGo / ((cusps[3] == 0) ? 1 : cusps[3]));
-                        double hoursToGo = degreeToGo * 24 / ((cusps[3] == 0) ? 1 : cusps[3]);
-                        if ((0.001 > cusps[3]) && (-0.001 < cusps[3]))
-                            tjd_ut += 1.0 / 1440.0;
-                        else if ((daysToGo > 2) || (daysToGo < -2))
-                            tjd_ut += 1;
-                        else if ((hoursToGo > 2) || (hoursToGo < -2))
-                            tjd_ut += 60.0 / 1440.0;
-                        else
-                            tjd_ut += 1.0 / 1440.0;
-                    }
-                    else if (pReturn != null && !transitIsCaptured)
-                    {
-                        // TODO: One time sun speed was 0 and made the adjustment as I didn't have internet
-                        // Need to check it again to find out whether the 1 is a viable alternative here
-                        double rasiTimeDif = ((cusps[0] - x2RasiEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
-                        pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(rasiTimeDif);
-                        transitIsCaptured = true;
-                        if (pReturn.Current == EnumPlanet.Moon && x2RasiEnd < x2NakathEnd)
-                            x2RasiEnd = x2NakathEnd + 0.001; // Adustment to get it hit the internal logic
-                        else
-                            break;
-                    }
-                    else
-                        break;
-                }
-            }
-            return planets;
-        }
+        //                // Optimization for NextTransitTime Calculation
+        //                double degreeToGo = (!transitIsCaptured) ?
+        //                    Math.Truncate(cusps[0] / AstroConsts.RasiLength) * AstroConsts.RasiLength + AstroConsts.RasiLength - cusps[0]
+        //                    : x2RasiEnd - cusps[0];
+        //                int daysToGo = (int)(degreeToGo / ((cusps[3] == 0) ? 1 : cusps[3]));
+        //                double hoursToGo = degreeToGo * 24 / ((cusps[3] == 0) ? 1 : cusps[3]);
+        //                if ((0.001 > cusps[3]) && (-0.001 < cusps[3]))
+        //                    tjd_ut += 1.0 / 1440.0;
+        //                else if ((daysToGo > 2) || (daysToGo < -2))
+        //                    tjd_ut += 1;
+        //                else if ((hoursToGo > 2) || (hoursToGo < -2))
+        //                    tjd_ut += 60.0 / 1440.0;
+        //                else
+        //                    tjd_ut += 1.0 / 1440.0;
+        //            }
+        //            else if (pReturn != null && !transitIsCaptured)
+        //            {
+        //                // TODO: One time sun speed was 0 and made the adjustment as I didn't have internet
+        //                // Need to check it again to find out whether the 1 is a viable alternative here
+        //                double rasiTimeDif = ((cusps[0] - x2RasiEnd) / ((cusps[3] == 0) ? 1 : cusps[3])) * 1440 * -1;
+        //                pReturn.NextTransitDateTime = TimeData.JulianToDateTime(tjd_ut, PlaceData.TimeZone).AddMinutes(rasiTimeDif);
+        //                transitIsCaptured = true;
+        //                if (pReturn.Current == EnumPlanet.Moon && x2RasiEnd < x2NakathEnd)
+        //                    x2RasiEnd = x2NakathEnd + 0.001; // Adustment to get it hit the internal logic
+        //                else
+        //                    break;
+        //            }
+        //            else
+        //                break;
+        //        }
+        //    }
+        //    return planets;
+        //}
 
-        public AstroRasi GetLagnaRashi()
+        /*public AstroRasi GetLagnaRashi()
         {
             double[] cusps = new double[13];
             double[] ascmc = new double[10];
             // cusps - the end point of a house
             swissEph.swe_houses_ex(tjd_ut, SwissEph.SEFLG_SIDEREAL, PlaceData.Latitude, PlaceData.Longitude, 'A', cusps, ascmc);
 
+            /*double[] geopos = new double[3];
+            geopos[0] = PlaceData.Longitude;
+            geopos[1] = PlaceData.Latitude;
+            geopos[2] = 0;
+
+            double[] datm = new double[2];
+            datm[0] = 1013.25; // atmospheric pressure;
+            // irrelevant with Hindu method, can be set to 0
+            datm[1] = 15; // atmospheric temperature;
+            swissEph.swe_rise_trans(tjd_ut, SwissEph.SE_SUN, "", SwissEph.SEFLG_SWIEPH, SwissEph.SE_CALC_RISE | SwissEph.SE_BIT_HINDU_RISING, geopos, datm[0], datm[1], )*//*
             int lagna = 0;
             // postion starts from 1
             for (int i = 1; i < cusps.Length; i++)
@@ -702,7 +721,7 @@ namespace ChaNiBaaStra.Calculator
                     if ((cusps[i] > 0) && (cusps[i] < 35)) lagna = i;
             Mod mod = new Mod(360);
             IntCircle intCycle = new IntCircle(12, lagna);
-            AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.ValueMinusCurrent(14));
+            AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.ValueMinusCurrent(12));
             rasi.AscendentDegrees = cusps[intCycle.Current];
             rasi.AscendentDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]) + cusps[intCycle.Current];
             rasi.RasiEndDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]);
@@ -713,62 +732,69 @@ namespace ChaNiBaaStra.Calculator
             rasi.LengthDegrees = mod.sub(rasi.RasiEndDegreesFromMesha, rasi.RasiStartDegreesFromMesha);
             rasi.Length = rasi.LengthDegrees;
             return rasi;
-        }
+        }*/
 
         public Horoscope CalculateHoroscope(List<AstroPlanet> pList)
         {
-            swissEph.swe_set_ephe_path("C:\\SWEPH\\EPHE");
-
-            DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
+            /*DateTime dt = new DateTime(Year, Month, Day, Hour, Minute, Second);
             TimeData tData = new TimeData(AstroPlace.GetUniversalTime(dt, PlaceData.Longitude));
-            tjd_ut = tData.JulianDateTime;
+            tjd_ut = tData.JulianDateTime;*/
+            int iyear_out, imonth_out, iday_out, ihour_out, imin_out;
+            double dsec_out;
+            GetUT(out iyear_out, out imonth_out, out iday_out, out ihour_out, out imin_out, out dsec_out);
 
+            double[] dret = new double[2];
+            string serr = "";
+            int retval = swissEph.swe_utc_to_jd(iyear_out, imonth_out, iday_out, ihour_out, imin_out, dsec_out, SwissEphNet.SwissEph.SE_GREG_CAL, dret, ref serr);
+
+            tjd_ut = dret[1];
             double[] cusps = new double[13];
             double[] ascmc = new double[10];
             // cusps - the end point of a house
-            swissEph.swe_houses_ex(tjd_ut, SwissEph.SEFLG_SIDEREAL, PlaceData.Latitude, PlaceData.Longitude, 'A', cusps, ascmc);// it was 'A' before  
+            swissEph.swe_houses_ex(tjd_ut, SwissEphNet.SwissEph.SEFLG_SIDEREAL, PlaceData.Latitude, PlaceData.Longitude, 'A', cusps, ascmc);// it was 'A' before  
             Horoscope horoScope = new Horoscope();
             Mod mod = new Mod(360);
 
             int lagna = 0;
+            int mesha = 0;
             // postion starts from 1
             for (int i = 1; i < cusps.Length; i++)
-                if ((cusps[i] > 0) && (cusps[i] < 30)) lagna = i;
-            if (lagna == 0)
+                if ((cusps[i] > 0) && (cusps[i] < 30)) mesha = i;
+            if (mesha == 0)
                 for (int i = 1; i < cusps.Length; i++)
-                    if ((cusps[i] > 0) && (cusps[i] < 35)) lagna = i;
+                    if ((cusps[i] > 0) && (cusps[i] < 35)) mesha = i;
+            lagna = (cusps[1] % 30 > 0) ? (int)cusps[1] / 30 + 1 : (int)cusps[1] / 30;
             int j = 0;
 
             horoScope.RasiHouseList = new List<AstroRasi>();
             horoScope.BhavaHouseList = new List<AstroBhava>();
-            IntCircle intCycle = new IntCircle(12, lagna);
-            double lagnaAscendant = cusps[lagna];
+            IntCircle intCycle = new IntCircle(12, 1);
+            intCycle.Current = lagna;
+            //double lagnaAscendant = cusps[lagna];
+            double lagnaAscendant = cusps[1] % 30;
             double bIncrement = 30.0;
             while (j != 12)
             {
                 // The 14 is used as the adjustment required to
                 // get the right lagna integer from the lagna integer
-                AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.ValueMinusCurrent(14));
-                rasi.AscendentDegrees = cusps[intCycle.Current];
-                rasi.AscendentDegreesFromMesha = (intCycle.Current == 1) ? cusps[intCycle.Current] : mod.sub(cusps[1], cusps[intCycle.Current]) + cusps[intCycle.Current];
-                rasi.RasiEndDegreesFromMesha = (intCycle.Current == 1) ? 0.0 : mod.sub(cusps[1], cusps[intCycle.Current]);
-                rasi.RasiEndDegreesFromHorizon = cusps[intCycle.Current];
-                rasi.RasiStartDegreesFromMesha = (intCycle.Previous == 1) ? 360.0 : mod.sub(cusps[1], cusps[intCycle.Previous]);
-                rasi.RasiStartDegreesFromHorizon = cusps[intCycle.Previous];
+                AstroRasi rasi = new AstroRasi((EnumRasi)intCycle.Current);
+                rasi.AscendentDegrees = cusps[j + 1] % 30;
+                rasi.AscendentDegreesFromMesha = cusps[1];
+                rasi.RasiEndDegreesFromMesha = Math.Abs(cusps[j + 1] - cusps[mesha]) + 30;
+                rasi.RasiEndDegreesFromHorizon = rasi.AscendentDegrees;
+                rasi.RasiStartDegreesFromMesha = Math.Abs(cusps[j + 1] - cusps[mesha]);
+                rasi.RasiStartDegreesFromHorizon = j * 30;
                 rasi.RasiMidDegreesFromMesha = (rasi.RasiStartDegreesFromMesha + rasi.RasiEndDegreesFromMesha) / 2.0;
                 rasi.LengthDegrees = mod.sub(rasi.RasiEndDegreesFromMesha, rasi.RasiStartDegreesFromMesha);
-                rasi.Length = rasi.LengthDegrees;
+                rasi.Length = rasi.AscendentDegrees;
                 rasi.HouseNumber = j + 1;
 
                 foreach (AstroPlanet planet in pList)
                 {
-                    if (planet.Longitude >= rasi.RasiEndDegreesFromMesha
-                        && planet.Longitude <= rasi.RasiStartDegreesFromMesha ||
-                        ((rasi.RasiStartDegreesFromMesha < rasi.RasiEndDegreesFromMesha) &&
-                        (((planet.Longitude <= rasi.RasiStartDegreesFromMesha) && (planet.Longitude >= 0)) ||
-                        ((planet.Longitude >= rasi.RasiEndDegreesFromMesha) && (planet.Longitude <= 360)))))
+                    if (planet.Longitude <= rasi.RasiEndDegreesFromMesha
+                        && planet.Longitude >= rasi.RasiStartDegreesFromMesha)
                     {
-                        planet.AjustedLongitude = mod.sub(planet.Longitude, rasi.RasiEndDegreesFromMesha);
+                        planet.AjustedLongitude = planet.Longitude % 30;
                         switch (rasi.HouseNumber)
                         {
                             case 10:
@@ -798,7 +824,7 @@ namespace ChaNiBaaStra.Calculator
                         }
                         planet.Rasi = rasi;// TODO: CHECKING
                         rasi.Planets.Add(planet);
-                        horoScope.RasiPlanetList.Add(planet);                      
+                        horoScope.RasiPlanetList.Add(planet);
                     }
                 }
 
@@ -811,7 +837,7 @@ namespace ChaNiBaaStra.Calculator
                     horoScope.LagnaRasi = rasi;
                     horoScope.NavamsaRasi = new AstroRasi(AstroBase.GetNawamsaRasi(rasi.AscendentDegreesFromMesha));
                 }
-                intCycle.GoBackward();
+                intCycle.GoForward();
                 j++;
                 bIncrement = mod.sub(bIncrement, 30.0);
                 if (j == 12) break;
@@ -823,6 +849,18 @@ namespace ChaNiBaaStra.Calculator
             FinalAdjustment(horoScope);
 
             return horoScope;
+        }
+
+        private void GetUT(out int iyear_out, out int imonth_out, out int iday_out, out int ihour_out, out int imin_out, out double dsec_out)
+        {
+            iyear_out = 0;
+            imonth_out = 0;
+            iday_out = 0;
+            ihour_out = 0;
+            imin_out = 0;
+            dsec_out = 0;
+            swissEph.swe_utc_time_zone(Year, Month, Day, Hour, Minute, Second, PlaceData.Longitude / 15,
+                ref iyear_out, ref imonth_out, ref iday_out, ref ihour_out, ref imin_out, ref dsec_out);
         }
 
         private static void AddThthakalikaMythra(AstroRasi rasi, AstroPlanet planet)

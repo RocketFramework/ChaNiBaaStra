@@ -30,6 +30,20 @@ namespace ChaNiBaaStra.Utilities
                 , Convert.ToInt32(sec));
         }
 
+        public static double CalculateAngularGap(double longitude1, double longitude2)
+        {
+            // Calculate the angular gap considering circular motion
+            double angularGap = Math.Abs(longitude2 - longitude1);
+
+            // Adjust the gap to consider the direction of motion
+            if (angularGap > 360 / 2)
+            {
+                angularGap = 360 - angularGap;
+            }
+
+            return angularGap;
+        }
+
         public static double ConvertDegreeAngleToDouble(string degreeAngle)
         {
             string[] data = degreeAngle.Split(new char[] { '°', '\'', ' '

@@ -121,14 +121,15 @@ namespace ChaNiBaaStra
                 transitHoroscope = birthCalculator
                     .CalculateHoroscope(transitPlantes);
                 foreach (AstroPlanet planet in transitHoroscope.CompletePlanetList)
+                {
                     planet.BirthPlanets = birthHoroscope.CompletePlanetList;
+                }
                 transitHoroscope.LagnaRasi = temp.LagnaRasi;
                 transitHoroscope.CurrentTransitDate = transitCalculator;
                 this.horoscopeFullView1.TransitHoroscope = transitHoroscope;
                 this.horoscopeFullView1.PartialUiInit();
             }
         }
-
         public void UpdateDisplayPlanetMessages(AstroPlanet planet, bool isBhavaView)
         {
             this.richTextBoxClickedPlanet.Text = "===Rashi Data===\r\n" + planet.Rasi.GetRashiQuality();
@@ -148,9 +149,16 @@ namespace ChaNiBaaStra
             BindingSource bindingSourceTheySee = new BindingSource();
             bindingSourceTheySee.DataSource = planet.ViewDetails.TheySeeMeDetails.Select(x => new { ThisSeeTheSource = x.SourceCanSeeThisPlanet.Name, GoodPlanet = (x.SourceCanSeeThisPlanet.IsGoodPlanet) ? "Yes" : "No", Relation = x.SourceCanSeeThisPlanet.GetPlanetRelation(x.SourcePlanet.Current), ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
 
+            BindingSource bindingSourceISeeOtherHoroscope = new BindingSource();
+            bindingSourceISeeOtherHoroscope.DataSource = planet.ViewDetails.ISeeOtherHoroscopePlanetDetails.Select(x => new { SourceSeeThis = x.SourceCanSeeThisPlanet.Name, GoodPlanet = (x.SourcePlanet.IsGoodPlanet) ? "Yes" : "No", Relation = x.SourcePlanet.GetPlanetRelation(x.SourceCanSeeThisPlanet.Current), ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
 
-            this.dataGridViewViews.DataSource = bindingSourceISee;
-            this.dataGridViewTheySeeMe.DataSource = bindingSourceTheySee;
+            BindingSource bindingSourceOtherHoroscopeSeeMee = new BindingSource();
+            bindingSourceOtherHoroscopeSeeMee.DataSource = planet.ViewDetails.OtherHoroscopePlanetSeeMeDetails.Select(x => new { ThisSeeTheSource = x.SourceCanSeeThisPlanet.Name, GoodPlanet = (x.SourceCanSeeThisPlanet.IsGoodPlanet) ? "Yes" : "No", Relation = x.SourceCanSeeThisPlanet.GetPlanetRelation(x.SourcePlanet.Current), ViewState = x.ViewState, ViewType = x.ViewType, Degree = x.Degrees, SourcePlanetName = x.SourcePlanet.Name, ProjectViewDate = x.ProjectedViewDate });
+
+            this.dataGridViewViews1.DataSource = bindingSourceISee;
+            this.dataGridViewTheySeeMe2.DataSource = bindingSourceTheySee;
+            this.dataGridViewISeeOtherHorsocope3.DataSource = bindingSourceISeeOtherHoroscope;
+            this.dataGridViewOtherHoroscopeSeeMee4.DataSource = bindingSourceOtherHoroscopeSeeMee;
         }
 
         public void UpdateDisplayMessage(string message, bool isAppend)
@@ -220,7 +228,7 @@ namespace ChaNiBaaStra
                                 UiInit(birthPlace);
                                 FileIOOperation.WriteToXmlFile<BirthDataSaveObject>(birthPlace.PersonName
                                     , new BirthDataSaveObject(birthPlace, transitPlace));
-                                RefreshYogaList();
+                                //RefreshYogaList();
                             }
                         }
                     }

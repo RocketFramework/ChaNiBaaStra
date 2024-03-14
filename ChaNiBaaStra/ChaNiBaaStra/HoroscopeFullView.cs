@@ -108,7 +108,8 @@ namespace ChaNiBaaStra
                 + "°";
 
             ResetLabels();
-            if (IsBhavaView)
+            CreateNawamsaHoroscope();
+            /*f (IsBhavaView)
                 foreach (AstroBhava rasi in CurrentHoroscope.BhavaHouseList)
                 {
                     CreateNawamsaHoroscope(rasi.Planets);
@@ -117,17 +118,18 @@ namespace ChaNiBaaStra
                 foreach (AstroRasi rasi in CurrentHoroscope.RasiHouseList)
                 {
                     CreateNawamsaHoroscope(rasi.Planets); 
-                }
+                }*/
         }
 
-        private void CreateNawamsaHoroscope(List<AstroPlanet> planets)
-        {            
+        private void CreateNawamsaHoroscope()
+        {
+            D9Chart d9Horoscope = new D9Chart(CurrentHoroscope);
             //NawamsaHoroscope.Planets.AddRange(planets);
-            foreach (AstroPlanet planet in planets)
+            foreach (AstroPlanet planet in d9Horoscope.Planets)
             {
                 int houseNumber = CurrentHoroscope
-                    .NavamsaRasi.ofRasi(planet.NawamsaRasi.Current);
-                switch (houseNumber)
+                    .NavamsaRasi.ofRasi(planet.NawamsaRasi.Current + 1);
+                switch (planet.CurrentlyActiveHouseNumber)
                 {
                     case 1:
                         {
@@ -321,7 +323,7 @@ namespace ChaNiBaaStra
 
         private void UpdateLoard(AstroRasi rasi)
         {
-            Label labelLord = (this.Controls.OfType<Label>())
+            Label labelLord = (this.panelHoroscope.Controls.OfType<Label>())
                 .Where(x => x.Name == "labelLord" + rasi.HouseNumber).FirstOrDefault();
             labelLord.Text = rasi.Loard.ShortName + " ♔";
             AstroPlanet adhipathi = rasi.AdhipathiAstroPlanets.Last();
@@ -331,7 +333,7 @@ namespace ChaNiBaaStra
             AstakaVargaMaster varga = new AstakaVargaMaster(CurrentHoroscope);
             for (int i = 0; i < 12; i++)
             {
-                Label labelS = (this.Controls.OfType<Label>())
+                Label labelS = (this.panelHoroscope.Controls.OfType<Label>())
                 .Where(x => x.Name == "labelSav" + (i + 1)).FirstOrDefault();
                 labelS.Text = varga.SavAsktakaVarga[i].ToString();
             }
@@ -342,7 +344,7 @@ namespace ChaNiBaaStra
             AstroPlanet adhipathi = rasi.AdhipathiAstroPlanets.Last();
             if (rasi.Loard.Current != adhipathi.Current)
             {
-                Label labelAdhipathi = (this.Controls.OfType<Label>())
+                Label labelAdhipathi = (this.panelHoroscope.Controls.OfType<Label>())
                     .Where(x => x.Name == "labelAdhipathi" + rasi.HouseNumber).FirstOrDefault();
                 labelAdhipathi.Text = rasi.AdhipathiAstroPlanets.Last().ShortName + " ♕";
             }
@@ -429,6 +431,11 @@ namespace ChaNiBaaStra
         {
             foreach (AstroPlanet planet in planets)
             {
+                if (IsTransit)
+                    planet.UpdateBirthHoroscopeViewDetails(CurrentHoroscope.CompletePlanetList);
+                else
+                    planet.UpdateTransitHoroscopeViewDetails(TransitHoroscope.CompletePlanetList);
+
                 ChaNiBaaStra.PlanetView planetHolder = new PlanetView();
                 planetHolder.IsTransitPlanet = IsTransit;
                 planetHolder.UpdateUI(planet);

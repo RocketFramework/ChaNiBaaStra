@@ -22,6 +22,7 @@ namespace ChaNiBaaStra
             InitializeComponent();
 
             dataGridViewFutureMapping.Scroll += dataGridView1_Scroll;
+            dataGridViewRelation.Scroll += dataGridView2_Scroll;
             this.comboBoxIncrement.SelectedItem = 1;
         }
 
@@ -219,8 +220,9 @@ namespace ChaNiBaaStra
                     AstroCalculator birthCalculator = new AstroCalculator(activePlace);
                     List<AstroPlanet> birthPlantes = birthCalculator.CalculatePlanetPositionWithDetailsOptmized(false);
                     Horoscope birthHoroscope = birthCalculator.CalculateHoroscope(birthPlantes);
-                    birthHoroscope.CurrentTransitDate = birthCalculator;
-                    birthHoroscope.CurrentTransitDate.PlaceData = activePlace;
+                    //birthHoroscope.CurrentTransitDate.PlaceData = activePlace;
+                    //birthHoroscope.CurrentTransitDate = birthCalculator;
+
 
                     dataObject = GetBirthDataObject(birthHoroscope);
                 }
@@ -576,6 +578,15 @@ namespace ChaNiBaaStra
             if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
             {
                 dataGridViewRelation.HorizontalScrollingOffset = dataGridViewFutureMapping.HorizontalScrollingOffset;
+            }
+        }
+
+        private void dataGridView2_Scroll(object sender, ScrollEventArgs e)
+        {
+            // Synchronize horizontal scrolling between dataGridView1 and dataGridView2
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+            {
+                dataGridViewMain.HorizontalScrollingOffset = dataGridViewRelation.HorizontalScrollingOffset;
             }
         }
     }

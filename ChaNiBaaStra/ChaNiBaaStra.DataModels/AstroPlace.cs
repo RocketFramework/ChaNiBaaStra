@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ChaNiBaaStra.Utilities;
 using PropertyChanged;
+using RestSharp;
 using static log4net.Appender.RollingFileAppender;
 
 namespace ChaNiBaaStra.DataModels
@@ -46,7 +47,7 @@ namespace ChaNiBaaStra.DataModels
             this.MinuteValue = min;
             this.DirectionValue = dir;
         }
-        public Location(string deg, string min, EnumDirection dir) 
+        public Location(string deg, string min, EnumDirection dir)
             : this(Convert.ToInt32(deg), Convert.ToInt32(min), dir)
         { }
         public Location(double value, EnumLocationType type)
@@ -69,8 +70,11 @@ namespace ChaNiBaaStra.DataModels
             get { return eventTimeField.ToString(DateTimeOffsetFormatString); }
             set { eventTimeField = DateTimeOffset.Parse(value); }
         }
-        public DateTime OriginalDateTime { get { return DateTime.Parse(EventTime); } 
-            set { eventTimeField = value; } }
+        public DateTime OriginalDateTime
+        {
+            get { return DateTime.Parse(EventTime); }
+            set { eventTimeField = value; }
+        }
         public DateTime AdjustedBirthDate
         {
             get { return adjustedBirthDateTime.Date; }
@@ -126,8 +130,11 @@ namespace ChaNiBaaStra.DataModels
         private string longitudeAngle;
         public string LongitudeAngle
         {
-            get { return string.IsNullOrEmpty(longitudeAngle) ? GeoAngle.FromDouble(Longitude).ToString() 
-                    : longitudeAngle; }
+            get
+            {
+                return string.IsNullOrEmpty(longitudeAngle) ? GeoAngle.FromDouble(Longitude).ToString()
+                    : longitudeAngle;
+            }
             set
             {
                 Longitude = AstroUtility.ConvertDegreeAngleToDouble(value);
@@ -140,8 +147,11 @@ namespace ChaNiBaaStra.DataModels
         private string latitudeAngle;
         public string LatitudeAngle
         {
-            get { return string.IsNullOrEmpty(latitudeAngle) ? GeoAngle.FromDouble(Latitude).ToString() 
-                    : latitudeAngle; }
+            get
+            {
+                return string.IsNullOrEmpty(latitudeAngle) ? GeoAngle.FromDouble(Latitude).ToString()
+                    : latitudeAngle;
+            }
             set
             {
                 Latitude = AstroUtility.ConvertDegreeAngleToDouble(value);
@@ -224,12 +234,93 @@ namespace ChaNiBaaStra.DataModels
             this.TimeZoneString = tz[0].ToString() + ":" + tz[1];
             //this.adjustedBirthDateTime = new DateTime(1975, 7, 2, 12, 34, 0);
         }
-        public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)
+        /*public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)
         {
-            double actualOffset = longitude / 15.0;
+            // Create a DateTimeOffset object from the input DateTime and longitude
+            DateTimeOffset localTimeOffset = new DateTimeOffset(locationDateTime, TimeSpan.FromHours(longitude / 15.0));
+
+            // Convert the local time to UTC
+            DateTime universalTime = localTimeOffset.UtcDateTime;
+
+            return universalTime;
+            /*double actualOffset = longitude / 15.0;
             double minAdjustment = (actualOffset) * 60 * -1;
             double secAdjustment = (minAdjustment - (int)minAdjustment) * 60;
-            return locationDateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
+            return locationDateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);*/
+        /*}*/
+
+        public static DateTime GetUniversalTime(DateTime locationDateTime, double longitude)
+        {
+            string zone = TimeZoneLookup(longitude);
+            /*if (zone == "India Standard Time")
+            {
+                double actualOffset = longitude / 15.0;
+                double minAdjustment = (actualOffset) * 60 * -1;
+                double secAdjustment = (minAdjustment - (int)minAdjustment) * 60;
+                return locationDateTime.AddMinutes((int)minAdjustment).AddSeconds(secAdjustment);
+            }*/
+            // Get the time zone corresponding to the longitude
+            TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById(TimeZoneLookup(longitude));
+
+            // Convert the local time to the time zone's UTC equivalent
+            DateTime universalTime = TimeZoneInfo.ConvertTimeToUtc(locationDateTime, timeZone);
+
+            return universalTime;
+        }
+
+        // Helper method to determine time zone based on longitude
+        private static string TimeZoneLookup(double longitude)
+        {
+            // Simplified logic for demonstration purposes, actual implementation may vary
+            if (longitude >= 67.5 && longitude < 82.5)
+                return "India Standard Time";
+            else if (longitude >= -180 && longitude < -157.5)
+                return "Hawaiian Standard Time";
+            else if (longitude >= -157.5 && longitude < -142.5)
+                return "Alaskan Standard Time";
+            // Add more cases for other time zones as needed
+            else
+                return "Eastern Standard Time"; // Default to EST for unknown longitudes
+        }
+
+        private const string GeoNamesApiBaseUrl = "http://api.geonames.org";
+
+        public static DateTime GetUniversalTime(DateTime locationDateTime, double latitude, double longitude)
+        {
+            // Fetch the time zone ID based on the geographical coordinates
+            string timeZoneId = GetTimeZoneId(latitude, longitude);
+
+            // Convert the local time to the time zone's UTC equivalent
+            TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
+            DateTime universalTime = TimeZoneInfo.ConvertTimeToUtc(locationDateTime, timeZone);
+
+            return universalTime;
+        }
+
+        private static string GetTimeZoneId(double latitude, double longitude)
+        {
+            var client = new RestClient(GeoNamesApiBaseUrl);
+            var request = new RestRequest("timezoneJSON", Method.Get);
+            request.AddParameter("lat", latitude);
+            request.AddParameter("lng", longitude);
+            request.AddParameter("username", "nirosh");
+
+            var response = client.Execute<TimeZoneResponse>(request);
+
+            if (response.IsSuccessful)
+            {
+                return response.Data.TimeZoneId;
+            }
+            else
+            {
+                // If the API call fails, fallback to a default time zone
+                return "UTC"; // or any other suitable default
+            }
+        }
+
+        private class TimeZoneResponse
+        {
+            public string TimeZoneId { get; set; }
         }
         public DateTime GetStandardTime(DateTime adjustedTime)
         {

@@ -46,17 +46,76 @@ namespace ChaNiBaaStra.DataModels
     {
         public List<AstroViewDetail> ISeeThemDetails { get; set; }
         public List<AstroViewDetail> TheySeeMeDetails { get; set; }
+        public bool IsTransitHoroscope { get; set; }
+        public List<AstroViewDetail> OtherHoroscopePlanetSeeMeDetails { get; set; }
+        public List<AstroViewDetail> ISeeOtherHoroscopePlanetDetails { get; set; }
         public AstroPlanet FocusPlanet { get; set; }
         public AstroViewDetails(AstroPlanet focusPlanet)
         {
             ISeeThemDetails = new List<AstroViewDetail>();
             TheySeeMeDetails = new List<AstroViewDetail>();
+            OtherHoroscopePlanetSeeMeDetails = new List<AstroViewDetail>();
+            ISeeOtherHoroscopePlanetDetails = new List<AstroViewDetail>();
+            IsTransitHoroscope = false;
             FocusPlanet = focusPlanet;
         }
 
         public AstroViewDetails(AstroPlanet focusPlanet, List<AstroPlanet> completePlanetList) : this(focusPlanet)
         {
             UpdateDetails(completePlanetList);
+        }
+
+        public void AstroTransitViewDetails(AstroPlanet focusPlanet, List<AstroPlanet> completePlanetList)
+        {
+            UpdateDetails(focusPlanet, completePlanetList);
+        }
+
+        public void AstroBirthViewDetails(AstroPlanet focusPlanet, List<AstroPlanet> completePlanetList)
+        {
+            UpdateDetails(focusPlanet, completePlanetList);
+        }
+        private void UpdateDetails(AstroPlanet focPlanet, List<AstroPlanet> completeOtherHoroscopePlanetList)
+        {
+            foreach (AstroPlanet planet in completeOtherHoroscopePlanetList)
+            {
+                if (focPlanet.Views.ICanSeeThem.Contains(planet.HouseNumber))
+                {
+                    if (focPlanet.Current != planet.Current)
+                    {
+                        int i = focPlanet.Rasi.absoluteHouseFromRasi(planet.Rasi.Current);
+                        AstroViewDetail detail = new AstroViewDetail();
+                        detail.ViewType = GetViewType(i, planet.Longitude, focPlanet.Longitude);
+                        if (detail.ViewType != ViewTypes.None)
+                        {
+                            detail.SourceCanSeeThisPlanet = planet;
+                            detail.SourcePlanet = focPlanet;
+                            detail.Degrees = AstroUtility.CalculateAngularGap(planet.Longitude, focPlanet.Longitude);
+                            detail.ViewState = (detail.Degrees < (i - 1) * 30) ? ViewStates.UpComing : ViewStates.Passed;
+                            detail.ProjectedViewDate = DateTime.Now.AddDays(((i - 1) * 30 - detail.Degrees) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
+                            ISeeOtherHoroscopePlanetDetails.Add(detail);
+                        }
+                    }
+                }
+
+                if (planet.Views.TheyCanSeeMee.Exists(x => x.HouseNumber == focPlanet.HouseNumber))
+                {
+                    if (focPlanet.Current != planet.Current)
+                    {
+                        int i = planet.Rasi.absoluteHouseFromRasi(focPlanet.Rasi.Current);
+                        AstroViewDetail detail = new AstroViewDetail();
+                        detail.ViewType = GetViewType(i, planet.Longitude, focPlanet.Longitude);
+                        if (detail.ViewType != ViewTypes.None)
+                        {
+                            detail.SourceCanSeeThisPlanet = planet;
+                            detail.SourcePlanet = focPlanet;
+                            detail.Degrees = AstroUtility.CalculateAngularGap(planet.Longitude, focPlanet.Longitude);
+                            detail.ViewState = (detail.Degrees < (i - 1) * 30) ? ViewStates.UpComing : ViewStates.Passed;
+                            detail.ProjectedViewDate = DateTime.Now.AddDays(((i - 1) * 30 - detail.Degrees) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
+                            OtherHoroscopePlanetSeeMeDetails.Add(detail);
+                        }
+                    }
+                }
+            }
         }
 
         private void UpdateDetails(List<AstroPlanet> completePlanetList)
@@ -72,17 +131,17 @@ namespace ChaNiBaaStra.DataModels
                         detail.ViewType = GetViewType(i, planet.Longitude, FocusPlanet.Longitude);
                         if (detail.ViewType != ViewTypes.None)
                         {
-                            detail.ViewState = (planet.Longitude > FocusPlanet.Longitude) ? ViewStates.UpComing : ViewStates.Passed;
                             detail.SourceCanSeeThisPlanet = planet;
                             detail.SourcePlanet = FocusPlanet;
-                            detail.ProjectedViewDate = DateTime.Now.AddDays(((planet.Longitude > FocusPlanet.Longitude) ? 1 : -1) * Math.Abs(planet.Longitude - FocusPlanet.Longitude) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
-                            detail.Degrees = planet.Longitude - FocusPlanet.Longitude;
+                            detail.Degrees = AstroUtility.CalculateAngularGap(planet.Longitude, FocusPlanet.Longitude);
+                            detail.ViewState = (detail.Degrees < (i - 1) * 30) ? ViewStates.UpComing : ViewStates.Passed;
+                            detail.ProjectedViewDate = DateTime.Now.AddDays(((i - 1) * 30 - detail.Degrees) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
                             ISeeThemDetails.Add(detail);
                         }
                     }
                 }
 
-                if (planet.Views.ICanSeeThem.Contains(FocusPlanet.HouseNumber))
+                if (planet.Views.TheyCanSeeMee.Exists(x => x.HouseNumber == FocusPlanet.HouseNumber))
                 {
                     if (FocusPlanet.Current != planet.Current)
                     {
@@ -91,11 +150,11 @@ namespace ChaNiBaaStra.DataModels
                         detail.ViewType = GetViewType(i, planet.Longitude, FocusPlanet.Longitude);
                         if (detail.ViewType != ViewTypes.None)
                         {
-                            detail.ViewState = (planet.Longitude > FocusPlanet.Longitude) ? ViewStates.UpComing : ViewStates.Passed;
                             detail.SourceCanSeeThisPlanet = planet;
                             detail.SourcePlanet = FocusPlanet;
-                            detail.ProjectedViewDate = DateTime.Now.AddDays(((planet.Longitude > FocusPlanet.Longitude) ? 1 : -1) * Math.Abs(planet.Longitude - FocusPlanet.Longitude) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
-                            detail.Degrees = planet.Longitude - FocusPlanet.Longitude;
+                            detail.Degrees = AstroUtility.CalculateAngularGap(planet.Longitude, FocusPlanet.Longitude);
+                            detail.ViewState = (detail.Degrees < (i - 1) * 30) ? ViewStates.UpComing : ViewStates.Passed;
+                            detail.ProjectedViewDate = DateTime.Now.AddDays(((i - 1) * 30 - detail.Degrees) * Math.Abs(planet.SpeedInLongitude - FocusPlanet.SpeedInLongitude));
                             TheySeeMeDetails.Add(detail);
                         }
                     }
@@ -105,10 +164,10 @@ namespace ChaNiBaaStra.DataModels
 
         private ViewTypes GetViewType(int houseGap, double longitude1, double longitude2)
         {
-            double debgreeGap = Math.Abs(longitude1 - longitude2);
+            double debgreeGap = AstroUtility.CalculateAngularGap(longitude1, longitude2);
             switch (houseGap)
             {
-                case 1: return (15 <= debgreeGap && debgreeGap <= 15) ? ViewTypes.Conjunction : ViewTypes.None;
+                case 1: return (0 <= debgreeGap && debgreeGap <= 15) ? ViewTypes.Conjunction : ViewTypes.None;
                 case 2: return (15 <= debgreeGap && debgreeGap <= 45) ? ViewTypes.Second : ViewTypes.None;
                 case 3: return (45 <= debgreeGap && debgreeGap <= 75) ? ViewTypes.Third : ViewTypes.None;
                 case 4: return (75 <= debgreeGap && debgreeGap <= 105) ? ViewTypes.Fourth : ViewTypes.None;
@@ -124,8 +183,6 @@ namespace ChaNiBaaStra.DataModels
             return ViewTypes.None;
         }
     }
-
-
     public class AstroView
     {
         public enum EnumViewStrengths
@@ -135,7 +192,7 @@ namespace ChaNiBaaStra.DataModels
             Bad,
             VeryBad
         }
-        private AstroUtility utility = new AstroUtility();  
+        private AstroUtility utility = new AstroUtility();
 
         public List<int> ICanSeeThem { get; set; }
         public List<AstroPlanet> TheyCanSeeMee { get; set; }
@@ -148,7 +205,7 @@ namespace ChaNiBaaStra.DataModels
             SeeBhavaHouses = new List<int>();
             UpdateForViews(planet);
         }
-        
+
         public static bool CanPlanetSeeThisRashiHouse(EnumPlanet planet, int planetInHouse, int toSeeHouse)
         {
             return GetHouses_ForPlanetBe_ToSeeThisHouse(planet, toSeeHouse).Contains(planetInHouse);
@@ -211,7 +268,7 @@ namespace ChaNiBaaStra.DataModels
             }
             return new List<int>();
         }
-        
+
         public static List<int> GetAllHousesPlanetSee(EnumPlanet planet, int planetHouse)
         {
             int i, j, k, l;
@@ -265,7 +322,7 @@ namespace ChaNiBaaStra.DataModels
                 case EnumPlanet.Pluto:
                 case EnumPlanet.Neptune:
                 case EnumPlanet.Uranus:
-                    return  new List<int> { AstroUtility.AstroCycleIncreaseNew(planetHouse, 7) };
+                    return new List<int> { AstroUtility.AstroCycleIncreaseNew(planetHouse, 7) };
             }
             return new List<int>();
         }
