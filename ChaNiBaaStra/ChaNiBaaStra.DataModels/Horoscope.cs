@@ -65,6 +65,7 @@ namespace ChaNiBaaStra.DataModels
             if (NavamsaRasi.IsMaleRashi) isMale += 1;
             else isMale -= 1;
 
+
             if (CurrentTransitDate.Sun.Rasi.IsMaleRashi) isMale += 1;
             else isMale -= 1;
             if (CurrentTransitDate.Sun.NawamsaRasi.IsMaleRashi) isMale += 1;

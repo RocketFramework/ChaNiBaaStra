@@ -60,20 +60,51 @@
             this.labelMoonIn6812 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.labelIsMoonWithPapa = new System.Windows.Forms.Label();
-            this.listViewEventDate = new System.Windows.Forms.ListView();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewNakaths = new System.Windows.Forms.ListView();
+            this.listViewRashies = new System.Windows.Forms.ListView();
+            this.listViewThthies = new System.Windows.Forms.ListView();
             this.label13 = new System.Windows.Forms.Label();
             this.labelNakathOfSun = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxNakath = new System.Windows.Forms.ComboBox();
+            this.comboBoxThithi = new System.Windows.Forms.ComboBox();
+            this.comboBoxRashi = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonThthiMatched = new System.Windows.Forms.Button();
+            this.buttonRashiMatched = new System.Windows.Forms.Button();
+            this.buttonNakathMatched = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxLatitude = new System.Windows.Forms.TextBox();
+            this.textBoxLongitude = new System.Windows.Forms.TextBox();
+            this.buttonStop = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBoxIteration = new System.Windows.Forms.TextBox();
+            this.textBoxIncrement = new System.Windows.Forms.TextBox();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBoxHouse = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxPlanet = new System.Windows.Forms.ComboBox();
+            this.listViewPlanets = new System.Windows.Forms.ListView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.progressBarFinderStatus = new System.Windows.Forms.ProgressBar();
+            this.buttonFind = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonPlanetMatched = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -341,9 +372,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(348, 202);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 20);
+            this.label11.Size = new System.Drawing.Size(139, 20);
             this.label11.TabIndex = 29;
-            this.label11.Text = "Moon in 6, 8 or !2:";
+            this.label11.Text = "Moon in 6, 8 or 12:";
             // 
             // labelMoonIn6812
             // 
@@ -372,38 +403,41 @@
             this.labelIsMoonWithPapa.TabIndex = 30;
             this.labelIsMoonWithPapa.Text = "Nakath:";
             // 
-            // listViewEventDate
+            // listViewNakaths
             // 
-            this.listViewEventDate.GridLines = true;
-            this.listViewEventDate.HideSelection = false;
-            this.listViewEventDate.Location = new System.Drawing.Point(21, 125);
-            this.listViewEventDate.Name = "listViewEventDate";
-            this.listViewEventDate.Size = new System.Drawing.Size(171, 99);
-            this.listViewEventDate.TabIndex = 32;
-            this.listViewEventDate.UseCompatibleStateImageBehavior = false;
-            this.listViewEventDate.View = System.Windows.Forms.View.List;
+            this.listViewNakaths.GridLines = true;
+            this.listViewNakaths.HideSelection = false;
+            this.listViewNakaths.Location = new System.Drawing.Point(21, 125);
+            this.listViewNakaths.Name = "listViewNakaths";
+            this.listViewNakaths.Size = new System.Drawing.Size(171, 127);
+            this.listViewNakaths.TabIndex = 32;
+            this.listViewNakaths.UseCompatibleStateImageBehavior = false;
+            this.listViewNakaths.View = System.Windows.Forms.View.List;
+            this.listViewNakaths.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewNakaths_KeyDown);
             // 
-            // listView1
+            // listViewRashies
             // 
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(230, 125);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(171, 99);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listViewRashies.GridLines = true;
+            this.listViewRashies.HideSelection = false;
+            this.listViewRashies.Location = new System.Drawing.Point(198, 125);
+            this.listViewRashies.Name = "listViewRashies";
+            this.listViewRashies.Size = new System.Drawing.Size(171, 127);
+            this.listViewRashies.TabIndex = 33;
+            this.listViewRashies.UseCompatibleStateImageBehavior = false;
+            this.listViewRashies.View = System.Windows.Forms.View.List;
+            this.listViewRashies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewNakaths_KeyDown);
             // 
-            // listView2
+            // listViewThthies
             // 
-            this.listView2.GridLines = true;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(438, 125);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(171, 99);
-            this.listView2.TabIndex = 34;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
+            this.listViewThthies.GridLines = true;
+            this.listViewThthies.HideSelection = false;
+            this.listViewThthies.Location = new System.Drawing.Point(375, 125);
+            this.listViewThthies.Name = "listViewThthies";
+            this.listViewThthies.Size = new System.Drawing.Size(171, 127);
+            this.listViewThthies.TabIndex = 34;
+            this.listViewThthies.UseCompatibleStateImageBehavior = false;
+            this.listViewThthies.View = System.Windows.Forms.View.List;
+            this.listViewThthies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewNakaths_KeyDown);
             // 
             // label13
             // 
@@ -423,32 +457,96 @@
             this.labelNakathOfSun.TabIndex = 36;
             this.labelNakathOfSun.Text = "Nakath:";
             // 
-            // comboBox1
+            // comboBoxNakath
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 28);
-            this.comboBox1.TabIndex = 37;
+            this.comboBoxNakath.FormattingEnabled = true;
+            this.comboBoxNakath.Items.AddRange(new object[] {
+            "Ashvida = 1",
+            "Berana = 2",
+            "Kathi = 3",
+            "Rehena = 4",
+            "Msirasa = 5",
+            "Ada = 6",
+            "Pwasa = 7",
+            "Pusha = 8",
+            "Aslisa = 9",
+            "Maa = 10",
+            "Ppal = 11",
+            "Upal = 12",
+            "Hatha = 13",
+            "Sitha = 14",
+            "Saa = 15",
+            "Visa = 16",
+            "Anura = 17",
+            "Deta = 18",
+            "Mula = 19",
+            "Psala = 20",
+            "Usala = 21",
+            "Suwana = 22",
+            "Denata = 23",
+            "Swasa = 24",
+            "Pputupa = 25",
+            "Uputupa = 26",
+            "Revathi = 27"});
+            this.comboBoxNakath.Location = new System.Drawing.Point(21, 88);
+            this.comboBoxNakath.Name = "comboBoxNakath";
+            this.comboBoxNakath.Size = new System.Drawing.Size(171, 28);
+            this.comboBoxNakath.TabIndex = 37;
+            this.comboBoxNakath.SelectedIndexChanged += new System.EventHandler(this.comboBoxNakath_SelectedIndexChanged);
             // 
-            // comboBox2
+            // comboBoxThithi
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(438, 73);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(171, 28);
-            this.comboBox2.TabIndex = 38;
+            this.comboBoxThithi.FormattingEnabled = true;
+            this.comboBoxThithi.Items.AddRange(new object[] {
+            "Any = 0",
+            "Prathamai = 1",
+            "Dvithiyai = 2",
+            "Thrithiyai = 3",
+            "Chathruthi = 4",
+            "Panchami = 5",
+            "Sashti = 6",
+            "Sapthami = 7",
+            "Ashtami = 8",
+            "Navami = 9",
+            "Dasami = 10",
+            "Ekaadasi = 11",
+            "Dvaadasi = 12",
+            "Thrayodasi = 13",
+            "Chathurdasi = 14",
+            "Pournami = 15",
+            "Amavasya = 16"});
+            this.comboBoxThithi.Location = new System.Drawing.Point(375, 88);
+            this.comboBoxThithi.Name = "comboBoxThithi";
+            this.comboBoxThithi.Size = new System.Drawing.Size(171, 28);
+            this.comboBoxThithi.TabIndex = 38;
+            this.comboBoxThithi.SelectedIndexChanged += new System.EventHandler(this.comboBoxThithi_SelectedIndexChanged);
             // 
-            // comboBox3
+            // comboBoxRashi
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(230, 73);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(171, 28);
-            this.comboBox3.TabIndex = 39;
+            this.comboBoxRashi.FormattingEnabled = true;
+            this.comboBoxRashi.Items.AddRange(new object[] {
+            "Any =0",
+            "Mesha = 1",
+            "Vrishabha = 2",
+            "Mithuna = 3",
+            "Kataka = 4",
+            "Simha = 5",
+            "Kanya = 6",
+            "Thula = 7",
+            "Vrichika = 8",
+            "Dhanus = 9",
+            "Makara = 10",
+            "Kumbha = 11",
+            "Meena = 12"});
+            this.comboBoxRashi.Location = new System.Drawing.Point(198, 88);
+            this.comboBoxRashi.Name = "comboBoxRashi";
+            this.comboBoxRashi.Size = new System.Drawing.Size(171, 28);
+            this.comboBoxRashi.TabIndex = 39;
+            this.comboBoxRashi.SelectedIndexChanged += new System.EventHandler(this.comboBoxRashi_SelectedIndexChanged);
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -484,54 +582,376 @@
             this.panel1.Controls.Add(this.labelThithiSE);
             this.panel1.Controls.Add(this.labelKaranaSE);
             this.panel1.Controls.Add(this.labelYogaSE);
-            this.panel1.Location = new System.Drawing.Point(17, 355);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(742, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 337);
+            this.panel1.Size = new System.Drawing.Size(680, 381);
             this.panel1.TabIndex = 40;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.listViewEventDate);
-            this.panel2.Controls.Add(this.listView1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.listView2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Location = new System.Drawing.Point(17, 82);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(635, 267);
-            this.panel2.TabIndex = 41;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(17, 735);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(572, 100);
-            this.panel3.TabIndex = 42;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(10, 15);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(571, 37);
+            this.label14.Size = new System.Drawing.Size(438, 29);
             this.label14.TabIndex = 37;
             this.label14.Text = "Basic Details of the Auspicious Time";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonPlanetMatched);
+            this.panel2.Controls.Add(this.buttonThthiMatched);
+            this.panel2.Controls.Add(this.buttonRashiMatched);
+            this.panel2.Controls.Add(this.buttonNakathMatched);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.textBoxLatitude);
+            this.panel2.Controls.Add(this.textBoxLongitude);
+            this.panel2.Controls.Add(this.buttonStop);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.textBoxIteration);
+            this.panel2.Controls.Add(this.textBoxIncrement);
+            this.panel2.Controls.Add(this.dateTimePickerStart);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.comboBoxHouse);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.comboBoxPlanet);
+            this.panel2.Controls.Add(this.listViewPlanets);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.progressBarFinderStatus);
+            this.panel2.Controls.Add(this.buttonFind);
+            this.panel2.Controls.Add(this.comboBoxRashi);
+            this.panel2.Controls.Add(this.listViewNakaths);
+            this.panel2.Controls.Add(this.listViewRashies);
+            this.panel2.Controls.Add(this.comboBoxThithi);
+            this.panel2.Controls.Add(this.listViewThthies);
+            this.panel2.Controls.Add(this.comboBoxNakath);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(742, 381);
+            this.panel2.TabIndex = 41;
+            // 
+            // buttonThthiMatched
+            // 
+            this.buttonThthiMatched.Location = new System.Drawing.Point(526, 65);
+            this.buttonThthiMatched.Name = "buttonThthiMatched";
+            this.buttonThthiMatched.Size = new System.Drawing.Size(20, 20);
+            this.buttonThthiMatched.TabIndex = 61;
+            this.buttonThthiMatched.UseVisualStyleBackColor = true;
+            // 
+            // buttonRashiMatched
+            // 
+            this.buttonRashiMatched.Location = new System.Drawing.Point(349, 65);
+            this.buttonRashiMatched.Name = "buttonRashiMatched";
+            this.buttonRashiMatched.Size = new System.Drawing.Size(20, 20);
+            this.buttonRashiMatched.TabIndex = 60;
+            this.buttonRashiMatched.UseVisualStyleBackColor = true;
+            // 
+            // buttonNakathMatched
+            // 
+            this.buttonNakathMatched.Location = new System.Drawing.Point(172, 65);
+            this.buttonNakathMatched.Name = "buttonNakathMatched";
+            this.buttonNakathMatched.Size = new System.Drawing.Size(20, 20);
+            this.buttonNakathMatched.TabIndex = 59;
+            this.buttonNakathMatched.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(194, 313);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(71, 20);
+            this.label23.TabIndex = 58;
+            this.label23.Text = "Latitude:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(17, 313);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(84, 20);
+            this.label24.TabIndex = 57;
+            this.label24.Text = "Longitude:";
+            // 
+            // textBoxLatitude
+            // 
+            this.textBoxLatitude.Location = new System.Drawing.Point(281, 310);
+            this.textBoxLatitude.Name = "textBoxLatitude";
+            this.textBoxLatitude.Size = new System.Drawing.Size(84, 26);
+            this.textBoxLatitude.TabIndex = 56;
+            this.textBoxLatitude.Text = "6.927079";
+            // 
+            // textBoxLongitude
+            // 
+            this.textBoxLongitude.Location = new System.Drawing.Point(108, 310);
+            this.textBoxLongitude.Name = "textBoxLongitude";
+            this.textBoxLongitude.Size = new System.Drawing.Size(80, 26);
+            this.textBoxLongitude.TabIndex = 55;
+            this.textBoxLongitude.Text = "79.861244";
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Location = new System.Drawing.Point(450, 260);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(96, 34);
+            this.buttonStop.TabIndex = 54;
+            this.buttonStop.Text = "Stop";
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(194, 267);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(81, 20);
+            this.label22.TabIndex = 53;
+            this.label22.Text = "Interation:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(17, 267);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(85, 20);
+            this.label21.TabIndex = 52;
+            this.label21.Text = "Increment:";
+            // 
+            // textBoxIteration
+            // 
+            this.textBoxIteration.Location = new System.Drawing.Point(281, 266);
+            this.textBoxIteration.Name = "textBoxIteration";
+            this.textBoxIteration.Size = new System.Drawing.Size(84, 26);
+            this.textBoxIteration.TabIndex = 51;
+            this.textBoxIteration.Text = "100";
+            // 
+            // textBoxIncrement
+            // 
+            this.textBoxIncrement.Location = new System.Drawing.Point(108, 266);
+            this.textBoxIncrement.Name = "textBoxIncrement";
+            this.textBoxIncrement.Size = new System.Drawing.Size(80, 26);
+            this.textBoxIncrement.TabIndex = 50;
+            this.textBoxIncrement.Text = "1";
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CustomFormat = "M/dd/yyyy HH:mm tt";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(375, 309);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(348, 26);
+            this.dateTimePickerStart.TabIndex = 49;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(16, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(433, 29);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "Nakath/ Event Finder Configurations";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(668, 65);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 20);
+            this.label19.TabIndex = 48;
+            this.label19.Text = "House";
+            // 
+            // comboBoxHouse
+            // 
+            this.comboBoxHouse.FormattingEnabled = true;
+            this.comboBoxHouse.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "6,8,12",
+            "5,9",
+            "2,11"});
+            this.comboBoxHouse.Location = new System.Drawing.Point(672, 88);
+            this.comboBoxHouse.Name = "comboBoxHouse";
+            this.comboBoxHouse.Size = new System.Drawing.Size(51, 28);
+            this.comboBoxHouse.TabIndex = 47;
+            this.comboBoxHouse.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(548, 65);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(54, 20);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "Planet";
+            // 
+            // comboBoxPlanet
+            // 
+            this.comboBoxPlanet.FormattingEnabled = true;
+            this.comboBoxPlanet.Items.AddRange(new object[] {
+            "None",
+            "Any",
+            "Subha",
+            "Asubha",
+            "Sun",
+            "Moon",
+            "Mars",
+            "Mercury",
+            "Jupiter",
+            "Venus",
+            "Saturn",
+            "Uranus",
+            "Neptune",
+            "Pluto",
+            "Rahu",
+            "Kethu"});
+            this.comboBoxPlanet.Location = new System.Drawing.Point(552, 88);
+            this.comboBoxPlanet.Name = "comboBoxPlanet";
+            this.comboBoxPlanet.Size = new System.Drawing.Size(114, 28);
+            this.comboBoxPlanet.TabIndex = 45;
+            // 
+            // listViewPlanets
+            // 
+            this.listViewPlanets.GridLines = true;
+            this.listViewPlanets.HideSelection = false;
+            this.listViewPlanets.Location = new System.Drawing.Point(552, 125);
+            this.listViewPlanets.Name = "listViewPlanets";
+            this.listViewPlanets.Size = new System.Drawing.Size(171, 127);
+            this.listViewPlanets.TabIndex = 44;
+            this.listViewPlanets.UseCompatibleStateImageBehavior = false;
+            this.listViewPlanets.View = System.Windows.Forms.View.List;
+            this.listViewPlanets.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewNakaths_KeyDown);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(17, 65);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(69, 20);
+            this.label17.TabIndex = 43;
+            this.label17.Text = "Nakatha";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(194, 65);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 20);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "Rashiya";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(371, 65);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 20);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Thithiya";
+            // 
+            // progressBarFinderStatus
+            // 
+            this.progressBarFinderStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBarFinderStatus.Location = new System.Drawing.Point(0, 358);
+            this.progressBarFinderStatus.Name = "progressBarFinderStatus";
+            this.progressBarFinderStatus.Size = new System.Drawing.Size(742, 23);
+            this.progressBarFinderStatus.TabIndex = 40;
+            // 
+            // buttonFind
+            // 
+            this.buttonFind.Location = new System.Drawing.Point(629, 262);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(95, 34);
+            this.buttonFind.TabIndex = 0;
+            this.buttonFind.Text = "Start";
+            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1422, 381);
+            this.panel3.TabIndex = 42;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dataGridViewEvents);
+            this.panel4.Controls.Add(this.labelStatus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 381);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1422, 427);
+            this.panel4.TabIndex = 42;
+            // 
+            // dataGridViewEvents
+            // 
+            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEvents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewEvents.Location = new System.Drawing.Point(0, 34);
+            this.dataGridViewEvents.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.dataGridViewEvents.Name = "dataGridViewEvents";
+            this.dataGridViewEvents.RowHeadersWidth = 62;
+            this.dataGridViewEvents.RowTemplate.Height = 28;
+            this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEvents.Size = new System.Drawing.Size(1422, 393);
+            this.dataGridViewEvents.TabIndex = 0;
+            this.dataGridViewEvents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEvents_CellContentClick);
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelStatus.Location = new System.Drawing.Point(0, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(1422, 34);
+            this.labelStatus.TabIndex = 1;
+            this.labelStatus.Text = "label15";
+            // 
+            // buttonPlanetMatched
+            // 
+            this.buttonPlanetMatched.Location = new System.Drawing.Point(646, 65);
+            this.buttonPlanetMatched.Name = "buttonPlanetMatched";
+            this.buttonPlanetMatched.Size = new System.Drawing.Size(20, 20);
+            this.buttonPlanetMatched.TabIndex = 62;
+            this.buttonPlanetMatched.UseVisualStyleBackColor = true;
             // 
             // PanchangaOfTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "PanchangaOfTime";
-            this.Size = new System.Drawing.Size(649, 861);
+            this.Size = new System.Drawing.Size(1422, 808);
             this.Load += new System.EventHandler(this.PanchangaOfTime_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -570,17 +990,45 @@
         private System.Windows.Forms.Label labelMoonIn6812;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelIsMoonWithPapa;
-        private System.Windows.Forms.ListView listViewEventDate;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewNakaths;
+        private System.Windows.Forms.ListView listViewRashies;
+        private System.Windows.Forms.ListView listViewThthies;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labelNakathOfSun;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxNakath;
+        private System.Windows.Forms.ComboBox comboBoxThithi;
+        private System.Windows.Forms.ComboBox comboBoxRashi;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ProgressBar progressBarFinderStatus;
+        private System.Windows.Forms.Button buttonFind;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridViewEvents;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBoxHouse;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxPlanet;
+        private System.Windows.Forms.ListView listViewPlanets;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBoxIteration;
+        private System.Windows.Forms.TextBox textBoxIncrement;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBoxLatitude;
+        private System.Windows.Forms.TextBox textBoxLongitude;
+        private System.Windows.Forms.Button buttonThthiMatched;
+        private System.Windows.Forms.Button buttonRashiMatched;
+        private System.Windows.Forms.Button buttonNakathMatched;
+        private System.Windows.Forms.Button buttonPlanetMatched;
     }
 }

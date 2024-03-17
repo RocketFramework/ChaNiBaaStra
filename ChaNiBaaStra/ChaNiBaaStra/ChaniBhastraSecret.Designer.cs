@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChaniBhastraSecret));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.planetSummary1 = new ChaNiBaaStra.PlanetSummary();
             this.panelRight = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -124,26 +123,6 @@
             this.toolStripStatusLabelCharaThira = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelMruduThada = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelMiddle = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.horoscopeFullView1 = new ChaNiBaaStra.HoroscopeFullView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,6 +144,8 @@
             this.relationFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitterMainRight = new System.Windows.Forms.Splitter();
             this.splitterMainLeft = new System.Windows.Forms.Splitter();
+            this.horoscopeFullView1 = new ChaNiBaaStra.HoroscopeFullView();
+            this.planetSummary1 = new ChaNiBaaStra.PlanetSummary();
             this.panelTop.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -195,7 +176,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDate)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panelMiddle.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,14 +187,6 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1767, 40);
             this.panelTop.TabIndex = 1;
-            // 
-            // planetSummary1
-            // 
-            this.planetSummary1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.planetSummary1.Location = new System.Drawing.Point(0, 0);
-            this.planetSummary1.Name = "planetSummary1";
-            this.planetSummary1.Size = new System.Drawing.Size(1767, 40);
-            this.planetSummary1.TabIndex = 0;
             // 
             // panelRight
             // 
@@ -338,7 +310,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(312, 813);
+            this.tabPage4.Size = new System.Drawing.Size(312, 810);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Dasa Data";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -352,7 +324,7 @@
             this.dataGridViewSubSubDasa.RowHeadersWidth = 62;
             this.dataGridViewSubSubDasa.RowTemplate.Height = 28;
             this.dataGridViewSubSubDasa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSubSubDasa.Size = new System.Drawing.Size(306, 289);
+            this.dataGridViewSubSubDasa.Size = new System.Drawing.Size(306, 286);
             this.dataGridViewSubSubDasa.TabIndex = 8;
             this.dataGridViewSubSubDasa.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewSubSubDasa_MouseDoubleClick);
             // 
@@ -407,7 +379,7 @@
             this.MainYogas.Controls.Add(this.listBoxYoga);
             this.MainYogas.Location = new System.Drawing.Point(4, 29);
             this.MainYogas.Name = "MainYogas";
-            this.MainYogas.Size = new System.Drawing.Size(312, 813);
+            this.MainYogas.Size = new System.Drawing.Size(312, 810);
             this.MainYogas.TabIndex = 2;
             this.MainYogas.Text = "Main Yogas";
             this.MainYogas.UseVisualStyleBackColor = true;
@@ -419,7 +391,7 @@
             this.listBoxYoga.ItemHeight = 20;
             this.listBoxYoga.Location = new System.Drawing.Point(0, 0);
             this.listBoxYoga.Name = "listBoxYoga";
-            this.listBoxYoga.Size = new System.Drawing.Size(312, 813);
+            this.listBoxYoga.Size = new System.Drawing.Size(312, 810);
             this.listBoxYoga.TabIndex = 0;
             // 
             // panelLeft
@@ -454,7 +426,7 @@
             this.ClickPlanet.Location = new System.Drawing.Point(4, 29);
             this.ClickPlanet.Name = "ClickPlanet";
             this.ClickPlanet.Padding = new System.Windows.Forms.Padding(3);
-            this.ClickPlanet.Size = new System.Drawing.Size(292, 813);
+            this.ClickPlanet.Size = new System.Drawing.Size(292, 810);
             this.ClickPlanet.TabIndex = 0;
             this.ClickPlanet.Text = "Clicked Item";
             this.ClickPlanet.UseVisualStyleBackColor = true;
@@ -465,7 +437,7 @@
             this.richTextBoxClickedPlanet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxClickedPlanet.Location = new System.Drawing.Point(3, 3);
             this.richTextBoxClickedPlanet.Name = "richTextBoxClickedPlanet";
-            this.richTextBoxClickedPlanet.Size = new System.Drawing.Size(286, 807);
+            this.richTextBoxClickedPlanet.Size = new System.Drawing.Size(286, 804);
             this.richTextBoxClickedPlanet.TabIndex = 1;
             this.richTextBoxClickedPlanet.Text = "";
             // 
@@ -476,7 +448,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(292, 813);
+            this.tabPage2.Size = new System.Drawing.Size(292, 810);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "General";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -875,7 +847,7 @@
             this.tabPage1.Controls.Add(this.richTextBoxSummary);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(292, 813);
+            this.tabPage1.Size = new System.Drawing.Size(292, 810);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Summary";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -898,7 +870,7 @@
             this.richTextBoxSummary.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.richTextBoxSummary.Location = new System.Drawing.Point(2, 61);
             this.richTextBoxSummary.Name = "richTextBoxSummary";
-            this.richTextBoxSummary.Size = new System.Drawing.Size(286, 542);
+            this.richTextBoxSummary.Size = new System.Drawing.Size(286, 539);
             this.richTextBoxSummary.TabIndex = 2;
             this.richTextBoxSummary.Text = "";
             // 
@@ -907,7 +879,7 @@
             this.tabPageEDM.Controls.Add(this.richTextBoxEDM);
             this.tabPageEDM.Location = new System.Drawing.Point(4, 29);
             this.tabPageEDM.Name = "tabPageEDM";
-            this.tabPageEDM.Size = new System.Drawing.Size(292, 813);
+            this.tabPageEDM.Size = new System.Drawing.Size(292, 810);
             this.tabPageEDM.TabIndex = 3;
             this.tabPageEDM.Text = "EarthDayMaster";
             this.tabPageEDM.UseVisualStyleBackColor = true;
@@ -917,7 +889,7 @@
             this.richTextBoxEDM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxEDM.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxEDM.Name = "richTextBoxEDM";
-            this.richTextBoxEDM.Size = new System.Drawing.Size(292, 813);
+            this.richTextBoxEDM.Size = new System.Drawing.Size(292, 810);
             this.richTextBoxEDM.TabIndex = 3;
             this.richTextBoxEDM.Text = "";
             // 
@@ -1171,220 +1143,13 @@
             // 
             // panelMiddle
             // 
-            this.panelMiddle.AutoScroll = true;
-            this.panelMiddle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMiddle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelMiddle.Controls.Add(this.panel1);
+            this.panelMiddle.Controls.Add(this.horoscopeFullView1);
             this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMiddle.Location = new System.Drawing.Point(326, 76);
             this.panelMiddle.Name = "panelMiddle";
             this.panelMiddle.Size = new System.Drawing.Size(1141, 843);
             this.panelMiddle.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel19);
-            this.panel1.Controls.Add(this.panel17);
-            this.panel1.Controls.Add(this.panel16);
-            this.panel1.Controls.Add(this.panel18);
-            this.panel1.Controls.Add(this.panel15);
-            this.panel1.Controls.Add(this.panel14);
-            this.panel1.Controls.Add(this.panel13);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.horoscopeFullView1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1600, 1100);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel19
-            // 
-            this.panel19.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel19.Location = new System.Drawing.Point(1557, 823);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(40, 40);
-            this.panel19.TabIndex = 10;
-            // 
-            // panel17
-            // 
-            this.panel17.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel17.Location = new System.Drawing.Point(1557, 555);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(40, 40);
-            this.panel17.TabIndex = 8;
-            // 
-            // panel16
-            // 
-            this.panel16.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel16.Location = new System.Drawing.Point(1225, 1053);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(40, 40);
-            this.panel16.TabIndex = 13;
-            // 
-            // panel18
-            // 
-            this.panel18.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel18.Location = new System.Drawing.Point(1557, 507);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(40, 40);
-            this.panel18.TabIndex = 7;
-            // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel15.Location = new System.Drawing.Point(1177, 1053);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(40, 40);
-            this.panel15.TabIndex = 12;
-            // 
-            // panel14
-            // 
-            this.panel14.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel14.Location = new System.Drawing.Point(1177, 7);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(40, 40);
-            this.panel14.TabIndex = 5;
-            // 
-            // panel13
-            // 
-            this.panel13.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel13.Location = new System.Drawing.Point(1128, 1053);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(40, 40);
-            this.panel13.TabIndex = 11;
-            // 
-            // panel12
-            // 
-            this.panel12.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Location = new System.Drawing.Point(152, 1053);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(40, 40);
-            this.panel12.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            this.panel11.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Location = new System.Drawing.Point(0, 777);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(40, 40);
-            this.panel11.TabIndex = 10;
-            // 
-            // panel10
-            // 
-            this.panel10.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Location = new System.Drawing.Point(1557, 777);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(40, 40);
-            this.panel10.TabIndex = 9;
-            // 
-            // panel8
-            // 
-            this.panel8.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Location = new System.Drawing.Point(1225, 7);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(40, 40);
-            this.panel8.TabIndex = 8;
-            // 
-            // panel9
-            // 
-            this.panel9.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(1128, 7);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(40, 40);
-            this.panel9.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Location = new System.Drawing.Point(1557, 461);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(40, 40);
-            this.panel6.TabIndex = 6;
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel7.Location = new System.Drawing.Point(1557, 413);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(40, 40);
-            this.panel7.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(201, 1053);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(40, 40);
-            this.panel4.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(102, 1053);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(40, 40);
-            this.panel5.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Good;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(1, 137);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(40, 40);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ChaNiBaaStra.Properties.Resources.Bad1;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(0, 90);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(40, 40);
-            this.panel2.TabIndex = 1;
-            // 
-            // horoscopeFullView1
-            // 
-            this.horoscopeFullView1.AutoSize = true;
-            this.horoscopeFullView1.BackColor = System.Drawing.Color.White;
-            this.horoscopeFullView1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("horoscopeFullView1.BackgroundImage")));
-            this.horoscopeFullView1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.horoscopeFullView1.CurrentHoroscope = null;
-            this.horoscopeFullView1.IsBhavaView = false;
-            this.horoscopeFullView1.Location = new System.Drawing.Point(50, 50);
-            this.horoscopeFullView1.Margin = new System.Windows.Forms.Padding(0);
-            this.horoscopeFullView1.MinimumSize = new System.Drawing.Size(1500, 1000);
-            this.horoscopeFullView1.Name = "horoscopeFullView1";
-            this.horoscopeFullView1.NawamsaHoroscope = null;
-            this.horoscopeFullView1.Size = new System.Drawing.Size(1500, 1000);
-            this.horoscopeFullView1.TabIndex = 0;
-            this.horoscopeFullView1.TransitHoroscope = null;
             // 
             // menuStrip1
             // 
@@ -1411,7 +1176,7 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 30);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
@@ -1462,7 +1227,7 @@
             this.birthDateToolStripMenuItem,
             this.configurationsToolStripMenuItem1});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 30);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // birthDateToolStripMenuItem
@@ -1495,7 +1260,7 @@
             this.nakathFinderToolStripMenuItem,
             this.relationFinderToolStripMenuItem});
             this.configurationsToolStripMenuItem.Name = "configurationsToolStripMenuItem";
-            this.configurationsToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.configurationsToolStripMenuItem.Size = new System.Drawing.Size(62, 30);
             this.configurationsToolStripMenuItem.Text = "Find";
             // 
             // specialToolStripMenuItem
@@ -1553,6 +1318,31 @@
             this.splitterMainLeft.TabIndex = 6;
             this.splitterMainLeft.TabStop = false;
             // 
+            // horoscopeFullView1
+            // 
+            this.horoscopeFullView1.BackColor = System.Drawing.Color.White;
+            this.horoscopeFullView1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("horoscopeFullView1.BackgroundImage")));
+            this.horoscopeFullView1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.horoscopeFullView1.CurrentHoroscope = null;
+            this.horoscopeFullView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.horoscopeFullView1.IsBhavaView = false;
+            this.horoscopeFullView1.Location = new System.Drawing.Point(0, 0);
+            this.horoscopeFullView1.Margin = new System.Windows.Forms.Padding(0);
+            this.horoscopeFullView1.MinimumSize = new System.Drawing.Size(1000, 1000);
+            this.horoscopeFullView1.Name = "horoscopeFullView1";
+            this.horoscopeFullView1.NawamsaHoroscope = null;
+            this.horoscopeFullView1.Size = new System.Drawing.Size(1141, 1000);
+            this.horoscopeFullView1.TabIndex = 0;
+            this.horoscopeFullView1.TransitHoroscope = null;
+            // 
+            // planetSummary1
+            // 
+            this.planetSummary1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.planetSummary1.Location = new System.Drawing.Point(0, 0);
+            this.planetSummary1.Name = "planetSummary1";
+            this.planetSummary1.Size = new System.Drawing.Size(1767, 40);
+            this.planetSummary1.TabIndex = 0;
+            // 
             // ChaniBhastraSecret
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1609,8 +1399,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panelMiddle.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1626,24 +1414,6 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panelMiddle;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel19;
         private PlanetSummary planetSummary1;
         private System.Windows.Forms.TrackBar trackBarDate;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -1750,7 +1520,6 @@
         private System.Windows.Forms.Panel panelH3;
         private System.Windows.Forms.Panel panelH2;
         private System.Windows.Forms.Panel panelH1;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panelH4;
         private System.Windows.Forms.Label labelH4;
         private System.Windows.Forms.Label labelH3;

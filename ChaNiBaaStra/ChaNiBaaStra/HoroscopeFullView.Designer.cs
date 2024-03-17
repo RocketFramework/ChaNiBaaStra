@@ -167,8 +167,11 @@
             this.labelSav12 = new System.Windows.Forms.Label();
             this.panelHoroscope = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panchangaOfTime1 = new ChaNiBaaStra.PanchangaOfTime();
             this.panelHoroscope.SuspendLayout();
             this.panelTop.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelT1
@@ -1576,8 +1579,28 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1505, 1046);
+            this.panelTop.Size = new System.Drawing.Size(1505, 1018);
             this.panelTop.TabIndex = 122;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panchangaOfTime1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 1018);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1505, 659);
+            this.panel2.TabIndex = 124;
+            // 
+            // panchangaOfTime1
+            // 
+            this.panchangaOfTime1.BirthHoroscope = null;
+            this.panchangaOfTime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panchangaOfTime1.Location = new System.Drawing.Point(0, 0);
+            this.panchangaOfTime1.Name = "panchangaOfTime1";
+            this.panchangaOfTime1.Size = new System.Drawing.Size(1503, 657);
+            this.panchangaOfTime1.TabIndex = 0;
             // 
             // HoroscopeFullView
             // 
@@ -1585,14 +1608,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTop);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(100);
             this.Name = "HoroscopeFullView";
-            this.Size = new System.Drawing.Size(1505, 1158);
+            this.Size = new System.Drawing.Size(1505, 1677);
             this.panelHoroscope.ResumeLayout(false);
             this.panelHoroscope.PerformLayout();
             this.panelTop.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1737,5 +1762,7 @@
         private System.Windows.Forms.Label labelSav12;
         private System.Windows.Forms.Panel panelHoroscope;
         private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.Panel panel2;
+        private PanchangaOfTime panchangaOfTime1;
     }
 }

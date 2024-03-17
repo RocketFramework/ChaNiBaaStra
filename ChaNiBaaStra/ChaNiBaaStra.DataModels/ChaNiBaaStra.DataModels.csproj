@@ -182,12 +182,11 @@
     <Compile Include="Mod.cs" />
     <Compile Include="AstroPlace.cs" />
     <Compile Include="Models\ThithiSagna.cs" />
-    <Compile Include="Models\ThithiWeekDay.cs" />
-    <Compile Include="Models\WeekDay.cs" />
     <Compile Include="Models\Work.cs" />
     <Compile Include="Models\WorkForThithi.cs" />
     <Compile Include="Models\Yoga.cs" />
     <Compile Include="RashiAdhipathiFinder.cs" />
+    <Compile Include="SubhaTime.cs" />
     <Compile Include="Templates\DbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

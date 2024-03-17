@@ -8,6 +8,24 @@ namespace ChaNiBaaStra.Utilities
 {
     public static class IntExtension
     {
+        public static string ToCustomString(this List<int> list)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            // Append each integer in the list to the StringBuilder
+            foreach (int num in list)
+            {
+                sb.Append(num);
+                sb.Append(" "); // Add space between numbers for clarity, can be modified as needed
+            }
+
+            // Remove the last space if list is not empty
+            if (sb.Length > 0)
+                sb.Length--;
+
+            return sb.ToString();
+        }
+
         public static bool IsEven(this int value)
         {
             return ((value % 2) == 0);

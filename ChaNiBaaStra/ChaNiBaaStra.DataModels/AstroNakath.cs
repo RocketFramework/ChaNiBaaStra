@@ -40,6 +40,33 @@ namespace ChaNiBaaStra.DataModels
         Uputupa = 26,
         Revathi = 27
     }
+
+    public enum EnumRelationshipTypes
+    {
+        Uchcha = 1,
+        UchchaMulaThrikona = 2,
+        Swashesthra = 3,
+        SwashesthraMulaThrikona = 4,
+        Mithra = 5,
+        Sama = 6,
+        Sathuru = 7,
+        SathuruMuta = 8,
+        Neecha = 9,
+        NeechaMuta = 10,
+        SamaMuta = 11,
+        MulaThrikona = 12,
+        Muta = 13,
+        ThathkaalikaMithra = 14,
+        Janma = 15,
+        Sampath = 16,
+        Vipath = 17,
+        Kshema = 18,
+        Prathyaari = 19,
+        Sadhaka = 20,
+        Vada = 21,
+        Mythree = 22,
+        ParamaMythree = 23,
+    }
     public class AstroNakath : AstroBase<EnumNakath, Nakath>
     {
         public AstroNakath(EnumNakath nakath) : base(nakath, 27, AstroConsts.NakLength)

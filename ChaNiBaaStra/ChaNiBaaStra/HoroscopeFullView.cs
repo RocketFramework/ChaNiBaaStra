@@ -33,6 +33,7 @@ namespace ChaNiBaaStra
             InitHoroscopeFlowLayout();
             InitHoroscope();
             InitNawamsaHoroscope();
+            this.panchangaOfTime1.BirthHoroscope = CurrentHoroscope;
         }
 
         public void PartialUiInit()
@@ -64,7 +65,7 @@ namespace ChaNiBaaStra
         {
             for (int i = 0; i < 12; i++)
             {
-                Label labelN = (this.Controls.OfType<Label>())
+                Label labelN = (this.panelHoroscope.Controls.OfType<Label>())
                     .Where(x => x.Name == "labelAsktakaVarga" + (i + 1)).FirstOrDefault();
                 labelN.Text = baseVargaCalculator.AshtakaVargaList[i].ToString();
             }
@@ -453,7 +454,7 @@ namespace ChaNiBaaStra
         {
             pViewClicked = (PlanetView)sender;
             SetAsktakaVarga(pViewClicked.ThisPlanet);
-            ((ChaniBhastraSecret)this.Parent.Parent.Parent).UpdateDisplayPlanetMessages(pViewClicked.ThisPlanet, this.IsBhavaView);
+            ((ChaniBhastraSecret)this.Parent.Parent).UpdateDisplayPlanetMessages(pViewClicked.ThisPlanet, this.IsBhavaView);
 
             if (planetHolders.Count == 0)
             {
@@ -550,7 +551,7 @@ namespace ChaNiBaaStra
 
         private void UpdateForICanSeeThem(int view, bool isTransitPlanet)
         {
-            List<PlanetView> planetViewList = (this.Controls.OfType<FlowLayoutPanel>())
+            List<PlanetView> planetViewList = (this.panelHoroscope.Controls.OfType<FlowLayoutPanel>())
                 .Where(x => x.Name == "flowLayoutPanel" + (isTransitPlanet ? "T" : "N") + view)
                 .FirstOrDefault().Controls.OfType<PlanetView>().ToList();
             if (planetViewList != null)
@@ -560,7 +561,7 @@ namespace ChaNiBaaStra
 
         private void UpdateForICantSeeThem(int view, bool isTransitPlanet)
         {
-            List<PlanetView> planetViewList = (this.Controls.OfType<FlowLayoutPanel>())
+            List<PlanetView> planetViewList = (this.panelHoroscope.Controls.OfType<FlowLayoutPanel>())
                 .Where(x => x.Name == "flowLayoutPanel" + (isTransitPlanet ? "T" : "N") + view)
                 .FirstOrDefault().Controls.OfType<PlanetView>().ToList();
             if (planetViewList != null)
@@ -570,7 +571,7 @@ namespace ChaNiBaaStra
 
         private void UpdateForTheyCanSeeMee(AstroPlanet view, bool isTransit)
         {
-            PlanetView planetView = (this.Controls.OfType<FlowLayoutPanel>())
+            PlanetView planetView = (this.panelHoroscope.Controls.OfType<FlowLayoutPanel>())
                 .Where(x => x.Name == "flowLayoutPanel" + (isTransit ? "T" : "N") + view.HouseNumber)
                 .FirstOrDefault().Controls.OfType<PlanetView>()
                 .Where(x => x.ThisPlanet.Name == view.Name).FirstOrDefault();
@@ -580,7 +581,7 @@ namespace ChaNiBaaStra
 
         private void UpdateForTheyCantSeeMee(AstroPlanet view, bool isTransit)
         {
-            PlanetView planetView = (this.Controls.OfType<FlowLayoutPanel>())
+            PlanetView planetView = (this.panelHoroscope.Controls.OfType<FlowLayoutPanel>())
                 .Where(x => x.Name == "flowLayoutPanel" + (isTransit ? "T" : "N") + view.HouseNumber)
                 .FirstOrDefault().Controls.OfType<PlanetView>()
                 .Where(x => x.ThisPlanet.Name == view.Name).FirstOrDefault();
